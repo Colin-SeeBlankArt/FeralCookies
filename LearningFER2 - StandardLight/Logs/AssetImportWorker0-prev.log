@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.5f1 (3737af19df53) revision 3618735'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19042.1288; Version 2009; 64bit' Language: 'en' Physical Memory: 16301 MB
+OS: 'Windows 10 Pro; OS build 19042.1348; Version 2009; 64bit' Language: 'en' Physical Memory: 16301 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ C:/Users/me/Documents/GitHub/FeralCookies/LearningFER2 - StandardLight
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58121
+63276
 Successfully changed project path to: C:/Users/me/Documents/GitHub/FeralCookies/LearningFER2 - StandardLight
 C:/Users/me/Documents/GitHub/FeralCookies/LearningFER2 - StandardLight
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 100.97 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 567.54 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.5f1 (3737af19df53)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/Resources/UnitySubsystems
@@ -35,28 +35,28 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56808
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006732 seconds.
+Registered in 0.083795 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 131.05 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 319.23 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.292 seconds
+- Completed reload, in  8.284 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006316 seconds.
+Registered in 0.019356 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.81 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
@@ -96,34 +96,184 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.371 seconds
+- Completed reload, in  2.782 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 1.28 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2786 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.6 MB.
-System memory in use after: 106.6 MB.
+Unloading 2787 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 118.4 MB.
+System memory in use after: 118.4 MB.
 
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3243.
-Total: 2.921700 ms (FindLiveObjects: 0.260000 ms CreateObjectMapping: 0.162000 ms MarkObjects: 2.424900 ms  DeleteObjects: 0.073600 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3258.
+Total: 5.374900 ms (FindLiveObjects: 0.349600 ms CreateObjectMapping: 0.183200 ms MarkObjects: 4.705600 ms  DeleteObjects: 0.134500 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/RhythmMounain/Segments/RM_prefab_00.prefab
-  artifactKey: Guid(c9e67d9f37c419d46aad08c7f88906b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/Segments/RM_prefab_00.prefab using Guid(c9e67d9f37c419d46aad08c7f88906b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93ba04f601cd9032138d89c86375b259') in 0.167798 seconds 
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(d024b14074a5abd48972d31d528a404a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(d024b14074a5abd48972d31d528a404a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1524bb213be5179c51f39a6253cb4297') in 0.148713 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000866 seconds.
+  path: Assets/Textures
+  artifactKey: Guid(70fd2a554c6dee54198774e86cdd078a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures using Guid(70fd2a554c6dee54198774e86cdd078a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0df36f96a5c950cd29dfb57f41441b9') in 0.016237 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 107.782685 seconds.
+  path: Assets/Textures/ground01.jpg
+  artifactKey: Guid(87982a9fc60531746854b30f2bb9a2da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground01.jpg using Guid(87982a9fc60531746854b30f2bb9a2da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40d90b40e275affe1d3abd67a2165701') in 0.358174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000762 seconds.
+  path: Assets/Textures/Limestone_01_n.jpg
+  artifactKey: Guid(e7f93b14e80cdee4caf486b266da8245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Limestone_01_n.jpg using Guid(e7f93b14e80cdee4caf486b266da8245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84d8a526daee8da8129ca848d8c6c63c') in 0.074324 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000828 seconds.
+  path: Assets/Textures/stone_04_a.jpg
+  artifactKey: Guid(331d53e788836aa4089aeb923a2fcb21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/stone_04_a.jpg using Guid(331d53e788836aa4089aeb923a2fcb21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf27f2464e4b617eac7636444181f094') in 0.122762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000954 seconds.
+  path: Assets/Textures/Limestone_01.jpg
+  artifactKey: Guid(57849f5c6514e084d85feba23ee47e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Limestone_01.jpg using Guid(57849f5c6514e084d85feba23ee47e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c6bd3232ad7571d98782a44f6502dad') in 0.071822 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000898 seconds.
+  path: Assets/Textures/ground01_n2.jpg
+  artifactKey: Guid(cf97c1e9e91a4fd4181a7a6aa03337ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground01_n2.jpg using Guid(cf97c1e9e91a4fd4181a7a6aa03337ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53831ab6b26cc7c5a8ea35023fd80326') in 0.120511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000833 seconds.
+  path: Assets/Textures/ground_03_n.jpg
+  artifactKey: Guid(9daa349d86340704485d030b82d63a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground_03_n.jpg using Guid(9daa349d86340704485d030b82d63a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85c0544a53aa6cd6b4f699b32382caed') in 0.096081 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000760 seconds.
+  path: Assets/Textures/ground_05_n.jpg
+  artifactKey: Guid(1c4765bbb27a16b448887c293967e8e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground_05_n.jpg using Guid(1c4765bbb27a16b448887c293967e8e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b553be7344c5fcb0c93c462229200ce') in 0.139666 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000619 seconds.
+  path: Assets/Textures/stone_04_n.jpg
+  artifactKey: Guid(e8f691331c84203428e29049e1e4e122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/stone_04_n.jpg using Guid(e8f691331c84203428e29049e1e4e122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d5fc1f72b62b96376b9b0708a981547') in 0.069194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002213 seconds.
+  path: Assets/Textures/ground_06_n.jpg
+  artifactKey: Guid(02668839718a78c4e86691474181db1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground_06_n.jpg using Guid(02668839718a78c4e86691474181db1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c707d2f5e4e77de45ea49e85056a68f5') in 0.075361 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001320 seconds.
+  path: Assets/Textures/ground_03_a.jpg
+  artifactKey: Guid(776a57745ec583b4491d84adc7840af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground_03_a.jpg using Guid(776a57745ec583b4491d84adc7840af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9054221eb933948774e9caa954987633') in 0.082531 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001764 seconds.
+  path: Assets/Textures/ground_05_a.jpg
+  artifactKey: Guid(24c11d99ff93900488669291a113d4d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground_05_a.jpg using Guid(24c11d99ff93900488669291a113d4d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51129499f71a69e977e864f86b9f94d4') in 0.070664 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001111 seconds.
+  path: Assets/Textures/ground_06_a.jpg
+  artifactKey: Guid(2fd94088bbbf4d040ad9200ecfe47a4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground_06_a.jpg using Guid(2fd94088bbbf4d040ad9200ecfe47a4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33a6ab3abefe0504a4df4382972d2bc7') in 0.056613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.328608 seconds.
+  path: Assets/Textures/ground01_n2.jpg
+  artifactKey: Guid(cf97c1e9e91a4fd4181a7a6aa03337ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground01_n2.jpg using Guid(cf97c1e9e91a4fd4181a7a6aa03337ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '011a4a279ac4734d1af3a6ba778799c9') in 0.080025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000928 seconds.
+  path: Assets/Textures/Limestone_01_n.jpg
+  artifactKey: Guid(e7f93b14e80cdee4caf486b266da8245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Limestone_01_n.jpg using Guid(e7f93b14e80cdee4caf486b266da8245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e11facd9ceaac52040b1ad173046954') in 0.045182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001003 seconds.
+  path: Assets/Textures/ground_03_n.jpg
+  artifactKey: Guid(9daa349d86340704485d030b82d63a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground_03_n.jpg using Guid(9daa349d86340704485d030b82d63a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaf90250e47849c396e58f0f54a5aaae') in 0.130417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001411 seconds.
+  path: Assets/Textures/ground_05_n.jpg
+  artifactKey: Guid(1c4765bbb27a16b448887c293967e8e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground_05_n.jpg using Guid(1c4765bbb27a16b448887c293967e8e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ec6ec326ffc3dcfd023a885461b9e54') in 0.075250 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000875 seconds.
+  path: Assets/Textures/stone_04_n.jpg
+  artifactKey: Guid(e8f691331c84203428e29049e1e4e122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/stone_04_n.jpg using Guid(e8f691331c84203428e29049e1e4e122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a18448a6af9447e921882b695fc531a') in 0.053919 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.005464 seconds.
+  path: Assets/Textures/ground_06_n.jpg
+  artifactKey: Guid(02668839718a78c4e86691474181db1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ground_06_n.jpg using Guid(02668839718a78c4e86691474181db1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3cd5237aad1e5ca28d1840cde2bf892') in 0.055709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 89.776930 seconds.
+  path: Assets/Terrain Images
+  artifactKey: Guid(6e23cca99718dd14a8dc66ec5e2825a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain Images using Guid(6e23cca99718dd14a8dc66ec5e2825a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b604852dfd3495ccabbd4536ec2f2e65') in 0.025610 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 115.522966 seconds.
+  path: Assets/Terrain Images/Base Terrain.terrainlayer
+  artifactKey: Guid(db58c8133d8b6a844a5032dd3f70bc78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain Images/Base Terrain.terrainlayer using Guid(db58c8133d8b6a844a5032dd3f70bc78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23813ff53df68534930e6d467f2171b3') in 0.026939 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 283.969820 seconds.
+  path: Assets/Terrain Layers
+  artifactKey: Guid(6e23cca99718dd14a8dc66ec5e2825a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain Layers using Guid(6e23cca99718dd14a8dc66ec5e2825a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7390a847c3e304921a913979ceae248a') in 0.010731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.621824 seconds.
+  path: Assets/Terrain Layers/Limestone.terrainlayer
+  artifactKey: Guid(6cef146550457364780f3ff6b4d6e7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain Layers/Limestone.terrainlayer using Guid(6cef146550457364780f3ff6b4d6e7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d2d6add4ca656db161814a07e7a07a1') in 0.048715 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 691.133337 seconds.
+  path: Assets/Terrain Layers/Base Terrain.terrainlayer
+  artifactKey: Guid(db58c8133d8b6a844a5032dd3f70bc78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain Layers/Base Terrain.terrainlayer using Guid(db58c8133d8b6a844a5032dd3f70bc78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9bbaeeb2545e0069662ce1861617402') in 0.112751 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002866 seconds.
+  path: Assets/Terrain Layers/Limestone.terrainlayer
+  artifactKey: Guid(6cef146550457364780f3ff6b4d6e7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain Layers/Limestone.terrainlayer using Guid(6cef146550457364780f3ff6b4d6e7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fd02dc70fc3f112d68c4ee4044b5ec5') in 0.036523 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.007669 seconds.
+Registered in 0.009114 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.06 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
@@ -166,33 +316,209 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.993 seconds
+- Completed reload, in  2.799 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.34 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 2.77 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2780 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.3 MB.
-System memory in use after: 106.5 MB.
+Unloading 2800 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 134.8 MB.
+System memory in use after: 135.0 MB.
 
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3256.
-Total: 4.483000 ms (FindLiveObjects: 0.372200 ms CreateObjectMapping: 0.251800 ms MarkObjects: 3.781800 ms  DeleteObjects: 0.075600 ms)
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3541.
+Total: 7.509800 ms (FindLiveObjects: 0.406400 ms CreateObjectMapping: 0.232400 ms MarkObjects: 6.683500 ms  DeleteObjects: 0.184600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 558.179182 seconds.
-  path: Assets/RhythmMounain/LRunner.cs
-  artifactKey: Guid(d09a2871edae1d34a932cf536df2e78e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/LRunner.cs using Guid(d09a2871edae1d34a932cf536df2e78e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34234c8bb572b2630fbd7dc68e44123d') in 0.027745 seconds 
+  Time since last request: 136.982729 seconds.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(d024b14074a5abd48972d31d528a404a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(d024b14074a5abd48972d31d528a404a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2025a317e0041b7bfa7673abbd38f697') in 0.085877 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 226.857663 seconds.
+  path: Assets/3rdPerson+Fly/Prefabs
+  artifactKey: Guid(9ae93ac891c5aa842a28be4ff92d2e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Prefabs using Guid(9ae93ac891c5aa842a28be4ff92d2e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36f9e14814e385f5a9013151b9710709') in 0.012107 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.101909 seconds.
+  path: Assets/3rdPerson+Fly/Prefabs/shadow.prefab
+  artifactKey: Guid(99aff40f3c93eea4eaf473f85c4c09c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Prefabs/shadow.prefab using Guid(99aff40f3c93eea4eaf473f85c4c09c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed4c2d4d8a00ccd2c9f20ea2d64a914d') in 0.578909 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.918352 seconds.
+  path: Assets/3rdPerson+Fly/Materials/char_shadow.mat
+  artifactKey: Guid(d4b9a00252f83864d8a5ea8767ad6894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/char_shadow.mat using Guid(d4b9a00252f83864d8a5ea8767ad6894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0788deca9dcf87f07e2c89fd97052cda') in 0.095308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001509 seconds.
+  path: Assets/3rdPerson+Fly/Materials/env_Gold.mat
+  artifactKey: Guid(493ecae6230b81b4385325e84dfc198e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/env_Gold.mat using Guid(493ecae6230b81b4385325e84dfc198e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea6011addfcb798317894dd96c192327') in 0.260505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000615 seconds.
+  path: Assets/3rdPerson+Fly/Materials/env_Fence.mat
+  artifactKey: Guid(fa505519e7f70e74d83de9fa8e285ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/env_Fence.mat using Guid(fa505519e7f70e74d83de9fa8e285ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f22fb37b62174931894c761a3a91ef89') in 0.316621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000640 seconds.
+  path: Assets/3rdPerson+Fly/Materials/char_shadow_toon.cubemap
+  artifactKey: Guid(08ace8642380dd0489507f969b3d9dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/char_shadow_toon.cubemap using Guid(08ace8642380dd0489507f969b3d9dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11199fd32e20c57cfce1c139bfcb86d2') in 0.097513 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001442 seconds.
+  path: Assets/3rdPerson+Fly/Materials/env_RedTile.mat
+  artifactKey: Guid(0be8db44e223e8d4f8d86c944d88bca4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/env_RedTile.mat using Guid(0be8db44e223e8d4f8d86c944d88bca4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5841e378811d56e92782942ca8dcd2d7') in 0.067762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001013 seconds.
+  path: Assets/3rdPerson+Fly/Materials/env_GoldTile.mat
+  artifactKey: Guid(0d2e318bf98ad6144ae3ced352c1962c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/env_GoldTile.mat using Guid(0d2e318bf98ad6144ae3ced352c1962c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de4070e62fff9a1d34a455504468bd98') in 0.049966 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001132 seconds.
+  path: Assets/3rdPerson+Fly/Materials/Character.physicMaterial
+  artifactKey: Guid(7a665289b8701a143a4d81cc38730390) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/Character.physicMaterial using Guid(7a665289b8701a143a4d81cc38730390) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff96c20135636d6787348681f6954a66') in 0.037911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000888 seconds.
+  path: Assets/3rdPerson+Fly/Materials/env_InnerRing.mat
+  artifactKey: Guid(2a5567d14decdf744a0a4ba82ae38334) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/env_InnerRing.mat using Guid(2a5567d14decdf744a0a4ba82ae38334) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f497fff2c72739ddc4486419bb3556e') in 0.043032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001887 seconds.
+  path: Assets/3rdPerson+Fly/Materials/env_DarkTile.mat
+  artifactKey: Guid(4d42b08d761358e49b969b4f3136ec7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/env_DarkTile.mat using Guid(4d42b08d761358e49b969b4f3136ec7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a16a49cb2fad542356fe94a43f092115') in 0.065504 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.713517 seconds.
+  path: Assets/3rdPerson+Fly/Materials
+  artifactKey: Guid(641c7b8de77a29342a03cc015e323a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials using Guid(641c7b8de77a29342a03cc015e323a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09d53b4f3110c1e155581dc2e1222499') in 0.015963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.172484 seconds.
+  path: Assets/3rdPerson+Fly/Materials/Dude.mat
+  artifactKey: Guid(e93fbf2577f9e1145a3f2118da2234a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Materials/Dude.mat using Guid(e93fbf2577f9e1145a3f2118da2234a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb87ab46f8c9bbfddb2172d97b0d0b0a') in 0.084731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 123.108675 seconds.
+  path: Assets/3rdPerson+Fly/Prefabs/shadow.prefab
+  artifactKey: Guid(99aff40f3c93eea4eaf473f85c4c09c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Prefabs/shadow.prefab using Guid(99aff40f3c93eea4eaf473f85c4c09c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26d6dc073d6cc43d3d10e9e654624ac5') in 0.401062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 179.035141 seconds.
+  path: Assets/3rdPerson+Fly/Animators/CharacterController.controller
+  artifactKey: Guid(1ac2a1891f6a2814dbcb83cbd24d5ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Animators/CharacterController.controller using Guid(1ac2a1891f6a2814dbcb83cbd24d5ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c83baed93db3c36617e993a08660f5c0') in 0.387117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.402185 seconds.
+  path: Assets/3rdPerson+Fly/Animations/Locomotion
+  artifactKey: Guid(3aefa2e21df3cad4bb64c54c505cffb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Animations/Locomotion using Guid(3aefa2e21df3cad4bb64c54c505cffb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e27ad58d7aa03d0967a771f3270384e') in 0.013420 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.009523 seconds.
+  path: Assets/3rdPerson+Fly/Animations/Locomotion/jog_fwd.anim
+  artifactKey: Guid(e5bc3f026f85905469c9003b0efaddee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Animations/Locomotion/jog_fwd.anim using Guid(e5bc3f026f85905469c9003b0efaddee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89b30556c5769ca3290f6c6984bc8d40') in 0.058329 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.368500 seconds.
+  path: Assets/3rdPerson+Fly/Animations/Locomotion/run_fwd.anim
+  artifactKey: Guid(fe763b5e709308f4085e998069974f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Animations/Locomotion/run_fwd.anim using Guid(fe763b5e709308f4085e998069974f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4cc0e098a77763df91617bd938d7a70') in 0.085326 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.559208 seconds.
+  path: Assets/3rdPerson+Fly/Animations/Locomotion/sprint_fwd.anim
+  artifactKey: Guid(b283eb77c9cc3ff4793335e8c9cd0940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Animations/Locomotion/sprint_fwd.anim using Guid(b283eb77c9cc3ff4793335e8c9cd0940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ad4147759b434f0e5b48c05604622b6') in 0.047426 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008815 seconds.
+Registered in 0.006406 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.22 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LearningFER2 - StandardLight
+System.NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.UIElements.BaseLiveReloadAssetTracker`1[T].StartTrackingAsset (T asset) [0x0003e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.HandlePanelAttachmentEvents (UnityEngine.UIElements.EventBase evt) [0x000a9] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt) [0x0010e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.CallbackEventHandler.HandleEvent (UnityEngine.UIElements.EventBase evt) [0x000ae] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.EventDispatchUtilities.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x00054] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x000ba] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.EventDispatcher.Dispatch (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, UnityEngine.UIElements.DispatchMode dispatchMode) [0x00046] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase e, UnityEngine.UIElements.DispatchMode dispatchMode) [0x0001a] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.HasChangedPanel (UnityEngine.UIElements.BaseVisualElementPanel prevPanel) [0x00061] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.SetPanel (UnityEngine.UIElements.BaseVisualElementPanel p) [0x001b1] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement+Hierarchy.SetParent (UnityEngine.UIElements.VisualElement value) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement+Hierarchy.Insert (System.Int32 index, UnityEngine.UIElements.VisualElement child) [0x000e4] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement+Hierarchy.Add (UnityEngine.UIElements.VisualElement child) [0x0001b] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.Add (UnityEngine.UIElements.VisualElement child) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEditor.UIElements.DefaultEditorWindowBackend.AddRootElement (UnityEngine.UIElements.VisualElement root) [0x0000c] in <c23044a1d79146ae9e09271e58031064>:0 
+  at UnityEditor.UIElements.DefaultEditorWindowBackend.RegisterWindow () [0x000c7] in <c23044a1d79146ae9e09271e58031064>:0 
+  at UnityEditor.UIElements.DefaultEditorWindowBackend.UnityEditor.IEditorWindowBackend.OnRegisterWindow () [0x00001] in <c23044a1d79146ae9e09271e58031064>:0 
+  at UnityEditor.HostView.RegisterSelectedPane (System.Boolean sendEvents) [0x00035] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.HostView.SetActualViewInternal (UnityEditor.EditorWindow value, System.Boolean sendEvents) [0x0004b] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.DockArea.SetSelectedPrivate (System.Int32 value, System.Boolean sendEvents) [0x00059] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.DockArea.AddTab (System.Int32 idx, UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x00018] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.DockArea.AddTab (UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x0000d] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.CreateNewWindowForEditorWindow (UnityEditor.EditorWindow window, System.Boolean loadPosition, System.Boolean showImmediately, System.Boolean setFocus) [0x0001b] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.Show (System.Boolean immediateDisplay) [0x00011] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.Show () [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.GetWindowPrivate (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00069] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.GetWindow (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at Dreamteck.Forever.PluginInfo..cctor () [0x00034] in C:\Users\me\Documents\GitHub\FeralCookies\LearningFER2 - StandardLight\Assets\Dreamteck\Forever\Editor\WelcomeScreen.cs:16 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  4.035 seconds
+Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 1.08 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2790 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.5 MB.
+System memory in use after: 151.8 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3622.
+Total: 9.274500 ms (FindLiveObjects: 0.613000 ms CreateObjectMapping: 0.328800 ms MarkObjects: 8.204700 ms  DeleteObjects: 0.125500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.046389 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LearningFER2 - StandardLight
@@ -234,27 +560,245 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.717 seconds
+- Completed reload, in  8.237 seconds
 Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2788 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.5 MB.
+System memory in use after: 151.7 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3628.
+Total: 8.383800 ms (FindLiveObjects: 0.823700 ms CreateObjectMapping: 0.444700 ms MarkObjects: 6.978000 ms  DeleteObjects: 0.131600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 94.264998 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Halfpipe.mat
+  artifactKey: Guid(c5c9f32eee1b75d438d4e7aeb4ceee49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Halfpipe.mat using Guid(c5c9f32eee1b75d438d4e7aeb4ceee49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f059ac2b1e232150a949c9a344735cab') in 20.075255 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.006010 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Palm2.mat
+  artifactKey: Guid(fa53d189b0bee2146841f3ae117d44c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Palm2.mat using Guid(fa53d189b0bee2146841f3ae117d44c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43095b393b293ec69cb1f894982df740') in 0.533573 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001121 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Tunnel3.mat
+  artifactKey: Guid(ead7047510dcd434180e4576b68ffae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Tunnel3.mat using Guid(ead7047510dcd434180e4576b68ffae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72c91d04acdaa2adf3cfefb89aa937fd') in 1.820809 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.007614 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Tunnel2.mat
+  artifactKey: Guid(1fdbf24aa3c6f4e42a3db75d02ba805c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Tunnel2.mat using Guid(1fdbf24aa3c6f4e42a3db75d02ba805c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f393bd7fceb343a04845e381ffdcd8d') in 0.489768 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.232815 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Pine3.mat
+  artifactKey: Guid(3af7d9b98874e7741a11b1e40c7b317b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Pine3.mat using Guid(3af7d9b98874e7741a11b1e40c7b317b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcb14a755585061d345ebff41dfbb534') in 1.096806 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.174284 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Meshes/Dreamteck Car.FBX
+  artifactKey: Guid(6504cdbbb79425544b299ea6f17e4baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Meshes/Dreamteck Car.FBX using Guid(6504cdbbb79425544b299ea6f17e4baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5379f61090303ca05c35bb6299bb9a93') in 1.551059 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.168827 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Pine1.mat
+  artifactKey: Guid(fc53f97fb160e9f4bba90191a0d258c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Pine1.mat using Guid(fc53f97fb160e9f4bba90191a0d258c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '046d811e9336d0de4de7f368e25fbd1f') in 0.491248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.088105 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Pine2.mat
+  artifactKey: Guid(0bbe8665bd6307c4baf596b5d75cdb36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Pine2.mat using Guid(0bbe8665bd6307c4baf596b5d75cdb36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff92ba23ea61f83a2551938a997652c2') in 0.785325 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001557 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Tunnel1.mat
+  artifactKey: Guid(05bd14ae9ec2a004d84208a1f5f3a86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Tunnel1.mat using Guid(05bd14ae9ec2a004d84208a1f5f3a86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '921d913eea109bb6950c219d8101c544') in 0.624556 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.029112 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Player Engine.mat
+  artifactKey: Guid(dc091b0299f5ff3429f61c2d37920ef9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Player Engine.mat using Guid(dc091b0299f5ff3429f61c2d37920ef9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6e64a9baccb48eca60b8cf5e97f2c6f') in 0.181408 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001292 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Ramp.mat
+  artifactKey: Guid(9960b38a8c3118d48b31e62d2238a7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Ramp.mat using Guid(9960b38a8c3118d48b31e62d2238a7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '253397c2c49ec047f14db41062b57320') in 0.263302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.086677 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Player.mat
+  artifactKey: Guid(41d05288417a15743930267199203870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Collider Run/Materials/Player.mat using Guid(41d05288417a15743930267199203870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06c5ebc9808c9c94a9c7c255abf258b7') in 3.315185 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.134530 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Palm1.mat
+  artifactKey: Guid(6ebfb94434a21134e8e9a32c44c1b959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Palm1.mat using Guid(6ebfb94434a21134e8e9a32c44c1b959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '428cf8cfe95aef90fbabc80ff3093a60') in 0.666741 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.006374 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Palm3.mat
+  artifactKey: Guid(fa2e7d09a8b90cd4b91b06ecd6dd2571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Palm3.mat using Guid(fa2e7d09a8b90cd4b91b06ecd6dd2571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c42ebbd0d9c4afacfdc5f72b5293f37a') in 2.643130 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.910637 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Math Highway/Materials/Player.mat
+  artifactKey: Guid(80efa0f4e41901149a11b81f78585f91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Math Highway/Materials/Player.mat using Guid(80efa0f4e41901149a11b81f78585f91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6ebf5b12ec187a846f831ce866251aa') in 1.488661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.199157 seconds.
+  path: Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Terrain.mat
+  artifactKey: Guid(120e3daf0b07d6343a881d8d892e8041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Forever/Examples/Retro Wave/Materials/Terrain.mat using Guid(120e3daf0b07d6343a881d8d892e8041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd249e02e3f02675a84cd6b9ec39c2b00') in 20.257656 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.169186 seconds.
+  path: Assets/3rdPerson+Fly/Textures/char_shadow_darker.png
+  artifactKey: Guid(d585d2695f979e542b4bd075efd2bcc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Textures/char_shadow_darker.png using Guid(d585d2695f979e542b4bd075efd2bcc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bfe7688130699c959e559dbe824c77f') in 7.683232 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.637009 seconds.
+  path: Assets/3rdPerson+Fly/Textures/keys.png
+  artifactKey: Guid(a13c0ef82261a884d95d2f33f5d5c662) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Textures/keys.png using Guid(a13c0ef82261a884d95d2f33f5d5c662) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21432585e14cce6cbbc709e6c59c6b3a') in 1.708345 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.893353 seconds.
+  path: Assets/3rdPerson+Fly/Textures/char_shadow_ligther.png
+  artifactKey: Guid(5fa5f49fd43855249b3637ed79c7706a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Textures/char_shadow_ligther.png using Guid(5fa5f49fd43855249b3637ed79c7706a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c35d184f4df1a4e2654c0deb73351882') in 18.942475 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000582 seconds.
+  path: Assets/3rdPerson+Fly/Textures/env_DarkTile.png
+  artifactKey: Guid(121916f4a6aaeb449ab44e28dc1d9ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Textures/env_DarkTile.png using Guid(121916f4a6aaeb449ab44e28dc1d9ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '487eb310467c8ba5caf9442e8e1f5ab6') in 15.544209 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000552 seconds.
+  path: Assets/Textures/Grass_c_00.png
+  artifactKey: Guid(e8a75bb386a2abe4d823373e9b9e7349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Grass_c_00.png using Guid(e8a75bb386a2abe4d823373e9b9e7349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19a667a10d6a14cfaf408e9bd61aa4e8') in 10.698213 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 186.263624 seconds.
+  path: Assets/Textures/Grass_c_00.png
+  artifactKey: Guid(e8a75bb386a2abe4d823373e9b9e7349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Grass_c_00.png using Guid(e8a75bb386a2abe4d823373e9b9e7349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a060fd3db962daf5dc5c3e6b4453663b') in 7.615560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.422609 seconds.
+  path: Assets/3rdPerson+Fly/Textures/decal_crosshair.png
+  artifactKey: Guid(145fa8a1dfcf6c3459f8df4ac782dba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Textures/decal_crosshair.png using Guid(145fa8a1dfcf6c3459f8df4ac782dba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e24d96a2c6df538734d1f7170af1604b') in 22.563630 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.105244 seconds.
+  path: Assets/3rdPerson+Fly/Textures/env_LightTile.png
+  artifactKey: Guid(bb58717e3152d994b844301b27a4bae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Textures/env_LightTile.png using Guid(bb58717e3152d994b844301b27a4bae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5edd8d9a970599bccb271cd8913cd61') in 13.061496 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.056255 seconds.
+  path: Assets/3rdPerson+Fly/Textures/gamepad.png
+  artifactKey: Guid(29cf0593d32107a4194c6eda267fbb08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3rdPerson+Fly/Textures/gamepad.png using Guid(29cf0593d32107a4194c6eda267fbb08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2a97fbdb32957f5c8a1e3ea271f28ee') in 7.082791 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.085613 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.76 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LearningFER2 - StandardLight
+System.NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.UIElements.BaseLiveReloadAssetTracker`1[T].StartTrackingAsset (T asset) [0x0003e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.HandlePanelAttachmentEvents (UnityEngine.UIElements.EventBase evt) [0x000a9] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt) [0x0010e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.CallbackEventHandler.HandleEvent (UnityEngine.UIElements.EventBase evt) [0x000ae] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.EventDispatchUtilities.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x00054] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x000ba] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.EventDispatcher.Dispatch (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, UnityEngine.UIElements.DispatchMode dispatchMode) [0x00046] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase e, UnityEngine.UIElements.DispatchMode dispatchMode) [0x0001a] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.HasChangedPanel (UnityEngine.UIElements.BaseVisualElementPanel prevPanel) [0x00061] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.SetPanel (UnityEngine.UIElements.BaseVisualElementPanel p) [0x001b1] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement+Hierarchy.SetParent (UnityEngine.UIElements.VisualElement value) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement+Hierarchy.Insert (System.Int32 index, UnityEngine.UIElements.VisualElement child) [0x000e4] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement+Hierarchy.Add (UnityEngine.UIElements.VisualElement child) [0x0001b] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEngine.UIElements.VisualElement.Add (UnityEngine.UIElements.VisualElement child) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
+  at UnityEditor.UIElements.DefaultEditorWindowBackend.AddRootElement (UnityEngine.UIElements.VisualElement root) [0x0000c] in <c23044a1d79146ae9e09271e58031064>:0 
+  at UnityEditor.UIElements.DefaultEditorWindowBackend.RegisterWindow () [0x000c7] in <c23044a1d79146ae9e09271e58031064>:0 
+  at UnityEditor.UIElements.DefaultEditorWindowBackend.UnityEditor.IEditorWindowBackend.OnRegisterWindow () [0x00001] in <c23044a1d79146ae9e09271e58031064>:0 
+  at UnityEditor.HostView.RegisterSelectedPane (System.Boolean sendEvents) [0x00035] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.HostView.SetActualViewInternal (UnityEditor.EditorWindow value, System.Boolean sendEvents) [0x0004b] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.DockArea.SetSelectedPrivate (System.Int32 value, System.Boolean sendEvents) [0x00059] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.DockArea.AddTab (System.Int32 idx, UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x00018] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.DockArea.AddTab (UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x0000d] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.CreateNewWindowForEditorWindow (UnityEditor.EditorWindow window, System.Boolean loadPosition, System.Boolean showImmediately, System.Boolean setFocus) [0x0001b] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.Show (System.Boolean immediateDisplay) [0x00011] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.Show () [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.GetWindowPrivate (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00069] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.GetWindow (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
+  at Dreamteck.Forever.PluginInfo..cctor () [0x00034] in C:\Users\me\Documents\GitHub\FeralCookies\LearningFER2 - StandardLight\Assets\Dreamteck\Forever\Editor\WelcomeScreen.cs:16 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  7.433 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.35 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2796 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 159.7 MB.
+System memory in use after: 159.9 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3779.
+Total: 8.259600 ms (FindLiveObjects: 0.445500 ms CreateObjectMapping: 0.229900 ms MarkObjects: 7.471000 ms  DeleteObjects: 0.110300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 172.918185 seconds.
+  path: Assets/Terrain Layers/DirtyGround.terrainlayer
+  artifactKey: Guid(d02abf0607c8981419eb64e95a1cfe87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Terrain Layers/DirtyGround.terrainlayer using Guid(d02abf0607c8981419eb64e95a1cfe87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffce04302c2245c6be00c2ea021a9ca0') in 0.810826 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008746 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.81 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2781 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.4 MB.
-System memory in use after: 106.6 MB.
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3263.
-Total: 5.171300 ms (FindLiveObjects: 0.300100 ms CreateObjectMapping: 0.143000 ms MarkObjects: 4.654900 ms  DeleteObjects: 0.071900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005613 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LearningFER2 - StandardLight
@@ -296,415 +840,15 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.569 seconds
+- Completed reload, in  2.435 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.56 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.80 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2781 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.5 MB.
-System memory in use after: 106.7 MB.
+Unloading 2788 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 159.5 MB.
+System memory in use after: 159.7 MB.
 
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3269.
-Total: 3.399500 ms (FindLiveObjects: 0.257700 ms CreateObjectMapping: 0.116800 ms MarkObjects: 2.974100 ms  DeleteObjects: 0.050000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 204.949188 seconds.
-  path: Assets/RhythmMounain/Prefabs/Player.prefab
-  artifactKey: Guid(9319b0e3246c1364b8d70ff522b41dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/Prefabs/Player.prefab using Guid(9319b0e3246c1364b8d70ff522b41dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '666f53fc49af56be0f198374dde9ae81') in 0.074649 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.144450 seconds.
-  path: Assets/RhythmMounain/Prefabs/Player.prefab
-  artifactKey: Guid(9319b0e3246c1364b8d70ff522b41dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/Prefabs/Player.prefab using Guid(9319b0e3246c1364b8d70ff522b41dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f8e071b2154e3d641c103ae88f07bb0') in 0.025710 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.839121 seconds.
-  path: Assets/RhythmMounain/Prefabs/Player.prefab
-  artifactKey: Guid(9319b0e3246c1364b8d70ff522b41dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/Prefabs/Player.prefab using Guid(9319b0e3246c1364b8d70ff522b41dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c80c6bba36a22da801d14100e55d84b') in 0.025707 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.703695 seconds.
-  path: Assets/RhythmMounain/Prefabs/Player.prefab
-  artifactKey: Guid(9319b0e3246c1364b8d70ff522b41dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/Prefabs/Player.prefab using Guid(9319b0e3246c1364b8d70ff522b41dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '550ad66a59b851a9feabf09ff046e71f') in 0.038023 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 67.922083 seconds.
-  path: Assets/RhythmMounain/Materials/Coin.mat
-  artifactKey: Guid(5861d58b4842437428b80a6fce5112d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/Materials/Coin.mat using Guid(5861d58b4842437428b80a6fce5112d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e71744f46a45420bd611564b853b00f8') in 0.080910 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.213839 seconds.
-  path: Assets/RhythmMounain/destroyMe.cs
-  artifactKey: Guid(a6239e4524be45d4aa64ed116c3424c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/destroyMe.cs using Guid(a6239e4524be45d4aa64ed116c3424c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93317192fc84d5a3980061fa760023bd') in 0.014804 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006122 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LearningFER2 - StandardLight
-System.NullReferenceException: Object reference not set to an instance of an object
-  at UnityEngine.UIElements.BaseLiveReloadAssetTracker`1[T].StartTrackingAsset (T asset) [0x0003e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HandlePanelAttachmentEvents (UnityEngine.UIElements.EventBase evt) [0x000a9] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt) [0x0010e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.CallbackEventHandler.HandleEvent (UnityEngine.UIElements.EventBase evt) [0x000ae] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatchUtilities.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x00054] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x000ba] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.Dispatch (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, UnityEngine.UIElements.DispatchMode dispatchMode) [0x00046] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase e, UnityEngine.UIElements.DispatchMode dispatchMode) [0x0001a] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HasChangedPanel (UnityEngine.UIElements.BaseVisualElementPanel prevPanel) [0x00061] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.SetPanel (UnityEngine.UIElements.BaseVisualElementPanel p) [0x001b1] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.SetParent (UnityEngine.UIElements.VisualElement value) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Insert (System.Int32 index, UnityEngine.UIElements.VisualElement child) [0x000e4] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Add (UnityEngine.UIElements.VisualElement child) [0x0001b] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.Add (UnityEngine.UIElements.VisualElement child) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.AddRootElement (UnityEngine.UIElements.VisualElement root) [0x0000c] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.RegisterWindow () [0x000c7] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.UnityEditor.IEditorWindowBackend.OnRegisterWindow () [0x00001] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.HostView.RegisterSelectedPane (System.Boolean sendEvents) [0x00035] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.HostView.SetActualViewInternal (UnityEditor.EditorWindow value, System.Boolean sendEvents) [0x0004b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.SetSelectedPrivate (System.Int32 value, System.Boolean sendEvents) [0x00059] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (System.Int32 idx, UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x00018] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x0000d] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.CreateNewWindowForEditorWindow (UnityEditor.EditorWindow window, System.Boolean loadPosition, System.Boolean showImmediately, System.Boolean setFocus) [0x0001b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show (System.Boolean immediateDisplay) [0x00011] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show () [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindowPrivate (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00069] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at Dreamteck.Forever.PluginInfo..cctor () [0x00034] in C:\Users\me\Documents\GitHub\FeralCookies\LearningFER2 - StandardLight\Assets\Dreamteck\Forever\Editor\WelcomeScreen.cs:16 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.431 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2781 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.7 MB.
-System memory in use after: 106.9 MB.
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3310.
-Total: 4.103600 ms (FindLiveObjects: 0.287400 ms CreateObjectMapping: 0.124600 ms MarkObjects: 3.632100 ms  DeleteObjects: 0.058200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 327.573791 seconds.
-  path: Assets/RhythmMounain/RM_2.unity
-  artifactKey: Guid(2491e0f5b76646c448a35120f0a2aef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/RM_2.unity using Guid(2491e0f5b76646c448a35120f0a2aef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8457c9c52c47bf97d0e7396db3e7b1bf') in 0.039494 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 209.605798 seconds.
-  path: Assets/RhythmMounain/testing.unity
-  artifactKey: Guid(abfb6083c4f562f4b8212f23ee0d4866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/testing.unity using Guid(abfb6083c4f562f4b8212f23ee0d4866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b7b3a2f4b9d0914f227a97a3bb43360') in 0.014424 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 88.891776 seconds.
-  path: Assets/RhythmMounain/RM_2.unity
-  artifactKey: Guid(2491e0f5b76646c448a35120f0a2aef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/RM_2.unity using Guid(2491e0f5b76646c448a35120f0a2aef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '694e844677986a4df7153ee9b321ba15') in 0.012042 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 269.191758 seconds.
-  path: Assets/RhythmMounain/testing.unity
-  artifactKey: Guid(abfb6083c4f562f4b8212f23ee0d4866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/testing.unity using Guid(abfb6083c4f562f4b8212f23ee0d4866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55c4e5cf631cf7fddb4c100520e8ff6f') in 0.012592 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008538 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LearningFER2 - StandardLight
-System.NullReferenceException: Object reference not set to an instance of an object
-  at UnityEngine.UIElements.BaseLiveReloadAssetTracker`1[T].StartTrackingAsset (T asset) [0x0003e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HandlePanelAttachmentEvents (UnityEngine.UIElements.EventBase evt) [0x000a9] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt) [0x0010e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.CallbackEventHandler.HandleEvent (UnityEngine.UIElements.EventBase evt) [0x000ae] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatchUtilities.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x00054] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x000ba] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.Dispatch (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, UnityEngine.UIElements.DispatchMode dispatchMode) [0x00046] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase e, UnityEngine.UIElements.DispatchMode dispatchMode) [0x0001a] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HasChangedPanel (UnityEngine.UIElements.BaseVisualElementPanel prevPanel) [0x00061] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.SetPanel (UnityEngine.UIElements.BaseVisualElementPanel p) [0x001b1] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.SetParent (UnityEngine.UIElements.VisualElement value) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Insert (System.Int32 index, UnityEngine.UIElements.VisualElement child) [0x000e4] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Add (UnityEngine.UIElements.VisualElement child) [0x0001b] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.Add (UnityEngine.UIElements.VisualElement child) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.AddRootElement (UnityEngine.UIElements.VisualElement root) [0x0000c] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.RegisterWindow () [0x000c7] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.UnityEditor.IEditorWindowBackend.OnRegisterWindow () [0x00001] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.HostView.RegisterSelectedPane (System.Boolean sendEvents) [0x00035] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.HostView.SetActualViewInternal (UnityEditor.EditorWindow value, System.Boolean sendEvents) [0x0004b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.SetSelectedPrivate (System.Int32 value, System.Boolean sendEvents) [0x00059] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (System.Int32 idx, UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x00018] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x0000d] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.CreateNewWindowForEditorWindow (UnityEditor.EditorWindow window, System.Boolean loadPosition, System.Boolean showImmediately, System.Boolean setFocus) [0x0001b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show (System.Boolean immediateDisplay) [0x00011] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show () [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindowPrivate (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00069] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at Dreamteck.Forever.PluginInfo..cctor () [0x00034] in C:\Users\me\Documents\GitHub\FeralCookies\LearningFER2 - StandardLight\Assets\Dreamteck\Forever\Editor\WelcomeScreen.cs:16 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.256 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.75 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2781 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.8 MB.
-System memory in use after: 107.0 MB.
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3316.
-Total: 4.350200 ms (FindLiveObjects: 0.282800 ms CreateObjectMapping: 0.163200 ms MarkObjects: 3.841100 ms  DeleteObjects: 0.061600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 220.748946 seconds.
-  path: Assets/RhythmMounain/RandomPathGenerator.asset
-  artifactKey: Guid(7adc43417af03fe45ba843f0b62ddb9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/RandomPathGenerator.asset using Guid(7adc43417af03fe45ba843f0b62ddb9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '585e5cf65e41c815f9b5cba2aad7d18d') in 0.031522 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000613 seconds.
-  path: Assets/RhythmMounain/RM_Level_Simple.asset
-  artifactKey: Guid(a2fcc1458dbbb574b9d4963de152968d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/RM_Level_Simple.asset using Guid(a2fcc1458dbbb574b9d4963de152968d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a580eb0d106ae99b03e4578b556ef14') in 0.030058 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007383 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LearningFER2 - StandardLight
-System.NullReferenceException: Object reference not set to an instance of an object
-  at UnityEngine.UIElements.BaseLiveReloadAssetTracker`1[T].StartTrackingAsset (T asset) [0x0003e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HandlePanelAttachmentEvents (UnityEngine.UIElements.EventBase evt) [0x000a9] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt) [0x0010e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.CallbackEventHandler.HandleEvent (UnityEngine.UIElements.EventBase evt) [0x000ae] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatchUtilities.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x00054] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x000ba] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.Dispatch (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, UnityEngine.UIElements.DispatchMode dispatchMode) [0x00046] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase e, UnityEngine.UIElements.DispatchMode dispatchMode) [0x0001a] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HasChangedPanel (UnityEngine.UIElements.BaseVisualElementPanel prevPanel) [0x00061] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.SetPanel (UnityEngine.UIElements.BaseVisualElementPanel p) [0x001b1] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.SetParent (UnityEngine.UIElements.VisualElement value) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Insert (System.Int32 index, UnityEngine.UIElements.VisualElement child) [0x000e4] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Add (UnityEngine.UIElements.VisualElement child) [0x0001b] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.Add (UnityEngine.UIElements.VisualElement child) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.AddRootElement (UnityEngine.UIElements.VisualElement root) [0x0000c] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.RegisterWindow () [0x000c7] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.UnityEditor.IEditorWindowBackend.OnRegisterWindow () [0x00001] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.HostView.RegisterSelectedPane (System.Boolean sendEvents) [0x00035] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.HostView.SetActualViewInternal (UnityEditor.EditorWindow value, System.Boolean sendEvents) [0x0004b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.SetSelectedPrivate (System.Int32 value, System.Boolean sendEvents) [0x00059] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (System.Int32 idx, UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x00018] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x0000d] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.CreateNewWindowForEditorWindow (UnityEditor.EditorWindow window, System.Boolean loadPosition, System.Boolean showImmediately, System.Boolean setFocus) [0x0001b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show (System.Boolean immediateDisplay) [0x00011] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show () [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindowPrivate (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00069] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at Dreamteck.Forever.PluginInfo..cctor () [0x00034] in C:\Users\me\Documents\GitHub\FeralCookies\LearningFER2 - StandardLight\Assets\Dreamteck\Forever\Editor\WelcomeScreen.cs:16 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.226 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2781 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.8 MB.
-System memory in use after: 107.0 MB.
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3322.
-Total: 3.866300 ms (FindLiveObjects: 0.275900 ms CreateObjectMapping: 0.127400 ms MarkObjects: 3.411000 ms  DeleteObjects: 0.051000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 38.939439 seconds.
-  path: Assets/RhythmMounain/Segments/RM_prefab_00.prefab
-  artifactKey: Guid(c9e67d9f37c419d46aad08c7f88906b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/Segments/RM_prefab_00.prefab using Guid(c9e67d9f37c419d46aad08c7f88906b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd4b7de9acc8c437e3ba5dc0a3105303') in 0.094470 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.848710 seconds.
-  path: Assets/RhythmMounain/Segments/RM_prefab_00.prefab
-  artifactKey: Guid(c9e67d9f37c419d46aad08c7f88906b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/Segments/RM_prefab_00.prefab using Guid(c9e67d9f37c419d46aad08c7f88906b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bbfe07194e708a130ca9b7599ba60a1') in 0.081334 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.997452 seconds.
-  path: Assets/RhythmMounain/Segments/RM_prefab_00.prefab
-  artifactKey: Guid(c9e67d9f37c419d46aad08c7f88906b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RhythmMounain/Segments/RM_prefab_00.prefab using Guid(c9e67d9f37c419d46aad08c7f88906b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c76d1f7b457e914cafa806037ee74b7a') in 0.064411 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009121 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LearningFER2 - StandardLight
-System.NullReferenceException: Object reference not set to an instance of an object
-  at UnityEngine.UIElements.BaseLiveReloadAssetTracker`1[T].StartTrackingAsset (T asset) [0x0003e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HandlePanelAttachmentEvents (UnityEngine.UIElements.EventBase evt) [0x000a9] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt) [0x0010e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.CallbackEventHandler.HandleEvent (UnityEngine.UIElements.EventBase evt) [0x000ae] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatchUtilities.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x00054] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x000ba] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.Dispatch (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, UnityEngine.UIElements.DispatchMode dispatchMode) [0x00046] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase e, UnityEngine.UIElements.DispatchMode dispatchMode) [0x0001a] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HasChangedPanel (UnityEngine.UIElements.BaseVisualElementPanel prevPanel) [0x00061] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.SetPanel (UnityEngine.UIElements.BaseVisualElementPanel p) [0x001b1] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.SetParent (UnityEngine.UIElements.VisualElement value) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Insert (System.Int32 index, UnityEngine.UIElements.VisualElement child) [0x000e4] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Add (UnityEngine.UIElements.VisualElement child) [0x0001b] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.Add (UnityEngine.UIElements.VisualElement child) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.AddRootElement (UnityEngine.UIElements.VisualElement root) [0x0000c] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.RegisterWindow () [0x000c7] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.UnityEditor.IEditorWindowBackend.OnRegisterWindow () [0x00001] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.HostView.RegisterSelectedPane (System.Boolean sendEvents) [0x00035] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.HostView.SetActualViewInternal (UnityEditor.EditorWindow value, System.Boolean sendEvents) [0x0004b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.SetSelectedPrivate (System.Int32 value, System.Boolean sendEvents) [0x00059] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (System.Int32 idx, UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x00018] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x0000d] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.CreateNewWindowForEditorWindow (UnityEditor.EditorWindow window, System.Boolean loadPosition, System.Boolean showImmediately, System.Boolean setFocus) [0x0001b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show (System.Boolean immediateDisplay) [0x00011] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show () [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindowPrivate (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00069] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at Dreamteck.Forever.PluginInfo..cctor () [0x00034] in C:\Users\me\Documents\GitHub\FeralCookies\LearningFER2 - StandardLight\Assets\Dreamteck\Forever\Editor\WelcomeScreen.cs:16 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.057 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2781 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.9 MB.
-System memory in use after: 107.1 MB.
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3329.
-Total: 3.759400 ms (FindLiveObjects: 0.268900 ms CreateObjectMapping: 0.147000 ms MarkObjects: 3.294400 ms  DeleteObjects: 0.047900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006778 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LearningFER2 - StandardLight
-System.NullReferenceException: Object reference not set to an instance of an object
-  at UnityEngine.UIElements.BaseLiveReloadAssetTracker`1[T].StartTrackingAsset (T asset) [0x0003e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HandlePanelAttachmentEvents (UnityEngine.UIElements.EventBase evt) [0x000a9] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt) [0x0010e] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.CallbackEventHandler.HandleEvent (UnityEngine.UIElements.EventBase evt) [0x000ae] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatchUtilities.ExecuteDefaultAction (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x00054] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) [0x000ba] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.EventDispatcher.Dispatch (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, UnityEngine.UIElements.DispatchMode dispatchMode) [0x00046] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase e, UnityEngine.UIElements.DispatchMode dispatchMode) [0x0001a] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.HasChangedPanel (UnityEngine.UIElements.BaseVisualElementPanel prevPanel) [0x00061] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.SetPanel (UnityEngine.UIElements.BaseVisualElementPanel p) [0x001b1] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.SetParent (UnityEngine.UIElements.VisualElement value) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Insert (System.Int32 index, UnityEngine.UIElements.VisualElement child) [0x000e4] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement+Hierarchy.Add (UnityEngine.UIElements.VisualElement child) [0x0001b] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEngine.UIElements.VisualElement.Add (UnityEngine.UIElements.VisualElement child) [0x00038] in <52d042b59b5f4b5fa4d9379442f5155a>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.AddRootElement (UnityEngine.UIElements.VisualElement root) [0x0000c] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.RegisterWindow () [0x000c7] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.UIElements.DefaultEditorWindowBackend.UnityEditor.IEditorWindowBackend.OnRegisterWindow () [0x00001] in <c23044a1d79146ae9e09271e58031064>:0 
-  at UnityEditor.HostView.RegisterSelectedPane (System.Boolean sendEvents) [0x00035] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.HostView.SetActualViewInternal (UnityEditor.EditorWindow value, System.Boolean sendEvents) [0x0004b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.SetSelectedPrivate (System.Int32 value, System.Boolean sendEvents) [0x00059] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (System.Int32 idx, UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x00018] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.DockArea.AddTab (UnityEditor.EditorWindow pane, System.Boolean sendPaneEvents) [0x0000d] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.CreateNewWindowForEditorWindow (UnityEditor.EditorWindow window, System.Boolean loadPosition, System.Boolean showImmediately, System.Boolean setFocus) [0x0001b] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show (System.Boolean immediateDisplay) [0x00011] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.Show () [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindowPrivate (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00069] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow (System.Type t, System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility, System.String title, System.Boolean focus) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at UnityEditor.EditorWindow.GetWindow[T] (System.Boolean utility) [0x00001] in <756e9f00f78640ec93f83e08257daaec>:0 
-  at Dreamteck.Forever.PluginInfo..cctor () [0x00034] in C:\Users\me\Documents\GitHub\FeralCookies\LearningFER2 - StandardLight\Assets\Dreamteck\Forever\Editor\WelcomeScreen.cs:16 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.073 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2781 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 106.9 MB.
-System memory in use after: 107.1 MB.
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3335.
-Total: 3.648000 ms (FindLiveObjects: 0.271500 ms CreateObjectMapping: 0.122600 ms MarkObjects: 3.205400 ms  DeleteObjects: 0.047700 ms)
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3785.
+Total: 5.209100 ms (FindLiveObjects: 0.400100 ms CreateObjectMapping: 0.216700 ms MarkObjects: 4.498100 ms  DeleteObjects: 0.092500 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
