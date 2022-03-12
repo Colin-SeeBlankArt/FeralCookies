@@ -8,7 +8,7 @@ public class PlayerCtrl : MonoBehaviour
 {
     LaneRunner runner;
     public static PlayerCtrl instance;
-    bool canBoost = true;
+    //bool canBoost = true;
     float speed = 0f;
     float startSpeed = 0f;
 
@@ -23,7 +23,12 @@ public class PlayerCtrl : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) runner.lane--;
+        
+        //animate character roll left, with ease in to start roll pos
+        
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) runner.lane++;
+     
+        //animate character roll right, with ease in to start roll pos
     }
     public void SetSpeed(float speed)
     {

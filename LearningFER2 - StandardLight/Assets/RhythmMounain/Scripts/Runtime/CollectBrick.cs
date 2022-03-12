@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class CollectBrick : MonoBehaviour
 {
-    public AudioSource collectSound;
+  //want  to add public Fmod variable to play sound
+  //define where notes are located define what note they actually are. This can be based on lanerunner lane number
 
     void OnTriggerEnter()
     {
-        collectSound.Play();
-        Debug.Log(" did I make a sound ");
+        //play fmod sound, note~hertz for this location
+        //?  would it be better to have player know lane, and the note know which lane (this is the note it could reperesent)
 
         ScoringSystem.theScore += 50;
 
