@@ -24,11 +24,11 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) runner.lane--;
         
-        //animate character roll left, with ease in to start roll pos
+        //want to add animate character roll left, with ease in to start roll pos
         
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) runner.lane++;
      
-        //animate character roll right, with ease in to start roll pos
+        //want to add animate character roll right, with ease in to start roll pos
     }
     public void SetSpeed(float speed)
     {

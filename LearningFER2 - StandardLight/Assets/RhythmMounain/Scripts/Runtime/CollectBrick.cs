@@ -12,12 +12,15 @@ public class CollectBrick : MonoBehaviour
     {
         //play fmod sound, note~hertz for this location
         //?  would it be better to have player know lane, and the note know which lane (this is the note it could reperesent)
+        //define publicly how many points for or against in player speed, coin count, time variable
+        //particle effect
 
-        ScoringSystem.theScore += 50;
+        ScoringSystem.theScore += 1;
 
         Destroy(gameObject);
 
         Debug.Log(" bricks must die ");
+
 
     }
 
