@@ -162,7 +162,7 @@ MonoBehaviour:
   _useUnloadUnusedAssets: 0
   _loopSegmentLogic: 1
   _levelCollection:
-  - {fileID: 11400000, guid: 9464923121164464e9971eb5bd5278aa, type: 2}
+  - {fileID: 11400000, guid: 76054bfbc10a0424cb4ec649bbcc1a79, type: 2}
   _levelIteration: 2
   _levelRandomizer: {fileID: 11400000, guid: 8db1a5e45048a064e8e5a55dba6859e5, type: 2}
   _startLevel: 0
@@ -200,6 +200,36 @@ MonoBehaviour:
   y: 1
   z: 1
   originResetDistance: 999
+--- !u!1 &34734606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34734607}
+  m_Layer: 0
+  m_Name: Tube_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34734607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34734606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &47947581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8184481657850837713, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: width
-      value: 75
+      value: 98
       objectReference: {fileID: 0}
     - target: {fileID: 8184481657850837713, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: laneCount
@@ -1117,7 +1147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8184481657850837713, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: _motion.offset.y
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8184481657850837713, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: laneSwitchSpeedCurve.m_Curve.Array.size
@@ -1150,6 +1180,34 @@ PrefabInstance:
     - target: {fileID: 8184481657850837713, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: laneSwitchSpeedCurve.m_Curve.Array.data[1].outSlope
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996510058068548924, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7204
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996510058068548924, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2794
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996510058068548924, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.000000028658876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996510058068548924, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000010801131
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996510058068548924, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.79149896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996510058068548924, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.61117065
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996510058068548924, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -75.348
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
@@ -1301,7 +1359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 688864047}
-  smoothSpeed: 10
+  smoothSpeed: 3
   offset: {x: -0.8, y: 8, z: -24}
 --- !u!114 &1402457560
 MonoBehaviour:
