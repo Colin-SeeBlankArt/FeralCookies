@@ -6,15 +6,28 @@ using UnityEngine.UI;
 public class ScoringSystem : MonoBehaviour
 {
     public GameObject CountTheBricks;
+    public GameObject TenBrickCounter;
+    public GameObject BrickTen;
     public static int theScore;
-
-    //want to use these to create variables for the testing side of the app
-    int currentBrickcount;
-    int brickGoal;
-
+    public static int tenBricks = 0;
+    public static int currentBrickcount = 0;
+    
     void Update()
     {
-        CountTheBricks.GetComponent<Text>().text = "Bricks " + theScore;           
+        CountTheBricks.GetComponent<Text>().text = "Totals " + theScore;
+
+        TenBrickCounter.GetComponent<Text>().text = "Bars " + tenBricks;
+
+        BrickTen.GetComponent<Text>().text = "Ten Brick Count " + currentBrickcount;
+
+
+        if (currentBrickcount >= 10)
+        {
+            currentBrickcount = 0;
+            tenBricks +=1;
+        }
     }
+
+
 
 }
