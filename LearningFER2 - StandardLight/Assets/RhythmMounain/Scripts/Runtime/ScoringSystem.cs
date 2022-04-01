@@ -20,7 +20,6 @@ public class ScoringSystem : MonoBehaviour
 
         BrickTen.GetComponent<Text>().text = "Ten Brick Count " + currentBrickcount;
 
-
         if (currentBrickcount >= 10)
         {
             currentBrickcount = 0;
