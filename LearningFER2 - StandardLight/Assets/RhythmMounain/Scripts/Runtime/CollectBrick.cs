@@ -10,13 +10,21 @@ public class CollectBrick : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        //play fmod sound, note~hertz for this location
+
         //? record the coin type
         //define publicly how many points for or against in player speed, coin count, time variable
-        //particle effect
+
+        //boom light is idle until collision, then
+            //play fmod sound, note~hertz for this location
+            //play animator light_boom
+            //play animator sphere_boom
+            //when light_boom is done, then:
+            //particle effect
 
         ScoringSystem.theScore += 1;
         ScoringSystem.currentBrickcount += 1;
+
+
 
         Destroy(gameObject);
 

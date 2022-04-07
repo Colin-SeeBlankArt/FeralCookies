@@ -14,11 +14,11 @@ public class ScoringSystem : MonoBehaviour
     
     void Update()
     {
-        CountTheBricks.GetComponent<Text>().text = "Totals " + theScore;
+        CountTheBricks.GetComponent<Text>().text = "Totals = " + theScore;
 
-        TenBrickCounter.GetComponent<Text>().text = "Bars " + tenBricks;
+        TenBrickCounter.GetComponent<Text>().text = "Bars = " + tenBricks;
 
-        BrickTen.GetComponent<Text>().text = "Ten Brick Count " + currentBrickcount;
+        BrickTen.GetComponent<Text>().text = "Ten Brick Count = " + currentBrickcount;
 
         if (currentBrickcount >= 10)
         {
