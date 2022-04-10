@@ -21,10 +21,8 @@ public class CollectBrick : MonoBehaviour
             //when light_boom is done, then:
             //particle effect
 
-        ScoringSystem.theScore += 1;
-        ScoringSystem.currentBrickcount += 1;
-
-
+        ScoringSystem.brickCount += 1;
+        ScoringSystem.loopticker += 1;
 
         Destroy(gameObject);
 

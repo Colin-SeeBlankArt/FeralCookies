@@ -5,25 +5,36 @@ using UnityEngine.UI;
 
 public class ScoringSystem : MonoBehaviour
 {
-    public GameObject CountTheBricks;
-    public GameObject TenBrickCounter;
-    public GameObject BrickTen;
-    public static int theScore;
-    public static int tenBricks = 0;
-    public static int currentBrickcount = 0;
-    
+    public GameObject BrickCounter;
+    public GameObject Loops;
+    public GameObject LoopTick;
+    public GameObject StateTicker;
+    public static int brickCount;
+    public static int loops = 0;
+    public static int loopticker = 0;
+    public static int stateticker = 0;
+
+
     void Update()
     {
-        CountTheBricks.GetComponent<Text>().text = "Totals = " + theScore;
+        BrickCounter.GetComponent<Text>().text = "Totals = " + brickCount;  //count all bricks
+        Loops.GetComponent<Text>().text = "Loops = " + loops;  //count loopos, based on 10 bricks for each loop
+        LoopTick.GetComponent<Text>().text = "Looop Ticker = " + loopticker;  //counter for the loops
+        StateTicker.GetComponent<Text>().text = "State Ticker = " + stateticker;  //counts loops to check which State the Game is in
 
-        TenBrickCounter.GetComponent<Text>().text = "Bars = " + tenBricks;
-
-        BrickTen.GetComponent<Text>().text = "Ten Brick Count = " + currentBrickcount;
-
-        if (currentBrickcount >= 10)
+        if (loopticker >= 8) //fore every 10 bricks, do the following:
         {
-            currentBrickcount = 0;
-            tenBricks +=1;
+            loopticker = 0;
+            Debug.Log("loop ticker reset");
+            loops +=1;
+            stateticker += 1;
+        }
+
+        if (stateticker >= 2) //for every 4 State counts, do the following
+        {
+            GameMngr.StateTick += 1;
+            Debug.Log("statecount is reset");
+            stateticker = 0;
         }
     }
 
