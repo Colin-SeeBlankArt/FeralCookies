@@ -14,6 +14,9 @@ public class ScoringSystem : MonoBehaviour
     public static int loopticker = 0;
     public static int stateticker = 0;
 
+    //public GameObject Slider_Loop;  //this is intended to create a countdown with LoopMeter, which player must keep filled. 
+    //public static int loopMeter = 100;  //this value is the trigger for State Machines
+    //public static int loopMinus -=1;
 
     void Update()
     {
@@ -22,7 +25,7 @@ public class ScoringSystem : MonoBehaviour
         LoopTick.GetComponent<Text>().text = "Looop Ticker = " + loopticker;  //counter for the loops
         StateTicker.GetComponent<Text>().text = "State Ticker = " + stateticker;  //counts loops to check which State the Game is in
 
-        if (loopticker >= 8) //fore every 10 bricks, do the following:
+        if (loopticker >= 8) //for every x bricks, do the following:
         {
             loopticker = 0;
             Debug.Log("loop ticker reset");
@@ -30,7 +33,7 @@ public class ScoringSystem : MonoBehaviour
             stateticker += 1;
         }
 
-        if (stateticker >= 2) //for every 4 State counts, do the following
+        if (stateticker >= 2) //for every x State counts, do the following
         {
             GameMngr.StateTick += 1;
             Debug.Log("statecount is reset");
