@@ -142,6 +142,7 @@ namespace Dreamteck.Forever
         void OnOriginOffset(Vector3 direction)
         {
             _result.position -= direction;
+            DoUpdate();
         }
 
         protected virtual void Update()

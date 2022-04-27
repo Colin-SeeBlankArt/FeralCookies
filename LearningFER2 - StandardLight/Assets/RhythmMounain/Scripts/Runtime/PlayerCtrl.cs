@@ -1,44 +1,133 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Reflection;
 using Dreamteck.Forever;
-
+using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    LaneRunner runner;
     public static PlayerCtrl instance;
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+        runner.followSpeed = speed;
+        if (speed == 0f)
+        {
+            EndScreen.Open();
+        }
+    }
+
+    private ParticleSystem.Particle[] m_particleBuffer = Array.Empty<ParticleSystem.Particle>();
+    private ParticleSystem[] m_particleSystems = Array.Empty<ParticleSystem>();
+
+    private Vector3[] m_positionBuffer = Array.Empty<Vector3>();
+
+    private TrailRenderer[] m_trailRenderers = Array.Empty<TrailRenderer>();
+
+    private LaneRunner runner;
+
     //bool canBoost = true;
-    float speed = 0f;
-    float startSpeed = 0f;
+    private float speed;
+    private float startSpeed;
+
+    // Zack: Had to use reflection since unity tried to hide this information. Not great!
+    private readonly FieldInfo trailsField = typeof(ParticleSystem.Trails).GetField("positions", BindingFlags.Instance | BindingFlags.NonPublic);
 
     private void Awake()
     {
+        m_trailRenderers = GetComponentsInChildren<TrailRenderer>(true);
+        m_particleSystems = GetComponentsInChildren<ParticleSystem>(true);
+
         runner = GetComponent<LaneRunner>();
         startSpeed = speed = runner.followSpeed;
-        instance = this;       
+        instance = this;
+    }
+
+    private void FloatingOriginOnonOriginOffset(Vector3 delta)
+    {
+        foreach (var trailRenderer in m_trailRenderers)
+        {
+            if (trailRenderer.positionCount > m_positionBuffer.Length)
+            {
+                Array.Resize(ref m_positionBuffer, trailRenderer.positionCount);
+            }
+
+            // Zack: Update trail renderer offsets
+            var storedCount = trailRenderer.GetPositions(m_positionBuffer);
+            for (var i = 0; i < storedCount; i++)
+            {
+                var storedPosition = m_positionBuffer[i];
+                m_positionBuffer[i] = storedPosition - delta;
+            }
+
+            trailRenderer.SetPositions(m_positionBuffer);
+        }
+
+        foreach (var currentParticleSystem in m_particleSystems)
+        {
+            if (currentParticleSystem.particleCount > m_particleBuffer.Length)
+            {
+                Array.Resize(ref m_particleBuffer, currentParticleSystem.particleCount);
+            }
+
+            // Zack: Update particle offsets
+            var storedCount = currentParticleSystem.GetParticles(m_particleBuffer);
+            for (var i = 0; i < storedCount; i++)
+            {
+                var storedPosition = m_particleBuffer[i].position;
+                m_particleBuffer[i].position = storedPosition - delta;
+            }
+
+            currentParticleSystem.SetParticles(m_particleBuffer);
+
+            // Zack: Update particle system trail offsets
+            var trails = currentParticleSystem.GetTrails();
+            var positions = trailsField.GetValue(trails) as List<Vector4>;
+            if (positions != null)
+            {
+                for (var i = 0; i < positions.Count; i++)
+                {
+                    positions[i] -= (Vector4)delta;
+                }
+
+                trailsField.SetValue(trails, positions);
+            }
+
+            currentParticleSystem.SetTrails(trails);
+        }
+    }
+
+    private void OnDisable()
+    {
+        FloatingOrigin.onOriginOffset -= FloatingOriginOnonOriginOffset;
+    }
+
+    private void OnEnable()
+    {
+        FloatingOrigin.onOriginOffset += FloatingOriginOnonOriginOffset;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) runner.lane--;
-        
-        //want to add animate character roll left, with ease in to start roll pos
-        
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) runner.lane++;
-     
-        //want to add animate character roll right, with ease in to start roll pos
-    }
-    public void SetSpeed(float speed)
-    {
-        this.speed = speed;
-        runner.followSpeed = speed;
-        if (speed == 0f) EndScreen.Open();
-    }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        {
+            runner.lane--;
+        }
 
-    public float GetSpeed()
-    {
-        return speed;
+        //want to add animate character roll left, with ease in to start roll pos
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        {
+            runner.lane++;
+        }
+
+        //want to add animate character roll right, with ease in to start roll pos
     }
 }

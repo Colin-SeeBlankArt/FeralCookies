@@ -18,6 +18,11 @@ public class DocumentationWindow : EditorWindow
     [MenuItem("Rhythm Mountain/Windows/Documentation")]
     private static void OpenDocumentationWindow()
     {
+        if (HasOpenInstances<DocumentationWindow>())
+        {
+            return;
+        }
+        
         GetWindow<DocumentationWindow>().Show();
     }
 
