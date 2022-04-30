@@ -5,30 +5,72 @@ using UnityEngine.UI;
 
 public class CollectBrick : MonoBehaviour
 {
-  //want  to add public Fmod variable to play sound
-  //define where notes are located define what note they actually are. This can be based on lanerunner lane number
+    private Animator _anim;
+    bool _destroyMe = false;
+    //public float interval;
+    public bool _goodBrick, _badBrick;
+    int _brickCount;
 
+
+    private float timerSpeed = 1;
+    private float lastTimestamp;
+
+    private void Start()
+    {
+        _anim = GetComponent<Animator>();
+    }
     void OnTriggerEnter()
     {
 
-        //? record the coin type
-        //define publicly how many points for or against in player speed, coin count, time variable
+        if (_badBrick)
+        {
+            ScoringSystem.badbrickTick += 2;
+            Debug.Log("bad brick");
+            _anim.SetBool("Die", true);
+            _destroyMe = true;
+        }
+        else
+        {
+            ScoringSystem.goodbrickTick += 1;
+            Debug.Log("good brick");
+            _anim.SetBool("Die", true);
+            _destroyMe = true;
+        } 
 
-        //boom light is idle until collision, then
-            //play fmod sound, note~hertz for this location
-            //play animator light_boom
-            //play animator sphere_boom
-            //when light_boom is done, then:
-            //particle effect
-
+        _brickCount += 1;
+        
         ScoringSystem.brickCount += 1;
-        ScoringSystem.loopticker += 1;
+        ScoringSystem.brickTick += 1;
+        _destroyMe = true;
+    }
 
-        Destroy(gameObject);
 
-        Debug.Log(" bricks must die ");
+    void Update()
+    {
+        if (_destroyMe)  //bool to say kill the coin
+        {                 
+            if (Time.time - lastTimestamp >= timerSpeed)
+            {
+                lastTimestamp = Time.time;
+                Destroy(gameObject);
 
+            }
+        }
 
     }
 
 }
+
+
+/* record the coin type
+//define publicly how many points for or against in player speed, coin count, time variable
+
+//boom light is idle until collision, then
+//play fmod sound, note~hertz for this location
+//play animator light_boom
+//play animator sphere_boom
+//when light_boom is done, then:
+//particle effect
+
+
+*/

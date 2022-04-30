@@ -7,6 +7,21 @@ using UnityEngine.UI;
 
 public class UI_base : MonoBehaviour
 {
+    private Animator _UIanim;
+
+    private void Start()
+    {
+        _UIanim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+            _UIanim.SetBool("Sate_Color2", true);
+    }
+}
+
+/*
     public void ButtonMoveScene(string level)
     {
         SceneManager.LoadScene(level);
@@ -25,4 +40,4 @@ public class UI_base : MonoBehaviour
         slider.value = loopMeter;
 
     }
-}
+    */

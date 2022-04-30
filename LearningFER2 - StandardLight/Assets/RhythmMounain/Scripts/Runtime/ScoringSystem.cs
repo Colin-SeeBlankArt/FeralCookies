@@ -6,26 +6,76 @@ using UnityEngine.UI;
 public class ScoringSystem : MonoBehaviour
 {
     public GameObject BrickCounter;
+    public GameObject PlayerScore;
     public GameObject Loops;
-    public GameObject LoopTick;
-    public GameObject StateTicker;
-    public static int brickCount;
-    public static int loops = 0;
-    public static int loopticker = 0;
-    public static int stateticker = 0;
+    public GameObject GBTick; 
+    public GameObject BBTick;
 
-    //public GameObject Slider_Loop;  //this is intended to create a countdown with LoopMeter, which player must keep filled. 
-    //public static int loopMeter = 100;  //this value is the trigger for State Machines
-    //public static int loopMinus -=1;
+
+    public static int brickCount; //fed from ScoryingSystem
+    public static int brickTick;
+    public static int goodbrickTick;  //this will be a positive impact on loop count
+    public static int badbrickTick; //this will be a negative impact on loop count
+
+    int pcScore;
+
+    int totBrickCt;
+    int goodBrickTot;
+    int badBrickTot;
+    //int totalScore;
+    int playerScore;
+
+    public int loopGoal;
+    public int stateGoal;
+
+    int loops;
+    int loopticker;
+    int state;
+    int stateticker;
+
+    private void Start()
+    {
+
+    }
 
     void Update()
     {
-        BrickCounter.GetComponent<Text>().text = "Totals = " + brickCount;  //count all bricks
+        BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
+        PlayerScore.GetComponent<Text>().text = "Player Score:" + playerScore;
         Loops.GetComponent<Text>().text = "Loops = " + loops;  //count loopos, based on 10 bricks for each loop
-        LoopTick.GetComponent<Text>().text = "Looop Ticker = " + loopticker;  //counter for the loops
-        StateTicker.GetComponent<Text>().text = "State Ticker = " + stateticker;  //counts loops to check which State the Game is in
+        GBTick.GetComponent<Text>().text = "Good Brick = " + goodBrickTot;  //counter for the green
+        BBTick.GetComponent<Text>().text = "Bad Brick = " + badBrickTot;  //counter for the purp
 
-        if (loopticker >= 8) //for every x bricks, do the following:
+        goodBrickTot = goodbrickTick;
+        badBrickTot = badbrickTick;
+        totBrickCt = brickCount;
+        playerScore = goodBrickTot;
+
+        pcScore = totBrickCt - badBrickTot;
+
+        if (brickTick == loopGoal)  //set adding to the loops, resest counter
+        {
+            loops += 1;
+            loopticker += 1;
+            brickTick = 0;
+        }
+        if (loopticker >= stateGoal) //set for the State, reset loop ticker
+        {
+            GameManager.StateTick += 1;
+            stateticker += 1;
+            Debug.Log("statecount is reset");
+            loopticker = 0;
+        }
+
+    }
+
+}
+
+/*
+ *      
+        loopticker += goodbrickTick - (badbrickTick);
+
+        if (loopticker >= loopTickGoal) //for every x bricks, do the following:
         {
             loopticker = 0;
             Debug.Log("loop ticker reset");
@@ -33,14 +83,11 @@ public class ScoringSystem : MonoBehaviour
             stateticker += 1;
         }
 
-        if (stateticker >= 2) //for every x State counts, do the following
+        if (stateticker >= statetickerGoal) //for every x State counts, do the following
         {
-            GameMngr.StateTick += 1;
+            GameManager.StateTick += 1;
             Debug.Log("statecount is reset");
             stateticker = 0;
         }
-    }
 
-
-
-}
+*/
