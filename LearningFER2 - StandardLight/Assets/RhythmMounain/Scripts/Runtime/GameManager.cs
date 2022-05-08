@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using FMOD;
+using FMOD.Studio;
+using FMODUnity;
 
 public class GameManager : MonoBehaviour
 {
-    //public GameObject otherGameObject;  
-   // private CollectBrick collectBrick;
+    /// <summary>
+    //Game Manager loads in to fire this panel open, and then try to use buttons in UI to trigger shit. like dominoes!!!
+    /// </summary>
 
     public GameObject currentState;
     public static int StateTick;
     public int _currentState;
 
-    void Awaket()
+    public GameObject Panel; //pause panel, currently
+
+
+    void Awake()
     {
         //collectBrick = GetComponent<CollectBrick>();
 
@@ -20,26 +28,59 @@ public class GameManager : MonoBehaviour
     }
 
     void Update()
-    {   
-        //Debug.Log(" collect brick from GetGO: " + collectBrick._brickCountGm); 
-
-        _currentState = StateTick;
-
-        if (StateTick == 2)
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("-- State Change 1 --");         
-        }
+            PauseGame();
 
-        if (_currentState == 4)
-        {
-            Debug.Log("-- State Change 2 --");
         }
+ 
+    }
+    public void Play()
+    {
+        Time.timeScale = 1;
+    }
 
-        if (_currentState == 5)
-        {
-            Debug.Log("-- State Change 3 --");
-        }
+    public void PauseGame()
+    {
+        //! in !Panel.gameObject.activeSelf makes this just a toggle. 
+ 
+        Time.timeScale = 0; //stops game time
+        Panel.gameObject.SetActive(!Panel.gameObject.activeSelf); //opens pause menu
+
+    }
+
+    public void ResetLevel()
+    {
+        UnityEngine.Debug.Log("We Reset Successfully");
+        //loads the scene over, FMOD requires a restart funcion in here.
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);  //this works, but FMOD needs assist
+    }
+    public void QuitGame()
+    {
+        UnityEngine.Debug.Log("Quit!");
+        Application.Quit();
     }
 
 
 }
+
+/*
+        on key.Down(esc){PauseGame;}
+        if (totalBrick = GoalBrickCt){pauseGame(); UI.counters=active; }
+        if (totalTime = EndTime);{pauseGame(); UI.reload=active; 
+        if (totalBrick != GoalBrickCT && TotalTime);{pauseGame(); UI.reload
+        if (UI.main = true); {main}
+
+    public void OpenPanel()
+    {
+        if (Panel ! = null)
+        {
+            bool isActive = Panel.activeSelf;
+            Panel.SetActive(isActive);
+        }
+    }
+
+
+
+ */

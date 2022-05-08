@@ -7,37 +7,75 @@ using UnityEngine.UI;
 
 public class UI_base : MonoBehaviour
 {
-    private Animator _UIanim;
+    //changing color based on array
+    public Material[] material;
+    Renderer rend; 
 
-    private void Start()
+    public int focusBrickColor;
+
+    //using these for random timer to change FocusBrick color
+    private float timerSpeed = 10f;
+    private float elapsed;
+    public int randomValue;
+
+    void Start()
     {
-        _UIanim = GetComponent<Animator>();
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
+        rend.sharedMaterial = material[0];
     }
-
     private void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
-            _UIanim.SetBool("Sate_Color2", true);
+    {           
+        elapsed += Time.deltaTime;
+        if(elapsed >= timerSpeed)
+        {
+            elapsed = 0f;                    
+            ChangeFocusBrick(3);
+        }
+
     }
+
+    public void ChangeFocusBrick(int maxNum)
+    {
+        // this can be put into an array which will name each item, and return the values I need. 
+        int randomNum = Random.Range(0, maxNum);
+        focusBrickColor = randomNum;
+        if (focusBrickColor == 0)
+        {
+            Debug.Log("Focus" + focusBrickColor);
+            rend.sharedMaterial = material[focusBrickColor];
+            CollectBrick._focusState += 0;
+        }
+        if (focusBrickColor == 1)
+        {
+            Debug.Log("Focus" + focusBrickColor);
+            rend.sharedMaterial = material[focusBrickColor];
+            CollectBrick._focusState += 1;
+        }
+        if (focusBrickColor == 2)
+        {
+            Debug.Log("Focus" + focusBrickColor);
+            rend.sharedMaterial = material[focusBrickColor];
+            CollectBrick._focusState += 2;
+        }
+    }
+
 }
 
 /*
-    public void ButtonMoveScene(string level)
+ 
+public void ButtonMoveScene(string level)
     {
         SceneManager.LoadScene(level);
     }
 
-    public Slider slider; //rename to loop meeter
-
-    public void SetMaxloopMeter(int loopMeter)
+    update if(thing){PickRandomNum(4);} //random in range of 4, as it is MaxNumber
+ 
+   public void PickRandomNum(int maxInt)
     {
-        slider.maxValue = loopMeter;
-        slider.minValue = loopMeter;
+        int randomNum = Random.Range(1, maxInt);
+        randomValue = randomNum;
+        Debug.Log("RanNum: " + randomValue);
     }
 
-    public void SetLoopCounter(int loopMeter)
-    {
-        slider.value = loopMeter;
-
-    }
     */

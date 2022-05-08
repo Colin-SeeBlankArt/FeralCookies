@@ -5765,7 +5765,7 @@ GameObject:
   - component: {fileID: 4439851182153558413}
   - component: {fileID: 1371966762472928458}
   m_Layer: 0
-  m_Name: PC
+  m_Name: PC free runner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6502,7 +6502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8029901196591270787}
-  - component: {fileID: 8184481657850837713}
+  - component: {fileID: 7288154030691689911}
   m_Layer: 0
   m_Name: ctl
   m_TagString: Untagged
@@ -6528,7 +6528,7 @@ Transform:
   m_Father: {fileID: 4439851182153558413}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8184481657850837713
+--- !u!114 &7288154030691689911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6537,21 +6537,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7570131032668659218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d2d491ea20618745ada741714dad7c0, type: 3}
+  m_Script: {fileID: 11500000, guid: ea2fa2f688cc3ee4ca853244d65c4f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   updateMode: 0
   startPercent: 0
   startDistance: 0
   startMode: 0
-  followSpeed: 5
+  followSpeed: 35
   follow: 1
   isPlayer: 1
   loop: 0
   physicsMode: 0
   _motion:
     enabled: 1
-    offset: {x: 0, y: 5}
+    offset: {x: 0, y: 0}
     useSplineSizes: 1
     rotationOffset: {x: 0, y: 0, z: 0}
     baseScale: {x: 1, y: 1, z: 1}
@@ -6571,19 +6571,6 @@ MonoBehaviour:
     applyScaleX: 0
     applyScaleY: 0
     applyScaleZ: 0
-  width: 5
-  laneCount: 3
-  startLane: 2
-  laneSwitchSpeed: 5
-  useCustomPaths: 0
-  laneSwitchSpeedCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  laneVector: {x: 1, y: 0}
-  _lane: 2
 --- !u!1 &7813509742800920169
 GameObject:
   m_ObjectHideFlags: 0

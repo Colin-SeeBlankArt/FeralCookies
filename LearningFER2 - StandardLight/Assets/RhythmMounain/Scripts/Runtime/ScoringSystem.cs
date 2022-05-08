@@ -11,7 +11,6 @@ public class ScoringSystem : MonoBehaviour
     public GameObject GBTick; 
     public GameObject BBTick;
 
-
     public static int brickCount; //fed from ScoryingSystem
     public static int brickTick;
     public static int goodbrickTick;  //this will be a positive impact on loop count
@@ -32,11 +31,6 @@ public class ScoringSystem : MonoBehaviour
     int loopticker;
     int state;
     int stateticker;
-
-    private void Start()
-    {
-
-    }
 
     void Update()
     {

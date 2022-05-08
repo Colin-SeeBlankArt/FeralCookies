@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &11015880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +200,68 @@ MonoBehaviour:
   y: 1
   z: 1
   originResetDistance: 999
+--- !u!1001 &20437970
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6727438
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5416412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.31123
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999984
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.001315998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0007993786
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0009571137
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.151
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.091
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642840241171332279, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752876846903439244, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_Name
+      value: Brick UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059876521383149698, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5059876521383149698, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0e3993d414773dc47be944bb2a238b7b, type: 3}
 --- !u!1 &47947581
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +292,7 @@ Transform:
   - {fileID: 11015881}
   - {fileID: 827444242}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &89351993
 GameObject:
@@ -294,7 +356,7 @@ Transform:
   - {fileID: 2074364431}
   - {fileID: 592964651}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &549041355
 GameObject:
@@ -474,7 +536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &592964651
 Transform:
   m_ObjectHideFlags: 0
@@ -501,7 +563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d31ad262faf54488a8b2370cc44642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountTheBricks: {fileID: 558889666}
+  BrickCounter: {fileID: 0}
+  PlayerScore: {fileID: 0}
+  Loops: {fileID: 0}
+  GBTick: {fileID: 0}
+  BBTick: {fileID: 0}
+  loopGoal: 0
+  stateGoal: 0
 --- !u!4 &688864047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8029901196591270787, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
@@ -691,7 +759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &827444241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,7 +1358,7 @@ Transform:
   - {fileID: 1184414198}
   - {fileID: 1402457562}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1184414198 stripped
 Transform:
@@ -1328,9 +1396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13dd2c96ba881e4bbd24a989a41ebd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 688864047}
-  smoothSpeed: 3
   offset: {x: -0.8, y: 8, z: -24}
+  smoothSpeed: 3
+  target: {fileID: 688864047}
 --- !u!114 &1402457560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,8 +1463,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402457558}
-  m_LocalRotation: {x: 0.15261671, y: -0, z: -0, w: 0.9882855}
-  m_LocalPosition: {x: 1.2450073, y: 17.2, z: -44.7}
+  m_LocalRotation: {x: 0.16007785, y: 0.01644483, z: -0.0026672236, w: 0.9869638}
+  m_LocalPosition: {x: 0.12500733, y: 8.314314, z: -17.094707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986998278}
@@ -1431,7 +1499,7 @@ Transform:
   m_Children:
   - {fileID: 1859922214}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1729059178 stripped
 GameObject:
@@ -1559,7 +1627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2074364431
 Transform:
   m_ObjectHideFlags: 0
@@ -1586,4 +1654,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4a2b259988ee74b8eed37df1b6405a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownText: {fileID: 549041357}
+  timeRemaining: 0
+  timerIsRunning: 0
+  timeText: {fileID: 0}
