@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class UI_base : MonoBehaviour
+public class FocusCoin : MonoBehaviour
 {
     //changing color based on array
     public Material[] material;

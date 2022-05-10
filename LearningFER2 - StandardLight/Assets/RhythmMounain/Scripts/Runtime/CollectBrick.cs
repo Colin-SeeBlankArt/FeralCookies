@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CollectBrick : MonoBehaviour
 {
-    public UI_base _uiBase;
+    public FocusCoin _focus;
     //below is the attempt to figure out how to use the array built in the UI base
     //and wire it here for the state change value 
     //start simple scoring system
@@ -27,7 +27,7 @@ public class CollectBrick : MonoBehaviour
     private void Start()
     {
         _anim = GetComponent<Animator>();
-        _uiBase = GetComponent<UI_base>();
+        _focus = GetComponent<FocusCoin>();
     }
     void OnTriggerEnter()
     {
