@@ -7,22 +7,7 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
     public static PlayerCtrl instance;
-
-    public float GetSpeed()
-    {
-        return speed;
-    }
-
-    public void SetSpeed(float speed)
-    {
-        this.speed = speed;
-        runner.followSpeed = speed;
-        if (speed == 0f)
-        {
-            EndScreen.Open();
-        }
-    }
-
+     
     private ParticleSystem.Particle[] m_particleBuffer = Array.Empty<ParticleSystem.Particle>();
     private ParticleSystem[] m_particleSystems = Array.Empty<ParticleSystem>();
 
@@ -138,4 +123,20 @@ public class PlayerCtrl : MonoBehaviour
 
         //want to add animate character roll right, with ease in to start roll pos
     }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+        runner.followSpeed = speed;
+        if (speed == 0f)
+        {
+            EndScreen.Open();
+        }
+    }
+
 }
