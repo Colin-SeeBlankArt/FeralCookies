@@ -5,40 +5,36 @@ using UnityEngine.UI;
 
 public class CountDownTimer : MonoBehaviour
 {
-    float currentTime = 0f;
-    float startingTime = 100f;
-
-    [SerializeField] Text countdownText;
-
-    void Start()
+    public float timeRemaining = 0;
+    public bool timerIsRunning = false;
+    public Text timeText;
+    private void Start()
     {
-        currentTime = startingTime;
+        // Starts the timer automatically
+        timerIsRunning = true;
     }
-
     void Update()
     {
-      /*  timmer counting down, does this need to be in a different script??  
-        currentTime -= 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString("0");
-
-        if (currentTime <= 0)
+        if (timerIsRunning)
         {
-            currentTime = 0;
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                DisplayTime(timeRemaining);
+            }
+            else
+            {
+                Debug.Log("Time has run out!");
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
         }
-      */
-        //how to pause game with this. 
-        //add mins/sec in display
-
-         currentTime += 1 * Time.deltaTime;
-         countdownText.text = currentTime.ToString("0");
-          
-         if (currentTime >= 100)
-         {
-               currentTime = 0;
-         }
-         
-         
     }
-
-
+    void DisplayTime(float timeToDisplay)
+    {
+        timeToDisplay += 1;
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
 }

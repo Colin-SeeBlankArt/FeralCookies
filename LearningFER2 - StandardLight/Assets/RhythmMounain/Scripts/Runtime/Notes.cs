@@ -41,9 +41,25 @@ public class Notes : MonoBehaviour
         State 4 solid, bouncing around track
         State 5 on track, collider is on
         State 6 dead, destroyed, play partilce, quick sprite anim for score awareness
+    
 
+    make a script for StateChange, general purpose
 
+    public class Statechange : Monobehaviour
+    {
+        public GameMngr _gmManager;
 
-
+    }
+ 
+    if (StateTicker == 10)
+        {
+            _anim.SetBool("State_Trig_01", true);
+            Debug.Log("-- BrickChange 2--");
+            //if the value of the loop meter moves above ( a value not yet decided upon), then move to state 2         
+        }
+     
+     
      */
+
+
 }

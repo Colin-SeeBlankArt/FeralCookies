@@ -7,22 +7,7 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
     public static PlayerCtrl instance;
-
-    public float GetSpeed()
-    {
-        return speed;
-    }
-
-    public void SetSpeed(float speed)
-    {
-        this.speed = speed;
-        runner.followSpeed = speed;
-        if (speed == 0f)
-        {
-            EndScreen.Open();
-        }
-    }
-
+     
     private ParticleSystem.Particle[] m_particleBuffer = Array.Empty<ParticleSystem.Particle>();
     private ParticleSystem[] m_particleSystems = Array.Empty<ParticleSystem>();
 
@@ -39,6 +24,10 @@ public class PlayerCtrl : MonoBehaviour
     // Zack: Had to use reflection since unity tried to hide this information. Not great!
     private readonly FieldInfo trailsField = typeof(ParticleSystem.Trails).GetField("positions", BindingFlags.Instance | BindingFlags.NonPublic);
 
+    private Animator _turnAnim;
+    public bool _turnL, _turnR;  // using ths to keep the ship leaning into a turn
+
+
     private void Awake()
     {
         m_trailRenderers = GetComponentsInChildren<TrailRenderer>(true);
@@ -47,6 +36,8 @@ public class PlayerCtrl : MonoBehaviour
         runner = GetComponent<LaneRunner>();
         startSpeed = speed = runner.followSpeed;
         instance = this;
+
+        _turnAnim = GetComponent<Animator>();
     }
 
     private void FloatingOriginOnonOriginOffset(Vector3 delta)
@@ -119,6 +110,7 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             runner.lane--;
+            _turnAnim.SetBool("Left_trig", true);
         }
 
         //want to add animate character roll left, with ease in to start roll pos
@@ -126,8 +118,25 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             runner.lane++;
+            _turnAnim.SetBool("Right_trig", true);
         }
 
         //want to add animate character roll right, with ease in to start roll pos
     }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+        runner.followSpeed = speed;
+        if (speed == 0f)
+        {
+            EndScreen.Open();
+        }
+    }
+
 }

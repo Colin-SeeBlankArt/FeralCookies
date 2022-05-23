@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     public float smoothSpeed = 10f;
     public Transform target;
 
-    private Vector3? Delta = null;
+    //private Vector3? Delta = null;
 
     private void FloatingOriginOnonOriginOffset(Vector3 delta)
     {
