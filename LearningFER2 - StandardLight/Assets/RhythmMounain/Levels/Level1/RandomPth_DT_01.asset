@@ -33,10 +33,10 @@ MonoBehaviour:
   customNormalDirection: {x: 0, y: 1, z: 0}
   startOrientation: {x: 0, y: 0, z: 0}
   randomizer: {fileID: 11400000, guid: 8db1a5e45048a064e8e5a55dba6859e5, type: 2}
-  restrictPitch: 1
+  restrictPitch: 0
   restrictYaw: 0
   restrictRoll: 1
-  usePitch: 0
+  usePitch: 1
   useYaw: 1
   useRoll: 0
   useColors: 0
@@ -44,9 +44,9 @@ MonoBehaviour:
   minOrientation: {x: -15, y: 15, z: -25}
   maxOrientation: {x: 15, y: 15, z: 25}
   minRandomStep: {x: 0, y: 5, z: 0}
-  maxRandomStep: {x: 25, y: 35, z: 10}
+  maxRandomStep: {x: 3, y: 35, z: 10}
   minTurnRate: {x: 0, y: 15, z: 0}
-  maxTurnRate: {x: 5, y: 25, z: 5}
+  maxTurnRate: {x: 3, y: 25, z: 5}
   startTargetOrientation: {x: 0, y: 0, z: 0}
   useStartPitchTarget: 0
   useStartYawTarget: 0

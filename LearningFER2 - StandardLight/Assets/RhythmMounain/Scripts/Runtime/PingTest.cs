@@ -1,15 +1,27 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Dreamteck.Forever;
 
 
 public class PingTest : MonoBehaviour
 {
+    
     [SerializeField] private int[] numbers;
     [SerializeField] private List<string> names = new List<string>();
 
+    LaneRunner myRunner;
+    float speed = 0f;
+    float startSpeed = 0f;
+ 
     public int varA; //script to script, passer
 
     public static int PingMe = 0;
+
+    public void Awake()
+    {
+        myRunner = GetComponent<LaneRunner>();
+        startSpeed = speed = myRunner.followSpeed;
+    }
 
     private void Update ()
     {
@@ -19,11 +31,12 @@ public class PingTest : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonDown(0))
         {
             numbers.Shuffle(6);
-
             names.Shuffle(6);
+
+
         }
     }
 

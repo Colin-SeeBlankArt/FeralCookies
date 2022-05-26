@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using FMOD;
-using FMOD.Studio;
-using FMODUnity;
+
 
 public class GameManager : MonoBehaviour
 {

@@ -6115,7 +6115,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8474172312418442914}
   - component: {fileID: 7349629666581527029}
-  - component: {fileID: 2807615987094707159}
   m_Layer: 0
   m_Name: 2.5D_camera
   m_TagString: Untagged
@@ -6180,20 +6179,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &2807615987094707159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744930654025184841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
-  ListenerNumber: -1
 --- !u!1 &4845095072305861527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6578,6 +6563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ffc11de8cd9574198192cb1bf9ba31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _turnL: 0
+  _turnR: 0
 --- !u!95 &208230363362876091
 Animator:
   serializedVersion: 3
@@ -11878,14 +11865,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2778921e1fd8b554287d6dc922757e64, type: 3}
---- !u!1 &1898228989553806711 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2778921e1fd8b554287d6dc922757e64, type: 3}
-  m_PrefabInstance: {fileID: 1627687209181720614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1232875352699983821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2778921e1fd8b554287d6dc922757e64, type: 3}
+  m_PrefabInstance: {fileID: 1627687209181720614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1898228989553806711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2778921e1fd8b554287d6dc922757e64, type: 3}
   m_PrefabInstance: {fileID: 1627687209181720614}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5526463780456335533
