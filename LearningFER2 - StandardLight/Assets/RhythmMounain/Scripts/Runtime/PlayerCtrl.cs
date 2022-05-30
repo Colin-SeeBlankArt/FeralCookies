@@ -104,7 +104,7 @@ public class PlayerCtrl : MonoBehaviour
         FloatingOrigin.onOriginOffset += FloatingOriginOnonOriginOffset;
     }
 
-    // Update is called once per frame
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
@@ -113,7 +113,6 @@ public class PlayerCtrl : MonoBehaviour
             _turnAnim.SetBool("Left_trig", true);
         }
 
-        //want to add animate character roll left, with ease in to start roll pos
 
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
@@ -121,7 +120,11 @@ public class PlayerCtrl : MonoBehaviour
             _turnAnim.SetBool("Right_trig", true);
         }
 
-        //want to add animate character roll right, with ease in to start roll pos
+        if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        {
+            //increase player speed, via boost
+        }
+
     }
 
     public float GetSpeed()
