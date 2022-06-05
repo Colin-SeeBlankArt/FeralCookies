@@ -13,20 +13,14 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   _enabled: 1
-  _pathGenerator: {fileID: 11400000, guid: cdaea63997be7254fb0e9512bc789fa1, type: 2}
+  _pathGenerator: {fileID: 0}
   _sequenceCollection:
     sequences:
     - enabled: 1
       name: Sequence
       isCustom: 0
       customSequence: {fileID: 0}
-      segments:
-      - nested: 0
-        randomPickChance: 1
-        _prefab: {fileID: 6441252245231536356, guid: 74385ea0033e26f4ebf0658cdeec80ed, type: 3}
-        _segmentPool: []
-        _pool: 0
-        _poolParent: {fileID: 0}
+      segments: []
       customPathGenerator: {fileID: 0}
       spawnCount: 1
       type: 0
@@ -41,13 +35,7 @@ MonoBehaviour:
       name: Sequence
       isCustom: 0
       customSequence: {fileID: 0}
-      segments:
-      - nested: 0
-        randomPickChance: 1
-        _prefab: {fileID: 6441252245231536356, guid: 74385ea0033e26f4ebf0658cdeec80ed, type: 3}
-        _segmentPool: []
-        _pool: 0
-        _poolParent: {fileID: 0}
+      segments: []
       customPathGenerator: {fileID: 0}
       spawnCount: 1
       type: 0

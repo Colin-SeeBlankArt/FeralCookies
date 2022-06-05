@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class CollectBrick : MonoBehaviour
 {
-    public FocusCoin _focus;
-    //below is the attempt to figure out how to use the array built in the UI base
-    //and wire it here for the state change value 
-    //start simple scoring system
-    int _fState;
+
+    //public GameObject _focus;
+
+    //int _fState;
     public static int _focusState;
 
     private Animator _anim;
@@ -21,24 +20,17 @@ public class CollectBrick : MonoBehaviour
     private float timerSpeed = 1;
     private float lastTimestamp;
 
-    //create variables for checks against UI brick color changes, as int
-    //one to recieve, one to hold, _getVar; _setVar;
-    
+   
     private void Start()
     {
         _anim = GetComponent<Animator>();
-        _focus = GetComponent<FocusCoin>();
+        //_focus = GetComponent<FocusCoin>();
     }
     void OnTriggerEnter()
     {
-        //if UIBrk_color = true, then (goodBrick), else(bad)
-        // if (UIBrk_color == _setVar){ this.Object = goodBrick;}
-        // else {this.Object = badBrick;}
 
-        //if ( _myMaterials[item] == _fStateInt){ ++ }else{ -- }
 
-        //use a for loop for this, later
-
+/*
         if (_fState == 0)
         {
             Debug.Log(" _fState + " + _fState);
@@ -51,6 +43,8 @@ public class CollectBrick : MonoBehaviour
         {
             Debug.Log(" _fState + " + _fState);
         }
+*/
+
 
         if (_badBrick)
         {
@@ -63,7 +57,7 @@ public class CollectBrick : MonoBehaviour
         {
             ScoringSystem.goodbrickTick += 1;
             Debug.Log("good brick");
-            _anim.SetBool("Die", true);
+            //_anim.SetBool("Die", true);
             //_destroyMe = true;
         } 
         _brickCount += 1;       
@@ -74,7 +68,7 @@ public class CollectBrick : MonoBehaviour
 
     void Update()
     {
-        _fState = _focusState;
+        //_fState = _focusState;
 
         if (_destroyMe)  //bool to say kill the coin
         {
@@ -98,6 +92,16 @@ public class CollectBrick : MonoBehaviour
 //play animator sphere_boom
 //when light_boom is done, then:
 //particle effect
+    //create variables for checks against UI brick color changes, as int
+    //one to recieve, one to hold, _getVar; _setVar;
+
+        //if UIBrk_color = true, then (goodBrick), else(bad)
+        // if (UIBrk_color == _setVar){ this.Object = goodBrick;}
+        // else {this.Object = badBrick;}
+
+        //if ( _myMaterials[item] == _fStateInt){ ++ }else{ -- }
+
+        //use a for loop for this, later
 
    UI_base _UI_base;
     [SerializeField] GameObject brick_UI; //allows the player controller into this GO

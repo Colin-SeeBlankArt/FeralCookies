@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject Panel; //pause panel, currently
 
+    //instaniate bunny!!
+    private float _makeB = 5f;
+    private float elapsed;
+    public GameObject bunny;
+
 
     void Awake()
     {
@@ -24,15 +29,26 @@ public class GameManager : MonoBehaviour
 
         currentState.GetComponent<Text>().text = "State = " + StateTick;
     }
+    private void Start()
+    {
+
+    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
-
         }
  
+        elapsed += Time.deltaTime;
+        if (elapsed >= _makeB)
+        {
+            elapsed = 0f;
+            MakeBunny();
+
+        }
+
     }
     public void Play()
     {
@@ -58,6 +74,12 @@ public class GameManager : MonoBehaviour
     {
         UnityEngine.Debug.Log("Quit!");
         Application.Quit();
+    }
+
+    public void MakeBunny()
+    {
+        
+        Instantiate(bunny, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
 

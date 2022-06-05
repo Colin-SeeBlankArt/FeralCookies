@@ -10,8 +10,8 @@ public class PingTest : MonoBehaviour
     [SerializeField] private List<string> names = new List<string>();
 
     LaneRunner myRunner;
-    float speed = 0f;
-    float startSpeed = 0f;
+    //float speed = 0f;
+    //float startSpeed = 0f;
  
     public int varA; //script to script, passer
 
@@ -20,7 +20,7 @@ public class PingTest : MonoBehaviour
     public void Awake()
     {
         myRunner = GetComponent<LaneRunner>();
-        startSpeed = speed = myRunner.followSpeed;
+        //startSpeed = speed = myRunner.followSpeed;
     }
 
     private void Update ()

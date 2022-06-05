@@ -2156,11 +2156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 0.12634996
+      value: 0.028792351
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].time
-      value: 0.18909898
+      value: 0.10617215
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
@@ -2168,7 +2168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0.2753311
+      value: 0.2915512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].inSlope
@@ -2176,11 +2180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
-      value: -1.4036602
+      value: -0.942129
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].inSlope
-      value: -0.17569742
+      value: -1.1117474
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outSlope
@@ -2188,19 +2192,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inWeight
-      value: 0.4732574
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
-      value: -1.4036602
+      value: -0.942129
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].inWeight
-      value: 0.24993406
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].outSlope
-      value: -0.17569742
+      value: -1.1117474
       objectReference: {fileID: 0}
     - target: {fileID: 2680441174130499186, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
@@ -2644,7 +2648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8184481657850837713, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: followSpeed
-      value: 35
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8184481657850837713, guid: 5d423b3b4ed20b9448d2ebefb278fa0f, type: 3}
       propertyPath: laneSwitchSpeed
@@ -8699,6 +8703,7 @@ MonoBehaviour:
   currentState: {fileID: 720958589}
   _currentState: 0
   Panel: {fileID: 1390779013}
+  bunny: {fileID: 3601136861555390513, guid: d8d4defa95ca3054aa098e5267d01b6a, type: 3}
 --- !u!1 &1800002986
 GameObject:
   m_ObjectHideFlags: 0
