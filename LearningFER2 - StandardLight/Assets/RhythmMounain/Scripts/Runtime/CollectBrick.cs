@@ -15,7 +15,8 @@ public class CollectBrick : MonoBehaviour
     bool _destroyMe = false;
     public bool _goodBrick, _badBrick;
     public bool _green, _red, _blue, _purple;
-    int _brickCount; 
+    int _brickCount;
+    public static int _penalty= 5;
 
     private float timerSpeed = 1;
     private float lastTimestamp;
@@ -26,44 +27,19 @@ public class CollectBrick : MonoBehaviour
         _anim = GetComponent<Animator>();
         //_focus = GetComponent<FocusCoin>();
     }
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider collider)
     {
-
-
-/*
-        if (_fState == 0)
+        if (collider.CompareTag("Player"))
         {
-            Debug.Log(" _fState + " + _fState);
+            PlayerTrigger();
         }
-        if (_fState == 1)
-        {
-            Debug.Log(" _fState + " + _fState);
-        }
-        if (_fState == 2)
-        {
-            Debug.Log(" _fState + " + _fState);
-        }
-*/
 
-
-        if (_badBrick)
+        if (collider.CompareTag("Enemy"))
         {
-            ScoringSystem.badbrickTick += 2;
-            Debug.Log("bad brick");
-            _anim.SetBool("Die", true);
-            //_destroyMe = true;
+            BunnyTrigger();
+            Debug.Log("bunny hits a brick");
         }
-        else
-        {
-            ScoringSystem.goodbrickTick += 1;
-            Debug.Log("good brick");
-            //_anim.SetBool("Die", true);
-            //_destroyMe = true;
-        } 
-        _brickCount += 1;       
-        ScoringSystem.brickCount += 1;
-        ScoringSystem.brickTick += 1;
-        _destroyMe = true;
+
     }
 
     void Update()
@@ -80,10 +56,33 @@ public class CollectBrick : MonoBehaviour
         }
     }
 
+    public void PlayerTrigger()
+    {
+        if (_badBrick)
+        {
+            ScoringSystem.badbrickTick += 2;
+            Debug.Log("bad brick");
+        }
+        else
+        {
+            ScoringSystem.goodbrickTick += 1;
+            Debug.Log("good brick");
+        }
+        _brickCount += 1;
+        ScoringSystem.brickCount += 1;
+        ScoringSystem.brickTick += 1;
+        _destroyMe = true;
+    }
+
+    public void BunnyTrigger()
+    {
+        
+    }
 }
 
 
 /* record the coin type
+
 //define publicly how many points for or against in player speed, coin count, time variable
 
 //boom light is idle until collision, then
@@ -92,18 +91,33 @@ public class CollectBrick : MonoBehaviour
 //play animator sphere_boom
 //when light_boom is done, then:
 //particle effect
-    //create variables for checks against UI brick color changes, as int
-    //one to recieve, one to hold, _getVar; _setVar;
+//create variables for checks against UI brick color changes, as int
+//one to recieve, one to hold, _getVar; _setVar;
 
-        //if UIBrk_color = true, then (goodBrick), else(bad)
-        // if (UIBrk_color == _setVar){ this.Object = goodBrick;}
-        // else {this.Object = badBrick;}
+//if UIBrk_color = true, then (goodBrick), else(bad)
+// if (UIBrk_color == _setVar){ this.Object = goodBrick;}
+// else {this.Object = badBrick;}
 
-        //if ( _myMaterials[item] == _fStateInt){ ++ }else{ -- }
+//if ( _myMaterials[item] == _fStateInt){ ++ }else{ -- }
 
-        //use a for loop for this, later
+//use a for loop for this, later
 
-   UI_base _UI_base;
+
+
+        if (_fState == 0)
+        {
+            Debug.Log(" _fState + " + _fState);
+        }
+        if (_fState == 1)
+        {
+            Debug.Log(" _fState + " + _fState);
+        }
+        if (_fState == 2)
+        {
+            Debug.Log(" _fState + " + _fState);
+        }
+
+UI_base _UI_base;
     [SerializeField] GameObject brick_UI; //allows the player controller into this GO
     start:
     _UI_base = brick_UI.GetComponent<UI_base>();
@@ -116,5 +130,6 @@ public class CollectBrick : MonoBehaviour
             Debug.Log(_state);
             }
         }
+
 
 */

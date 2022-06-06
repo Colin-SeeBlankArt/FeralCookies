@@ -10,19 +10,18 @@ public class ScoringSystem : MonoBehaviour
     public GameObject Loops;
     public GameObject GBTick; 
     public GameObject BBTick;
+    public Text textobject;
 
     public static int brickCount; 
     public static int brickTick;
     public static int goodbrickTick;  //this will be a positive impact on loop count
     public static int badbrickTick; //this will be a negative impact on loop count
 
-    int pcScore;
+    public int pcScore;
 
     int totBrickCt;
     int goodBrickTot;
     int badBrickTot;
-    //int totalScore;
-    int playerScore;
 
     public int loopGoal;
     public int stateGoal;
@@ -32,43 +31,32 @@ public class ScoringSystem : MonoBehaviour
     int state;
     int stateticker;
 
+    public int _winGame = 64;
+
     void Update()
     {
-        BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
-        PlayerScore.GetComponent<Text>().text = "Player Score:" + playerScore;
-        Loops.GetComponent<Text>().text = "Loops = " + loops;  //count loopos, based on 10 bricks for each loop
-        GBTick.GetComponent<Text>().text = "Good Brick = " + goodBrickTot;  //counter for the green
-        BBTick.GetComponent<Text>().text = "Bad Brick = " + badBrickTot;  //counter for the purp
+        pcScore = (totBrickCt - badBrickTot);
 
         goodBrickTot = goodbrickTick;
         badBrickTot = badbrickTick;
         totBrickCt = brickCount;
-        playerScore = goodBrickTot;
 
-        pcScore = totBrickCt - badBrickTot;
+        BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
+        PlayerScore.GetComponent<Text>().text = "Player Score: " + pcScore;
+        Loops.GetComponent<Text>().text = "Loops = " + loops;  //count loopos, based on 10 bricks for each loop
+        GBTick.GetComponent<Text>().text = "Good Brick = " + goodBrickTot; //counter for the green
+        BBTick.GetComponent<Text>().text = "Bad Brick = " + badBrickTot;  //counter for the purp  
 
-        if (brickTick == loopGoal)  //set adding to the loops, resest counter
+        if (pcScore >= _winGame)
         {
-            loops += 1;
-            loopticker += 1;
-            brickTick = 0;
+            GameManager._noteQuota ++;
         }
-        if (loopticker >= stateGoal) //set for the State, reset loop ticker
-        {
-            GameManager.StateTick += 1;
-            stateticker += 1;
-            Debug.Log("statecount is reset");
-            loopticker = 0;
-        }
-
     }
 
 }
 
-/*
- *      
+/*    
         loopticker += goodbrickTick - (badbrickTick);
-
         if (loopticker >= loopTickGoal) //for every x bricks, do the following:
         {
             loopticker = 0;
@@ -83,5 +71,19 @@ public class ScoringSystem : MonoBehaviour
             Debug.Log("statecount is reset");
             stateticker = 0;
         }
+////         
 
+        if (brickTick == loopGoal)  //set adding to the loops, resest counter
+        {
+            loops += 1;
+            loopticker += 1;
+            //brickTick = 0;
+        }
+        if (loopticker >= stateGoal) //set for the State, reset loop ticker
+        {
+            GameManager.StateTick += 1;
+            stateticker += 1;
+            Debug.Log("statecount is reset");
+            loopticker = 0;
+        }
 */

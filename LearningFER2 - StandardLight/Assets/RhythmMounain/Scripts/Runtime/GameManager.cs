@@ -18,20 +18,17 @@ public class GameManager : MonoBehaviour
     public GameObject Panel; //pause panel, currently
 
     //instaniate bunny!!
-    private float _makeB = 5f;
+    public float _makeB = 2f; //spawn every x seconds, hopefully
     private float elapsed;
     public GameObject bunny;
 
+    public static int _noteQuota = 0; //coming from scoring system, unitl better idea
 
     void Awake()
     {
         //collectBrick = GetComponent<CollectBrick>();
 
         currentState.GetComponent<Text>().text = "State = " + StateTick;
-    }
-    private void Start()
-    {
-
     }
 
     void Update()
@@ -46,9 +43,12 @@ public class GameManager : MonoBehaviour
         {
             elapsed = 0f;
             MakeBunny();
-
         }
 
+        if (_noteQuota == 1)
+        {
+            WinGame();
+        }
     }
     public void Play()
     {
@@ -80,6 +80,13 @@ public class GameManager : MonoBehaviour
     {
         
         Instantiate(bunny, new Vector3(0, 0, 0), Quaternion.identity);
+    }
+
+    public void WinGame()
+    {
+        Panel.gameObject.SetActive(!Panel.gameObject.activeSelf); //opens pause menu
+        Debug.Log("Win Game!");
+
     }
 
 
