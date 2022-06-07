@@ -25,7 +25,7 @@ public class PlayerCtrl : MonoBehaviour
     private readonly FieldInfo trailsField = typeof(ParticleSystem.Trails).GetField("positions", BindingFlags.Instance | BindingFlags.NonPublic);
 
     private Animator _turnAnim;
-    public bool _turnL, _turnR;  // using ths to keep the ship leaning into a turn
+    bool _turnL, _turnR;  // using ths to keep the ship leaning into a turn
 
 
     private void Awake()
