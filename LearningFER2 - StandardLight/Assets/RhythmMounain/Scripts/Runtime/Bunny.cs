@@ -29,11 +29,12 @@ public class Bunny : MonoBehaviour
             ChangeLanes(2);
         }
     }
-    void OnTriggerEnter(Collider colliderb)
+
+    void OnTriggerEnter(Collider other)
     {
-        if(colliderb.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            HitBunny();
+            Debug.Log("Hit the Player!");
         }
     }
     public void ChangeLanes(int maxNum)
@@ -47,12 +48,6 @@ public class Bunny : MonoBehaviour
         {
             runner.lane--;
         }
-    }
-
-    public void HitBunny()
-    {
-        //ScoringSystem.badbrickTick = 5;
-        Debug.Log("Bunny Hits Player");
     }
 }
 

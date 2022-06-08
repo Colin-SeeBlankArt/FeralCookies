@@ -661,29 +661,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344346036}
   m_CullTransparentMesh: 1
---- !u!1 &416075405 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7259812892559854709, guid: 1de29429e554e58409f8448cb54ca873, type: 3}
-  m_PrefabInstance: {fileID: 7494377414980890053}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &416075406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416075405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0870a04618952e14e9f796ae09a3b5ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material:
-  - {fileID: 2100000, guid: ab41f8a07f5010846aab333a9114bf74, type: 2}
-  - {fileID: 2100000, guid: 2fb924c59468e814cb2d1d17bc9df24b, type: 2}
-  - {fileID: 2100000, guid: 044712a2a467e8f4caff6827bed69457, type: 2}
-  focusBrickColor: 0
-  randomValue: 0
 --- !u!4 &416130183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8029901196591270787, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
@@ -1337,10 +1314,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _goodBrick: 1
   _badBrick: 0
-  _green: 0
-  _red: 0
-  _blue: 0
-  _purple: 0
+  material:
+  - {fileID: 2100000, guid: ab41f8a07f5010846aab333a9114bf74, type: 2}
+  - {fileID: 2100000, guid: cb9849dba79c9024ab77eaef5bf5781f, type: 2}
 --- !u!135 &660628504
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8714,6 +8690,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.183
       objectReference: {fileID: 0}
+    - target: {fileID: 8528821948588587119, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
 --- !u!4 &543450653163387658 stripped
@@ -8728,6 +8708,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1653926673}
     m_Modifications:
+    - target: {fileID: -8862238462792101857, guid: 1de29429e554e58409f8448cb54ca873, type: 3}
+      propertyPath: material.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8862238462792101857, guid: 1de29429e554e58409f8448cb54ca873, type: 3}
+      propertyPath: material.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ab41f8a07f5010846aab333a9114bf74, type: 2}
+    - target: {fileID: -8862238462792101857, guid: 1de29429e554e58409f8448cb54ca873, type: 3}
+      propertyPath: material.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fb924c59468e814cb2d1d17bc9df24b, type: 2}
+    - target: {fileID: -8862238462792101857, guid: 1de29429e554e58409f8448cb54ca873, type: 3}
+      propertyPath: material.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 044712a2a467e8f4caff6827bed69457, type: 2}
     - target: {fileID: 7259812892559854709, guid: 1de29429e554e58409f8448cb54ca873, type: 3}
       propertyPath: m_Name
       value: _uiCoin_new

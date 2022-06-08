@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
     {
         Panel.gameObject.SetActive(!Panel.gameObject.activeSelf); //opens pause menu
         Debug.Log("Win Game!");
+        Time.timeScale = 0;
 
     }
 

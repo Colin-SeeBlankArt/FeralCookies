@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 4439851182153558413}
   m_Layer: 0
   m_Name: PC25
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5470,9 +5470,10 @@ GameObject:
   - component: {fileID: 3557488844460074330}
   - component: {fileID: 208230363362876091}
   - component: {fileID: 2399835320692827200}
+  - component: {fileID: 8909485642935172355}
   m_Layer: 0
   m_Name: ctl
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5696,6 +5697,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &8909485642935172355
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7570131032668659218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.455952
+  m_Height: 4.911904
+  m_Direction: 1
+  m_Center: {x: -0.022111962, y: -1.2476945, z: -2.5535495}
 --- !u!1 &7639194562155527637
 GameObject:
   m_ObjectHideFlags: 0
@@ -10728,7 +10743,7 @@ GameObject:
   - component: {fileID: 1620971770741855506}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10806,7 +10821,7 @@ SphereCollider:
   m_GameObject: {fileID: 8176158937659616443}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.40968296
   m_Center: {x: 1.7650745, y: -6.671818e-14, z: -3.4322757e-16}
@@ -10898,6 +10913,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3ce1cb717fd6a2b45b409285c9fda88e, type: 3}
       propertyPath: m_Name
       value: VStarFighter_25
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ce1cb717fd6a2b45b409285c9fda88e, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ce1cb717fd6a2b45b409285c9fda88e, type: 3}

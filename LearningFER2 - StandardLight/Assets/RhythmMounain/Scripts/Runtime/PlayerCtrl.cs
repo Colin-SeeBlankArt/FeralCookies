@@ -141,5 +141,4 @@ public class PlayerCtrl : MonoBehaviour
             EndScreen.Open();
         }
     }
-
 }

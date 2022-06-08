@@ -14,16 +14,23 @@ public class CollectBrick : MonoBehaviour
     private Animator _anim;
     bool _destroyMe = false;
     public bool _goodBrick, _badBrick;
-    public bool _green, _red, _blue, _purple;
     int _brickCount;
     public static int _penalty= 5;
 
-    private float timerSpeed = 1;
-    private float lastTimestamp;
+    private float timerSpeed = 1f;
+    private float elapsed;
 
-   
-    private void Start()
+    //create array to hold states  
+    public Material[] material; //potentially change this int at GameManager
+    Renderer rend;
+    //use these states to change coin colora
+
+    void Start()
     {
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
+        rend.sharedMaterial = material[0];
+
         _anim = GetComponent<Animator>();
         //_focus = GetComponent<FocusCoin>();
     }
@@ -36,7 +43,7 @@ public class CollectBrick : MonoBehaviour
 
         if (collider.CompareTag("Enemy"))
         {
-            BunnyTrigger();
+            //DestroyMe();
             Debug.Log("bunny hits a brick");
         }
 
@@ -48,9 +55,10 @@ public class CollectBrick : MonoBehaviour
 
         if (_destroyMe)  //bool to say kill the coin
         {
-            if (Time.time - lastTimestamp >= timerSpeed)
+            elapsed += Time.deltaTime;
+            if (elapsed >= timerSpeed)
             {
-                lastTimestamp = Time.time;
+                elapsed = 0f;
                 Destroy(gameObject);
             }
         }
@@ -68,15 +76,19 @@ public class CollectBrick : MonoBehaviour
             ScoringSystem.goodbrickTick += 1;
             Debug.Log("good brick");
         }
+        DestroyMe();
         _brickCount += 1;
         ScoringSystem.brickCount += 1;
         ScoringSystem.brickTick += 1;
-        _destroyMe = true;
+
     }
 
-    public void BunnyTrigger()
+    public void DestroyMe()
     {
-        
+        _destroyMe = true;
+        _anim.SetBool("Die", true);
+        _anim.SetBool("Light", true);
+
     }
 }
 
