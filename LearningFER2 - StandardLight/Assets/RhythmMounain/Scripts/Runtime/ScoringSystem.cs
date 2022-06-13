@@ -16,6 +16,7 @@ public class ScoringSystem : MonoBehaviour
     public static int brickTick;
     public static int goodbrickTick;  //this will be a positive impact on loop count
     public static int badbrickTick; //this will be a negative impact on loop count
+    public static int _penalty; //hit the bunny, get penalized
 
     public int pcScore;
 
@@ -37,8 +38,9 @@ public class ScoringSystem : MonoBehaviour
     {
         pcScore = (totBrickCt - badBrickTot);
 
+
         goodBrickTot = goodbrickTick;
-        badBrickTot = badbrickTick;
+        badBrickTot = (badbrickTick + _penalty);
         totBrickCt = brickCount;
 
         BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks

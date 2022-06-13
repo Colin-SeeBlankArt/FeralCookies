@@ -15,9 +15,9 @@ public class CollectBrick : MonoBehaviour
     bool _destroyMe = false;
     public bool _goodBrick, _badBrick;
     int _brickCount;
-    public static int _penalty= 5;
 
-    private float timerSpeed = 1f;
+
+    private float timerSpeed = 0.2f;
     private float elapsed;
 
     //create array to hold states  
@@ -69,14 +69,15 @@ public class CollectBrick : MonoBehaviour
         if (_badBrick)
         {
             ScoringSystem.badbrickTick += 2;
-            Debug.Log("bad brick");
+            //Debug.Log("bad brick");
         }
         else
         {
             ScoringSystem.goodbrickTick += 1;
-            Debug.Log("good brick");
+            //Debug.Log("good brick");
         }
-        DestroyMe();
+        _destroyMe = true;
+        //DestroyMe();
         _brickCount += 1;
         ScoringSystem.brickCount += 1;
         ScoringSystem.brickTick += 1;
@@ -85,7 +86,7 @@ public class CollectBrick : MonoBehaviour
 
     public void DestroyMe()
     {
-        _destroyMe = true;
+        //_destroyMe = true;
         _anim.SetBool("Die", true);
         _anim.SetBool("Light", true);
 

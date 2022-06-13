@@ -8,11 +8,16 @@ public class Bunny : MonoBehaviour
 {
     public static Bunny instance;
 
+    bool _destroyMe = false;
+    private float timerSpeed = 0.2f;
+    private float destroyElapsed;
+
     private LaneRunner runner;
     public int _currentLane;
     private float laneChangeSpd = 3f;
     private float elapsed;
     private int randomValue;
+
 
     void Awake()
     {
@@ -28,13 +33,18 @@ public class Bunny : MonoBehaviour
             elapsed = 0f;
             ChangeLanes(2);
         }
+        if (_destroyMe)  //bool to say kill the coin
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Hit the Player!");
+            ScoringSystem._penalty += 5;
+            _destroyMe = true;
         }
     }
     public void ChangeLanes(int maxNum)
