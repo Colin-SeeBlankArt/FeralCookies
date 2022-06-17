@@ -8,7 +8,7 @@ public class UI_Manager : MonoBehaviour
 
     public void ChangeScene() //change by name
     {
-        SceneManager.LoadScene("Scene_DesignTest_R");
+        SceneManager.LoadScene("Scene_DesignTest_25_R");
 
     }
 

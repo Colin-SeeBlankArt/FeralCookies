@@ -5,35 +5,35 @@ using UnityEngine.UI;
 
 public class CollectBrick : MonoBehaviour
 {
-
-    //public GameObject _focus;
-
     //int _fState;
     public static int _focusState;
-
     private Animator _anim;
     bool _destroyMe = false;
-    public bool _goodBrick, _badBrick;
+    public bool _goodBrick = false; 
+    public bool _badBrick = false;
     int _brickCount;
-
 
     private float timerSpeed = 0.2f;
     private float elapsed;
 
     //create array to hold states  
-    public Material[] material; //potentially change this int at GameManager
+    public Material[] _bMaterial; //potentially change this int at GameManager
     Renderer rend;
-    //use these states to change coin colora
-
+    int _bStartColor; //what the coin will be at start
+    //public int _bCurColor; //may need this, but not now
+    int _colorRandomize; //randomizer to make a coin red
+    
     void Start()
     {
         rend = GetComponent<Renderer>();
         rend.enabled = true;
-        rend.sharedMaterial = material[0];
+        rend.sharedMaterial = _bMaterial[0];
 
         _anim = GetComponent<Animator>();
-        //_focus = GetComponent<FocusCoin>();
+
+        colorChange(4);
     }
+   
     void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
@@ -43,10 +43,8 @@ public class CollectBrick : MonoBehaviour
 
         if (collider.CompareTag("Enemy"))
         {
-            //DestroyMe();
             Debug.Log("bunny hits a brick");
         }
-
     }
 
     void Update()
@@ -76,34 +74,61 @@ public class CollectBrick : MonoBehaviour
             ScoringSystem.goodbrickTick += 1;
             //Debug.Log("good brick");
         }
-        _destroyMe = true;
-        //DestroyMe();
+        DestroyMe();
         _brickCount += 1;
-        ScoringSystem.brickCount += 1;
         ScoringSystem.brickTick += 1;
-
     }
 
     public void DestroyMe()
     {
-        //_destroyMe = true;
+        _destroyMe = true;
         _anim.SetBool("Die", true);
         _anim.SetBool("Light", true);
 
     }
+
+    public void colorChange(int maxNum) //set max num in Awake, cur 6
+    {
+        int randomNum = Random.Range(0, maxNum);
+        _colorRandomize = randomNum;
+        if (_colorRandomize == 0) 
+        {
+            rend.sharedMaterial = _bMaterial[_colorRandomize];
+            Debug.Log("Green Brick Change");           
+        }
+        if (_colorRandomize == 1) 
+        {
+            rend.sharedMaterial = _bMaterial[_colorRandomize];
+            Debug.Log("Blue Brick Change");
+
+        }
+        if (_colorRandomize == 2)
+        {
+            rend.sharedMaterial = _bMaterial[_colorRandomize];
+            Debug.Log("Purple Brick Change");
+        }
+        if (_colorRandomize == 3) 
+        {
+            rend.sharedMaterial = _bMaterial[_colorRandomize];
+            Debug.Log("Red Brick Change");
+
+        }
+    }
 }
+
 
 
 /* record the coin type
 
+        ScoringSystem.TICK = 2;
+
 //define publicly how many points for or against in player speed, coin count, time variable
 
 //boom light is idle until collision, then
-//play fmod sound, note~hertz for this location
 //play animator light_boom
 //play animator sphere_boom
 //when light_boom is done, then:
-//particle effect
+//particle effect -- why can't I get this to work??
 //create variables for checks against UI brick color changes, as int
 //one to recieve, one to hold, _getVar; _setVar;
 

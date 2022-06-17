@@ -24,13 +24,13 @@ public class FocusCoin : MonoBehaviour
         rend.enabled = true;
         rend.sharedMaterial = material[0];
     }
-    private void Update()
+    private void Update() //currently just a timer to initiate color change
     {           
         elapsed += Time.deltaTime;
         if(elapsed >= timerSpeed)
         {
             elapsed = 0f;                    
-            ChangeFocusBrick(3);
+            ChangeFocusBrick(3); //sets max number in randomizer
         }
 
     }

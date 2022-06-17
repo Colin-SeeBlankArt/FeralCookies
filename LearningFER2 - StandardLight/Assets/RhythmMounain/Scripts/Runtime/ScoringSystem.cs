@@ -12,7 +12,6 @@ public class ScoringSystem : MonoBehaviour
     public GameObject BBTick;
     public Text textobject;
 
-    public static int brickCount; 
     public static int brickTick;
     public static int goodbrickTick;  //this will be a positive impact on loop count
     public static int badbrickTick; //this will be a negative impact on loop count
@@ -41,7 +40,7 @@ public class ScoringSystem : MonoBehaviour
 
         goodBrickTot = goodbrickTick;
         badBrickTot = (badbrickTick + _penalty);
-        totBrickCt = brickCount;
+        totBrickCt = brickTick;
 
         BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
         PlayerScore.GetComponent<Text>().text = "Player Score: " + pcScore;
@@ -58,6 +57,17 @@ public class ScoringSystem : MonoBehaviour
 }
 
 /*    
+    public static int TICK
+    {
+        get { return _TICK; }
+        set 
+        { 
+            _TICK = value;
+            Debug.Log($"TICK changed to {_TICK}");
+        }
+    }
+    private static int _TICK;        
+
         loopticker += goodbrickTick - (badbrickTick);
         if (loopticker >= loopTickGoal) //for every x bricks, do the following:
         {

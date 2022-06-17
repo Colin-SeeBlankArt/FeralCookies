@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
         UnityEngine.Debug.Log("We Reset Successfully");
         //loads the scene over, FMOD requires a restart funcion in here.
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);  //this works, but FMOD needs assist
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);  //this works, but FMOD needs assist
     }
     public void QuitGame()
     {
