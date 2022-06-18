@@ -16,7 +16,10 @@ public class CollectBrick : MonoBehaviour
     private float timerSpeed = 0.2f;
     private float elapsed;
 
-    //create array to hold states  
+    //create array to hold states
+    //create dropBox for the Particles so to activate them
+        //this is how I think I can activate a child object.
+
     public Material[] _bMaterial; //potentially change this int at GameManager
     Renderer rend;
     int _bStartColor; //what the coin will be at start
