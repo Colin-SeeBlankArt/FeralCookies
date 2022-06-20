@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using Dreamteck.Forever;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerCtrl : MonoBehaviour
 {
+   
     public static PlayerCtrl instance;
      
     private ParticleSystem.Particle[] m_particleBuffer = Array.Empty<ParticleSystem.Particle>();
@@ -38,6 +40,7 @@ public class PlayerCtrl : MonoBehaviour
         instance = this;
 
         _turnAnim = GetComponent<Animator>();
+
     }
 
     private void FloatingOriginOnonOriginOffset(Vector3 delta)
@@ -104,8 +107,21 @@ public class PlayerCtrl : MonoBehaviour
         FloatingOrigin.onOriginOffset += FloatingOriginOnonOriginOffset;
     }
 
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("Enemy"))
+        {
+            FindObjectOfType<AudioManager>().Play("BunnyPing");
+            Debug.Log("Bunny Boom on Destroy");
+        }
+        if (collider.CompareTag("Brick"))
+        {
+            FindObjectOfType<AudioManager>().Play("BrickPing");
+            Debug.Log("Coin Noise on Destroy");
+        }
+    }
 
-    private void Update()
+        private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {

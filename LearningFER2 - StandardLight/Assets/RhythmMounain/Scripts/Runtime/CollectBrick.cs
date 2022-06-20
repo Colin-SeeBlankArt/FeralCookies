@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class CollectBrick : MonoBehaviour
 {
     //int _fState;
+    public GameObject _boomSprite;
+    public GameObject _Particlecube;
+
     public static int _focusState;
     private Animator _anim;
     bool _destroyMe = false;
@@ -42,6 +45,7 @@ public class CollectBrick : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             PlayerTrigger();
+
         }
 
         if (collider.CompareTag("Enemy"))
@@ -70,13 +74,12 @@ public class CollectBrick : MonoBehaviour
         if (_badBrick)
         {
             ScoringSystem.badbrickTick += 2;
-            //Debug.Log("bad brick");
-        }
+       }
         else
         {
             ScoringSystem.goodbrickTick += 1;
-            //Debug.Log("good brick");
         }
+        
         DestroyMe();
         _brickCount += 1;
         ScoringSystem.brickTick += 1;
@@ -85,9 +88,9 @@ public class CollectBrick : MonoBehaviour
     public void DestroyMe()
     {
         _destroyMe = true;
-        _anim.SetBool("Die", true);
-        _anim.SetBool("Light", true);
 
+        Instantiate(_boomSprite, transform.position, transform.rotation);
+        Instantiate(_Particlecube, transform.position, transform.rotation);
     }
 
     public void colorChange(int maxNum) //set max num in Awake, cur 6
