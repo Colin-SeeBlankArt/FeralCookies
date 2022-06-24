@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CollectBrick : MonoBehaviour
 {
-    //int _fState;
     public GameObject _boomSprite;
     public GameObject _Particlecube;
 
@@ -19,16 +18,15 @@ public class CollectBrick : MonoBehaviour
     private float timerSpeed = 0.2f;
     private float elapsed;
 
-    //create array to hold states
-    //create dropBox for the Particles so to activate them
-        //this is how I think I can activate a child object.
-
     public Material[] _bMaterial; //potentially change this int at GameManager
     Renderer rend;
-    int _bStartColor; //what the coin will be at start
+    //int _bStartColor; //what the coin will be at start
     //public int _bCurColor; //may need this, but not now
-    int _colorRandomize; //randomizer to make a coin red
-    
+    //int _colorRandomize; //randomizer to make a coin red
+   
+
+    int NewNum;
+
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -37,7 +35,8 @@ public class CollectBrick : MonoBehaviour
 
         _anim = GetComponent<Animator>();
 
-        colorChange(4);
+        //colorChange(4);
+        RangeRandom(50);
     }
    
     void OnTriggerEnter(Collider collider)
@@ -45,7 +44,6 @@ public class CollectBrick : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             PlayerTrigger();
-
         }
 
         if (collider.CompareTag("Enemy"))
@@ -93,50 +91,69 @@ public class CollectBrick : MonoBehaviour
         Instantiate(_Particlecube, transform.position, transform.rotation);
     }
 
-    public void colorChange(int maxNum) //set max num in Awake, cur 6
+    public void RangeRandom(int MyNewNum)
+    {
+        int _ranNum = Random.Range(0, MyNewNum);
+        NewNum = _ranNum;
+        if (NewNum >= 0 && NewNum <= 34)
+        {
+            rend.sharedMaterial = _bMaterial[0];
+            Debug.Log("Randome Range 1");
+        }
+        if (NewNum >= 35 && NewNum <= 46)
+        {
+            rend.sharedMaterial = _bMaterial[1];
+            Debug.Log("Randome Range 2");
+        }
+        if (NewNum == 47)
+        {
+            rend.sharedMaterial = _bMaterial[2];
+            Debug.Log("Randome Range 3");
+        }
+        if (NewNum == 48)
+        {
+            rend.sharedMaterial = _bMaterial[3];
+            Debug.Log("Randome Range 4");
+        }
+        if (NewNum == 49)
+        {
+            Debug.Log("Randome Range 5");
+        }
+    }
+
+
+}
+
+
+
+/*
+ *     public void colorChange(int maxNum) 
     {
         int randomNum = Random.Range(0, maxNum);
         _colorRandomize = randomNum;
         if (_colorRandomize == 0) 
         {
-            rend.sharedMaterial = _bMaterial[_colorRandomize];
-            Debug.Log("Green Brick Change");           
+            rend.sharedMaterial = _bMaterial[_colorRandomize];          
         }
         if (_colorRandomize == 1) 
         {
             rend.sharedMaterial = _bMaterial[_colorRandomize];
-            Debug.Log("Blue Brick Change");
-
         }
         if (_colorRandomize == 2)
         {
             rend.sharedMaterial = _bMaterial[_colorRandomize];
-            Debug.Log("Purple Brick Change");
         }
         if (_colorRandomize == 3) 
         {
             rend.sharedMaterial = _bMaterial[_colorRandomize];
-            Debug.Log("Red Brick Change");
-
         }
-    }
-}
-
-
-
-/* record the coin type
+    } 
+     record the coin type
 
         ScoringSystem.TICK = 2;
 
 //define publicly how many points for or against in player speed, coin count, time variable
 
-//boom light is idle until collision, then
-//play animator light_boom
-//play animator sphere_boom
-//when light_boom is done, then:
-//particle effect -- why can't I get this to work??
-//create variables for checks against UI brick color changes, as int
-//one to recieve, one to hold, _getVar; _setVar;
 
 //if UIBrk_color = true, then (goodBrick), else(bad)
 // if (UIBrk_color == _setVar){ this.Object = goodBrick;}
@@ -145,8 +162,6 @@ public class CollectBrick : MonoBehaviour
 //if ( _myMaterials[item] == _fStateInt){ ++ }else{ -- }
 
 //use a for loop for this, later
-
-
 
         if (_fState == 0)
         {

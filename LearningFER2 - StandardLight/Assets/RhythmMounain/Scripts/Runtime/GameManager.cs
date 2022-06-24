@@ -7,10 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    /// <summary>
-    //Game Manager loads in to fire this panel open, and then try to use buttons in UI to trigger shit. like dominoes!!!
-    /// </summary>
-
     public GameObject currentState;
     public static int StateTick;
     public int _currentState;
@@ -21,6 +17,8 @@ public class GameManager : MonoBehaviour
     public float _makeB = 2f; //spawn every x seconds, hopefully
     private float elapsed;
     public GameObject bunny;
+
+    public GameObject _sMSegs; //SheetMusic Testing Instantiate coins w/ rules
 
     public static int _noteQuota = 0; //coming from scoring system, unitl better idea
 
@@ -54,7 +52,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
-
     public void PauseGame()
     {
         //! in !Panel.gameObject.activeSelf makes this just a toggle. 
@@ -63,7 +60,6 @@ public class GameManager : MonoBehaviour
         Panel.gameObject.SetActive(!Panel.gameObject.activeSelf); //opens pause menu
 
     }
-
     public void ResetLevel()
     {
         UnityEngine.Debug.Log("We Reset Successfully");
@@ -76,13 +72,11 @@ public class GameManager : MonoBehaviour
         UnityEngine.Debug.Log("Quit!");
         Application.Quit();
     }
-
     public void MakeBunny()
     {
         
         Instantiate(bunny, new Vector3(0, 0, 0), Quaternion.identity);
     }
-
     public void WinGame()
     {
         Panel.gameObject.SetActive(!Panel.gameObject.activeSelf); //opens pause menu

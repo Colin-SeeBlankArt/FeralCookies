@@ -9,7 +9,7 @@ public class Bunny : MonoBehaviour
     public static Bunny instance;
 
     bool _destroyMe = false;
-    private float timerSpeed = 0.2f;
+    //private float timerSpeed = 0.2f;
     private float destroyElapsed;
 
     private LaneRunner runner;

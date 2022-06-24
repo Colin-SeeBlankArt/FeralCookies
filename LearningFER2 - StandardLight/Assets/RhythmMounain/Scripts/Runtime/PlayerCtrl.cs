@@ -28,9 +28,14 @@ public class PlayerCtrl : MonoBehaviour
 
     private Animator _turnAnim;
     bool _turnL, _turnR;  // using ths to keep the ship leaning into a turn
+    private AudioManager soundBite;
 
 
-    private void Awake()
+    void Start()
+    {
+        soundBite.Play("EngineNoise");
+    }
+    void Awake()
     {
         m_trailRenderers = GetComponentsInChildren<TrailRenderer>(true);
         m_particleSystems = GetComponentsInChildren<ParticleSystem>(true);
@@ -40,6 +45,8 @@ public class PlayerCtrl : MonoBehaviour
         instance = this;
 
         _turnAnim = GetComponent<Animator>();
+
+        soundBite = FindObjectOfType<AudioManager>();
 
     }
 
@@ -111,34 +118,32 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (collider.CompareTag("Enemy"))
         {
-            FindObjectOfType<AudioManager>().Play("BunnyPing");
-            Debug.Log("Bunny Boom on Destroy");
+            soundBite.Play("BunnyPing");
         }
         if (collider.CompareTag("Brick"))
         {
-            FindObjectOfType<AudioManager>().Play("BrickPing");
-            Debug.Log("Coin Noise on Destroy");
+            soundBite.Play("BrickPing");
         }
     }
 
-        private void Update()
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             runner.lane--;
             _turnAnim.SetBool("Left_trig", true);
         }
-
-
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             runner.lane++;
             _turnAnim.SetBool("Right_trig", true);
         }
-
         if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
-            //increase player speed, via boost
+            //if  boost count == ?? && boost = false
+                //On 2 Sec Timer:
+                    // boost; (SetSpeed = GetSpeed+BoostSpeed (??))
+                    //else boost == false
         }
 
     }
