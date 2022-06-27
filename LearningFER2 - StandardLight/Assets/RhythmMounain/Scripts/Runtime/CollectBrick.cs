@@ -49,6 +49,7 @@ public class CollectBrick : MonoBehaviour
         if (collider.CompareTag("Enemy"))
         {
             Debug.Log("bunny hits a brick");
+            rend.sharedMaterial = _bMaterial[1];
         }
     }
 
