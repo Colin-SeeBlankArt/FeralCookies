@@ -13,7 +13,7 @@ namespace Dreamteck.Forever
             if (open) return;
             bool showInfo = EditorPrefs.GetString("Dreamteck.Forever.Info.version", "") != version;
             if (!showInfo) return;
-            EditorWindow.GetWindow<WelcomeScreen>(true);
+            //EditorWindow.GetWindow<WelcomeScreen>(true);
             EditorPrefs.SetString("Dreamteck.Forever.Info.version", version);
             open = true;
         }

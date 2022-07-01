@@ -72,11 +72,12 @@ public class CollectBrick : MonoBehaviour
     {
         if (_badBrick)
         {
-            ScoringSystem.badbrickTick += 2;
+            ScoringSystem.badbrickTick ++;
        }
         else
         {
-            ScoringSystem.goodbrickTick += 1;
+            ScoringSystem.goodbrickTick ++;
+            BrickStates._stateChange++;
         }
         
         DestroyMe();
@@ -90,7 +91,7 @@ public class CollectBrick : MonoBehaviour
 
         Instantiate(_boomSprite, transform.position, transform.rotation);
         Instantiate(_Particlecube, transform.position, transform.rotation);
-    }
+    }//obvious
 
     public void RangeRandom(int MyNewNum)
     {
@@ -120,7 +121,7 @@ public class CollectBrick : MonoBehaviour
         {
             Debug.Log("Randome Range 5");
         }
-    }
+    } //changes colors, percentaged based
 
 
 }
