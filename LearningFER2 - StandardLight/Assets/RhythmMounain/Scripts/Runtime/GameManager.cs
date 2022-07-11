@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject _sMSegs; //SheetMusic Testing Instantiate coins w/ rules
 
-    public static int _noteQuota = 0; //coming from scoring system, unitl better idea
+    public static int _noteQuota = 0; //coming from scoring system, until better idea
 
     void Awake()
     {

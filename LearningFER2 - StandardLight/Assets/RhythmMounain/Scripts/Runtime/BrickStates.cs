@@ -13,6 +13,9 @@ public class BrickStates : MonoBehaviour
     public static int _bCount; //comes from ScoringSystem
     public static int _cCount; //comes from Timer
     int _bIndex;
+
+    public int brickState = 1;
+
     private void Awake()
     {
         changeMe = _stateChange;
@@ -20,19 +23,29 @@ public class BrickStates : MonoBehaviour
 
     void Update()
     {
-        if (changeMe >= 15)
+   
+        if (changeMe >= 0)
         {
             State2();
             _state2 = true;
             changeMe = 0;
         }
-/*
-        if (_state1 == false)
+
+    }
+    public void StateChange()
+    {
+        switch (brickState)
         {
-            State2();
-            _state2 = true;
+            case 1:
+                Debug.Log("RedCoin");
+                break;
+            case 2:
+                Debug.Log("BlueCoin");
+                break;
+            default:
+                Debug.Log("GreenCoin");
+                break;
         }
-*/
     }
 
     public void State2()

@@ -7,7 +7,8 @@ using UnityEngine.Audio;
 
 public class PlayerCtrl : MonoBehaviour
 {
-   
+    [SerializeField] private Animator ShipAnim = null;
+
     public static PlayerCtrl instance;
      
     private ParticleSystem.Particle[] m_particleBuffer = Array.Empty<ParticleSystem.Particle>();
@@ -124,19 +125,27 @@ public class PlayerCtrl : MonoBehaviour
         {
             soundBite.Play("BrickPing");
         }
+        if (collider.CompareTag("BlockL"))
+        {
+            runner.lane =+ 2;
+            ShipAnim.SetBool("Right_trig", true);
+        }
+        if (collider.CompareTag("BlockR"))
+        {
+            runner.lane --;
+            ShipAnim.SetBool("Left_trig", true);
+        }
     }
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
-            runner.lane--;
-            _turnAnim.SetBool("Left_trig", true);
+            Left();
         }
         if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
-            runner.lane++;
-            _turnAnim.SetBool("Right_trig", true);
+            Right();
         }
         if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
@@ -146,6 +155,18 @@ public class PlayerCtrl : MonoBehaviour
                     //else boost == false
         }
 
+    }
+
+    public void Left()
+    {
+        runner.lane--;
+        ShipAnim.SetBool("Left_trig", true);
+    }
+
+    public void Right()
+    {
+        runner.lane++;
+        ShipAnim.SetBool("Right_trig", true);
     }
 
     public float GetSpeed()

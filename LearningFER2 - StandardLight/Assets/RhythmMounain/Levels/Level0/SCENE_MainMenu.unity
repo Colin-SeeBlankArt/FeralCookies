@@ -166,7 +166,7 @@ MonoBehaviour:
   _levelIteration: 2
   _levelRandomizer: {fileID: 11400000, guid: 8db1a5e45048a064e8e5a55dba6859e5, type: 2}
   _startLevel: 0
-  _sharedPathGenerator: {fileID: 11400000, guid: 16ef5f9678c16544aa7e10138133dfa2, type: 2}
+  _sharedPathGenerator: {fileID: 11400000, guid: 4b26b886cd123684081a2e7cf7553ef6, type: 2}
   levels: []
   usePathGeneratorInstance: 0
 --- !u!4 &11015881
@@ -3029,12 +3029,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2011193157}
         m_TargetAssemblyTypeName: UI_Manager, RM.Runtime
-        m_MethodName: ChangeScene
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -3364,6 +3364,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: d8aee4a31d9e2d644b8db17bef845b60, type: 3}
     - target: {fileID: 3443093162516972245, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443093162516972245, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -3467,9 +3471,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6962723410024532763, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7570131032668659218, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727789437745708615, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176158937659616443, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8176158937659616443, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
       propertyPath: m_TagString

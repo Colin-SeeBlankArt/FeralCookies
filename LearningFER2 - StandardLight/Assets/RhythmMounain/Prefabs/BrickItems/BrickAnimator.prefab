@@ -119,6 +119,7 @@ MonoBehaviour:
   BrickAnimator: {fileID: 2270880998837692623}
   _state1: 1
   _state2: 0
+  brickState: 1
 --- !u!1001 &5839127048174361218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,12 +192,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4960145733234801428, guid: 5e6a885f39c3c8846b7bc910757bcf37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960145733234801428, guid: 5e6a885f39c3c8846b7bc910757bcf37, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.956
+      value: -1.04
       objectReference: {fileID: 0}
     - target: {fileID: 4960145733234801428, guid: 5e6a885f39c3c8846b7bc910757bcf37, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.046
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5856098965220974680, guid: 5e6a885f39c3c8846b7bc910757bcf37, type: 3}
       propertyPath: m_LocalPosition.y

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CollectBrick : MonoBehaviour
 {
-    public GameObject _boomSprite;
-    public GameObject _Particlecube;
+    [SerializeField] private GameObject _boomSprite;
+    [SerializeField] private GameObject _Particlecube;
 
     public static int _focusState;
     private Animator _anim;
