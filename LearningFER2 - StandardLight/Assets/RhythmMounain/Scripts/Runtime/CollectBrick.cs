@@ -8,6 +8,7 @@ public class CollectBrick : MonoBehaviour
     [SerializeField] private GameObject _boomSprite;
     [SerializeField] private GameObject _Particlecube;
 
+
     public static int _focusState;
     private Animator _anim;
     bool _destroyMe = false;
@@ -50,6 +51,7 @@ public class CollectBrick : MonoBehaviour
         {
             Debug.Log("bunny hits a brick");
             rend.sharedMaterial = _bMaterial[1];
+            _badBrick = true;
         }
     }
 
@@ -106,6 +108,7 @@ public class CollectBrick : MonoBehaviour
         {
             rend.sharedMaterial = _bMaterial[1];
             Debug.Log("Randome Range 2");
+            _badBrick = true;
         }
         if (NewNum == 47)
         {
@@ -115,6 +118,7 @@ public class CollectBrick : MonoBehaviour
         if (NewNum == 48)
         {
             rend.sharedMaterial = _bMaterial[3];
+
             Debug.Log("Randome Range 4");
         }
         if (NewNum == 49)

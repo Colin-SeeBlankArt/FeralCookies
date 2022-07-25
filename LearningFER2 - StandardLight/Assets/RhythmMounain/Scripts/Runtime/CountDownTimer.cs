@@ -8,6 +8,7 @@ public class CountDownTimer : MonoBehaviour
     public float timeRemaining = 0;
     public bool timerIsRunning = false;
     public Text timeText;
+
     private void Start()
     {
         // Starts the timer automatically
@@ -15,6 +16,7 @@ public class CountDownTimer : MonoBehaviour
     }
     void Update()
     {
+
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
@@ -27,6 +29,7 @@ public class CountDownTimer : MonoBehaviour
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                GameManager._endTime = true;
             }
         }
     }

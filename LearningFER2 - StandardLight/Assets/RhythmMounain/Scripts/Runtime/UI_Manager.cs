@@ -29,6 +29,13 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    Animator anim;
+
+    public void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     public void ChangeScene(int sceneIndex) //change by name
     {
         SceneManager.LoadScene(sceneIndex);
@@ -39,6 +46,11 @@ public class UI_Manager : MonoBehaviour
         //create simple 3 sec time, sec 1 fade in, sec 2 read text, sec 3 fade out
         //animate text stating "Pop!" after coin collect
         //animate text stating "Loop Collected", bring in LoopCt from GameManager
+    }
+
+    public void FadeFromBlack()
+    {
+        anim.SetBool("FromBlack", true);
     }
 }
 

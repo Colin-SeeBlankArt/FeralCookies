@@ -10,7 +10,7 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] private Animator ShipAnim = null;
 
     public static PlayerCtrl instance;
-     
+
     private ParticleSystem.Particle[] m_particleBuffer = Array.Empty<ParticleSystem.Particle>();
     private ParticleSystem[] m_particleSystems = Array.Empty<ParticleSystem>();
 
@@ -135,6 +135,7 @@ public class PlayerCtrl : MonoBehaviour
             runner.lane --;
             ShipAnim.SetBool("Left_trig", true);
         }
+ 
     }
 
     void Update()

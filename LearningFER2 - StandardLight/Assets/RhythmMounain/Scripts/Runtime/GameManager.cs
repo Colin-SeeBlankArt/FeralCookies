@@ -11,16 +11,17 @@ public class GameManager : MonoBehaviour
     public static int StateTick;
     public int _currentState;
 
-    public GameObject Panel; //pause panel, currently
+    public GameObject PausePanel; //pause panel, currently
+    public GameObject EndTime; //end time panel, currently
 
     //instaniate bunny!!
     public float _makeB = 2f; //spawn every x seconds, hopefully
     private float elapsed;
     public GameObject bunny;
-
     public GameObject _sMSegs; //SheetMusic Testing Instantiate coins w/ rules
-
     public static int _noteQuota = 0; //coming from scoring system, until better idea
+
+    public static bool _endTime = false;
 
     void Awake()
     {
@@ -47,6 +48,10 @@ public class GameManager : MonoBehaviour
         {
             WinGame();
         }
+         if(_endTime == true)
+        {
+            EndTimer();
+        }
     }
     public void Play()
     {
@@ -54,11 +59,15 @@ public class GameManager : MonoBehaviour
     }
     public void PauseGame()
     {
-        //! in !Panel.gameObject.activeSelf makes this just a toggle. 
- 
         Time.timeScale = 0; //stops game time
-        Panel.gameObject.SetActive(!Panel.gameObject.activeSelf); //opens pause menu
+        PausePanel.gameObject.SetActive(!PausePanel.gameObject.activeSelf); //opens pause menu
+    }
 
+    public void EndTimer()
+    {
+        Time.timeScale = 0; //stops game time
+        //EndTime.gameObject.SetActive(!EndTime.gameObject.activeSelf); //opens pause menu
+        EndTime.gameObject.SetActive(true);
     }
     public void ResetLevel()
     {
@@ -79,7 +88,7 @@ public class GameManager : MonoBehaviour
     }
     public void WinGame()
     {
-        Panel.gameObject.SetActive(!Panel.gameObject.activeSelf); //opens pause menu
+        PausePanel.gameObject.SetActive(!PausePanel.gameObject.activeSelf); //opens pause menu
         Debug.Log("Win Game!");
         Time.timeScale = 0;
 
