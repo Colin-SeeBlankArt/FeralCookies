@@ -16,7 +16,7 @@ public class Bunny : MonoBehaviour
     public int _currentLane;
     private float laneChangeSpd = 3f;
     private float elapsed;
-    private int randomValue;
+    private int bunnyHit;
 
 
     void Awake()
@@ -43,6 +43,8 @@ public class Bunny : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            bunnyHit++;
+            Debug.Log("Bunny Hits = " + bunnyHit);
             ScoringSystem._penalty += 5;
             _destroyMe = true;
         }

@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        //collectBrick = GetComponent<CollectBrick>();
-
         currentState.GetComponent<Text>().text = "State = " + StateTick;
     }
 

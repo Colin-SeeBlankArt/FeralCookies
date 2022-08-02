@@ -5,32 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
-    //from Brackey's - Load screen
-    // https://www.youtube.com/watch?v=YMj2qPq9CP8
-    //
-    public void LoadLevel (int sceneIndex)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        StartCoroutine(LoadAsynchronously(sceneIndex)); //CoRoutine Function
-    }
-    //CoRoutine to run the load of one scene while another scene is running
-    IEnumerator LoadAsynchronously (int sceneIndex)
-    {   
-        //Operation is the var holding the loading progress in the scene index
-        //While loop just says on this frame, tell us the progress, 
-        //then at the end of this frame, go to the next frame, repeat until done 
-
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
-            Debug.Log (progress);
-            yield return null;  
-        }
-    }
-
     Animator anim;
 
+
+  
     public void Start()
     {
         anim = GetComponent<Animator>();
@@ -52,5 +30,30 @@ public class UI_Manager : MonoBehaviour
     {
         anim.SetBool("FromBlack", true);
     }
+
+    //from Brackey's - Load screen
+    // https://www.youtube.com/watch?v=YMj2qPq9CP8
+    //
+    public void LoadLevel(int sceneIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        StartCoroutine(LoadAsynchronously(sceneIndex)); //CoRoutine Function
+    }
+    //CoRoutine to run the load of one scene while another scene is running
+    IEnumerator LoadAsynchronously(int sceneIndex)
+    {
+        //Operation is the var holding the loading progress in the scene index
+        //While loop just says on this frame, tell us the progress, 
+        //then at the end of this frame, go to the next frame, repeat until done 
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            Debug.Log(progress);
+            yield return null;
+        }
+    }
+
 }
 

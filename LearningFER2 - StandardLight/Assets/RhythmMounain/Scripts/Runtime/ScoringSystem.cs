@@ -17,6 +17,8 @@ public class ScoringSystem : MonoBehaviour
     public static int badbrickTick; //this will be a negative impact on loop count
     public static int _penalty; //hit the bunny, get penalized
 
+    public static int _loopTicker;
+
     public int pcScore;
 
     int totBrickCt;
@@ -33,30 +35,52 @@ public class ScoringSystem : MonoBehaviour
 
     public int _winGame = 64;
 
+ 
     void Update()
     {
         pcScore = (totBrickCt - badBrickTot);
 
-
         goodBrickTot = goodbrickTick;
         badBrickTot = (badbrickTick + _penalty);
-        totBrickCt = brickTick;
+        totBrickCt = goodbrickTick + badbrickTick;
 
         BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
         PlayerScore.GetComponent<Text>().text = "Player Score: " + pcScore;
-        Loops.GetComponent<Text>().text = "Loops = " + loops;  //count loopos, based on 10 bricks for each loop
+        Loops.GetComponent<Text>().text = "Loops = " + loopticker;  //count loopos, based on 10 bricks for each loop
         GBTick.GetComponent<Text>().text = "Good Brick = " + goodBrickTot; //counter for the green
-        BBTick.GetComponent<Text>().text = "Bad Brick = " + badBrickTot;  //counter for the purp  
+        BBTick.GetComponent<Text>().text = "Bad Brick = " + badBrickTot;  //counter for the red  
 
-        if (pcScore >= _winGame)
+        if (goodbrickTick >= _winGame)
         {
             GameManager._noteQuota ++;
         }
-    }
 
+        if (_loopTicker >= loopGoal) //for every x bricks, do the following:
+        {           
+            Debug.Log("Loop Count Change " + _loopTicker);
+            _loopTicker = 0;
+            loopticker++;
+            stateticker++;
+        }
+        if (stateticker >= stateGoal)
+        {
+            Debug.Log("State Index Change = " + state);
+            state++;
+            stateticker = 0;            
+
+        }
+    }
 }
 
 /*    
+ *        void LoopCounter()
+    {
+        loopticker = 0;
+        Debug.Log("loop ticker = " + loopticker);
+        loops += 1;
+        stateticker += 1;
+    }
+ *    
     public static int TICK
     {
         get { return _TICK; }

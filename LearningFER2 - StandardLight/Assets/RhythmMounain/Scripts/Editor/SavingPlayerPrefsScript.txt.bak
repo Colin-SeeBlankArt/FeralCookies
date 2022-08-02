@@ -1,0 +1,105 @@
+SaveSystem.cs
+
+using UnityEngine;
+using System.IO;
+using System.Runtime.Serialization.Fromatters.Binary;
+
+pubilc static class SaveSystem
+{
+	public static void SavePlayer (Player player) //static vars do not get instantiated, this writes data
+	{
+		BinaryFormatter formatter = new BinaryFormatter();
+		string path = Application.persistaentDataPath + "/player.fun" // this .Fun is a file type being put into binary. can be any name. cool.
+		FileStream stream = new FileStream(path, FileMode.Create);
+		
+		Player data = news PlayerData(player);  // comes from playerData.cs script (below)
+		
+		formatter.Serialize(stream, data);
+		stream.Close();
+	
+	}
+	
+	pbulic static PlayerData LoadPlayer()
+	{
+		if (File.Exists(path))
+		{
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream stream = new FileStream(path, FileMode.Open);
+			
+			PlayerData data = formatter.Deserialize(stream) as PlayerData; //need to cast into a Datatype var
+			stream.Close(); //close stream to keep from bad errors
+			return data;
+		}
+		else
+		{
+			Debug.Log{"Save File not found in " + path);
+			
+			return null;
+		}
+	
+	}
+
+}
+
+
+playerData.cs  //writing/loading player data
+
+
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class PlayerData   //not a Monobehavior, and considered a constructor
+{
+	public int level;
+	pubilc int health;
+	public float [] position;
+	
+	public PlayerData (Player player)
+	{
+		level = player.level;
+		health = player.health;
+		
+		position = new float[3];
+		position[0] = player.transform.position.x;
+		position[1] = player.transform.position.y;
+		position[2] = player.transform.position.z;
+		
+	}
+
+
+}
+
+Player.cs //where the data is at
+
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class Player : Monobehavior
+{
+	public int level = 3;
+	public int health = 40;
+	
+	public  void SavePlayer()
+	{
+		SaveSystem.LoadPlayer(this);
+	}
+	
+	public void LoadPlayer()
+	{
+		PlayerData data = SaveSystem.LoadPlayer();
+		level=data.level;
+		health = data.health;
+		
+		Vector3 position;
+		position.x = data.position[0];
+		position.y = data.position[1];
+		position.z = data.position[2];
+		transform.position = position;
+		
+	}
+	
+
+}

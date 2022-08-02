@@ -8,13 +8,11 @@ public class CollectBrick : MonoBehaviour
     [SerializeField] private GameObject _boomSprite;
     [SerializeField] private GameObject _Particlecube;
 
-
     public static int _focusState;
     private Animator _anim;
     bool _destroyMe = false;
     public bool _goodBrick = false; 
     public bool _badBrick = false;
-    int _brickCount;
 
     private float timerSpeed = 0.2f;
     private float elapsed;
@@ -33,10 +31,7 @@ public class CollectBrick : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.enabled = true;
         rend.sharedMaterial = _bMaterial[0];
-
         _anim = GetComponent<Animator>();
-
-        //colorChange(4);
         RangeRandom(50);
     }
    
@@ -44,7 +39,7 @@ public class CollectBrick : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            PlayerTrigger();
+            PlayerTrigger();         
         }
 
         if (collider.CompareTag("Enemy"))
@@ -57,8 +52,6 @@ public class CollectBrick : MonoBehaviour
 
     void Update()
     {
-        //_fState = _focusState;
-
         if (_destroyMe)  //bool to say kill the coin
         {
             elapsed += Time.deltaTime;
@@ -72,25 +65,22 @@ public class CollectBrick : MonoBehaviour
 
     public void PlayerTrigger()
     {
+        
         if (_badBrick)
         {
             ScoringSystem.badbrickTick ++;
-       }
+        }
         else
         {
             ScoringSystem.goodbrickTick ++;
-            BrickStates._stateChange++;
+            ScoringSystem._loopTicker ++;
         }
-        
-        DestroyMe();
-        _brickCount += 1;
-        ScoringSystem.brickTick += 1;
+        DestroyMe(); 
     }
 
     public void DestroyMe()
     {
         _destroyMe = true;
-
         Instantiate(_boomSprite, transform.position, transform.rotation);
         Instantiate(_Particlecube, transform.position, transform.rotation);
     }//obvious
@@ -102,24 +92,24 @@ public class CollectBrick : MonoBehaviour
         if (NewNum >= 0 && NewNum <= 34)
         {
             rend.sharedMaterial = _bMaterial[0];
-            Debug.Log("Randome Range 1");
+            Debug.Log("Color Range 1");
         }
         if (NewNum >= 35 && NewNum <= 46)
         {
             rend.sharedMaterial = _bMaterial[1];
-            Debug.Log("Randome Range 2");
+            Debug.Log("Color Range 2");
             _badBrick = true;
         }
         if (NewNum == 47)
         {
             rend.sharedMaterial = _bMaterial[2];
-            Debug.Log("Randome Range 3");
+            Debug.Log("Color Range 3");
         }
         if (NewNum == 48)
         {
             rend.sharedMaterial = _bMaterial[3];
 
-            Debug.Log("Randome Range 4");
+            Debug.Log("Color Range 4");
         }
         if (NewNum == 49)
         {

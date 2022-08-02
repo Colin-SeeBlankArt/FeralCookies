@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class TimeSlider : MonoBehaviour
 {
     public Text             timerText;
+
     private bool            stopTimer;
-    public Slider           timerSlider;
     public float            gameTime;
+
+    public Slider timerSlider;
 
     // Start is called before the first frame update
     void Start()
