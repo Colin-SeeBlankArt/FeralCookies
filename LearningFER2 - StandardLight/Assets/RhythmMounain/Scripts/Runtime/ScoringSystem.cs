@@ -59,7 +59,7 @@ public class ScoringSystem : MonoBehaviour
         {           
             Debug.Log("Loop Count Change " + _loopTicker);
             _loopTicker = 0;
-            loopticker++;
+            loopticker++;  //need to name these a little better!!
             stateticker++;
         }
         if (stateticker >= stateGoal)
@@ -67,7 +67,6 @@ public class ScoringSystem : MonoBehaviour
             Debug.Log("State Index Change = " + state);
             state++;
             stateticker = 0;            
-
         }
     }
 }
