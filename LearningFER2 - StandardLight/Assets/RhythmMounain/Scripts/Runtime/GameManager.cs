@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     }
     public void Play()
     {
-        CountDownTimer.timerIsRunning = true;
+        Time.timeScale = 1;
     }
     public void PauseGame()
     {

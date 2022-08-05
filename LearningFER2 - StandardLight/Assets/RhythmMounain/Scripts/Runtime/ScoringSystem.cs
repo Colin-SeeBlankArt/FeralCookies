@@ -21,9 +21,9 @@ public class ScoringSystem : MonoBehaviour
 
     public int pcScore;
 
-    public int totBrickCt;
-    public int goodBrickTot;
-    public int badBrickTot;
+    int totBrickCt;
+    int goodBrickTot;
+    int badBrickTot;
 
     public int loopGoal;
     public int stateGoal;
@@ -41,14 +41,14 @@ public class ScoringSystem : MonoBehaviour
         pcScore = (totBrickCt - badBrickTot);
 
         goodBrickTot = goodbrickTick;
-        badBrickTot = (badbrickTick + _penalty); // includes Bunny Penalty
+        badBrickTot = (badbrickTick + _penalty);
         totBrickCt = goodbrickTick + badbrickTick;
 
         BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
         PlayerScore.GetComponent<Text>().text = "Player Score: " + pcScore;
         Loops.GetComponent<Text>().text = "Loops = " + loopticker;  //count loopos, based on 10 bricks for each loop
         GBTick.GetComponent<Text>().text = "Good Brick = " + goodBrickTot; //counter for the green
-        BBTick.GetComponent<Text>().text = "Bad Brick = " + badbrickTick;  //counter for the red  
+        BBTick.GetComponent<Text>().text = "Bad Brick = " + badBrickTot;  //counter for the red  
 
         if (goodbrickTick >= _winGame)
         {
@@ -69,20 +69,6 @@ public class ScoringSystem : MonoBehaviour
             stateticker = 0;            
         }
     }
-    public void SaveGameData()
-    {
-        PrefsSave.SaveGame (this);
-    }
-
-    public void LoadGameData()
-    {
-        GameData data = PrefsSave.LoadData();
-        totBrickCt = data.totalBrickCount;
-        badBrickTot = data.badbrick;
-        goodBrickTot = data.goodbrick;
-        pcScore = data.pcscore;
-    }
-
 }
 
 /*    

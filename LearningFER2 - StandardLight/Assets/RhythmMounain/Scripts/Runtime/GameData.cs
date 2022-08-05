@@ -2,26 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 public class GameData 
 {
-    public int totalBrickCount;
-    public int badbrick;
-    public int goodbrick;
-    public int pcscore;
+        public int totalBrickCount;
+        public int badbrickTick;
+        public int goodbrickTick;
 
-    public GameData (ScoringSystem scoreData) //constructor
-    {
-        totalBrickCount = scoreData.totBrickCt;
-        badbrick = scoreData.badBrickTot;
-        goodbrick = scoreData.goodBrickTot;
-        pcscore = scoreData.pcScore;
-    }
+        public GameData (ScoringSystem scoringSystem)
+        {
+            //totalBrickCount = scoringSystem.totalBrickCount;
 
-
+        }
     
 }
-/*NOTES
- * 
+/*
+ * public static int brickCount;
+ *  public static int brickTick;
+    public static int goodbrickTick;
  * 
  */
