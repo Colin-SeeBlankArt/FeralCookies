@@ -19,12 +19,10 @@ public class CollectBrick : MonoBehaviour
 
     public Material[] _bMaterial; //potentially change this int at GameManager
     Renderer rend;
-    //int _bStartColor; //what the coin will be at start
-    //public int _bCurColor; //may need this, but not now
-    //int _colorRandomize; //randomizer to make a coin red
-   
 
     int NewNum;
+
+    int tmTrigger; // initialize this to keep from calling another script??
 
     void Start()
     {
@@ -33,6 +31,7 @@ public class CollectBrick : MonoBehaviour
         rend.sharedMaterial = _bMaterial[0];
         _anim = GetComponent<Animator>();
         RangeRandom(50);
+
     }
    
     void OnTriggerEnter(Collider collider)
@@ -69,11 +68,13 @@ public class CollectBrick : MonoBehaviour
         if (_badBrick)
         {
             ScoringSystem.badbrickTick ++;
+            CountDownTimer._bunnyTrig++;
         }
         else
         {
             ScoringSystem.goodbrickTick ++;
             ScoringSystem._loopTicker ++;
+            CountDownTimer._timeTrig ++;
         }
         DestroyMe(); 
     }
@@ -83,7 +84,7 @@ public class CollectBrick : MonoBehaviour
         _destroyMe = true;
         Instantiate(_boomSprite, transform.position, transform.rotation);
         Instantiate(_Particlecube, transform.position, transform.rotation);
-    }//obvious
+    }
 
     public void RangeRandom(int MyNewNum)
     {
