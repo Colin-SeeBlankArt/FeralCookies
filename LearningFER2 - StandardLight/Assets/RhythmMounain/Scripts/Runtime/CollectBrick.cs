@@ -10,19 +10,16 @@ public class CollectBrick : MonoBehaviour
 
     public static int _focusState;
     private Animator _anim;
-    bool _destroyMe = false;
-    public bool _goodBrick = false; 
-    public bool _badBrick = false;
+    bool _destroyMe = false; 
+    bool _badBrick = false;
 
     private float timerSpeed = 0.2f;
     private float elapsed;
 
     public Material[] _bMaterial; //potentially change this int at GameManager
     Renderer rend;
-    //int _bStartColor; //what the coin will be at start
-    //public int _bCurColor; //may need this, but not now
-    //int _colorRandomize; //randomizer to make a coin red
-   
+
+    public int brickState = 1;
 
     int NewNum;
 
@@ -65,15 +62,16 @@ public class CollectBrick : MonoBehaviour
 
     public void PlayerTrigger()
     {
-        
         if (_badBrick)
         {
-            ScoringSystem.badbrickTick ++;
+            ScoringSystem.badbrickTick++;
+            CountDownTimer._bunnyTrig++;
         }
         else
         {
             ScoringSystem.goodbrickTick ++;
             ScoringSystem._loopTicker ++;
+            CountDownTimer._timeTrig++;
         }
         DestroyMe(); 
     }
@@ -92,35 +90,52 @@ public class CollectBrick : MonoBehaviour
         if (NewNum >= 0 && NewNum <= 34)
         {
             rend.sharedMaterial = _bMaterial[0];
-            Debug.Log("Color Range 1");
+            //Debug.Log("Color Range 1");
         }
         if (NewNum >= 35 && NewNum <= 46)
         {
             rend.sharedMaterial = _bMaterial[1];
-            Debug.Log("Color Range 2");
+            //Debug.Log("Color Range 2");
             _badBrick = true;
         }
         if (NewNum == 47)
         {
             rend.sharedMaterial = _bMaterial[2];
-            Debug.Log("Color Range 3");
+            //Debug.Log("Color Range 3");
         }
         if (NewNum == 48)
         {
             rend.sharedMaterial = _bMaterial[3];
 
-            Debug.Log("Color Range 4");
+            //Debug.Log("Color Range 4");
         }
         if (NewNum == 49)
         {
-            Debug.Log("Randome Range 5");
+            //Debug.Log("Color Range 5");
         }
     } //changes colors, percentaged based
 
+    public void BrickChange()
+    {
+        if (brickState == 1)
+        {
+
+        }
+        else if (brickState == 2)
+        {
+            
+        }
+        else if (brickState == 3)
+        {
+            //blue
+        }
+        else if (brickState == 3)
+        {
+            //purple
+        }
+    }
 
 }
-
-
 
 /*
  *     public void colorChange(int maxNum) 

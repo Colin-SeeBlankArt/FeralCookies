@@ -28,14 +28,23 @@ public class ScoringSystem : MonoBehaviour
     public int loopGoal;
     public int stateGoal;
 
-    int loops;
+
     int loopticker;
-    int state;
-    int stateticker;
 
-    public int _winGame = 64;
+    int _gBricktkr;
+    int _gBrick = 4;
+    int _blBrick = 2;
+    int _blBrktkr;
+    int _prpBrick = 2;
+    int _prpBrktkr;
 
- 
+    public int _winGame;
+
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
         pcScore = (totBrickCt - badBrickTot);
@@ -55,19 +64,27 @@ public class ScoringSystem : MonoBehaviour
             GameManager._noteQuota ++;
         }
 
-        if (_loopTicker >= loopGoal) //for every x bricks, do the following:
+        if (_loopTicker >= _gBrick) 
         {           
-            Debug.Log("Loop Count Change " + _loopTicker);
+            Debug.Log("Green Brick Tick");
             _loopTicker = 0;
-            loopticker++;  //need to name these a little better!!
-            stateticker++;
+            loopticker++;  
+            _blBrktkr++;
         }
-        if (stateticker >= stateGoal)
+
+        if (_blBrktkr >= _blBrick)
         {
-            Debug.Log("State Index Change = " + state);
-            state++;
-            stateticker = 0;            
+            Debug.Log("Blue Brick Tick");
+            _blBrktkr = 0;
+            _prpBrktkr++;
         }
+
+        if (_prpBrktkr >= _prpBrick)
+        {
+            print("Purple Brick Count");
+            _prpBrktkr = 0;
+        }
+
     }
 }
 
