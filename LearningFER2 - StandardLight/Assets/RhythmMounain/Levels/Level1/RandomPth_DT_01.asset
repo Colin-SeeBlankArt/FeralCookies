@@ -36,17 +36,17 @@ MonoBehaviour:
   restrictPitch: 0
   restrictYaw: 0
   restrictRoll: 0
-  usePitch: 0
-  useYaw: 0
+  usePitch: 1
+  useYaw: 1
   useRoll: 1
   useColors: 0
   useSizes: 0
   minOrientation: {x: -15, y: 0, z: 0}
   maxOrientation: {x: 15, y: 1, z: 25}
   minRandomStep: {x: 0, y: 0, z: 0}
-  maxRandomStep: {x: 0, y: 15, z: 5}
-  minTurnRate: {x: 0, y: -5, z: 0}
-  maxTurnRate: {x: 15, y: 5, z: 15}
+  maxRandomStep: {x: 10, y: 55, z: 2}
+  minTurnRate: {x: 0, y: 25, z: 0}
+  maxTurnRate: {x: 2, y: 0, z: 5}
   startTargetOrientation: {x: 0, y: 0, z: 0}
   useStartPitchTarget: 0
   useStartYawTarget: 0

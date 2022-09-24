@@ -42,6 +42,7 @@ public class CollectBrick : MonoBehaviour
         if (collider.CompareTag("Enemy"))
         {
             Debug.Log("bunny hits a brick");
+            BrickChange();
             rend.sharedMaterial = _bMaterial[1];
             _badBrick = true;
         }
@@ -69,8 +70,8 @@ public class CollectBrick : MonoBehaviour
         }
         else
         {
-            ScoringSystem.goodbrickTick ++;
-            ScoringSystem._loopTicker ++;
+            ScoringSystem.goodbrickTick++;
+            ScoringSystem._loopTicker++;
             CountDownTimer._timeTrig++;
         }
         DestroyMe(); 

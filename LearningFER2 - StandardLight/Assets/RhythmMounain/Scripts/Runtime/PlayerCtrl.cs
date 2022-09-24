@@ -127,7 +127,7 @@ public class PlayerCtrl : MonoBehaviour
         }
         if (collider.CompareTag("BlockL"))
         {
-            runner.lane =+ 2;
+            runner.lane++;
             ShipAnim.SetBool("Right_trig", true);
         }
         if (collider.CompareTag("BlockR"))

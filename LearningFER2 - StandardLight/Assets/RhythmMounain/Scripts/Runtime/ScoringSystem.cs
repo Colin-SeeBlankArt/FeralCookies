@@ -10,7 +10,14 @@ public class ScoringSystem : MonoBehaviour
     public GameObject Loops;
     public GameObject GBTick; 
     public GameObject BBTick;
-    public Text textobject;
+    //public Text textobject;
+    public Text greenTick;
+    public Text blueTick;
+    public Text purpleTick;
+
+    public Slider _greenSlider;
+    public Slider _blueSlider;
+    public Slider _purpleSlider;
 
     public static int brickTick;
     public static int goodbrickTick;  //this will be a positive impact on loop count
@@ -25,29 +32,36 @@ public class ScoringSystem : MonoBehaviour
     int goodBrickTot;
     int badBrickTot;
 
-    public int loopGoal;
-    public int stateGoal;
-
-
     int loopticker;
 
     int _gBricktkr;
-    int _gBrick = 4;
-    int _blBrick = 2;
-    int _blBrktkr;
-    int _prpBrick = 2;
-    int _prpBrktkr;
+    int _blBrktkr;                          // Ticker for Purple Bricks 
+    int _prpBrktkr;                         // Tcker for furture Brick colors
+
+    public int _greenBrickGoals = 4;        // Trigger for Blue Brick 
+    public int _blueBrickGoals = 2;         // Trigger for Purple Brick
+    public int _purpleBrickGoals = 2;       // Trigger for future Brick colors
 
     public int _winGame;
 
     private void Start()
     {
-        
+        _greenSlider.maxValue = _greenBrickGoals;
+        _blueSlider.maxValue = _blueBrickGoals;
+        _purpleSlider.maxValue = _purpleBrickGoals;
     }
 
     void Update()
     {
         pcScore = (totBrickCt - badBrickTot);
+
+        _greenSlider.value = _loopTicker;
+        greenTick.text = ""+ _loopTicker;
+        _blueSlider.value = _blBrktkr;
+        blueTick.text = "" + _blBrktkr;
+        _purpleSlider.value = _prpBrktkr;
+        purpleTick.text = "" + _prpBrktkr;
+
 
         goodBrickTot = goodbrickTick;
         badBrickTot = (badbrickTick + _penalty);
@@ -64,7 +78,7 @@ public class ScoringSystem : MonoBehaviour
             GameManager._noteQuota ++;
         }
 
-        if (_loopTicker >= _gBrick) 
+        if (_loopTicker >= _greenBrickGoals) 
         {           
             Debug.Log("Green Brick Tick");
             _loopTicker = 0;
@@ -72,14 +86,14 @@ public class ScoringSystem : MonoBehaviour
             _blBrktkr++;
         }
 
-        if (_blBrktkr >= _blBrick)
+        if (_blBrktkr >= _blueBrickGoals)
         {
             Debug.Log("Blue Brick Tick");
             _blBrktkr = 0;
             _prpBrktkr++;
         }
 
-        if (_prpBrktkr >= _prpBrick)
+        if (_prpBrktkr >= _purpleBrickGoals)
         {
             print("Purple Brick Count");
             _prpBrktkr = 0;
