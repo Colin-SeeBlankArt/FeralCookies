@@ -17,7 +17,13 @@ public class SoundBox : MonoBehaviour
 
         if (collider.CompareTag("Player"))
         {
-            soundBite.Play("BassLoop");
+            //soundBite.Play("KeysA1");
+            soundBite.Play("BassLoop"); 
         }
     }
 }
+
+//if (collider.CompareTage("Player") && (coinCount <= 25)
+//      {
+//          soundBite.Play(" ")
+//      }
