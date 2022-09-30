@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static int StateTick;
     public int _currentState;
 
+    public GameObject NextLevel;    //win level panel
     public GameObject PausePanel; //pause panel, currently
     public GameObject EndTime; //end time panel, currently
 
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        _noteQuota = 0;
         currentState.GetComponent<Text>().text = "State = " + StateTick;
     }
 
@@ -86,7 +88,7 @@ public class GameManager : MonoBehaviour
     }
     public void WinGame()
     {
-        PausePanel.gameObject.SetActive(!PausePanel.gameObject.activeSelf); //opens pause menu
+        NextLevel.gameObject.SetActive(!NextLevel.gameObject.activeSelf); //opens pause menu
         Debug.Log("Win Game!");
         Time.timeScale = 0;
 

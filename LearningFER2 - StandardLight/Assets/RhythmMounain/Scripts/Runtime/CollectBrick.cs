@@ -10,8 +10,10 @@ public class CollectBrick : MonoBehaviour
 
     public static int _focusState;
     private Animator _anim;
-    bool _destroyMe = false; 
+    bool _destroyMe = false;
+    bool _greenbrick = false;
     bool _badBrick = false;
+    bool _purpStacking = false;
 
     private float timerSpeed = 0.2f;
     private float elapsed;
@@ -46,6 +48,8 @@ public class CollectBrick : MonoBehaviour
             rend.sharedMaterial = _bMaterial[1];
             _badBrick = true;
         }
+
+        
     }
 
     void Update()
@@ -68,7 +72,13 @@ public class CollectBrick : MonoBehaviour
             ScoringSystem.badbrickTick++;
             CountDownTimer._bunnyTrig++;
         }
-        else
+        if (_purpStacking)
+        {
+            ScoringSystem._purpStack++;
+            Debug.Log("Purple Stacks");
+        }
+
+        if (_greenbrick)
         {
             ScoringSystem.goodbrickTick++;
             ScoringSystem._loopTicker++;
@@ -91,6 +101,7 @@ public class CollectBrick : MonoBehaviour
         if (NewNum >= 0 && NewNum <= 34)
         {
             rend.sharedMaterial = _bMaterial[0];
+            _greenbrick = true;
             //Debug.Log("Color Range 1");
         }
         if (NewNum >= 35 && NewNum <= 46)
@@ -103,6 +114,7 @@ public class CollectBrick : MonoBehaviour
         {
             rend.sharedMaterial = _bMaterial[2];
             //Debug.Log("Color Range 3");
+            _purpStacking = true;
         }
         if (NewNum == 48)
         {
@@ -139,7 +151,10 @@ public class CollectBrick : MonoBehaviour
 }
 
 /*
- *     public void colorChange(int maxNum) 
+
+
+
+     public void colorChange(int maxNum) 
     {
         int randomNum = Random.Range(0, maxNum);
         _colorRandomize = randomNum;

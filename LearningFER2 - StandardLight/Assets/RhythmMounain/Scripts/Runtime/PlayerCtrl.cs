@@ -181,7 +181,7 @@ public class PlayerCtrl : MonoBehaviour
         runner.followSpeed = speed;
         if (speed == 0f)
         {
-            EndScreen.Open();
+            //EndScreen.Open();
         }
     }
 }

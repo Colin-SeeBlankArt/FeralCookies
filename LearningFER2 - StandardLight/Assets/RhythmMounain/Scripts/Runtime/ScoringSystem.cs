@@ -23,6 +23,8 @@ public class ScoringSystem : MonoBehaviour
     public static int goodbrickTick;  //this will be a positive impact on loop count
     public static int badbrickTick; //this will be a negative impact on loop count
     public static int _penalty; //hit the bunny, get penalized
+    public static int _blueStack; //blue coin stack
+    public static int _purpStack; //purple coin stack
 
     public static int _loopTicker;
 
@@ -38,14 +40,15 @@ public class ScoringSystem : MonoBehaviour
     int _blBrktkr;                          // Ticker for Purple Bricks 
     int _prpBrktkr;                         // Tcker for furture Brick colors
 
-    public int _greenBrickGoals = 4;        // Trigger for Blue Brick 
-    public int _blueBrickGoals = 2;         // Trigger for Purple Brick
+    public int _greenBrickGoals = 4;        // Trigger for + Blue Brick 
+    public int _blueBrickGoals = 2;         // Trigger for + Purple Brick
     public int _purpleBrickGoals = 2;       // Trigger for future Brick colors
 
-    public int _winGame;
+    public int _winLevel;
 
     private void Start()
     {
+        loopticker = 0;
         _greenSlider.maxValue = _greenBrickGoals;
         _blueSlider.maxValue = _blueBrickGoals;
         _purpleSlider.maxValue = _purpleBrickGoals;
@@ -60,7 +63,7 @@ public class ScoringSystem : MonoBehaviour
         _blueSlider.value = _blBrktkr;
         blueTick.text = "" + _blBrktkr;
         _purpleSlider.value = _prpBrktkr;
-        purpleTick.text = "" + _prpBrktkr;
+        purpleTick.text = "" + _purpStack;
 
 
         goodBrickTot = goodbrickTick;
@@ -73,7 +76,7 @@ public class ScoringSystem : MonoBehaviour
         GBTick.GetComponent<Text>().text = "Good Brick = " + goodBrickTot; //counter for the green
         BBTick.GetComponent<Text>().text = "Bad Brick = " + badBrickTot;  //counter for the red  
 
-        if (goodbrickTick >= _winGame)
+        if (loopticker >= _winLevel)
         {
             GameManager._noteQuota ++;
         }
@@ -81,9 +84,9 @@ public class ScoringSystem : MonoBehaviour
         if (_loopTicker >= _greenBrickGoals) 
         {           
             Debug.Log("Green Brick Tick");
-            _loopTicker = 0;
-            loopticker++;  
+            _loopTicker = 0;            
             _blBrktkr++;
+            _blueStack++;
         }
 
         if (_blBrktkr >= _blueBrickGoals)
@@ -91,6 +94,8 @@ public class ScoringSystem : MonoBehaviour
             Debug.Log("Blue Brick Tick");
             _blBrktkr = 0;
             _prpBrktkr++;
+            loopticker++;
+            _purpStack++;
         }
 
         if (_prpBrktkr >= _purpleBrickGoals)

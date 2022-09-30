@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Dreamteck.Forever;
 
 public class UI_Manager : MonoBehaviour
 {
     Animator anim;
-
 
   
     public void Start()
@@ -18,7 +18,12 @@ public class UI_Manager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
     }
+    public void StartPlayer()
+    {
+        //activate player in 3 secs after pressiong this button
+        //LevelGen.Awake = true
 
+    }
     public void UI_Pop () // use this to test out ideas for "popping" menus telling the player "something" happened
     {
         //create simple 3 sec time, sec 1 fade in, sec 2 read text, sec 3 fade out
