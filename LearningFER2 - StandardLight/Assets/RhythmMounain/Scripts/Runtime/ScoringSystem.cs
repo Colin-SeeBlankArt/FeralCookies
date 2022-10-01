@@ -1,10 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Dreamteck;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoringSystem : MonoBehaviour
 {
+    public static void RecordResults()
+    {
+        var gameData = SaveManager.Instance.LoadDataBlocking("GameData", new GameSaveData());
+        
+        var sessionData = new GameSessionData()
+        {
+            TimeCreated = DateTime.UtcNow,
+            TotalBricks = brickTick,
+            TotalGoodBricks = goodbrickTick,
+            TotalBadBricks = badbrickTick,
+            BlueStack = _blueStack,
+            PurpStack = _purpStack
+        };
+
+        gameData.SessionData ??= Array.Empty<GameSessionData>();
+        ArrayUtility.Add(ref gameData.SessionData, sessionData);
+
+        SaveManager.Instance.SaveData("GameData", gameData);
+    }
+    
     public GameObject BrickCounter;
     public GameObject PlayerScore;
     public GameObject Loops;
