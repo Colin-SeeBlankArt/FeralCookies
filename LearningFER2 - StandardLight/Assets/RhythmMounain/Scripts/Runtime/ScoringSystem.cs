@@ -105,6 +105,11 @@ public class ScoringSystem : MonoBehaviour
         }
 
     }
+
+    public void ResetScore()
+    {
+        //reset all points to zero
+    }
 }
 
 /*    
