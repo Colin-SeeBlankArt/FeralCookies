@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject NextLevel;    //win level panel
     public GameObject PausePanel; //pause panel, currently
+    bool _paused = false;
     public GameObject EndTime; //end time panel, currently
 
     //instaniate bunny!!
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         _noteQuota = 0;
+        UnPauseGame();
         currentState.GetComponent<Text>().text = "State = " + StateTick;
     }
 
@@ -35,8 +37,10 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
+            _paused = true;
         }
- 
+       
+
         elapsed += Time.deltaTime;
         if (elapsed >= _makeB)
         {
@@ -61,6 +65,11 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0; //stops game time
         PausePanel.gameObject.SetActive(!PausePanel.gameObject.activeSelf); //opens pause menu
+    }
+
+    public void UnPauseGame()
+    {
+        Time.timeScale = 1;
     }
 
     public void EndTimer()

@@ -44,6 +44,7 @@ public class ScoringSystem : MonoBehaviour
     public int _blueBrickGoals = 2;         // Trigger for + Purple Brick
     public int _purpleBrickGoals = 2;       // Trigger for future Brick colors
 
+    public static int _resetCounts = 0;
     public int _winLevel;
 
     private void Start()
@@ -61,7 +62,7 @@ public class ScoringSystem : MonoBehaviour
         _greenSlider.value = _loopTicker;
         greenTick.text = ""+ _loopTicker;
         _blueSlider.value = _blBrktkr;
-        blueTick.text = "" + _blBrktkr;
+        blueTick.text = "" + _blueStack;
         _purpleSlider.value = _prpBrktkr;
         purpleTick.text = "" + _purpStack;
 
@@ -104,7 +105,12 @@ public class ScoringSystem : MonoBehaviour
             _prpBrktkr = 0;
         }
 
-    }
+        if (_resetCounts ==1)
+        {
+            loopticker = 0;
+            
+        }
+}
 }
 
 /*    
