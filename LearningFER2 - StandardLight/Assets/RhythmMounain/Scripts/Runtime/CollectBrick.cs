@@ -13,7 +13,6 @@ public class CollectBrick : MonoBehaviour
     bool _destroyMe = false;
     bool _greenbrick = false;
     bool _badBrick = false;
-    bool _blueStacking = false;
     bool _purpStacking = false;
 
     private float timerSpeed = 0.2f;
@@ -75,12 +74,8 @@ public class CollectBrick : MonoBehaviour
         }
         if (_purpStacking)
         {
-            ScoringSystem._purpStack++;           
-        }
-
-        if (_blueStacking)
-        {
-            ScoringSystem._blueStack++;
+            ScoringSystem._purpStack++;
+            Debug.Log("Purple Stacks");
         }
 
         if (_greenbrick)
@@ -118,14 +113,13 @@ public class CollectBrick : MonoBehaviour
         if (NewNum == 47)
         {
             rend.sharedMaterial = _bMaterial[2];
-            _blueStacking = true;
             //Debug.Log("Color Range 3");
-
+            _purpStacking = true;
         }
         if (NewNum == 48)
         {
             rend.sharedMaterial = _bMaterial[3];
-            _purpStacking = true;
+
             //Debug.Log("Color Range 4");
         }
         if (NewNum == 49)
