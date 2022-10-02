@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
     }
     public void WinGame()
     {
+        ScoringSystem.RecordResults();
         NextLevel.gameObject.SetActive(!NextLevel.gameObject.activeSelf); //opens pause menu
         Debug.Log("Win Game!");
         Time.timeScale = 0;
