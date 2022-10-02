@@ -16,7 +16,7 @@ public class SaveGamesFreeJsonSaveManagerImplementation : ISaveManagerImplementa
     
     private readonly ISaveGameSerializer m_serializer = new SaveGameJsonSerializer();
     
-    public Task SaveDataAsync<T>(string key, T value, CancellationToken cancelToken = new())
+    public Task SaveDataAsync<T>(string key, T value, CancellationToken cancelToken = new CancellationToken())
     {
         cancelToken.ThrowIfCancellationRequested();
         
@@ -24,7 +24,7 @@ public class SaveGamesFreeJsonSaveManagerImplementation : ISaveManagerImplementa
         return Task.CompletedTask;
     }
 
-    public Task<T> LoadDataAsync<T>(string key, T defaultIfNotFound = default, CancellationToken cancelToken = new())
+    public Task<T> LoadDataAsync<T>(string key, T defaultIfNotFound = default, CancellationToken cancelToken = new CancellationToken())
     {
         cancelToken.ThrowIfCancellationRequested();
         

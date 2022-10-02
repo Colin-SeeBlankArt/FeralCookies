@@ -31,8 +31,8 @@ public class GameSaveData
  */
 public interface ISaveManagerImplementation
 {
-    Task SaveDataAsync<T>(string key, T value, CancellationToken cancelToken = new());
-    Task<T> LoadDataAsync<T>(string key, T defaultIfNotFound = default, CancellationToken cancelToken = new());
+    Task SaveDataAsync<T>(string key, T value, CancellationToken cancelToken = new CancellationToken());
+    Task<T> LoadDataAsync<T>(string key, T defaultIfNotFound = default, CancellationToken cancelToken = new CancellationToken());
 }
 
 public class SaveManager : MonoBehaviour
