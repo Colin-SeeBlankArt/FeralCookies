@@ -1,3 +1,4 @@
+
 using System;
 using Dreamteck;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class ScoringSystem : MonoBehaviour
     public static void RecordResults()
     {
         var gameData = SaveManager.Instance.LoadDataBlocking("GameData", new GameSaveData());
-        
+
         var sessionData = new GameSessionData()
         {
             TimeCreated = DateTime.UtcNow,
@@ -24,11 +25,11 @@ public class ScoringSystem : MonoBehaviour
 
         SaveManager.Instance.SaveData("GameData", gameData);
     }
-    
+
     public GameObject BrickCounter;
     public GameObject PlayerScore;
     public GameObject Loops;
-    public GameObject GBTick; 
+    public GameObject GBTick;
     public GameObject BBTick;
     //public Text textobject;
     public Text greenTick;
@@ -42,17 +43,19 @@ public class ScoringSystem : MonoBehaviour
     public static int brickTick;
     public static int goodbrickTick;  //this will be a positive impact on loop count
     public static int badbrickTick; //this will be a negative impact on loop count
+    public static int _negativeBrickTick;
     public static int _penalty; //hit the bunny, get penalized
     public static int _blueStack; //blue coin stack
     public static int _purpStack; //purple coin stack
 
-    public static int _loopTicker;
+    public static int _loopTicker;  //actual score variable
 
     public int pcScore;
 
     int totBrickCt;
     int goodBrickTot;
     int badBrickTot;
+    //int _negativeBrick;
 
     int loopticker;
 
@@ -69,6 +72,7 @@ public class ScoringSystem : MonoBehaviour
     private void Start()
     {
         loopticker = 0;
+        _negativeBrickTick = 0;
         _greenSlider.maxValue = _greenBrickGoals;
         _blueSlider.maxValue = _blueBrickGoals;
         _purpleSlider.maxValue = _purpleBrickGoals;
@@ -76,18 +80,23 @@ public class ScoringSystem : MonoBehaviour
 
     void Update()
     {
-        pcScore = (totBrickCt - badBrickTot);
+        if(_loopTicker <= 0)
+        {
+            _loopTicker = 0;
+        }
+
+        pcScore = (totBrickCt);
 
         _greenSlider.value = _loopTicker;
-        greenTick.text = ""+ _loopTicker;
+        greenTick.text = "" + _loopTicker;
         _blueSlider.value = _blBrktkr;
         blueTick.text = "" + _blBrktkr;
         _purpleSlider.value = _prpBrktkr;
         purpleTick.text = "" + _purpStack;
 
 
-        goodBrickTot = goodbrickTick;
-        badBrickTot = (badbrickTick + _penalty);
+        goodBrickTot = (goodbrickTick - badBrickTot);
+        badBrickTot = (_negativeBrickTick + _penalty);
         totBrickCt = goodbrickTick + badbrickTick;
 
         BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
@@ -98,15 +107,16 @@ public class ScoringSystem : MonoBehaviour
 
         if (loopticker >= _winLevel)
         {
-            GameManager._noteQuota ++;
+            GameManager._noteQuota++;
         }
 
-        if (_loopTicker >= _greenBrickGoals) 
-        {           
+        if (_loopTicker >= _greenBrickGoals)
+        {
             Debug.Log("Green Brick Tick");
-            _loopTicker = 0;            
+            _loopTicker = 0;
             _blBrktkr++;
             _blueStack++;
+
         }
 
         if (_blBrktkr >= _blueBrickGoals)
@@ -116,6 +126,7 @@ public class ScoringSystem : MonoBehaviour
             _prpBrktkr++;
             loopticker++;
             _purpStack++;
+            //SoundBox._playAudio = 1;
         }
 
         if (_prpBrktkr >= _purpleBrickGoals)
@@ -131,6 +142,7 @@ public class ScoringSystem : MonoBehaviour
         //reset all points to zero
     }
 }
+
 
 /*    
  *        void LoopCounter()

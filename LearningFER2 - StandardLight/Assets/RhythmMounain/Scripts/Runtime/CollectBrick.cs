@@ -13,7 +13,8 @@ public class CollectBrick : MonoBehaviour
     bool _destroyMe = false;
     bool _greenbrick = false;
     bool _badBrick = false;
-    bool _purpStacking = false;
+    bool _purple = false;
+    bool _blue = false;
 
     private float timerSpeed = 0.2f;
     private float elapsed;
@@ -25,6 +26,12 @@ public class CollectBrick : MonoBehaviour
 
     int NewNum;
 
+    private AudioManager _audioManager;
+
+    void Awake()
+    {
+        _audioManager = FindObjectOfType<AudioManager>();
+    }
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -32,6 +39,7 @@ public class CollectBrick : MonoBehaviour
         rend.sharedMaterial = _bMaterial[0];
         _anim = GetComponent<Animator>();
         RangeRandom(50);
+
     }
    
     void OnTriggerEnter(Collider collider)
@@ -43,10 +51,12 @@ public class CollectBrick : MonoBehaviour
 
         if (collider.CompareTag("Enemy"))
         {
-            Debug.Log("bunny hits a brick");
+            Debug.Log("spark hits a brick");
             BrickChange();
-            rend.sharedMaterial = _bMaterial[1];
+            rend.sharedMaterial = _bMaterial[1]; //change this to a generic trigger
+
             _badBrick = true;
+            _greenbrick = false;
         }
 
         
@@ -67,23 +77,37 @@ public class CollectBrick : MonoBehaviour
 
     public void PlayerTrigger()
     {
+        if (_greenbrick)
+        {
+            ScoringSystem.goodbrickTick++;  //green brick tally
+            ScoringSystem._loopTicker++;     //for counter to work in Scoring
+            CountDownTimer._timeTrig++;
+            _audioManager.Play("BrickPing");
+        }
+
         if (_badBrick)
         {
             ScoringSystem.badbrickTick++;
             CountDownTimer._bunnyTrig++;
+            ScoringSystem._negativeBrickTick = +2;
+            PlayerCtrl._redbrick = 1; //send to playerctl to reduce speed temp
+            _audioManager.Play("BunnyPing");
         }
-        if (_purpStacking)
+        if (_purple)
         {
             ScoringSystem._purpStack++;
-            Debug.Log("Purple Stacks");
+            Debug.Log("Purple");
+            _audioManager.Play("BrickPing");
         }
 
-        if (_greenbrick)
+        if (_blue)
         {
-            ScoringSystem.goodbrickTick++;
-            ScoringSystem._loopTicker++;
-            CountDownTimer._timeTrig++;
+            ScoringSystem._blueStack++;
+            //Debug.Log("Blue");
+            _audioManager.Play("BrickPing");
         }
+
+
         DestroyMe(); 
     }
 
@@ -102,25 +126,23 @@ public class CollectBrick : MonoBehaviour
         {
             rend.sharedMaterial = _bMaterial[0];
             _greenbrick = true;
-            //Debug.Log("Color Range 1");
         }
         if (NewNum >= 35 && NewNum <= 46)
         {
             rend.sharedMaterial = _bMaterial[1];
-            //Debug.Log("Color Range 2");
             _badBrick = true;
         }
         if (NewNum == 47)
         {
             rend.sharedMaterial = _bMaterial[2];
-            //Debug.Log("Color Range 3");
-            _purpStacking = true;
+            _blue = true;
+            ScoringSystem._blueStack++;
         }
         if (NewNum == 48)
         {
             rend.sharedMaterial = _bMaterial[3];
-
-            //Debug.Log("Color Range 4");
+            _purple = true;
+            ScoringSystem._purpStack++;
         }
         if (NewNum == 49)
         {

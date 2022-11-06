@@ -7,6 +7,11 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
+
+    public AudioSource audioSource;
+
+    public static int _pause=0;
+
     void Awake()
     {
         if (instance == null)
@@ -26,11 +31,6 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-    }
-
-    void Start()
-    {
-        //Play("BassLine 1");
     }
 
     public void Play (string name)

@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
         _noteQuota = 0;
         currentState.GetComponent<Text>().text = "State = " + StateTick;
+        Play();
     }
 
     void Update()
@@ -56,11 +57,14 @@ public class GameManager : MonoBehaviour
     public void Play()
     {
         Time.timeScale = 1;
+        //send int to Audio to Play Sound
+        //AudioManager._pause = 0;
     }
     public void PauseGame()
     {
         Time.timeScale = 0; //stops game time
         PausePanel.gameObject.SetActive(!PausePanel.gameObject.activeSelf); //opens pause menu
+        AudioManager._pause = 2;
     }
 
     public void EndTimer()

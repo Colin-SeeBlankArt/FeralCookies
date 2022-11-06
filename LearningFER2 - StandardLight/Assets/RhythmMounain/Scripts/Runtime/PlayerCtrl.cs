@@ -30,7 +30,7 @@ public class PlayerCtrl : MonoBehaviour
     private Animator _turnAnim;
     bool _turnL, _turnR;  // using ths to keep the ship leaning into a turn
     private AudioManager soundBite;
-
+    public static int _redbrick=0; //reduce speed when hitting a bunny or red brick
 
     void Start()
     {
@@ -121,19 +121,18 @@ public class PlayerCtrl : MonoBehaviour
         {
             soundBite.Play("BunnyPing");
         }
-        if (collider.CompareTag("Brick"))
-        {
-            soundBite.Play("BrickPing");
-        }
+  
         if (collider.CompareTag("BlockL"))
         {
             runner.lane++;
             ShipAnim.SetBool("Right_trig", true);
+            soundBite.Play("Bump");
         }
         if (collider.CompareTag("BlockR"))
         {
             runner.lane --;
             ShipAnim.SetBool("Left_trig", true);
+            soundBite.Play("Bump");
         }
  
     }

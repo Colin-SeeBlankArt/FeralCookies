@@ -162,8 +162,8 @@ MonoBehaviour:
   _useUnloadUnusedAssets: 0
   _loopSegmentLogic: 1
   _levelCollection:
-  - {fileID: 11400000, guid: 8a2bfc22fb31896498acba0c0ebbe8f9, type: 2}
-  - {fileID: 11400000, guid: ae996835033846a499dad9ac601bbb7d, type: 2}
+  - {fileID: 11400000, guid: 0240ba821cd9e404a8f37797188c512f, type: 2}
+  - {fileID: 11400000, guid: 779ef1555ba23f543b24abbcb92ff9c6, type: 2}
   _levelIteration: 1
   _levelRandomizer: {fileID: 11400000, guid: 8db1a5e45048a064e8e5a55dba6859e5, type: 2}
   _startLevel: 0
@@ -835,7 +835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit to MAin
+  m_text: Quit to Main
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}
   m_sharedMaterial: {fileID: 6365364023026732378, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}
@@ -2266,9 +2266,9 @@ MonoBehaviour:
   _purpleSlider: {fileID: 840018401}
   pcScore: 0
   _greenBrickGoals: 4
-  _blueBrickGoals: 4
+  _blueBrickGoals: 2
   _purpleBrickGoals: 2
-  _winLevel: 2
+  _winLevel: 8
 --- !u!1 &627890586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3879,7 +3879,7 @@ GameObject:
   - component: {fileID: 999591770}
   - component: {fileID: 999591769}
   m_Layer: 5
-  m_Name: BlueLoop
+  m_Name: LoopCount_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4190,7 +4190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restarty Level
+  m_text: Restart Level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}
   m_sharedMaterial: {fileID: 6365364023026732378, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}
@@ -4279,7 +4279,7 @@ GameObject:
   - component: {fileID: 1198313362}
   - component: {fileID: 1198313361}
   m_Layer: 5
-  m_Name: PurpleLoop
+  m_Name: MeasureCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4444,24 +4444,19 @@ MonoBehaviour:
     pitch: 0.31
     loop: 0
     source: {fileID: 0}
-  - name: BassLine 1
-    clip: {fileID: 8300000, guid: 8ab2ffdf3b7f750448cd1c39dd93c768, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: BassLoopA
-    clip: {fileID: 8300000, guid: 1555819c4fee3af4caf279d3583fa290, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: KeysA1
-    clip: {fileID: 8300000, guid: 2d968cea5f16fdc4c944a158c8e769e0, type: 3}
+  - name: Bump
+    clip: {fileID: 8300000, guid: 2fb4a4469c1d6f944b525486ebb79cf0, type: 3}
     volume: 0.423
+    pitch: 0.78
+    loop: 0
+    source: {fileID: 0}
+  - name: BassA
+    clip: {fileID: 8300000, guid: 1555819c4fee3af4caf279d3583fa290, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &1297039544
 GameObject:
   m_ObjectHideFlags: 0
@@ -6075,52 +6070,6 @@ MonoBehaviour:
   _makeB: 5
   bunny: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
   _sMSegs: {fileID: 4174493254310642626, guid: 37623a2aee5fee44ebdbf27440445924, type: 3}
---- !u!1 &1806035090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1806035092}
-  - component: {fileID: 1806035091}
-  m_Layer: 0
-  m_Name: koreogrpahy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1806035091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806035090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 316907577, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadedKoreography:
-  - {fileID: 11400000, guid: 49a6f1a58c7f8ce4698f5c62b31a1d3d, type: 2}
-  eventDelayInSeconds: 0
---- !u!4 &1806035092
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806035090}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.174, y: 0.364, z: -2.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1837213357
 GameObject:
   m_ObjectHideFlags: 0
@@ -6133,7 +6082,7 @@ GameObject:
   - component: {fileID: 1837213360}
   - component: {fileID: 1837213359}
   m_Layer: 5
-  m_Name: GreenLoop
+  m_Name: GreenCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6633,6 +6582,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1766650410}
+        m_TargetAssemblyTypeName: GameManager, RM.Runtime
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
