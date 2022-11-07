@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3443362858170814733}
   - component: {fileID: 8252472489458428330}
   m_Layer: 0
-  m_Name: SoundBox
+  m_Name: SoundBox_OBJ
   m_TagString: SoundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39367ba3832feb64f9625c1b8422b209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  musicBites: {fileID: 0}
+  musicPause: 0
+  startPoint: 0
+  bassA: 0
+  keysA: 0
 --- !u!1 &7365514527849437661
 GameObject:
   m_ObjectHideFlags: 0

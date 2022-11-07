@@ -52,14 +52,12 @@ public class CollectBrick : MonoBehaviour
         if (collider.CompareTag("Enemy"))
         {
             Debug.Log("spark hits a brick");
-            BrickChange();
             rend.sharedMaterial = _bMaterial[1]; //change this to a generic trigger
-
             _badBrick = true;
             _greenbrick = false;
-        }
-
-        
+            _purple = false;
+            _blue = false;
+        }       
     }
 
     void Update()
@@ -82,22 +80,26 @@ public class CollectBrick : MonoBehaviour
             ScoringSystem.goodbrickTick++;  //green brick tally
             ScoringSystem._loopTicker++;     //for counter to work in Scoring
             CountDownTimer._timeTrig++;
+            rend.sharedMaterial = _bMaterial[0];
             _audioManager.Play("BrickPing");
+            brickState = 0;
         }
 
         if (_badBrick)
         {
             ScoringSystem.badbrickTick++;
             CountDownTimer._bunnyTrig++;
-            ScoringSystem._negativeBrickTick = +2;
+            ScoringSystem._negativeBrickTick++;
             PlayerCtrl._redbrick = 1; //send to playerctl to reduce speed temp
             _audioManager.Play("BunnyPing");
+            brickState = 1;
         }
         if (_purple)
         {
             ScoringSystem._purpStack++;
             Debug.Log("Purple");
             _audioManager.Play("BrickPing");
+            brickState = 2;
         }
 
         if (_blue)
@@ -105,8 +107,8 @@ public class CollectBrick : MonoBehaviour
             ScoringSystem._blueStack++;
             //Debug.Log("Blue");
             _audioManager.Play("BrickPing");
+            brickState = 3;
         }
-
 
         DestroyMe(); 
     }
@@ -116,60 +118,35 @@ public class CollectBrick : MonoBehaviour
         _destroyMe = true;
         Instantiate(_boomSprite, transform.position, transform.rotation);
         Instantiate(_Particlecube, transform.position, transform.rotation);
-    }//obvious
+    }
 
+    //changes colors, percentaged based
     public void RangeRandom(int MyNewNum)
     {
         int _ranNum = Random.Range(0, MyNewNum);
         NewNum = _ranNum;
         if (NewNum >= 0 && NewNum <= 34)
         {
-            rend.sharedMaterial = _bMaterial[0];
             _greenbrick = true;
         }
-        if (NewNum >= 35 && NewNum <= 46)
+        if (NewNum >= 35 && NewNum <= 47)
         {
             rend.sharedMaterial = _bMaterial[1];
             _badBrick = true;
         }
-        if (NewNum == 47)
+        if (NewNum == 48)
         {
             rend.sharedMaterial = _bMaterial[2];
             _blue = true;
             ScoringSystem._blueStack++;
         }
-        if (NewNum == 48)
+        if (NewNum == 49)
         {
             rend.sharedMaterial = _bMaterial[3];
             _purple = true;
             ScoringSystem._purpStack++;
         }
-        if (NewNum == 49)
-        {
-            //Debug.Log("Color Range 5");
-        }
-    } //changes colors, percentaged based
-
-    public void BrickChange()
-    {
-        if (brickState == 1)
-        {
-
-        }
-        else if (brickState == 2)
-        {
-            
-        }
-        else if (brickState == 3)
-        {
-            //blue
-        }
-        else if (brickState == 3)
-        {
-            //purple
-        }
-    }
-
+    } 
 }
 
 /*

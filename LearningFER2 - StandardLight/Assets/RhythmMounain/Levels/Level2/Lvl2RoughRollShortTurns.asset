@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fab16db9ad26e5d4589d394443875f2f, type: 3}
-  m_Name: Lvl2_PathGen_Random
+  m_Name: Lvl2RoughRollShortTurns
   m_EditorClassIdentifier: 
   pathType: 2
   sampleRate: 10
@@ -38,15 +38,15 @@ MonoBehaviour:
   restrictRoll: 0
   usePitch: 0
   useYaw: 1
-  useRoll: 1
+  useRoll: 0
   useColors: 0
   useSizes: 0
   minOrientation: {x: 0, y: 0, z: 0}
   maxOrientation: {x: 0, y: 0, z: 0}
-  minRandomStep: {x: 0, y: 0, z: 0}
-  maxRandomStep: {x: 0, y: 10, z: 3}
-  minTurnRate: {x: 0, y: 0, z: 0}
-  maxTurnRate: {x: 0, y: 10, z: 3}
+  minRandomStep: {x: 0, y: 5, z: 0}
+  maxRandomStep: {x: 0, y: 5, z: 15}
+  minTurnRate: {x: 0, y: 10, z: 0}
+  maxTurnRate: {x: 0, y: 15, z: 15}
   startTargetOrientation: {x: 0, y: 0, z: 0}
   useStartPitchTarget: 0
   useStartYawTarget: 0

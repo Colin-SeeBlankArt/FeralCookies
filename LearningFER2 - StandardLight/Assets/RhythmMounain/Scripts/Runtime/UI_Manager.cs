@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Dreamteck.Forever;
 
@@ -8,7 +9,6 @@ public class UI_Manager : MonoBehaviour
 {
     Animator anim;
 
-  
     public void Start()
     {
         anim = GetComponent<Animator>();
@@ -34,6 +34,12 @@ public class UI_Manager : MonoBehaviour
     public void FadeFromBlack()
     {
         anim.SetBool("FromBlack", true);
+    }
+
+    public void QuitGame()
+    {
+        UnityEngine.Debug.Log("Quit!");
+        Application.Quit();
     }
 
     //from Brackey's - Load screen

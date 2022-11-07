@@ -52,6 +52,8 @@ public class ScoringSystem : MonoBehaviour
 
     public int pcScore;
 
+    public static int _resetScores = 0;
+
     int totBrickCt;
     int goodBrickTot;
     int badBrickTot;
@@ -71,8 +73,10 @@ public class ScoringSystem : MonoBehaviour
 
     private void Start()
     {
-        loopticker = 0;
-        _negativeBrickTick = 0;
+        //for scoring
+        ResetScore();
+
+        //for small sliders in UI
         _greenSlider.maxValue = _greenBrickGoals;
         _blueSlider.maxValue = _blueBrickGoals;
         _purpleSlider.maxValue = _purpleBrickGoals;
@@ -84,9 +88,16 @@ public class ScoringSystem : MonoBehaviour
         {
             _loopTicker = 0;
         }
+ 
+        if(_resetScores >= 1)
+        {
+            ResetScore();
+            _resetScores = 0;
+        }
 
         pcScore = (totBrickCt);
-
+        
+        //slider logic
         _greenSlider.value = _loopTicker;
         greenTick.text = "" + _loopTicker;
         _blueSlider.value = _blBrktkr;
@@ -94,11 +105,12 @@ public class ScoringSystem : MonoBehaviour
         _purpleSlider.value = _prpBrktkr;
         purpleTick.text = "" + _purpStack;
 
-
+        //scoring logic
         goodBrickTot = (goodbrickTick - badBrickTot);
-        badBrickTot = (_negativeBrickTick + _penalty);
+        badBrickTot = (_negativeBrickTick +2);
         totBrickCt = goodbrickTick + badbrickTick;
 
+        //scoring display
         BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
         PlayerScore.GetComponent<Text>().text = "Player Score: " + pcScore;
         Loops.GetComponent<Text>().text = "Loops = " + loopticker;  //count loopos, based on 10 bricks for each loop
@@ -110,36 +122,35 @@ public class ScoringSystem : MonoBehaviour
             GameManager._noteQuota++;
         }
 
+        //collection logic
         if (_loopTicker >= _greenBrickGoals)
         {
-            Debug.Log("Green Brick Tick");
+            Debug.Log("Green Tick");
             _loopTicker = 0;
             _blBrktkr++;
-            _blueStack++;
-
         }
-
         if (_blBrktkr >= _blueBrickGoals)
         {
-            Debug.Log("Blue Brick Tick");
+            Debug.Log("Blue Tick");
             _blBrktkr = 0;
             _prpBrktkr++;
             loopticker++;
-            _purpStack++;
-            //SoundBox._playAudio = 1;
         }
-
         if (_prpBrktkr >= _purpleBrickGoals)
         {
-            print("Purple Brick Count");
+            print("Purple Count");
             _prpBrktkr = 0;
         }
-
     }
 
     public void ResetScore()
     {
         //reset all points to zero
+        loopticker = 0;
+        _negativeBrickTick = 0;
+        goodbrickTick = 0;
+        goodBrickTot = 0;
+        totBrickCt = 0;
     }
 }
 
