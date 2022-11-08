@@ -11,6 +11,7 @@ public class ResetTimer : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             CountDownTimer._resetTimetk++;
+            ScoringSystem._resetScores++;
         }
     }
 }

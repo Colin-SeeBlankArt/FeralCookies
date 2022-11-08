@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4034647828499682188}
   - component: {fileID: 1624504276742609053}
   - component: {fileID: 3163271213499931641}
-  - component: {fileID: 6537617632923250512}
+  - component: {fileID: 599189167244011302}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: BlockL
@@ -100,8 +100,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6537617632923250512
-BoxCollider:
+--- !u!136 &599189167244011302
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,9 +110,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.94857734, y: 2, z: 0.97027653}
-  m_Center: {x: 0.04780787, y: 0, z: -0.016375465}
+  m_Radius: 0.7367747
+  m_Height: 4.325372
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.022643546, z: 0}
 --- !u!1 &8642973332797002276
 GameObject:
   m_ObjectHideFlags: 0

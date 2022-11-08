@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fab16db9ad26e5d4589d394443875f2f, type: 3}
-  m_Name: Level1_PathGen_Random 1
+  m_Name: Level1_Straight
   m_EditorClassIdentifier: 
   pathType: 2
   sampleRate: 10
@@ -37,19 +37,19 @@ MonoBehaviour:
   restrictYaw: 0
   restrictRoll: 0
   usePitch: 0
-  useYaw: 1
-  useRoll: 1
+  useYaw: 0
+  useRoll: 0
   useColors: 0
   useSizes: 0
   minOrientation: {x: 0, y: 0, z: 0}
   maxOrientation: {x: 0, y: 0, z: 0}
   minRandomStep: {x: 0, y: 0, z: 0}
-  maxRandomStep: {x: 0, y: 15, z: 5}
+  maxRandomStep: {x: 0, y: 0, z: 5}
   minTurnRate: {x: 0, y: 0, z: 0}
-  maxTurnRate: {x: 0, y: 25, z: 5}
+  maxTurnRate: {x: 0, y: 0, z: 5}
   startTargetOrientation: {x: 0, y: 0, z: 0}
   useStartPitchTarget: 0
-  useStartYawTarget: 0
+  useStartYawTarget: 1
   useStartRollTarget: 0
   minColor:
     serializedVersion: 2
