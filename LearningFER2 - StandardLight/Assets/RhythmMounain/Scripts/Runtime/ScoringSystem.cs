@@ -146,7 +146,7 @@ public class ScoringSystem : MonoBehaviour
     public void ResetScore()
     {
         //reset all points to zero
-        loopticker = 0;
+       // loopticker = 0;
         _negativeBrickTick = 0;
         goodbrickTick = 0;
         goodBrickTot = 0;

@@ -4,27 +4,42 @@ using UnityEngine;
 
 public class LoopMachine : MonoBehaviour
 {
-    private float varTime = 0;
-    //loop counter
-    //loop
+    //this is the loop counter machine, used to fire off the audio tracks
+    //this will take in from CollectBricks the TickerCounter
+    static public int _loopTicker =0; //comes from from CollectBrick
+    static public int _resetLoopCount = 0; //comes from Outside (single source)
+
+    int _loopCtr;  //inherits _loopTicker 
+    int _loopCount; //Loop counter, want to reduce count (rule)
+    int _CurLoop; //Holds Current Loop Designation
+    int _loopAdvance;
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
-       
-        float elapsed = Time.time - varTime;
-        float duration = 2.0f;
-        float scalar = elapsed / duration;
-        Debug.Log($"current scalar value {scalar}");
-        if (Input.GetKey(KeyCode.R))
+        _loopCtr = _loopTicker;
+        Debug.Log($"LoopCounter {_loopCtr}");
+
+        if (_resetLoopCount >= 1)
         {
-            ResetTimer();
+            LoopReset();
         }
-
     }
 
-    private void ResetTimer()
+    public void LoopCount()
     {
-        varTime = Time.time;
-
+        if (_loopTicker >= _loopAdvance)
+        {
+            _CurLoop++;
+        }
     }
 
+    public void LoopReset()
+    {
+        _loopCtr = 0;
+
+    }
 }

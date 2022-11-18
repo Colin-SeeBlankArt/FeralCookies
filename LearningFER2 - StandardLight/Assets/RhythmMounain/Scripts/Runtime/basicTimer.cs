@@ -17,4 +17,6 @@ public class basicTimer : MonoBehaviour
             //GetComponent<Flasher>().Flash();
         }
     }
+
+
 }
