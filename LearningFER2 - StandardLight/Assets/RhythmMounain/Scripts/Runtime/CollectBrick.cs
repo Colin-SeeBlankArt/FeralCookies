@@ -139,6 +139,7 @@ public class CollectBrick : MonoBehaviour
             rend.sharedMaterial = _bMaterial[2];
             _blue = true;
             ScoringSystem._blueStack++;
+
         }
         if (NewNum == 49)
         {

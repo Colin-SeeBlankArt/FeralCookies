@@ -107,7 +107,7 @@ public class ScoringSystem : MonoBehaviour
 
         //scoring logic
         goodBrickTot = (goodbrickTick - badBrickTot);
-        badBrickTot = (_negativeBrickTick +2);
+        badBrickTot = (_negativeBrickTick);
         totBrickCt = goodbrickTick + badbrickTick;
 
         //scoring display

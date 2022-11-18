@@ -163,8 +163,9 @@ MonoBehaviour:
   _loopSegmentLogic: 1
   _levelCollection:
   - {fileID: 11400000, guid: 04321983bd02c96449bb407fd0b10313, type: 2}
-  - {fileID: 11400000, guid: 19f4f87d238e59e40a58d0eaa8141d59, type: 2}
-  _levelIteration: 1
+  - {fileID: 11400000, guid: 96c8f7aba04a93645a72fde9cc200381, type: 2}
+  - {fileID: 11400000, guid: d04128a578a41324dad7f8c4db2532f6, type: 2}
+  _levelIteration: 2
   _levelRandomizer: {fileID: 11400000, guid: 8db1a5e45048a064e8e5a55dba6859e5, type: 2}
   _startLevel: 0
   _sharedPathGenerator: {fileID: 11400000, guid: 0ab157164645a1946bbe6000b672d2e3, type: 2}
@@ -2071,7 +2072,7 @@ MonoBehaviour:
   _greenBrickGoals: 4
   _blueBrickGoals: 1
   _purpleBrickGoals: 1
-  _winLevel: 4
+  _winLevel: 2
 --- !u!1 &627890586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,7 +4559,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BassA
     clip: {fileID: 8300000, guid: 1555819c4fee3af4caf279d3583fa290, type: 3}
-    volume: 0.5
+    volume: 0
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -6002,7 +6003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1653926673
 Transform:
   m_ObjectHideFlags: 0

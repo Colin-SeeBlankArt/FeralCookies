@@ -34,7 +34,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void Start()
     {
-        soundBite.Play("EngineNoise");
+        //soundBite.Play("EngineNoise");
     }
     void Awake()
     {
