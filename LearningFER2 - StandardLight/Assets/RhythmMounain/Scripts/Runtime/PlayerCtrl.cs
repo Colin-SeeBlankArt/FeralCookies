@@ -22,6 +22,7 @@ public class PlayerCtrl : MonoBehaviour
 
     //bool canBoost = true;
     private float speed;
+    private float speedBoost; //timer for boost, tied to green brick collection
     private float startSpeed;
 
     // Zack: Had to use reflection since unity tried to hide this information. Not great!
@@ -149,10 +150,11 @@ public class PlayerCtrl : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
-            //if  boost count == ?? && boost = false
-                //On 2 Sec Timer:
-                    // boost; (SetSpeed = GetSpeed+BoostSpeed (??))
-                    //else boost == false
+            runner.followSpeed++;
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.W))
+        {
+            runner.followSpeed--;
         }
 
     }
@@ -182,5 +184,10 @@ public class PlayerCtrl : MonoBehaviour
         {
             //EndScreen.Open();
         }
+    }
+
+    public void SpeedBoost()
+    {
+        runner.followSpeed = speed;
     }
 }

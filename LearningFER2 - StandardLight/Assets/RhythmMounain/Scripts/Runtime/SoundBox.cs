@@ -13,6 +13,8 @@ public class SoundBox : MonoBehaviour
     public bool bassA;
     public bool keysA;
     public static int _pause = 0;
+    public bool resetLoop=false;
+        
 
     void Awake()
     {
@@ -61,6 +63,13 @@ public class SoundBox : MonoBehaviour
         }
     }
 
+    void ResetLoopCount()
+    {
+       if (resetLoop)
+        {
+            LoopMachine._resetLoopCount++;
+        }
+    }
 
 }
 

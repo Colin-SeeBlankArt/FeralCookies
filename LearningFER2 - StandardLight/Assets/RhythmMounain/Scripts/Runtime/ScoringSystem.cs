@@ -1,4 +1,3 @@
-
 using System;
 using Dreamteck;
 using UnityEngine;
@@ -31,7 +30,7 @@ public class ScoringSystem : MonoBehaviour
     public GameObject Loops;
     public GameObject GBTick;
     public GameObject BBTick;
-    //public Text textobject;
+
     public Text greenTick;
     public Text blueTick;
     public Text purpleTick;
@@ -68,15 +67,13 @@ public class ScoringSystem : MonoBehaviour
     public int _greenBrickGoals = 4;        // Trigger for + Blue Brick 
     public int _blueBrickGoals = 2;         // Trigger for + Purple Brick
     public int _purpleBrickGoals = 2;       // Trigger for future Brick colors
-
+    [SerializeField]
     public int _winLevel;
 
     private void Start()
     {
-        //for scoring
         ResetScore();
 
-        //for small sliders in UI
         _greenSlider.maxValue = _greenBrickGoals;
         _blueSlider.maxValue = _blueBrickGoals;
         _purpleSlider.maxValue = _purpleBrickGoals;
@@ -93,6 +90,11 @@ public class ScoringSystem : MonoBehaviour
         {
             ResetScore();
             _resetScores = 0;
+        }
+
+        if (loopticker >= _winLevel)
+        {
+            GameManager._noteQuota++;
         }
 
         pcScore = (totBrickCt);
@@ -117,10 +119,7 @@ public class ScoringSystem : MonoBehaviour
         GBTick.GetComponent<Text>().text = "Good Brick = " + goodBrickTot; //counter for the green
         BBTick.GetComponent<Text>().text = "Bad Brick = " + badBrickTot;  //counter for the red  
 
-        if (loopticker >= _winLevel)
-        {
-            GameManager._noteQuota++;
-        }
+
 
         //collection logic
         if (_loopTicker >= _greenBrickGoals)
@@ -128,6 +127,7 @@ public class ScoringSystem : MonoBehaviour
             Debug.Log("Green Tick");
             _loopTicker = 0;
             _blBrktkr++;
+            
         }
         if (_blBrktkr >= _blueBrickGoals)
         {
@@ -135,6 +135,7 @@ public class ScoringSystem : MonoBehaviour
             _blBrktkr = 0;
             _prpBrktkr++;
             loopticker++;
+            
         }
         if (_prpBrktkr >= _purpleBrickGoals)
         {
@@ -152,11 +153,19 @@ public class ScoringSystem : MonoBehaviour
         goodBrickTot = 0;
         totBrickCt = 0;
     }
+
+    public void WinLevel()//trigger the winLevel in GameManager
+    {
+        GameManager._noteQuota++;
+    }
+
 }
 
 
 /*    
- *        void LoopCounter()
+ *         
+ *  
+ *  void LoopCounter()
     {
         loopticker = 0;
         Debug.Log("loop ticker = " + loopticker);

@@ -1991,9 +1991,9 @@ MonoBehaviour:
   _purpleSlider: {fileID: 840018401}
   pcScore: 0
   _greenBrickGoals: 4
-  _blueBrickGoals: 1
-  _purpleBrickGoals: 1
-  _winLevel: 2
+  _blueBrickGoals: 4
+  _purpleBrickGoals: 2
+  _winLevel: 4
 --- !u!1 &627890586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2655,18 +2655,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _generateSegmentsAhead: 5
-  _activateSegmentsAhead: 1
+  _activateSegmentsAhead: 4
   _loadTimeout: 10
   _maxSegments: 10
   _buildOnAwake: 1
   _multithreaded: 1
   _useUnloadUnusedAssets: 0
-  _loopSegmentLogic: 0
+  _loopSegmentLogic: 1
   _levelCollection:
   - {fileID: 11400000, guid: 04321983bd02c96449bb407fd0b10313, type: 2}
   - {fileID: 11400000, guid: 96c8f7aba04a93645a72fde9cc200381, type: 2}
   - {fileID: 11400000, guid: d04128a578a41324dad7f8c4db2532f6, type: 2}
-  _levelIteration: 0
+  _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
   _sharedPathGenerator: {fileID: 11400000, guid: 98304cf0b75b30d459fe1ab17d00bddb, type: 2}
@@ -6335,6 +6335,8 @@ MonoBehaviour:
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
   _makeB: 10
+  _makeRover: 5
+  rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
   _sMSegs: {fileID: 4174493254310642626, guid: 37623a2aee5fee44ebdbf27440445924, type: 3}
 --- !u!1 &1837213357
@@ -6507,49 +6509,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1850572916
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1850572918}
-  - component: {fileID: 1850572917}
-  m_Layer: 0
-  m_Name: LoopMachine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1850572917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850572916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90a844c1e5beda24aa06dcc4867c750c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1850572918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850572916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.15, y: 0, z: 5.38}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1859922212
 GameObject:
   m_ObjectHideFlags: 0

@@ -80,7 +80,7 @@ public class CollectBrick : MonoBehaviour
             ScoringSystem.goodbrickTick++;  //green brick tally
             ScoringSystem._loopTicker++;     //for counter to work in Scoring
             CountDownTimer._timeTrig++;
-            LoopMachine._loopTicker++;
+           // LoopMachine._loopTicker++;
             rend.sharedMaterial = _bMaterial[0];
             _audioManager.Play("BrickPing");
             brickState = 0;

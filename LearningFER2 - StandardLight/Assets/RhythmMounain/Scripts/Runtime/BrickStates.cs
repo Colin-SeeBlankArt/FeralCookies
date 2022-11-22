@@ -39,10 +39,10 @@ public class BrickStates : MonoBehaviour
     {
         BrickAnimator.SetBool("Bounce", true); //initiates brick bounce
 
-    }
+    }    
     public void ChangeState()
     {
         _state1 = false;
+        _state2 = false;
     }
-
 }
