@@ -111,7 +111,8 @@ public class GameManager : MonoBehaviour
 
     public void MakeRover()
     {
-        Instantiate(rover, new Vector3(0, 0, 0), Quaternion.identity);
+        //Instantiate(rover, new Vector3(0, 0, 0), Quaternion.identity);
+        Debug.Log("Rover is Not Working");
     }
     public void WinGame()
     {

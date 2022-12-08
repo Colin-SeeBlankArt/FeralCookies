@@ -42,7 +42,7 @@ public class Coin_State : MonoBehaviour
             case 1:
                 rend.sharedMaterial = _bMaterial[1];
                 ScoringSystem.badbrickTick++;
-                ScoringSystem._negativeBrickTick ++;
+                //ScoringSystem._negativeBrickTick ++;
                 PlayerCtrl._redbrick = 1; //send to playerctl to reduce speed temp
                 _audioManager.Play("BunnyPing");
                 break;

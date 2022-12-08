@@ -90,7 +90,7 @@ public class CollectBrick : MonoBehaviour
         {
             ScoringSystem.badbrickTick++;
             CountDownTimer._bunnyTrig++;
-            ScoringSystem._negativeBrickTick++;
+            //ScoringSystem._negativeBrickTick++;
             PlayerCtrl._redbrick = 1; //send to playerctl to reduce speed temp
             _audioManager.Play("BunnyPing");
             brickState = 1;
