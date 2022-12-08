@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         //loads the scene over, audio needs to persist
         //maybe it should pause since its game crit
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        ScoringSystem._resetScores ++;
+        ScoringSystem._resetALL ++;
         LoopMachine._resetLoopCount++;
     }
     public void QuitGame()

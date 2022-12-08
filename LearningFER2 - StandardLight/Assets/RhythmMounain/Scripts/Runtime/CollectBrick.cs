@@ -79,7 +79,7 @@ public class CollectBrick : MonoBehaviour
         {
             ScoringSystem.goodbrickTick++;  //green brick tally
             ScoringSystem._loopTicker++;     //for counter to work in Scoring
-            CountDownTimer._timeTrig++;
+
            // LoopMachine._loopTicker++;
             rend.sharedMaterial = _bMaterial[0];
             _audioManager.Play("BrickPing");
@@ -89,7 +89,7 @@ public class CollectBrick : MonoBehaviour
         if (_badBrick)
         {
             ScoringSystem.badbrickTick++;
-            CountDownTimer._bunnyTrig++;
+            //CountDownTimer._bunnyTrig++;
             //ScoringSystem._negativeBrickTick++;
             PlayerCtrl._redbrick = 1; //send to playerctl to reduce speed temp
             _audioManager.Play("BunnyPing");
@@ -101,6 +101,7 @@ public class CollectBrick : MonoBehaviour
             Debug.Log("Purple");
             _audioManager.Play("BrickPing");
             brickState = 2;
+            CountDownTimer._timeTrig++;
         }
 
         if (_blue)
