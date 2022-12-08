@@ -135,7 +135,6 @@ public class PlayerCtrl : MonoBehaviour
             ShipAnim.SetBool("Left_trig", true);
             soundBite.Play("Bump");
         }
- 
     }
 
     void Update()
