@@ -1846,7 +1846,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CountDown
+  m_Text: Game Time
 --- !u!222 &549041358
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   _purpleSlider: {fileID: 840018401}
   pcScore: 0
   _greenBrickGoals: 4
-  _blueBrickGoals: 4
+  _blueBrickGoals: 2
   _purpleBrickGoals: 1
   _winLevel: 2
 --- !u!1 &627890586
@@ -7221,8 +7221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4a2b259988ee74b8eed37df1b6405a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameText: {fileID: 549041357}
-  _totalTime: {fileID: 2064319891}
+  _gameText: {fileID: 2064319891}
+  _totalTime: {fileID: 549041357}
   timerSlider: {fileID: 838686113}
   _timeLeft: 8
   _bonusTime: 8

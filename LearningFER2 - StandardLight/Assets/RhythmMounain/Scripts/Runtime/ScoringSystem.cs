@@ -13,10 +13,10 @@ public class ScoringSystem : MonoBehaviour
         {
             TimeCreated = DateTime.UtcNow,
             TotalBricks = brickTick,
-            TotalGoodBricks = goodbrickTick,
-            TotalBadBricks = badbrickTick,
-            BlueStack = _blueStack,
-            PurpStack = _purpStack
+            //TotalGoodBricks = goodbrickTick,
+            //TotalBadBricks = badbrickTick,
+            //BlueStack = _blueStack,
+            //PurpStack = _purpStack
         };
 
         gameData.SessionData ??= Array.Empty<GameSessionData>();
@@ -57,7 +57,7 @@ public class ScoringSystem : MonoBehaviour
 
     int totBrickCt;
     int goodBrickTot;
-    int badBrickTot;
+    //int badBrickTot;
     //int _negativeBrick;
 
     int loopticker;
@@ -86,16 +86,13 @@ public class ScoringSystem : MonoBehaviour
 
     void Update()
     {
+        brickTick = brickTick + totBrickCt;
         _gBricktkr = _loopTicker;
         _greenBucket = _loopTicker;
         _negativeBrickTick = badbrickTick;
+        _blueStack = _blueCounter;
 
-        if (_loopTicker <= 0)
-        {
-            _loopTicker = 0;
-        }
- 
-        if(_resetScores >= 1)
+        if (_resetScores >= 1)
         {
             ResetScore();
             _resetScores = 0;
@@ -105,10 +102,15 @@ public class ScoringSystem : MonoBehaviour
             ResetALL();
             _resetALL = 0;
         }
-
         if (loopticker >= _winLevel)
         {
             GameManager._noteQuota++;
+        }
+        if (_penalty>=1)
+        {
+            goodbrickTick = 0;
+            Debug.Log("Hit Spark + ");
+            _penalty = 0;
         }
 
         pcScore = (totBrickCt);
@@ -117,13 +119,13 @@ public class ScoringSystem : MonoBehaviour
         _greenSlider.value = _gBricktkr; 
         greenTick.text = "" + goodbrickTick;
         _blueSlider.value = _blBrktkr;
-        blueTick.text = "" + _blueCounter;
+        blueTick.text = "" + _blueStack;
         _purpleSlider.value = _prpBrktkr;
         purpleTick.text = "" + _purpCounter; 
 
         //scoring logic
-        goodBrickTot = (goodbrickTick - badBrickTot);
-        badBrickTot = _negativeBrickTick;
+        goodBrickTot = goodbrickTick - _negativeBrickTick;
+        
         totBrickCt = goodbrickTick + _negativeBrickTick;
 
         //scoring display
@@ -131,7 +133,7 @@ public class ScoringSystem : MonoBehaviour
         PlayerScore.GetComponent<Text>().text = "Player Score: " + pcScore;
         Loops.GetComponent<Text>().text = "Loops = " + loopticker;  //count loopos, based on 10 bricks for each loop
         GBTick.GetComponent<Text>().text = "Good Brick = " + goodBrickTot; //counter for the green
-        BBTick.GetComponent<Text>().text = "Bad Brick = " + badBrickTot;  //counter for the red  
+        BBTick.GetComponent<Text>().text = "Bad Brick = " + _negativeBrickTick;  //counter for the red  
 
 
         //collection logic
@@ -155,26 +157,55 @@ public class ScoringSystem : MonoBehaviour
             _prpBrktkr = 0;
             loopticker++;
         }
+
+        if (_loopTicker <= 0)
+        {
+            _loopTicker = 0;
+        }
+        if (goodBrickTot <= 0)
+        {
+            goodBrickTot = 0;
+        }
+
+        //to fire audio clilps 
+        if (_greenBucket>=1)
+        {
+            SoundBox._bassA = true;
+        }
+        
+        if(_blueCounter >= 2)
+        {
+            SoundBox._keysA1 = true;
+        }
+        if(_blueCounter >= 6)
+        {
+            SoundBox._keysB1 = true;
+        }
     }
 
     public void ResetScore()
     {
         //reset all points to zero
-       loopticker = 0;
+        //loopticker = 0;
         _negativeBrickTick = 0;
-        //goodbrickTick = 0;
         goodBrickTot = 0;
-        totBrickCt = 0;
+        //totBrickCt = 0;
+        badbrickTick = 0;
+        _blueStack=0;
+        _purpStack = 0;
     }
 
     public void ResetALL()
     {
-            //reset all points to zero
-            loopticker = 0;
-            _negativeBrickTick = 0;
-            goodbrickTick = 0;
-            goodBrickTot = 0;
-            totBrickCt = 0;
+        //reset all points to zero
+        loopticker = 0;
+        _negativeBrickTick = 0;
+        goodbrickTick = 0;
+        goodBrickTot = 0;
+        totBrickCt = 0;
+        badbrickTick = 0;
+        _blueStack = 0;
+        _purpStack=0;
     }
 
     public void a()//trigger the winLevel in GameManager

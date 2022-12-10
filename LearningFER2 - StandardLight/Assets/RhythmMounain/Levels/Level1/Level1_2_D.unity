@@ -1846,7 +1846,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CountDown
+  m_Text: Game Time
 --- !u!222 &549041358
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   _purpleSlider: {fileID: 840018401}
   pcScore: 0
   _greenBrickGoals: 4
-  _blueBrickGoals: 4
+  _blueBrickGoals: 2
   _purpleBrickGoals: 1
   _winLevel: 2
 --- !u!1 &627890586
@@ -2654,9 +2654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c623274580f39f948ab0f5c9019cff7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _generateSegmentsAhead: 5
-  _activateSegmentsAhead: 3
-  _loadTimeout: 10
+  _generateSegmentsAhead: 3
+  _activateSegmentsAhead: 1
+  _loadTimeout: 5
   _maxSegments: 10
   _buildOnAwake: 1
   _multithreaded: 1
@@ -6200,7 +6200,7 @@ MonoBehaviour:
   NextLevel: {fileID: 1472131634}
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
-  _makeB: 4
+  _makeB: 15
   _makeRover: 100
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
@@ -6716,7 +6716,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7221,11 +7221,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4a2b259988ee74b8eed37df1b6405a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameText: {fileID: 549041357}
-  _totalTime: {fileID: 2064319891}
+  _gameText: {fileID: 2064319891}
+  _totalTime: {fileID: 549041357}
   timerSlider: {fileID: 838686113}
-  _timeLeft: 3
-  _bonusTime: 2
+  _timeLeft: 8
+  _bonusTime: 8
 --- !u!1 &2089676331
 GameObject:
   m_ObjectHideFlags: 0

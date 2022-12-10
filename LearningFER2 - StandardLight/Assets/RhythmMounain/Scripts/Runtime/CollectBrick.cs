@@ -89,8 +89,6 @@ public class CollectBrick : MonoBehaviour
         if (_badBrick)
         {
             ScoringSystem.badbrickTick++;
-            //CountDownTimer._bunnyTrig++;
-            //ScoringSystem._negativeBrickTick++;
             PlayerCtrl._redbrick = 1; //send to playerctl to reduce speed temp
             _audioManager.Play("BunnyPing");
             brickState = 1;
@@ -98,7 +96,6 @@ public class CollectBrick : MonoBehaviour
         if (_purple)
         {
             ScoringSystem._purpStack++;
-            Debug.Log("Purple");
             _audioManager.Play("BrickPing");
             brickState = 2;
             CountDownTimer._timeTrig++;
@@ -107,7 +104,6 @@ public class CollectBrick : MonoBehaviour
         if (_blue)
         {
             ScoringSystem._blueStack++;
-            //Debug.Log("Blue");
             _audioManager.Play("BrickPing");
             brickState = 3;
         }

@@ -42,19 +42,16 @@ public class FocusCoin : MonoBehaviour
         focusBrickColor = randomNum;
         if (focusBrickColor == 0)
         {
-            Debug.Log("Focus" + focusBrickColor);
             rend.sharedMaterial = material[focusBrickColor];
             CollectBrick._focusState += 0;
         }
         if (focusBrickColor == 1)
         {
-            Debug.Log("Focus" + focusBrickColor);
             rend.sharedMaterial = material[focusBrickColor];
             CollectBrick._focusState += 1;
         }
         if (focusBrickColor == 2)
         {
-            Debug.Log("Focus" + focusBrickColor);
             rend.sharedMaterial = material[focusBrickColor];
             CollectBrick._focusState += 2;
         }
