@@ -31,25 +31,25 @@ public class Coin_State : MonoBehaviour
         {
             case 3:
                 rend.sharedMaterial = _bMaterial[3];
-                ScoringSystem._purpStack++;
+                ScoringSystem._purpTick++;
                 _audioManager.Play("BrickPing");
                 break;
             case 2:
                 rend.sharedMaterial = _bMaterial[2];
-                ScoringSystem._blueStack++;
+                ScoringSystem._blueTick++;
                 _audioManager.Play("BrickPing");
                 break;
             case 1:
                 rend.sharedMaterial = _bMaterial[1];
-                ScoringSystem.badbrickTick++;
+                ScoringSystem._redTick++;
                 //ScoringSystem._negativeBrickTick ++;
                 PlayerCtrl._redbrick = 1; //send to playerctl to reduce speed temp
                 _audioManager.Play("BunnyPing");
                 break;
             default: 
                 rend.sharedMaterial = _bMaterial[0];
-                ScoringSystem.goodbrickTick++;  //green brick tally
-                ScoringSystem._loopTicker++;     //for counter to work in Scoring
+                ScoringSystem._greenTick++;  //green brick tally
+                ScoringSystem._greenBrickTicker++;     //for counter to work in Scoring
                 CountDownTimer._timeTrig++;
                 _audioManager.Play("BrickPing");
                 break;

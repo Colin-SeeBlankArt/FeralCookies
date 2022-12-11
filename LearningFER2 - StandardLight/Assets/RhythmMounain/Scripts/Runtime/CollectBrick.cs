@@ -72,40 +72,39 @@ public class CollectBrick : MonoBehaviour
             }
         }
     }
-
+    
+    //coin counter
     public void PlayerTrigger()
     {
         if (_greenbrick)
         {
-            ScoringSystem.goodbrickTick++;  //green brick tally
-            ScoringSystem._loopTicker++;     //for counter to work in Scoring
+            ScoringSystem._greenTick++;     //green brick tally
+            ScoringSystem._greenBrickTicker++;    //for counter to work in Scoring
 
            // LoopMachine._loopTicker++;
             rend.sharedMaterial = _bMaterial[0];
             _audioManager.Play("BrickPing");
             brickState = 0;
         }
-
         if (_badBrick)
         {
-            ScoringSystem.badbrickTick++;
+            ScoringSystem._redTick++;
             PlayerCtrl._redbrick = 1; //send to playerctl to reduce speed temp
             _audioManager.Play("BunnyPing");
             brickState = 1;
         }
+        if (_blue)
+        {
+            ScoringSystem._blueTick++;
+            _audioManager.Play("BrickPing");
+            brickState = 3;
+        }
         if (_purple)
         {
-            ScoringSystem._purpStack++;
+            ScoringSystem._purpTick++;
             _audioManager.Play("BrickPing");
             brickState = 2;
             CountDownTimer._timeTrig++;
-        }
-
-        if (_blue)
-        {
-            ScoringSystem._blueStack++;
-            _audioManager.Play("BrickPing");
-            brickState = 3;
         }
 
         DestroyMe(); 
@@ -136,14 +135,14 @@ public class CollectBrick : MonoBehaviour
         {
             rend.sharedMaterial = _bMaterial[2];
             _blue = true;
-            ScoringSystem._blueStack++;
+            ScoringSystem._blueTick++;
 
         }
         if (NewNum == 49)
         {
             rend.sharedMaterial = _bMaterial[3];
             _purple = true;
-            ScoringSystem._purpStack++;
+            ScoringSystem._purpTick++;
         }
     } 
 }

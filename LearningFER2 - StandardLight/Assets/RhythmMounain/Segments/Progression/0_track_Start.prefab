@@ -1521,7 +1521,7 @@ MonoBehaviour:
     min: {x: -17.27365, y: -16.884483, z: -2.5364738}
     size: {x: 33.50467, y: 32.297546, z: 25.009659}
   builders: []
-  unpacked: 0
+  unpacked: 1
   alwaysDraw: 0
   drawGeneratedSpline: 1
   drawGeneratedSamples: 1
@@ -1529,7 +1529,7 @@ MonoBehaviour:
   drawEntranceAndExit: 1
   drawBounds: 1
   drawCustomPaths: 1
-  editorChildCount: 44
+  editorChildCount: 43
 --- !u!1 &2067165431994958076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,9 +1885,9 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 1755555504751130738, guid: ef4c7fc4aba086b42aefe0ea14004beb, type: 3}
   m_PrefabInstance: {fileID: 736749992632574110}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6534034360457150080 stripped
+--- !u!4 &4494165920037026856 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5806542446386765342, guid: ef4c7fc4aba086b42aefe0ea14004beb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3775997950067203254, guid: ef4c7fc4aba086b42aefe0ea14004beb, type: 3}
   m_PrefabInstance: {fileID: 736749992632574110}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6843945405884620299 stripped
@@ -1955,14 +1955,14 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 4322383599645661029, guid: ef4c7fc4aba086b42aefe0ea14004beb, type: 3}
   m_PrefabInstance: {fileID: 736749992632574110}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &6534034360457150080 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5806542446386765342, guid: ef4c7fc4aba086b42aefe0ea14004beb, type: 3}
+  m_PrefabInstance: {fileID: 736749992632574110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!136 &6166510560186606997 stripped
 CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 6893514148252796171, guid: ef4c7fc4aba086b42aefe0ea14004beb, type: 3}
-  m_PrefabInstance: {fileID: 736749992632574110}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4494165920037026856 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3775997950067203254, guid: ef4c7fc4aba086b42aefe0ea14004beb, type: 3}
   m_PrefabInstance: {fileID: 736749992632574110}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &4181985483765374115 stripped
@@ -1992,6 +1992,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1866860476118133610}
     m_Modifications:
+    - target: {fileID: 4877709471184607737, guid: 9c7b92a77982e0d43bc2e82d641781f9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7365514527849437661, guid: 9c7b92a77982e0d43bc2e82d641781f9, type: 3}
       propertyPath: m_Name
       value: Soundbox
@@ -2003,6 +2007,14 @@ PrefabInstance:
     - target: {fileID: 8252472489458428330, guid: 9c7b92a77982e0d43bc2e82d641781f9, type: 3}
       propertyPath: keysA
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252472489458428330, guid: 9c7b92a77982e0d43bc2e82d641781f9, type: 3}
+      propertyPath: AudioTrig
+      value: 
+      objectReference: {fileID: 7498762800516672017}
+    - target: {fileID: 8252472489458428330, guid: 9c7b92a77982e0d43bc2e82d641781f9, type: 3}
+      propertyPath: bassATrig
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8252472489458428330, guid: 9c7b92a77982e0d43bc2e82d641781f9, type: 3}
       propertyPath: startPoint
@@ -2072,6 +2084,11 @@ MeshFilter:
 --- !u!65 &317688097925653221 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 3443362858170814733, guid: 9c7b92a77982e0d43bc2e82d641781f9, type: 3}
+  m_PrefabInstance: {fileID: 3144057772181681128}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7498762800516672017 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4877709471184607737, guid: 9c7b92a77982e0d43bc2e82d641781f9, type: 3}
   m_PrefabInstance: {fileID: 3144057772181681128}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &710585769198226959 stripped

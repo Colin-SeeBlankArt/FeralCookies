@@ -34,21 +34,28 @@ public class ScoringSystem : MonoBehaviour
     public Text greenTick;
     public Text blueTick;
     public Text purpleTick;
+    public Text loopTick;
 
     public Slider _greenSlider;
     public Slider _blueSlider;
     public Slider _purpleSlider;
+    public Slider _loopSlider;
+
+    public static int _greenBrickTicker;  //actual score variable
 
     public static int brickTick;
-    public static int goodbrickTick;  //this will be a positive impact on loop count
-    public static int badbrickTick; //this will be a negative impact on loop count
-    public static int _greenBucket;  //green collection
-    int _negativeBrickTick;
-    public static int _penalty; //hit the bunny, get penalized
-    public static int _blueStack; //blue coin stack
-    public static int _purpStack; //purple coin stack
+    public static int _greenTick;   //this will be a positive impact on loop count
+    public static int _redTick;     //this will be a negative impact on loop count
+    public static int _purpTick;
+    public static int _blueTick;
 
-    public static int _loopTicker;  //actual score variable
+    public static int _greenStack;  //green collection
+    int _negativeBrickTick;
+    
+    public static int _penalty; //hit the bunny, get penalized
+    
+    int _blueStack; //blue coin stack
+    int _purpStack; //purple coin stack
 
     public int pcScore;
 
@@ -68,29 +75,37 @@ public class ScoringSystem : MonoBehaviour
     int _blueCounter;
     int _prpBrktkr;                         // Tcker for furture Brick colors
     int _purpCounter;
+    int _loopTicker;
+    int _loopCount;
 
     public int _greenBrickGoals = 4;        // Trigger for + Blue Brick 
     public int _blueBrickGoals = 2;         // Trigger for + Purple Brick
     public int _purpleBrickGoals = 2;       // Trigger for future Brick colors
+    int _loopGoals;
     [SerializeField]
     public int _winLevel;
 
     private void Start()
     {
         ResetALL();
-        //_greenBucket = _loopTicker;
+        _loopGoals = _purpleBrickGoals;
+        //slider values for visual rep of loop count
         _greenSlider.maxValue = _greenBrickGoals;
         _blueSlider.maxValue = _blueBrickGoals;
         _purpleSlider.maxValue = _purpleBrickGoals;
-    }
+
+        _loopSlider.maxValue = _winLevel;        
+
+        }
 
     void Update()
     {
-        brickTick = brickTick + totBrickCt;
-        _gBricktkr = _loopTicker;
-        _greenBucket = _loopTicker;
-        _negativeBrickTick = badbrickTick;
-        _blueStack = _blueCounter;
+         brickTick = brickTick + totBrickCt;
+        _gBricktkr = _greenBrickTicker;
+        _greenStack  = _greenBrickTicker;
+        _negativeBrickTick = _redTick;
+        _blueStack = _blueCounter + _blueTick;
+        _purpStack = _purpCounter + _purpTick;
 
         if (_resetScores >= 1)
         {
@@ -108,59 +123,63 @@ public class ScoringSystem : MonoBehaviour
         }
         if (_penalty>=1)
         {
-            goodbrickTick = 0;
+            _greenTick = 0;
             Debug.Log("Hit Spark + ");
             _penalty = 0;
         }
 
-        pcScore = (totBrickCt);
+        //pcScore = totBrickCt;
         
         //slider UI
         _greenSlider.value = _gBricktkr; 
-        greenTick.text = "" + goodbrickTick;
+        greenTick.text = "" + _greenTick;
         _blueSlider.value = _blBrktkr;
         blueTick.text = "" + _blueStack;
         _purpleSlider.value = _prpBrktkr;
-        purpleTick.text = "" + _purpCounter; 
+        purpleTick.text = "" + _purpStack;
+        _loopSlider.value = _loopTicker;
+        loopTick.text = "" + _winLevel;
 
         //scoring logic
-        goodBrickTot = goodbrickTick - _negativeBrickTick;
-        
-        totBrickCt = goodbrickTick + _negativeBrickTick;
+        goodBrickTot = _greenTick - _negativeBrickTick;       
+        totBrickCt = _greenTick + _negativeBrickTick;
 
         //scoring display
         BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
         PlayerScore.GetComponent<Text>().text = "Player Score: " + pcScore;
         Loops.GetComponent<Text>().text = "Loops = " + loopticker;  //count loopos, based on 10 bricks for each loop
-        GBTick.GetComponent<Text>().text = "Good Brick = " + goodBrickTot; //counter for the green
-        BBTick.GetComponent<Text>().text = "Bad Brick = " + _negativeBrickTick;  //counter for the red  
-
-
-        //collection logic
-        if (_loopTicker >= _greenBrickGoals)
+        GBTick.GetComponent<Text>().text = "Green Brick = " + goodBrickTot; //counter for the green
+        BBTick.GetComponent<Text>().text = "Red Brick = " + _negativeBrickTick;  //counter for the red  
+        
+        //scoring collection logic
+        if (_greenBrickTicker >= _greenBrickGoals)
         {
             Debug.Log("Green Tick");
-            _loopTicker = 0;          
+            _greenBrickTicker = 0;          
             _blBrktkr++;
             _blueCounter++;
+            pcScore++;
         }
         if (_blBrktkr >= _blueBrickGoals)
         {
             Debug.Log("Blue Tick");
             _blBrktkr = 0;
             _prpBrktkr++;
-            _purpCounter++;                    
+            _purpCounter++;
+            loopticker++;
+            pcScore++;
         }
         if (_prpBrktkr >= _purpleBrickGoals)
         {
-            print("Purple Count");
+            print("Purple Tick");
             _prpBrktkr = 0;
-            loopticker++;
+            
+            pcScore++;
         }
 
-        if (_loopTicker <= 0)
+        if (_greenBrickTicker <= 0)
         {
-            _loopTicker = 0;
+            _greenBrickTicker = 0;
         }
         if (goodBrickTot <= 0)
         {
@@ -168,16 +187,16 @@ public class ScoringSystem : MonoBehaviour
         }
 
         //to fire audio clilps 
-        if (_greenBucket>=1)
+        if (_greenStack >= 1)
         {
             SoundBox._bassA = true;
         }
         
-        if(_blueCounter >= 2)
+        if(_blueCounter >= 1)
         {
             SoundBox._keysA1 = true;
         }
-        if(_blueCounter >= 6)
+        if(_blueCounter >= 4)
         {
             SoundBox._keysB1 = true;
         }
@@ -190,7 +209,7 @@ public class ScoringSystem : MonoBehaviour
         _negativeBrickTick = 0;
         goodBrickTot = 0;
         //totBrickCt = 0;
-        badbrickTick = 0;
+        _redTick = 0;
         _blueStack=0;
         _purpStack = 0;
     }
@@ -200,10 +219,10 @@ public class ScoringSystem : MonoBehaviour
         //reset all points to zero
         loopticker = 0;
         _negativeBrickTick = 0;
-        goodbrickTick = 0;
+        _greenTick = 0;
         goodBrickTot = 0;
         totBrickCt = 0;
-        badbrickTick = 0;
+        _redTick = 0;
         _blueStack = 0;
         _purpStack=0;
     }

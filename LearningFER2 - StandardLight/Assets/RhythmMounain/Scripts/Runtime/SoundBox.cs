@@ -8,6 +8,7 @@ public class SoundBox : MonoBehaviour
 {
     //[SerializeField]
     AudioManager musicBites;
+    
     public int musicPause = 0;
     public bool startPoint;
     public bool bassATrig;
@@ -15,7 +16,8 @@ public class SoundBox : MonoBehaviour
     public bool keysA2Ttrig;
     public bool keysB1Trig;
     public static int _pause = 0;
-    public bool resetLoop=false;
+    public bool _allStop = false;
+    bool resetLoop=false;
 
     //these come from ScoringSystem
     public static bool _bassA = false; 
@@ -47,34 +49,32 @@ public class SoundBox : MonoBehaviour
 
     void PlayMusic()
     {
+        
         //Fire/Stop BassA
-        if (startPoint && _bassA)
+        if (bassATrig && _bassA)
         {
-        musicBites.Play("BassA");
-        Debug.Log("Bass A plays");
+            musicBites.Play("BassA");
+            Debug.Log("Bass A plays");          
         }
- 
         //fire Keys A
         if(keysA1Ttrig && _keysA1)
         {
             musicBites.Play("KeysA1");
             Debug.Log("Keys A plays");
+
         }
- 
         //fire Keys B
         if(keysB1Trig && _keysB1)
         {
             musicBites.Play("KeysB1");
             Debug.Log("Keys B plays");
         }
-
         //fire Keys A2
         if (keysA2Ttrig && _keysA2)
         {
             musicBites.Play("KeysA2");
             Debug.Log("Keys A2 plays");
         }
-
     }
     void PauseMusic()
     {
@@ -83,7 +83,6 @@ public class SoundBox : MonoBehaviour
             musicBites.Stop("KeysA1");
         }
     }
-
     void ResetLoopCount()
     {
        if (resetLoop)
