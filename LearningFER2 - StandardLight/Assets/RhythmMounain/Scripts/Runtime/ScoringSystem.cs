@@ -13,10 +13,10 @@ public class ScoringSystem : MonoBehaviour
         {
             TimeCreated = DateTime.UtcNow,
             TotalBricks = brickTick,
-            //TotalGoodBricks = goodbrickTick,
-            //TotalBadBricks = badbrickTick,
-            //BlueStack = _blueStack,
-            //PurpStack = _purpStack
+            PlayerScore = pcScore,
+            RedStack = _redTick,
+            BlueStack = _blueStack,
+            PurpStack = _purpStack
         };
 
         gameData.SessionData ??= Array.Empty<GameSessionData>();
@@ -53,11 +53,12 @@ public class ScoringSystem : MonoBehaviour
     int _negativeBrickTick;
     
     public static int _penalty; //hit the bunny, get penalized
-    
-    int _blueStack; //blue coin stack
-    int _purpStack; //purple coin stack
 
-    public int pcScore;
+    public static int _blueStack; //blue coin stack
+    public static int _purpStack; //purple coin stack
+
+    public static int pcScore;
+    int _maxScore;
 
     public static int _resetScores = 0; //GAmeManger, Reset Level
     public static int _resetALL = 0; //GAmeManger, Reset All counters
@@ -101,6 +102,9 @@ public class ScoringSystem : MonoBehaviour
     void Update()
     {
          brickTick = brickTick + totBrickCt;
+        
+        pcScore = totBrickCt + _maxScore + _blueTick + _purpTick; //player score
+        
         _gBricktkr = _greenBrickTicker;
         _greenStack  = _greenBrickTicker;
         _negativeBrickTick = _redTick;
@@ -123,7 +127,7 @@ public class ScoringSystem : MonoBehaviour
         }
         if (_penalty>=1)
         {
-            _greenTick = 0;
+            _greenBrickTicker = 0;
             Debug.Log("Hit Spark + ");
             _penalty = 0;
         }
@@ -140,7 +144,7 @@ public class ScoringSystem : MonoBehaviour
         _loopSlider.value = _loopTicker;
         loopTick.text = "" + _winLevel;
 
-        //scoring logic
+        //scoring logic    
         goodBrickTot = _greenTick - _negativeBrickTick;       
         totBrickCt = _greenTick + _negativeBrickTick;
 
@@ -158,7 +162,7 @@ public class ScoringSystem : MonoBehaviour
             _greenBrickTicker = 0;          
             _blBrktkr++;
             _blueCounter++;
-            pcScore++;
+            _maxScore++;
         }
         if (_blBrktkr >= _blueBrickGoals)
         {
@@ -167,14 +171,13 @@ public class ScoringSystem : MonoBehaviour
             _prpBrktkr++;
             _purpCounter++;
             loopticker++;
-            pcScore++;
+            _maxScore++;
         }
         if (_prpBrktkr >= _purpleBrickGoals)
         {
             print("Purple Tick");
             _prpBrktkr = 0;
-            
-            pcScore++;
+            _maxScore++;
         }
 
         if (_greenBrickTicker <= 0)
@@ -191,7 +194,6 @@ public class ScoringSystem : MonoBehaviour
         {
             SoundBox._bassA = true;
         }
-        
         if(_blueCounter >= 1)
         {
             SoundBox._keysA1 = true;
@@ -221,7 +223,7 @@ public class ScoringSystem : MonoBehaviour
         _negativeBrickTick = 0;
         _greenTick = 0;
         goodBrickTot = 0;
-        totBrickCt = 0;
+        //totBrickCt = 0;
         _redTick = 0;
         _blueStack = 0;
         _purpStack=0;
