@@ -511,6 +511,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+          m_StringArgument: BassA
+          m_BoolArgument: 0
+        m_CallState: 0
+      - m_Target: {fileID: 2031473185}
+        m_TargetAssemblyTypeName: AudioManager, RM.Runtime
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: KeysA
           m_BoolArgument: 0
         m_CallState: 2
@@ -991,7 +1003,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: KeysA
+          m_StringArgument: BassA
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1669355299}
@@ -6129,6 +6141,12 @@ MonoBehaviour:
   sounds:
   - name: KeysA
     clip: {fileID: 8300000, guid: 2d968cea5f16fdc4c944a158c8e769e0, type: 3}
+    volume: 0.355
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BassA
+    clip: {fileID: 8300000, guid: 1555819c4fee3af4caf279d3583fa290, type: 3}
     volume: 0.355
     pitch: 1
     loop: 0

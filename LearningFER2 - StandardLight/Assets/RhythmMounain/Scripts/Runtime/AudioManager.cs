@@ -6,14 +6,13 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
+
     public Sound[] sounds;
     public static AudioManager instance;
-
     AudioSource audioSource;
 
     public static int _pause = 0;
-    public static int _loop = 0;
-
+    public static bool _loop = false;
 
     void Awake()
     {
@@ -34,10 +33,6 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-    }
-    private void Update()
-    {
-
     }
 
     public void Play(string name)

@@ -28,7 +28,7 @@ public class PlayerCtrl : MonoBehaviour
     // Zack: Had to use reflection since unity tried to hide this information. Not great!
     private readonly FieldInfo trailsField = typeof(ParticleSystem.Trails).GetField("positions", BindingFlags.Instance | BindingFlags.NonPublic);
 
-    private Animator _turnAnim;
+    //private Animator _turnAnim;
     bool _turnL, _turnR;  // using ths to keep the ship leaning into a turn
     private AudioManager soundBite;
     public static int _redbrick=0; //reduce speed when hitting a bunny or red brick
@@ -46,7 +46,7 @@ public class PlayerCtrl : MonoBehaviour
         startSpeed = speed = runner.followSpeed;
         instance = this;
 
-        _turnAnim = GetComponent<Animator>();
+        //_turnAnim = GetComponent<Animator>();
 
         soundBite = FindObjectOfType<AudioManager>();
 

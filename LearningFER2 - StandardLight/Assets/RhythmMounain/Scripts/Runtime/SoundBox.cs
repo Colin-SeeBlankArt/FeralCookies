@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class SoundBox : MonoBehaviour
 {
+    [SerializeField] private Animator _audioTrgr = null;
     //[SerializeField]
     AudioManager musicBites;
-    
+
+    public GameObject AudioTriggers;
+
     public int musicPause = 0;
     public bool startPoint;
     public bool bassATrig;
@@ -38,7 +42,9 @@ public class SoundBox : MonoBehaviour
             PauseMusic();
             //_pause = 0;
         }
+
     }
+
     void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
@@ -48,13 +54,15 @@ public class SoundBox : MonoBehaviour
     }
 
     void PlayMusic()
-    {
-        
+    {       
         //Fire/Stop BassA
         if (bassATrig && _bassA)
         {
             musicBites.Play("BassA");
-            Debug.Log("Bass A plays");          
+            Debug.Log("Bass A plays");
+            _audioTrgr.SetBool("bool_BassA_", true);
+
+
         }
         //fire Keys A
         if(keysA1Ttrig && _keysA1)
@@ -63,18 +71,20 @@ public class SoundBox : MonoBehaviour
             Debug.Log("Keys A plays");
 
         }
-        //fire Keys B
-        if(keysB1Trig && _keysB1)
-        {
-            musicBites.Play("KeysB1");
-            Debug.Log("Keys B plays");
-        }
         //fire Keys A2
         if (keysA2Ttrig && _keysA2)
         {
             musicBites.Play("KeysA2");
             Debug.Log("Keys A2 plays");
         }
+ 
+        //fire Keys B
+        if (keysB1Trig && _keysB1)
+        {
+            musicBites.Play("KeysB1");
+            Debug.Log("Keys B plays");
+        }
+
     }
     void PauseMusic()
     {

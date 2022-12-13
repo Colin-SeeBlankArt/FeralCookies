@@ -128,6 +128,7 @@ public class ScoringSystem : MonoBehaviour
         if (_penalty>=1)
         {
             _greenBrickTicker = 0;
+            _greenTick = 0;
             Debug.Log("Hit Spark + ");
             _penalty = 0;
         }
@@ -190,17 +191,22 @@ public class ScoringSystem : MonoBehaviour
         }
 
         //to fire audio clilps 
-        if (_greenStack >= 1)
+        if (/*_greenStack*/ goodBrickTot >= 1)
         {
             SoundBox._bassA = true;
         }
-        if(_blueCounter >= 1)
+        else 
+        { 
+            SoundBox._bassA = false; 
+        }
+
+        if (_blueCounter >= 1)
         {
             SoundBox._keysA1 = true;
         }
         if(_blueCounter >= 4)
         {
-            SoundBox._keysB1 = true;
+            SoundBox._keysA2 = true;
         }
     }
 
@@ -214,6 +220,13 @@ public class ScoringSystem : MonoBehaviour
         _redTick = 0;
         _blueStack=0;
         _purpStack = 0;
+        _redTick = 0;
+        _blueStack = 0;
+        _purpStack = 0;
+        _blueCounter = 0;
+        _blueTick = 0;
+        _purpCounter = 0;
+        _purpTick = 0;
     }
 
     public void ResetALL()
@@ -227,6 +240,10 @@ public class ScoringSystem : MonoBehaviour
         _redTick = 0;
         _blueStack = 0;
         _purpStack=0;
+        _blueCounter = 0;
+        _blueTick = 0;
+        _purpCounter = 0;
+        _purpTick = 0;
     }
 
     public void a()//trigger the winLevel in GameManager
