@@ -24,11 +24,11 @@ public class SaveGamesFreeJsonSaveManagerImplementation : ISaveManagerImplementa
         return Task.CompletedTask;
     }
 
-    public Task<T> LoadDataAsync<T>(string key, T defaultIfNotFound = default, CancellationToken cancelToken = new CancellationToken())
+    public Task<T> LoadDataAsync<T>(string key, T defaultIfNotFound = default, CancellationToken cancelToken = new CancellationToken()) where T : new()
     {
         cancelToken.ThrowIfCancellationRequested();
         
-        var loadedValue = SaveGame.Load(key, defaultIfNotFound, m_serializer);
+        var loadedValue = SaveGame.Load(key, defaultIfNotFound, m_serializer) ?? new T();
         return Task.FromResult(loadedValue);
     }
 }

@@ -1,5 +1,4 @@
 using System;
-using Dreamteck;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +6,6 @@ public class ScoringSystem : MonoBehaviour
 {
     public static void RecordResults()
     {
-        var gameData = SaveManager.Instance.LoadDataBlocking("GameData", new GameSaveData());
-
         var sessionData = new GameSessionData()
         {
             TimeCreated = DateTime.UtcNow,
@@ -19,10 +16,8 @@ public class ScoringSystem : MonoBehaviour
             PurpStack = _purpStack
         };
 
-        gameData.SessionData ??= Array.Empty<GameSessionData>();
-        ArrayUtility.Add(ref gameData.SessionData, sessionData);
-
-        SaveManager.Instance.SaveData("GameData", gameData);
+        SaveManager.Instance.SaveData("SessionData", sessionData);
+        AnalyticsManager.SaveDataAsync("SessionData", sessionData);
     }
 
     public GameObject BrickCounter;
