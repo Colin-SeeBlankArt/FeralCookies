@@ -32,7 +32,9 @@ public class GameSaveData
 public interface ISaveManagerImplementation
 {
     Task SaveDataAsync<T>(string key, T value, CancellationToken cancelToken = new CancellationToken());
-    Task<T> LoadDataAsync<T>(string key, T defaultIfNotFound = default, CancellationToken cancelToken = new CancellationToken());
+
+    Task<T> LoadDataAsync<T>(string key, T defaultIfNotFound = default,
+        CancellationToken cancelToken = new CancellationToken()) where T : new();
 }
 
 public class SaveManager : MonoBehaviour
@@ -73,7 +75,7 @@ public class SaveManager : MonoBehaviour
     /*
      * Loads a save value from the underlying system. The process may take several frames and the result will be sent to your callback
      */
-    public async void LoadData<T>(string key, Action<T> callback, T defaultIfNotFound = default)
+    public async void LoadData<T>(string key, Action<T> callback, T defaultIfNotFound = default) where T : new()
     {
         if (string.IsNullOrEmpty(key)) throw new ArgumentException($"{nameof(key)} is null or empty");
         if (callback == null) throw new ArgumentNullException(nameof(callback));
@@ -88,7 +90,7 @@ public class SaveManager : MonoBehaviour
      * but it comes at the cost of performance. This blocks the game thread which prevents any other thing from working until
      * the result is returned.
      */
-    public T LoadDataBlocking<T>(string key, T defaultIfNotFound = default)
+    public T LoadDataBlocking<T>(string key, T defaultIfNotFound = default) where T : new()
     {
         if (string.IsNullOrEmpty(key)) throw new ArgumentException($"{nameof(key)} is null or empty");
 
