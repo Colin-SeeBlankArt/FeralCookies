@@ -51,7 +51,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4680906809621572873
 Transform:
   m_ObjectHideFlags: 0
@@ -148,6 +148,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4776517446270834352}
     m_Modifications:
+    - target: {fileID: 2344672610769327770, guid: d16488ae5f812554a8ebeafc160c28ff, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fb924c59468e814cb2d1d17bc9df24b, type: 2}
     - target: {fileID: 2850618086664484586, guid: d16488ae5f812554a8ebeafc160c28ff, type: 3}
       propertyPath: m_Name
       value: 3Tubes_00
@@ -208,6 +212,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 7626846743180117732, guid: d16488ae5f812554a8ebeafc160c28ff, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d8574d64562e974c941a599719c1909, type: 2}
+    - target: {fileID: 8892361775154018045, guid: d16488ae5f812554a8ebeafc160c28ff, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d8574d64562e974c941a599719c1909, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d16488ae5f812554a8ebeafc160c28ff, type: 3}
 --- !u!4 &5857836348993013175 stripped

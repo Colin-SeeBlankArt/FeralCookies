@@ -11,8 +11,8 @@ public class GameSessionData
 {
     public DateTime TimeCreated;
     public int TotalBricks;
-    public int TotalGoodBricks;
-    public int TotalBadBricks;
+    public int PlayerScore;
+    public int RedStack;
     public int Penalties;
     public int BlueStack;
     public int PurpStack;

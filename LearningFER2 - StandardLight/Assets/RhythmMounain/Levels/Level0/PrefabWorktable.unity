@@ -333,6 +333,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2270880998837692609, guid: 4c078690c85daf24aabcf4166a8f6652, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2270880998837692611, guid: 4c078690c85daf24aabcf4166a8f6652, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -500,7 +504,19 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2031473185}
         m_TargetAssemblyTypeName: AudioManager, RM.Runtime
-        m_MethodName: Pause
+        m_MethodName: Stop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BassA
+          m_BoolArgument: 0
+        m_CallState: 0
+      - m_Target: {fileID: 2031473185}
+        m_TargetAssemblyTypeName: AudioManager, RM.Runtime
+        m_MethodName: Play
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -508,18 +524,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: KeysA
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: StopPlayback
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &913906631
@@ -999,7 +1003,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: KeysA
+          m_StringArgument: BassA
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1669355299}
@@ -1013,18 +1017,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: AudioBounce
-          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 913906628}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -6043,7 +6035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &1982948399
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -6153,60 +6145,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
---- !u!1001 &8756781049755155213
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606072341590885669, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091706204931515688, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
-      propertyPath: m_Name
-      value: TowerWall_
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 15163e5072ce43643b9392f0c8b20ede, type: 3}
+  - name: BassA
+    clip: {fileID: 8300000, guid: 1555819c4fee3af4caf279d3583fa290, type: 3}
+    volume: 0.355
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
