@@ -127,6 +127,11 @@ public class GameManager : MonoBehaviour
         SoundBox._pause++;
     }
 
+    private async void Start()
+    {
+        await AnalyticsManager.InitializeAsync();
+    }
+
 
 }
 
