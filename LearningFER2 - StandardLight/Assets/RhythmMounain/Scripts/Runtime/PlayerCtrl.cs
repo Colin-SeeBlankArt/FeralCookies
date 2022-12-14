@@ -15,15 +15,20 @@ public class PlayerCtrl : MonoBehaviour
     private ParticleSystem[] m_particleSystems = Array.Empty<ParticleSystem>();
 
     private Vector3[] m_positionBuffer = Array.Empty<Vector3>();
-
     private TrailRenderer[] m_trailRenderers = Array.Empty<TrailRenderer>();
 
     private LaneRunner runner;
 
-    //bool canBoost = true;
-    private float speed;
-    private float speedBoost; //timer for boost, tied to green brick collection
-    private float startSpeed;
+    //taken from DreamTeck.Forever.MathPlayer.cs
+    public static int _speedBoostCheck = 0;
+    float boost = 2f;
+    bool canBoost = true;
+    float speed;
+    float startSpeed = 0;
+
+    //test to find this out. May need to be Public in GameManager
+    float minSpeed;
+    float maxSpeed; 
 
     // Zack: Had to use reflection since unity tried to hide this information. Not great!
     private readonly FieldInfo trailsField = typeof(ParticleSystem.Trails).GetField("positions", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -33,7 +38,11 @@ public class PlayerCtrl : MonoBehaviour
     private AudioManager soundBite;
     public static int _redbrick=0; //reduce speed when hitting a bunny or red brick
 
-    void Start()
+    //timer for clamping speed changes
+    private float elapsed;
+    private float timerSpeed = 0.2f;
+
+void Start()
     {
         //soundBite.Play("EngineNoise");
     }
@@ -122,7 +131,7 @@ public class PlayerCtrl : MonoBehaviour
         {
             soundBite.Play("BunnyPing");
         }
-  
+
         if (collider.CompareTag("BlockL"))
         {
             runner.lane++;
@@ -131,7 +140,7 @@ public class PlayerCtrl : MonoBehaviour
         }
         if (collider.CompareTag("BlockR"))
         {
-            runner.lane --;
+            runner.lane--;
             ShipAnim.SetBool("Left_trig", true);
             soundBite.Play("Bump");
         }
@@ -139,7 +148,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             Left();
         }
@@ -149,7 +158,7 @@ public class PlayerCtrl : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
-            runner.followSpeed++;
+            runner.followSpeed++; 
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.W))
         {
@@ -157,24 +166,20 @@ public class PlayerCtrl : MonoBehaviour
         }
 
     }
-
     public void Left()
     {
         runner.lane--;
         ShipAnim.SetBool("Left_trig", true);
     }
-
     public void Right()
     {
         runner.lane++;
         ShipAnim.SetBool("Right_trig", true);
     }
-
     public float GetSpeed()
     {
         return speed;
     }
-
     public void SetSpeed(float speed)
     {
         this.speed = speed;
@@ -184,9 +189,26 @@ public class PlayerCtrl : MonoBehaviour
             //EndScreen.Open();
         }
     }
-
-    public void SpeedBoost()
+    public void Spedometer()
     {
-        runner.followSpeed = speed;
+        //SetSpeed(GetSpeed() + boost);
+        Debug.Log("speed boost " + runner.followSpeed);
+        //runner.followSpeed = speed;
+    }
+    public void SlowPlayer()
+    {
+        SetSpeed(GetSpeed() - boost);
+        Debug.Log("speed slow " + runner.followSpeed);
+        //runner.followSpeed = speed;
+    }
+    public void ElapseTimer()
+    {
+        elapsed += Time.deltaTime;
+        if (elapsed >= timerSpeed)
+        {
+            elapsed = 0f;
+            Destroy(gameObject);
+        }
+        
     }
 }

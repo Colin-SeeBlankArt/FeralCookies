@@ -2029,7 +2029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &585044370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2155,14 +2155,12 @@ MonoBehaviour:
   greenTick: {fileID: 1837213359}
   blueTick: {fileID: 999591769}
   purpleTick: {fileID: 1198313361}
-  loopTick: {fileID: 225375577}
   _greenSlider: {fileID: 686095236}
   _blueSlider: {fileID: 1837799057}
   _purpleSlider: {fileID: 840018401}
-  _loopSlider: {fileID: 585044371}
-  _greenBrickGoals: 4
   _blueBrickGoals: 4
   _purpleBrickGoals: 1
+  _LvlWGoals: 2
   _winLevel: 2
 --- !u!1 &627890586
 GameObject:
@@ -2834,11 +2832,11 @@ MonoBehaviour:
   _useUnloadUnusedAssets: 0
   _loopSegmentLogic: 1
   _levelCollection:
-  - {fileID: 11400000, guid: 3a39841a80d414f48913d23062d9e719, type: 2}
+  - {fileID: 11400000, guid: 04321983bd02c96449bb407fd0b10313, type: 2}
   _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
-  _sharedPathGenerator: {fileID: 11400000, guid: cef07fbf542d61141b7d93217747a68c, type: 2}
+  _sharedPathGenerator: {fileID: 11400000, guid: 98304cf0b75b30d459fe1ab17d00bddb, type: 2}
   levels: []
   usePathGeneratorInstance: 0
 --- !u!1 &757075883
@@ -4020,7 +4018,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6552,7 +6550,7 @@ MonoBehaviour:
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
   _makeB: 3
-  _makeRover: 100
+  _makeRover: 3
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
   _sMSegs: {fileID: 4174493254310642626, guid: d41bf9b0467d0244db4a756bcd320d4e, type: 3}
@@ -6931,7 +6929,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7867,7 +7865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3922241855129381493, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
       propertyPath: followSpeed
-      value: 10.8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4439851182153558413, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
       propertyPath: m_RootOrder

@@ -19,6 +19,8 @@ public class CollectBrick : MonoBehaviour
     private float timerSpeed = 0.2f;
     private float elapsed;
 
+    float _boosterFloat = 0.2f;
+
     public Material[] _bMaterial; //potentially change this int at GameManager
     Renderer rend;
 
@@ -38,7 +40,7 @@ public class CollectBrick : MonoBehaviour
         rend.enabled = true;
         rend.sharedMaterial = _bMaterial[0];
         _anim = GetComponent<Animator>();
-        RangeRandom(50);
+        RangeRandom(100);
 
     }
    
@@ -80,8 +82,7 @@ public class CollectBrick : MonoBehaviour
         {
             ScoringSystem._greenTick++;     //green brick tally
             ScoringSystem._greenBrickTicker++;    //for counter to work in Scoring
-
-           // LoopMachine._loopTicker++;
+            PlayerCtrl.instance.SetSpeed(PlayerCtrl.instance.GetSpeed() + _boosterFloat); ; //boosts player speed            
             rend.sharedMaterial = _bMaterial[0];
             _audioManager.Play("BrickPing");
             brickState = 0;
@@ -89,7 +90,7 @@ public class CollectBrick : MonoBehaviour
         if (_badBrick)
         {
             ScoringSystem._redTick++;
-            PlayerCtrl._redbrick = 1; //send to playerctl to reduce speed temp
+            PlayerCtrl.instance.SetSpeed(PlayerCtrl.instance.GetSpeed() - _boosterFloat); //send to playerctl to reduce speed temp
             _audioManager.Play("BunnyPing");
             brickState = 1;
         }
@@ -101,9 +102,9 @@ public class CollectBrick : MonoBehaviour
         }
         if (_purple)
         {
-            ScoringSystem._purpTick++;
             _audioManager.Play("BrickPing");
             brickState = 2;
+            ScoringSystem._purpTick++;            
             CountDownTimer._timeTrig++;
         }
 
@@ -122,23 +123,23 @@ public class CollectBrick : MonoBehaviour
     {
         int _ranNum = Random.Range(0, MyNewNum);
         NewNum = _ranNum;
-        if (NewNum >= 0 && NewNum <= 34)
+        if (NewNum >= 0 && NewNum <= 69)
         {
             _greenbrick = true;
         }
-        if (NewNum >= 35 && NewNum <= 47)
+        if (NewNum >= 70 && NewNum <= 89)
         {
             rend.sharedMaterial = _bMaterial[1];
             _badBrick = true;
         }
-        if (NewNum == 48)
+        if (NewNum >= 90 && NewNum <= 94)
         {
             rend.sharedMaterial = _bMaterial[2];
             _blue = true;
             ScoringSystem._blueTick++;
 
         }
-        if (NewNum == 49)
+        if (NewNum >= 95 && NewNum <= 99)
         {
             rend.sharedMaterial = _bMaterial[3];
             _purple = true;

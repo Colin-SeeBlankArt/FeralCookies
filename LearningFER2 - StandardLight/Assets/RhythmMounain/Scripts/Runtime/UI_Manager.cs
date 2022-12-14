@@ -24,24 +24,15 @@ public class UI_Manager : MonoBehaviour
         //LevelGen.Awake = true
 
     }
-    public void UI_Pop () // use this to test out ideas for "popping" menus telling the player "something" happened
-    {
-        //create simple 3 sec time, sec 1 fade in, sec 2 read text, sec 3 fade out
-        //animate text stating "Pop!" after coin collect
-        //animate text stating "Loop Collected", bring in LoopCt from GameManager
-    }
-
     public void FadeFromBlack()
     {
         anim.SetBool("FromBlack", true);
     }
-
     public void QuitGame()
     {
         UnityEngine.Debug.Log("Quit!");
         Application.Quit();
     }
-
     //from Brackey's - Load screen
     // https://www.youtube.com/watch?v=YMj2qPq9CP8
     //

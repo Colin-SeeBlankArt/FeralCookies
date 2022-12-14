@@ -2155,14 +2155,12 @@ MonoBehaviour:
   greenTick: {fileID: 1837213359}
   blueTick: {fileID: 999591769}
   purpleTick: {fileID: 1198313361}
-  loopTick: {fileID: 225375577}
   _greenSlider: {fileID: 686095236}
   _blueSlider: {fileID: 1837799057}
   _purpleSlider: {fileID: 840018401}
-  _loopSlider: {fileID: 585044371}
-  _greenBrickGoals: 4
   _blueBrickGoals: 8
   _purpleBrickGoals: 1
+  _LvlWGoals: 2
   _winLevel: 2
 --- !u!1 &627890586
 GameObject:
@@ -2834,7 +2832,7 @@ MonoBehaviour:
   _useUnloadUnusedAssets: 0
   _loopSegmentLogic: 1
   _levelCollection:
-  - {fileID: 11400000, guid: 5208135e5476df641b9e11288ac776cf, type: 2}
+  - {fileID: 11400000, guid: 3a39841a80d414f48913d23062d9e719, type: 2}
   _levelIteration: 2
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
@@ -7408,7 +7406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2051909359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7867,7 +7865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3922241855129381493, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
       propertyPath: followSpeed
-      value: 10.8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4439851182153558413, guid: 2f322326be692004d9d7dd2ebadea937, type: 3}
       propertyPath: m_RootOrder

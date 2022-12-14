@@ -29,20 +29,18 @@ public class ScoringSystem : MonoBehaviour
     public Text greenTick;
     public Text blueTick;
     public Text purpleTick;
-    public Text loopTick;
 
     public Slider _greenSlider;
     public Slider _blueSlider;
     public Slider _purpleSlider;
-    public Slider _loopSlider;
 
     public static int _greenBrickTicker;  //actual score variable
 
     public static int brickTick;
     public static int _greenTick;   //this will be a positive impact on loop count
     public static int _redTick;     //this will be a negative impact on loop count
-    public static int _purpTick;
-    public static int _blueTick;
+    public static int _purpTick;    //unlocks future items
+    public static int _blueTick;    //unlocks future items
 
     public static int _greenStack;  //green collection
     int _negativeBrickTick;
@@ -74,9 +72,9 @@ public class ScoringSystem : MonoBehaviour
     int _loopTicker;
     int _loopCount;
 
-    public int _greenBrickGoals = 4;        // Trigger for + Blue Brick 
-    public int _blueBrickGoals = 2;         // Trigger for + Purple Brick
-    public int _purpleBrickGoals = 2;       // Trigger for future Brick colors
+    public int _blueBrickGoals = 4;        // Trigger for + Blue Brick 
+    public int _purpleBrickGoals = 2;         // Trigger for + Purple Brick
+    public int _LvlWGoals = 2;       // Trigger for Level Winning
     int _loopGoals;
     [SerializeField]
     public int _winLevel;
@@ -84,22 +82,37 @@ public class ScoringSystem : MonoBehaviour
     private void Start()
     {
         ResetALL();
-        _loopGoals = _purpleBrickGoals;
-        //slider values for visual rep of loop count
-        _greenSlider.maxValue = _greenBrickGoals;
-        _blueSlider.maxValue = _blueBrickGoals;
-        _purpleSlider.maxValue = _purpleBrickGoals;
-
-        _loopSlider.maxValue = _winLevel;        
-
+        _loopGoals = _LvlWGoals;
+        _greenSlider.maxValue = _blueBrickGoals;
+        _blueSlider.maxValue = _purpleBrickGoals;
+        _purpleSlider.maxValue = _LvlWGoals;    
         }
 
     void Update()
     {
-         brickTick = brickTick + totBrickCt;
+        brickTick = brickTick + totBrickCt;
         
         pcScore = totBrickCt + _maxScore + _blueTick + _purpTick; //player score
         
+        //seting to zeros for scoretable
+        if (_greenBrickTicker <= 0)
+        {
+            _greenBrickTicker = 0;
+        }
+        if (goodBrickTot <= 0)
+        {
+            goodBrickTot = 0;
+        }
+        if (_greenTick <= 0)
+        {
+            _greenTick = 0;
+        }
+        if (_gBricktkr <= 0)
+        {
+            _gBricktkr = 0;
+        }
+
+
         _gBricktkr = _greenBrickTicker;
         _greenStack  = _greenBrickTicker;
         _negativeBrickTick = _redTick;
@@ -122,23 +135,18 @@ public class ScoringSystem : MonoBehaviour
         }
         if (_penalty>=1)
         {
-            _greenBrickTicker = 0;
+            _greenBrickTicker = _greenBrickTicker/2;
             _greenTick = 0;
             Debug.Log("Hit Spark + ");
             _penalty = 0;
         }
 
-        //pcScore = totBrickCt;
-        
-        //slider UI
         _greenSlider.value = _gBricktkr; 
         greenTick.text = "" + _greenTick;
         _blueSlider.value = _blBrktkr;
         blueTick.text = "" + _blueStack;
         _purpleSlider.value = _prpBrktkr;
         purpleTick.text = "" + _purpStack;
-        _loopSlider.value = _loopTicker;
-        loopTick.text = "" + _winLevel;
 
         //scoring logic    
         goodBrickTot = _greenTick - _negativeBrickTick;       
@@ -152,37 +160,29 @@ public class ScoringSystem : MonoBehaviour
         BBTick.GetComponent<Text>().text = "Red Brick = " + _negativeBrickTick;  //counter for the red  
         
         //scoring collection logic
-        if (_greenBrickTicker >= _greenBrickGoals)
+        if (_greenBrickTicker >= _blueBrickGoals)
         {
-            Debug.Log("Green Tick");
+            Debug.Log("Blue Tick");
             _greenBrickTicker = 0;          
             _blBrktkr++;
             _blueCounter++;
             _maxScore++;
         }
-        if (_blBrktkr >= _blueBrickGoals)
+        if (_blBrktkr >= _purpleBrickGoals)
         {
-            Debug.Log("Blue Tick");
+            Debug.Log("Purple Tick");
             _blBrktkr = 0;
             _prpBrktkr++;
             _purpCounter++;
-            loopticker++;
+            
             _maxScore++;
         }
-        if (_prpBrktkr >= _purpleBrickGoals)
+        if (_prpBrktkr >= _LvlWGoals)
         {
-            print("Purple Tick");
+            print("Level Loop Tick");
             _prpBrktkr = 0;
             _maxScore++;
-        }
-
-        if (_greenBrickTicker <= 0)
-        {
-            _greenBrickTicker = 0;
-        }
-        if (goodBrickTot <= 0)
-        {
-            goodBrickTot = 0;
+            loopticker++;
         }
 
         //to fire audio clilps 
@@ -194,7 +194,6 @@ public class ScoringSystem : MonoBehaviour
         { 
             SoundBox._bassA = false; 
         }
-
         if (_blueCounter >= 1)
         {
             SoundBox._keysA1 = true;

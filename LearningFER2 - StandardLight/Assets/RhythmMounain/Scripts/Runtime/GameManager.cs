@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
 
     int _pauseMe = 0;
 
+    //test to find this out. May need to be Public in PlayerCtrl
+    float minSpeed;
+    float maxSpeed;
+
     void Awake()
     {
         _noteQuota = 0;
@@ -111,8 +115,8 @@ public class GameManager : MonoBehaviour
 
     public void MakeRover()
     {
-        //Instantiate(rover, new Vector3(0, 0, 0), Quaternion.identity);
-        Debug.Log("Rover is Not Working");
+        Instantiate(rover, new Vector3(0, 0, 0), Quaternion.identity);
+        //Debug.Log("Rover is Not Working");
     }
     public void WinGame()
     {
