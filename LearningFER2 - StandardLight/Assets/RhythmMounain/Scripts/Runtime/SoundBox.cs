@@ -7,11 +7,10 @@ using System;
 
 public class SoundBox : MonoBehaviour
 {
-    [SerializeField] private Animator _audioTrgr = null;
-    //[SerializeField]
     AudioManager musicBites;
+    AudioSource musicSource;
 
-    public GameObject AudioTriggers;
+    public static SoundBox instance;
 
     public int musicPause = 0;
     public bool startPoint;
@@ -32,49 +31,48 @@ public class SoundBox : MonoBehaviour
 
     void Awake()
     {
-        musicBites = FindObjectOfType<AudioManager>();  
+        musicBites = FindObjectOfType<AudioManager>();
+        musicSource = FindObjectOfType<AudioSource>();
+        instance = this;
     }
     private void Update()
     {
-
         if (_pause >= 1)
         {
             PauseMusic();
-            //_pause = 0;
+            _pause = 0;
         }
-
     }
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
         {
-            PlayMusic();
+            PlayMusic();            
         }
     }
 
-    void PlayMusic()
+    //this is tied to the scoring system, based on coin unlocks
+    public void PlayMusic()
     {       
         //Fire/Stop BassA
         if (bassATrig && _bassA)
         {
-            musicBites.Play("BassA");
+            //musicBites.Play("BassA");
             Debug.Log("Bass A plays");
-            _audioTrgr.SetBool("bool_BassA_", true);
-
+            LoopMachine._loopPanelToggle ++;
 
         }
         //fire Keys A
         if(keysA1Ttrig && _keysA1)
         {
-            musicBites.Play("KeysA1");
+            //musicBites.Play("KeysA1");
             Debug.Log("Keys A plays");
-
         }
         //fire Keys A2
         if (keysA2Ttrig && _keysA2)
         {
-            musicBites.Play("KeysA2");
+            //musicBites.Play("KeysA2");
             Debug.Log("Keys A2 plays");
         }
  
@@ -86,6 +84,7 @@ public class SoundBox : MonoBehaviour
         }
 
     }
+
     void PauseMusic()
     {
         {
@@ -93,14 +92,6 @@ public class SoundBox : MonoBehaviour
             musicBites.Stop("KeysA1");
         }
     }
-    void ResetLoopCount()
-    {
-       if (resetLoop)
-        {
-            LoopMachine._resetLoopCount++;
-        }
-    }
-
 }
 
 /*

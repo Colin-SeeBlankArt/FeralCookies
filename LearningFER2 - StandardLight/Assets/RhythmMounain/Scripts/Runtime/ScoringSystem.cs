@@ -26,6 +26,9 @@ public class ScoringSystem : MonoBehaviour
     public GameObject GBTick;
     public GameObject BBTick;
 
+    //UI Element which activates Buttons for Songs
+    public GameObject LoopLists;
+
     public Text greenTick;
     public Text blueTick;
     public Text purpleTick;
@@ -58,24 +61,22 @@ public class ScoringSystem : MonoBehaviour
 
     int totBrickCt;
     int goodBrickTot;
-    //int badBrickTot;
-    //int _negativeBrick;
 
     int loopticker;
-
     int _gBricktkr;
-    
     int _blBrktkr;                          // Ticker for Purple Bricks 
     int _blueCounter;
     int _prpBrktkr;                         // Tcker for furture Brick colors
     int _purpCounter;
+ 
     int _loopTicker;
     int _loopCount;
+    int _loopGoals;
 
     public int _blueBrickGoals = 4;        // Trigger for + Blue Brick 
     public int _purpleBrickGoals = 2;         // Trigger for + Purple Brick
     public int _LvlWGoals = 2;       // Trigger for Level Winning
-    int _loopGoals;
+    
     [SerializeField]
     public int _winLevel;
 
@@ -90,6 +91,9 @@ public class ScoringSystem : MonoBehaviour
 
     void Update()
     {
+        FireAudioLoops();
+        CoinCounter();
+
         brickTick = brickTick + totBrickCt;
         
         pcScore = totBrickCt + _maxScore + _blueTick + _purpTick; //player score
@@ -111,7 +115,6 @@ public class ScoringSystem : MonoBehaviour
         {
             _gBricktkr = 0;
         }
-
 
         _gBricktkr = _greenBrickTicker;
         _greenStack  = _greenBrickTicker;
@@ -158,12 +161,38 @@ public class ScoringSystem : MonoBehaviour
         Loops.GetComponent<Text>().text = "Loops = " + loopticker;  //count loopos, based on 10 bricks for each loop
         GBTick.GetComponent<Text>().text = "Green Brick = " + goodBrickTot; //counter for the green
         BBTick.GetComponent<Text>().text = "Red Brick = " + _negativeBrickTick;  //counter for the red  
-        
+      
+    }
+    //to fire audio clilps 
+    void FireAudioLoops()
+    {
+        //to fire audio clilps 
+        if (/*_greenStack*/ goodBrickTot >= 1)
+        {
+            SoundBox._bassA = true;
+        }
+        else
+        {
+            SoundBox._bassA = false;
+        }
+        if (_blueCounter >= 1)
+        {
+            SoundBox._keysA1 = true;
+        }
+        if (_blueCounter >= 4)
+        {
+            SoundBox._keysA2 = true;
+        }
+    }
+
+    //scoring collection logic
+    void CoinCounter()
+    {
         //scoring collection logic
         if (_greenBrickTicker >= _blueBrickGoals)
         {
             Debug.Log("Blue Tick");
-            _greenBrickTicker = 0;          
+            _greenBrickTicker = 0;
             _blBrktkr++;
             _blueCounter++;
             _maxScore++;
@@ -174,7 +203,7 @@ public class ScoringSystem : MonoBehaviour
             _blBrktkr = 0;
             _prpBrktkr++;
             _purpCounter++;
-            
+
             _maxScore++;
         }
         if (_prpBrktkr >= _LvlWGoals)
@@ -183,24 +212,6 @@ public class ScoringSystem : MonoBehaviour
             _prpBrktkr = 0;
             _maxScore++;
             loopticker++;
-        }
-
-        //to fire audio clilps 
-        if (/*_greenStack*/ goodBrickTot >= 1)
-        {
-            SoundBox._bassA = true;
-        }
-        else 
-        { 
-            SoundBox._bassA = false; 
-        }
-        if (_blueCounter >= 1)
-        {
-            SoundBox._keysA1 = true;
-        }
-        if(_blueCounter >= 4)
-        {
-            SoundBox._keysA2 = true;
         }
     }
 
@@ -244,60 +255,10 @@ public class ScoringSystem : MonoBehaviour
     {
         GameManager._noteQuota++;
     }
-
 }
 
 
 /*    
- *         
- *  
- *  void LoopCounter()
-    {
-        loopticker = 0;
-        Debug.Log("loop ticker = " + loopticker);
-        loops += 1;
-        stateticker += 1;
-    }
+
  *    
-    public static int TICK
-    {
-        get { return _TICK; }
-        set 
-        { 
-            _TICK = value;
-            Debug.Log($"TICK changed to {_TICK}");
-        }
-    }
-    private static int _TICK;        
-
-        loopticker += goodbrickTick - (badbrickTick);
-        if (loopticker >= loopTickGoal) //for every x bricks, do the following:
-        {
-            loopticker = 0;
-            Debug.Log("loop ticker reset");
-            loops +=1;
-            stateticker += 1;
-        }
-
-        if (stateticker >= statetickerGoal) //for every x State counts, do the following
-        {
-            GameManager.StateTick += 1;
-            Debug.Log("statecount is reset");
-            stateticker = 0;
-        }
-////         
-
-        if (brickTick == loopGoal)  //set adding to the loops, resest counter
-        {
-            loops += 1;
-            loopticker += 1;
-            //brickTick = 0;
-        }
-        if (loopticker >= stateGoal) //set for the State, reset loop ticker
-        {
-            GameManager.StateTick += 1;
-            stateticker += 1;
-            Debug.Log("statecount is reset");
-            loopticker = 0;
-        }
 */

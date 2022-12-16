@@ -101,7 +101,6 @@ public class GameManager : MonoBehaviour
         //maybe it should pause since its game crit
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         ScoringSystem._resetALL ++;
-        LoopMachine._resetLoopCount++;
     }
     public void QuitGame()
     {

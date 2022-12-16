@@ -6,6 +6,8 @@ using Dreamteck.Forever;
 
 public class LoopMachine : MonoBehaviour
 {
+    public static LoopMachine instance;
+    public GameObject BassA1box;
     //this is the loop counter machine, used to fire off the audio tracks
 
     [SerializeField]
@@ -13,37 +15,48 @@ public class LoopMachine : MonoBehaviour
     [SerializeField]
     private int _loopCtr;
 
-    static public int _loopTicker =0; //comes from from Scoring
-    static public int _resetLoopCount = 0; //comes from SoundBox
-
-    private LaneRunner _levelControl; 
+    public static int _loopPanelToggle = 0;
 
     //audio controller, needs to trigger song loops at loop counts
-    //
+    AudioSource audioSourceB;
 
-    int _CurLoop; //Holds Current Loop Designation
-    
-    int _loopAdvance;
     private void Awake()
     {
-        _levelControl = GetComponent<LaneRunner>();
+        audioSourceB = GetComponent<AudioSource>();
+        instance = this;
+        //Invoke("DeactivateMe", audioSourceB.clip.length);
     }
-
+    private void Start()
+    {
+        BassA1box = GetComponent<GameObject>();
+    }
     void Update()
     {
-        LoopCount();
-
+        if (_loopPanelToggle >= 1)
+        {
+            Debug.Log("Panel Toggle");
+            BassA1box.SetActive(true);
+            _loopPanelToggle = 0;  
+        }
+        //PlayingLoops(); 
     }
 
-    public void LoopCount()
+    public void PlayingLoops()
     {
-        if (_loopTicker >= _loopCountA)
-        {
-            _CurLoop++;
-            _loopTicker = 0;
-            Debug.Log("Loop Count " + _CurLoop);
-        }
-    } //loop counter
+        audioSourceB.Play();
+      
+    }
 
+    void PlayingIsTrue()
+    {
+        //wait the time of the length of the loop to move to the next step
+        if (!audioSourceB.isPlaying)
+        {
+            //wait the time of the length of the loop to move to the next step
+            Debug.Log("Audio stopped");
+            gameObject.SetActive(false);
+        }
+    }
+        
      
 }

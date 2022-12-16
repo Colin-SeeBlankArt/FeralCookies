@@ -82,7 +82,9 @@ public class CollectBrick : MonoBehaviour
         {
             ScoringSystem._greenTick++;     //green brick tally
             ScoringSystem._greenBrickTicker++;    //for counter to work in Scoring
+            
             PlayerCtrl.instance.SetSpeed(PlayerCtrl.instance.GetSpeed() + _boosterFloat); ; //boosts player speed            
+            
             rend.sharedMaterial = _bMaterial[0];
             _audioManager.Play("BrickPing");
             brickState = 0;
@@ -90,7 +92,9 @@ public class CollectBrick : MonoBehaviour
         if (_badBrick)
         {
             ScoringSystem._redTick++;
+            
             PlayerCtrl.instance.SetSpeed(PlayerCtrl.instance.GetSpeed() - _boosterFloat); //send to playerctl to reduce speed temp
+            
             _audioManager.Play("BunnyPing");
             brickState = 1;
         }
@@ -105,7 +109,6 @@ public class CollectBrick : MonoBehaviour
             _audioManager.Play("BrickPing");
             brickState = 2;
             ScoringSystem._purpTick++;            
-            CountDownTimer._timeTrig++;
         }
 
         DestroyMe(); 
@@ -118,6 +121,16 @@ public class CollectBrick : MonoBehaviour
         Instantiate(_Particlecube, transform.position, transform.rotation);
     }
 
+    void AddSpeed()
+    {
+        //send to playerctl to increase speed
+        PlayerCtrl.instance.SetSpeed(PlayerCtrl.instance.GetSpeed() + _boosterFloat); 
+    }
+    void LoseSpeed()
+    {
+        //send to playerctl to decrease speed
+        PlayerCtrl.instance.SetSpeed(PlayerCtrl.instance.GetSpeed() - _boosterFloat);
+    }
     //changes colors, percentaged based
     public void RangeRandom(int MyNewNum)
     {
@@ -136,14 +149,11 @@ public class CollectBrick : MonoBehaviour
         {
             rend.sharedMaterial = _bMaterial[2];
             _blue = true;
-            ScoringSystem._blueTick++;
-
         }
         if (NewNum >= 95 && NewNum <= 99)
         {
             rend.sharedMaterial = _bMaterial[3];
             _purple = true;
-            ScoringSystem._purpTick++;
         }
     } 
 }

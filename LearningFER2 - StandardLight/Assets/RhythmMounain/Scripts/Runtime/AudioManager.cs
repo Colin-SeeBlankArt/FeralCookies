@@ -6,7 +6,6 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-
     public Sound[] sounds;
     public static AudioManager instance;
     AudioSource audioSource;
@@ -35,6 +34,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+
+    }
+
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -45,7 +49,6 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Pause();
     }
-
     public void Stop(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
