@@ -4,10 +4,13 @@ using System.Reflection;
 using Dreamteck.Forever;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class PlayerCtrl : MonoBehaviour
 {
     [SerializeField] private Animator ShipAnim = null;
+
+    public  GameObject _speedometer;
 
     public static PlayerCtrl instance;
 
@@ -28,7 +31,7 @@ public class PlayerCtrl : MonoBehaviour
 
     //test to find this out. May need to be Public in GameManager
     float minSpeed;
-    float maxSpeed; 
+    float maxSpeed = 15f; 
 
     // Zack: Had to use reflection since unity tried to hide this information. Not great!
     private readonly FieldInfo trailsField = typeof(ParticleSystem.Trails).GetField("positions", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -148,6 +151,13 @@ void Start()
 
     void Update()
     {
+        if(speed >= 15f)
+        {
+            CollectBrick._canBoost = false;
+            SetSpeed(speed=maxSpeed);            
+        }
+        _speedometer.GetComponent<Text>().text ="Speed: " + speed.ToString() + " mps"; 
+
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             Left();
@@ -191,9 +201,7 @@ void Start()
     }
     public void Spedometer()
     {
-        //SetSpeed(GetSpeed() + boost);
         Debug.Log("speed boost " + runner.followSpeed);
-        //runner.followSpeed = speed;
     }
     public void SlowPlayer()
     {

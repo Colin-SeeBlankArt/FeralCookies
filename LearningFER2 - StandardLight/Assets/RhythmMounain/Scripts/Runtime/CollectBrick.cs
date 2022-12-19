@@ -20,6 +20,7 @@ public class CollectBrick : MonoBehaviour
     private float elapsed;
 
     float _boosterFloat = 0.2f;
+    public static bool _canBoost = true;
 
     public Material[] _bMaterial; //potentially change this int at GameManager
     Renderer rend;
@@ -73,6 +74,11 @@ public class CollectBrick : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if (_canBoost == false)
+        {
+            Debug.Log("Boost is false");
+        }   
     }
     
     //coin counter
@@ -80,11 +86,15 @@ public class CollectBrick : MonoBehaviour
     {
         if (_greenbrick)
         {
+            ScoringSys2.greenCoinCollect ++;
             ScoringSystem._greenTick++;     //green brick tally
             ScoringSystem._greenBrickTicker++;    //for counter to work in Scoring
-            
-            PlayerCtrl.instance.SetSpeed(PlayerCtrl.instance.GetSpeed() + _boosterFloat); ; //boosts player speed            
-            
+
+            if (_canBoost)
+            {                
+                PlayerCtrl.instance.SetSpeed(PlayerCtrl.instance.GetSpeed() + _boosterFloat); ; //boosts player speed            
+            }
+             
             rend.sharedMaterial = _bMaterial[0];
             _audioManager.Play("BrickPing");
             brickState = 0;

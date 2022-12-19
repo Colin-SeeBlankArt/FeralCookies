@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 121617103937192084}
   - component: {fileID: 121617103937192087}
+  - component: {fileID: 1269684781707863113}
   m_Layer: 0
   m_Name: BassA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &121617103937192084
 Transform:
   m_ObjectHideFlags: 0
@@ -128,6 +129,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1269684781707863113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121617103937192086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e58ba20f2f85504f83dadda5610d344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &121617104671882403
 GameObject:
   m_ObjectHideFlags: 0

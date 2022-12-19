@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ScoringSystem : MonoBehaviour
 {
+    //store data
     public static void RecordResults()
     {
         var sessionData = new GameSessionData()
@@ -20,6 +21,7 @@ public class ScoringSystem : MonoBehaviour
         AnalyticsManager.SaveDataAsync("SessionData", sessionData);
     }
 
+    //text of data
     public GameObject BrickCounter;
     public GameObject PlayerScore;
     public GameObject Loops;
@@ -167,21 +169,21 @@ public class ScoringSystem : MonoBehaviour
     void FireAudioLoops()
     {
         //to fire audio clilps 
-        if (/*_greenStack*/ goodBrickTot >= 1)
+        if (goodBrickTot >= 1)
         {
-            SoundBox._bassA = true;
+            LoopMachine._bassA = true;
         }
         else
         {
-            SoundBox._bassA = false;
+            LoopMachine._bassA = false;
         }
-        if (_blueCounter >= 1)
+        if (_blueStack >= _blueBrickGoals*.5)
         {
-            SoundBox._keysA1 = true;
+            LoopMachine._keysA1 = true;
         }
-        if (_blueCounter >= 4)
+        if (_purpStack >= 4)
         {
-            SoundBox._keysA2 = true;
+            LoopMachine._keysA2 = true;
         }
     }
 

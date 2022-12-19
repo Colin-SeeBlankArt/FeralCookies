@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject NextLevel;    //win level panel
     public GameObject PausePanel; //pause panel, currently
     public GameObject EndTime; //end time panel, currently
-
+    
     //instaniate bunny!!
     public float _makeB = 2f; //spawn every x seconds, hopefully
     public float _makeRover = 1f;
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
@@ -70,22 +71,31 @@ public class GameManager : MonoBehaviour
             EndTimer();
         }
     }
+    public void WinGame()
+    {
+        ScoringSystem.RecordResults();
+        NextLevel.gameObject.SetActive(!NextLevel.gameObject.activeSelf); //opens pause menu
+        Debug.Log("Win Game!");
+        Time.timeScale = 0;
+        audioBox._pause++;
+    }
+
     public void Play()
     {
         Time.timeScale = 1;
-        SoundBox._pause = 0;
+        audioBox._pause = 0;
     }
     public void PauseGame()
     {
         Time.timeScale = 0; //stops game time
         PausePanel.gameObject.SetActive(!PausePanel.gameObject.activeSelf); //opens pause menu  
-        SoundBox._pause++;
+        audioBox._pause++;
         _pauseMe++;
     }
     public void UnPauseGame()
     {
         Time.timeScale = 1; //start game time
-        SoundBox._pause = 0;
+        LoopMachine._pause = 0;
         _pauseMe = 0;
     }
     public void EndTimer()
@@ -117,14 +127,7 @@ public class GameManager : MonoBehaviour
         Instantiate(rover, new Vector3(0, 0, 0), Quaternion.identity);
         //Debug.Log("Rover is Not Working");
     }
-    public void WinGame()
-    {
-        ScoringSystem.RecordResults();
-        NextLevel.gameObject.SetActive(!NextLevel.gameObject.activeSelf); //opens pause menu
-        Debug.Log("Win Game!");
-        Time.timeScale = 0;
-        SoundBox._pause++;
-    }
+
 
     private async void Start()
     {

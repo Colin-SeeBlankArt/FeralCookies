@@ -6,7 +6,7 @@ public class CountDownTimer : MonoBehaviour
 {
     public static CountDownTimer instance;
     public static bool timerIsRunning = false;
-    public Text _gameText;              // Set up Game Player timer (down)
+    //public Text _gameText;              // Set up Game Player timer (down)
     public Text _totalTime;             // Over All Time for Game (up)
     public Slider timerSlider;
 
@@ -33,7 +33,7 @@ public class CountDownTimer : MonoBehaviour
     }
     void Update()
     {
-        GamePlayTime(timeLeft);
+        
         if (_timeTrig == 1)
         {
             BonusTime();
@@ -64,13 +64,7 @@ public class CountDownTimer : MonoBehaviour
             _timerTime++;               // count Up
         }
     }
-    void GamePlayTime(float timeToDisplay)
-    {
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        _gameText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        timerSlider.value = timeToDisplay;
-    }
+
 
     void OverallTime(float timeToDisplay)
     {
@@ -88,3 +82,16 @@ public class CountDownTimer : MonoBehaviour
         timeLeft -= _bonusTime;
     }
 }
+/*
+/
+    GamePlayTime(timeLeft); 
+    void GamePlayTime(float timeToDisplay)
+    {
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        _gameText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timerSlider.value = timeToDisplay;
+    }
+
+ 
+ */
