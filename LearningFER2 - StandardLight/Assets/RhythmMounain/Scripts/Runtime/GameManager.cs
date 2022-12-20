@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1; //start game time
         LoopMachine._pause = 0;
+        audioBox._pause = 0;
         _pauseMe = 0;
     }
     public void EndTimer()

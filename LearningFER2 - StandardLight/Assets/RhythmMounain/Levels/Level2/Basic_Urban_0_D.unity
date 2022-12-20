@@ -2142,8 +2142,8 @@ MonoBehaviour:
   _blueSlider: {fileID: 1837799057}
   _purpleSlider: {fileID: 840018401}
   _blueBrickGoals: 4
-  _purpleBrickGoals: 1
-  _LvlWGoals: 4
+  _purpleBrickGoals: 2
+  _LvlWGoals: 1
   _winLevel: 4
 --- !u!1 &627890586
 GameObject:
@@ -2688,18 +2688,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 121617103937192086, guid: c938cd62c45e8994b9ecb041ff80541f, type: 3}
   m_PrefabInstance: {fileID: 1444613365}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &718326862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718326859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e58ba20f2f85504f83dadda5610d344, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &720958589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3874,14 +3862,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BassAGameObject: {fileID: 0}
   _audioBoxes: []
-  _loopCountA: 0
-  _loopCtr: 0
   musicPause: 0
   startPoint: 0
-  bassATrig: 0
-  keysA1Ttrig: 0
-  keysA2Ttrig: 0
-  keysB1Trig: 0
   _allStop: 0
 --- !u!1 &986998277
 GameObject:
@@ -6995,7 +6977,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 12
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7123,14 +7105,8 @@ MonoBehaviour:
   - {fileID: 1232887871}
   - {fileID: 1886595071}
   - {fileID: 730054844}
-  _loopCountA: 0
-  _loopCtr: 0
   musicPause: 0
   startPoint: 0
-  bassATrig: 0
-  keysA1Ttrig: 0
-  keysA2Ttrig: 0
-  keysB1Trig: 0
   _allStop: 0
 --- !u!4 &2039029468
 Transform:
@@ -7203,7 +7179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 1 Dev
+  m_text: Urban Level 2 - 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}
   m_sharedMaterial: {fileID: 6365364023026732378, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}

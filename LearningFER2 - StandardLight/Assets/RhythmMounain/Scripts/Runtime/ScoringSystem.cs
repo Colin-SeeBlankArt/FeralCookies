@@ -78,9 +78,9 @@ public class ScoringSystem : MonoBehaviour
     public int _blueBrickGoals = 4;        // Trigger for + Blue Brick 
     public int _purpleBrickGoals = 2;         // Trigger for + Purple Brick
     public int _LvlWGoals = 2;       // Trigger for Level Winning
-    
+
     [SerializeField]
-    public int _winLevel;
+    int _winLevel;
 
     private void Start()
     {
@@ -93,7 +93,7 @@ public class ScoringSystem : MonoBehaviour
 
     void Update()
     {
-        FireAudioLoops();
+        
         CoinCounter();
 
         brickTick = brickTick + totBrickCt;
@@ -165,27 +165,7 @@ public class ScoringSystem : MonoBehaviour
         BBTick.GetComponent<Text>().text = "Red Brick = " + _negativeBrickTick;  //counter for the red  
       
     }
-    //to fire audio clilps 
-    void FireAudioLoops()
-    {
-        //to fire audio clilps 
-        if (goodBrickTot >= 1)
-        {
-            LoopMachine._bassA = true;
-        }
-        else
-        {
-            LoopMachine._bassA = false;
-        }
-        if (_blueStack >= _blueBrickGoals*.5)
-        {
-            LoopMachine._keysA1 = true;
-        }
-        if (_purpStack >= 4)
-        {
-            LoopMachine._keysA2 = true;
-        }
-    }
+
 
     //scoring collection logic
     void CoinCounter()
@@ -261,6 +241,12 @@ public class ScoringSystem : MonoBehaviour
 
 
 /*    
-
+    //use this to control song loop triggers
+    public bool _goalsLoop1 = false;
+    public bool _goalsLoop2 = false;
+    public bool _goalsLoop3 = false;
+    public bool _goalsLoop4 = false;
+    public bool _goalsLoop5 = false;
+    public bool _goalsLoop6 = false;
  *    
 */

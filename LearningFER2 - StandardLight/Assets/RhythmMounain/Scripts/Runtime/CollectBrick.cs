@@ -74,11 +74,7 @@ public class CollectBrick : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-        if (_canBoost == false)
-        {
-            Debug.Log("Boost is false");
-        }   
+   
     }
     
     //coin counter

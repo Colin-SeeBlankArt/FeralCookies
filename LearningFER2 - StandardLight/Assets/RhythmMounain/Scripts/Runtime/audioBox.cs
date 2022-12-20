@@ -7,35 +7,35 @@ public class audioBox : MonoBehaviour
     AudioSource audioSource;
     public static int _pause = 0;
     public static bool _loop = false;
-    private bool _canPlay = false;
+
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();        
     }
 
     void Update()
     {
-        if(_pause == 1)
+        EndPlaying();
+
+        if (_pause == 1)
         {
             audioSource.Pause();
         }
+        else { audioSource.UnPause(); }
+        
         if(_loop)
         {
             audioSource.loop = true;
         }
-        if(_canPlay)
-        {
-            AudioBoxPlaying();
-        }
+        //else { EndPlaying(); }
     }
 
-    public void AudioBoxPlaying()
+    public void EndPlaying()
     {
         if (!audioSource.isPlaying)
-        {
-            //wait the time of the length of the loop to move to the next step
-            Debug.Log("Audio stopped");
-            gameObject.SetActive(false);
+        {           
+            //this.gameObject.SetActive(false); 
+            LoopMachine._playNextTrack = true; //toggle next track of song
         }
     }
 }
