@@ -17,6 +17,7 @@ public class audioBox : MonoBehaviour
     {
         EndPlaying();
 
+
         if (_pause == 1)
         {
             audioSource.Pause();
@@ -35,7 +36,14 @@ public class audioBox : MonoBehaviour
         if (!audioSource.isPlaying)
         {           
             //this.gameObject.SetActive(false); 
-            LoopMachine._playNextTrack = true; //toggle next track of song
+            LoopMachine._playNextTrack = 1;
+            Debug.Log("Play Next Track ++");
         }
+
+    }
+
+    public void WinCheck()
+    {
+        GameManager._noteQuota ++;
     }
 }

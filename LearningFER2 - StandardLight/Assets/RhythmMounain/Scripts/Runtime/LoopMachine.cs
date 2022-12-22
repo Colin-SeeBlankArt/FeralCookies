@@ -21,6 +21,7 @@ public class LoopMachine : MonoBehaviour
     public int musicPause = 0;
     public bool startPoint;
 
+    [SerializeField] private bool Array0Trig;
     [SerializeField] private bool Array1Trig;
     [SerializeField] private bool Array2Trig;
     [SerializeField] private bool Array3Trig;
@@ -41,7 +42,7 @@ public class LoopMachine : MonoBehaviour
     public static bool _array6 = false;
 
     //used to toggle next track of the song
-    public static bool _playNextTrack = false; //from audioBox
+    public static int _playNextTrack = 0; //from audioBox
     [SerializeField] private int _nextTrack=0;
 
     private void Awake()
@@ -54,9 +55,7 @@ public class LoopMachine : MonoBehaviour
     {
     }
     void Update()
-    {
-
-        
+    {       
         if (_pause >= 1)
         {
             PauseLoops();
@@ -74,13 +73,14 @@ public class LoopMachine : MonoBehaviour
             //first 8 notes - no loop
         if (_array1)
         {
+            Array0Trig = true;
             _audioBoxes[0].gameObject.SetActive(true);
-            Array2Trig = true;
-            if (_array1 && _playNextTrack)
+
+            if (_array1 && _playNextTrack ==1)
             {
                 _nextTrack = 2;
-                _playNextTrack = false;
                 Debug.Log("Array0");
+                Array2Trig = true;
             }
         }
         //fire Array B
@@ -88,11 +88,9 @@ public class LoopMachine : MonoBehaviour
         if (Array2Trig && _nextTrack==2)
         {            
             _audioBoxes[1].gameObject.SetActive(true);
-
-            if (_array2 && _playNextTrack)
+            if (_array2 && Array2Trig)
             {
                 _nextTrack = 3;
-                _playNextTrack = false;
                 Debug.Log("Array1");
                 Array3Trig = true;               
             }
@@ -102,10 +100,10 @@ public class LoopMachine : MonoBehaviour
         if (Array3Trig && _nextTrack == 3)
         {
             _audioBoxes[2].gameObject.SetActive(true);
-            if (_array3)
+            if (_array3 && Array3Trig)
             {
+                Array2Trig = false;
                 _nextTrack = 4;
-                _playNextTrack = false;
                 Debug.Log("Array3");
                 Array4Trig = true;
             }
@@ -119,7 +117,7 @@ public class LoopMachine : MonoBehaviour
             if (_array4)
             {
                 _nextTrack = 4;
-                _playNextTrack = false;
+
                 Debug.Log("Array4");
                 Array5Trig = true;
             }

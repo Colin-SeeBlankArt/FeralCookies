@@ -17,6 +17,8 @@ public class Bunny : MonoBehaviour
     private float laneChangeSpd = 3f;
     private float elapsed;
 
+    public static int _bunnyToggle = 0;
+
     void Awake()
     {
         runner = GetComponent<LaneRunner>();
@@ -25,6 +27,7 @@ public class Bunny : MonoBehaviour
 
     void Update()
     {     
+  
         elapsed += Time.deltaTime;
         if(elapsed >= laneChangeSpd)
         {
@@ -41,7 +44,10 @@ public class Bunny : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ScoringSystem._penalty++;
+
+                BadBunny();
+
+
             _destroyMe = true;
         }
     }
@@ -57,14 +63,11 @@ public class Bunny : MonoBehaviour
             runner.lane--;
         }
     }
+    public void BadBunny()
+    {
+        ScoringSystem._penalty++;
+        Debug.Log("BunnyRed Speed Minus");
+    }
+    
 }
 
-//  I want to reduce the player's brick count 
-//  I want to change colors, which defines
-//      my brick count reduction
-//      follow speed
-
-//  I want animation states:
-//      basic spin and scale
-//      death
-//  I want to spawn a message to the player that contact has been made, and brick count has changed, UI

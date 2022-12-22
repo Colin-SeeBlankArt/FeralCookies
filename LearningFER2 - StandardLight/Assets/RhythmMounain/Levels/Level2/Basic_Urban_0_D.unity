@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.03137255, g: 0.039215688, b: 0.0627451, a: 1}
+  m_FogColor: {r: 0.38823533, g: 0.4784314, b: 0.6156863, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 8
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.06
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.10588236, g: 0.2392157, b: 0.32156864, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 52fcefd712182d743a781fde12426775, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 135a7036ca1a07b4e9e162d80e6b6e77, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.4
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1859922213}
-  m_IndirectSpecularColor: {r: 0.01348184, g: 0.027132371, b: 0.060971506, a: 0.4}
+  m_IndirectSpecularColor: {r: 0.19556198, g: 0.25282326, b: 0.33909446, a: 0.4}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3860,11 +3860,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a844c1e5beda24aa06dcc4867c750c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BassAGameObject: {fileID: 0}
   _audioBoxes: []
   musicPause: 0
   startPoint: 0
+  Array1Trig: 0
+  Array2Trig: 0
+  Array3Trig: 0
+  Array4Trig: 0
+  Array5Trig: 0
+  Array6Trig: 0
   _allStop: 0
+  _nextTrack: 0
 --- !u!1 &986998277
 GameObject:
   m_ObjectHideFlags: 0
@@ -4936,6 +4942,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: KeysLick1
     clip: {fileID: 8300000, guid: 7987ec7f2ec5d7e4083384894746efce, type: 3}
+    volume: 0.3333
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Ally
+    clip: {fileID: 8300000, guid: b92ec13d933e6894c98fab6e5ec0de89, type: 3}
     volume: 0.3333
     pitch: 1
     loop: 0
@@ -6461,9 +6473,11 @@ MonoBehaviour:
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
   _makeB: 3
+  _makeBg: 2
   _makeRover: 3
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
+  bunnyG: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
   _sMSegs: {fileID: 4174493254310642626, guid: d41bf9b0467d0244db4a756bcd320d4e, type: 3}
 --- !u!1 &1837213357
 GameObject:
@@ -7097,7 +7111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a844c1e5beda24aa06dcc4867c750c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BassAGameObject: {fileID: 718326859}
   _audioBoxes:
   - {fileID: 718326859}
   - {fileID: 909955701}
@@ -7107,7 +7120,14 @@ MonoBehaviour:
   - {fileID: 730054844}
   musicPause: 0
   startPoint: 0
+  Array1Trig: 0
+  Array2Trig: 0
+  Array3Trig: 0
+  Array4Trig: 0
+  Array5Trig: 0
+  Array6Trig: 0
   _allStop: 0
+  _nextTrack: 0
 --- !u!4 &2039029468
 Transform:
   m_ObjectHideFlags: 0

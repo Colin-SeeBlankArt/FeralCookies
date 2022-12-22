@@ -54,10 +54,19 @@ public class CollectBrick : MonoBehaviour
 
         if (collider.CompareTag("Enemy"))
         {
-            Debug.Log("spark hits a brick");
+            Debug.Log("Red hits a coin");
             rend.sharedMaterial = _bMaterial[1]; //change this to a generic trigger
             _badBrick = true;
             _greenbrick = false;
+            _purple = false;
+            _blue = false;
+        }
+         if(collider.CompareTag("Ally"))
+        {
+            Debug.Log("Green hits a coin");
+            rend.sharedMaterial = _bMaterial[0]; //change this to a generic trigger
+            _badBrick = false;
+            _greenbrick = true;
             _purple = false;
             _blue = false;
         }       

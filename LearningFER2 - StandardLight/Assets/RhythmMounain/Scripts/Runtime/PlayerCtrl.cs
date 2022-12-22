@@ -134,6 +134,10 @@ void Start()
         {
             soundBite.Play("BunnyPing");
         }
+        if (collider.CompareTag("Ally"))
+        {
+            soundBite.Play("Ally");
+        }
 
         if (collider.CompareTag("BlockL"))
         {

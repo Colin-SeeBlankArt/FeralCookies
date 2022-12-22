@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6462130320785758640}
   m_Layer: 0
   m_Name: BunnnyRLight
-  m_TagString: Untagged
+  m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +126,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3461483805414411763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3470860634359503597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752461e2aeada824c8180f2011a06e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentLane: 3
 --- !u!114 &7638204078672081099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +155,7 @@ MonoBehaviour:
   startPercent: 0
   startDistance: 0
   startMode: 0
-  followSpeed: -5
+  followSpeed: -12
   follow: 1
   isPlayer: 0
   loop: 0
@@ -200,19 +213,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   laneVector: {x: 1, y: 0}
   _lane: 2
---- !u!114 &7973883743666571857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3470860634359503597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db34080d9a091c44788da7d4a108d10e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentLane: 3
 --- !u!1 &3601136861555390513
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,8 +223,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3601136861555390519}
   m_Layer: 0
-  m_Name: Bunnys25_
-  m_TagString: Enemy
+  m_Name: Bunnys25_G
+  m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -309,11 +309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6907805969036055067, guid: 7124555e996b64b47a910ca0e3de3d3d, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Ally
       objectReference: {fileID: 0}
     - target: {fileID: -5188647404792218513, guid: 7124555e996b64b47a910ca0e3de3d3d, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Ally
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7124555e996b64b47a910ca0e3de3d3d, type: 3}
       propertyPath: m_Name
@@ -321,8 +321,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7124555e996b64b47a910ca0e3de3d3d, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Ally
       objectReference: {fileID: 0}
+    - target: {fileID: 2187622775414091782, guid: 7124555e996b64b47a910ca0e3de3d3d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fb924c59468e814cb2d1d17bc9df24b, type: 2}
     - target: {fileID: 5503419333626940650, guid: 7124555e996b64b47a910ca0e3de3d3d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.499503
@@ -371,6 +375,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.43454823
       objectReference: {fileID: 0}
+    - target: {fileID: 8902079596736059206, guid: 7124555e996b64b47a910ca0e3de3d3d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ab41f8a07f5010846aab333a9114bf74, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7124555e996b64b47a910ca0e3de3d3d, type: 3}
 --- !u!1 &3470860634359503597 stripped

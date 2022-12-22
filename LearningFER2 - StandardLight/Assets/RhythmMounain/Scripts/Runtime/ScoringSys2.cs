@@ -10,17 +10,13 @@ public class ScoringSys2 : MonoBehaviour
     [SerializeField] private int _subLoopTotals;
     [SerializeField] private int _ArrayCounter; //old purple coin
 
+    [SerializeField] public int _array0LoopGoals;
+    [SerializeField] public int _array1LoopGoals;
+    [SerializeField] public int _array2LoopGoals;
+    [SerializeField] public int _array3LoopGoals;
+    [SerializeField] public int _array4LoopGoals;
+    [SerializeField] public int _array5LoopGoals;
 
-    [SerializeField]
-    public int _array1LoopGoals;
-    [SerializeField]
-    public int _array2LoopGoals;
-    [SerializeField]
-    public int _array3LoopGoals;
-    [SerializeField]
-    public int _array4LoopGoals;
-    [SerializeField]
-    public int _array5LoopGoals;
     void Start()
     {
         SetToZero();
@@ -57,7 +53,7 @@ public class ScoringSys2 : MonoBehaviour
     {
         //to fire audio clilps 
         //change these to reflect generic array calls, not specific loops
-        if (_greenCoin >= 1)
+        if (_greenCoin >= _array0LoopGoals)
         {
             LoopMachine._array1 = true;
         }
@@ -99,6 +95,5 @@ public class ScoringSys2 : MonoBehaviour
         _subLoopTotals = 0; ;
         _ArrayCounter = 0;
         greenCoinCollect = 0;
-
     }
 }

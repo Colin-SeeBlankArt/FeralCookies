@@ -16,12 +16,14 @@ public class GameManager : MonoBehaviour
     public GameObject EndTime; //end time panel, currently
     
     //instaniate bunny!!
-    public float _makeB = 2f; //spawn every x seconds, hopefully
+    public float _makeB = 2f; //spawn red bunny
+    public float _makeBg = 2f; //spawn good bunny
     public float _makeRover = 1f;
     private float elapsed;
     private float _roverElapsed;
     public GameObject rover;
     public GameObject bunny;
+    public GameObject bunnyG;
     public GameObject _sMSegs; //SheetMusic Testing Instantiate coins w/ rules
     public static int _noteQuota = 0; //coming from scoring system, until better idea
     public static int _pause = 0;
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
         {
             elapsed = 0f;
             MakeBunny();
+            MakeGoodBunny();
         }
 
         _roverElapsed += Time.deltaTime;
@@ -121,6 +124,11 @@ public class GameManager : MonoBehaviour
     public void MakeBunny()
     {       
         Instantiate(bunny, new Vector3(0, 0, 0), Quaternion.identity);
+    }
+
+    public void MakeGoodBunny()
+    {
+        Instantiate(bunnyG, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     public void MakeRover()
