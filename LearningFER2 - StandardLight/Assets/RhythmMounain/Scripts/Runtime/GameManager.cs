@@ -16,20 +16,25 @@ public class GameManager : MonoBehaviour
     public GameObject EndTime; //end time panel, currently
     
     //instaniate bunny!!
-    public float _makeB = 2f; //spawn red bunny
-    public float _makeBg = 2f; //spawn good bunny
+    public float _makeRedBunny = 2f; //spawn red bunny
     public float _makeRover = 1f;
     private float elapsed;
     private float _roverElapsed;
     public GameObject rover;
     public GameObject bunny;
     public GameObject bunnyG;
-    public GameObject _sMSegs; //SheetMusic Testing Instantiate coins w/ rules
-    public static int _noteQuota = 0; //coming from scoring system, until better idea
+    public static int _noteQuota = 0; //coming from ScoringSystem and ScoreSys2
     public static int _pause = 0;
     public static bool _endTime = false;
 
     int _pauseMe = 0;
+
+    //control the probability machine for coin colors
+    //tied to game play for measuring different types of game play
+    [SerializeField] int _gColorState;
+    [SerializeField] int _rColorState;
+    [SerializeField] int _bColorState;
+    [SerializeField] int _pColorState;
 
     //test to find this out. May need to be Public in PlayerCtrl
     float minSpeed;
@@ -44,6 +49,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        
+        //controls the color of the coins at spawn
+        CollectBrick._gColorState = _gColorState;
+        CollectBrick._rColorState = _rColorState;
+        CollectBrick._bColorState = _bColorState;
+        CollectBrick._pColorState = _pColorState;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -51,7 +62,7 @@ public class GameManager : MonoBehaviour
         }
  
         elapsed += Time.deltaTime;
-        if (elapsed >= _makeB)
+        if (elapsed >= _makeRedBunny)
         {
             elapsed = 0f;
             MakeBunny();

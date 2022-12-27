@@ -1574,6 +1574,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377430933}
   m_CullTransparentMesh: 1
+--- !u!1 &407682543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 121617103937192086, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+  m_PrefabInstance: {fileID: 1153280226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &426040394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,10 +1776,6 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: bb263363ee24c274c9e41f58844a0136, type: 3}
-    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
-      propertyPath: _array6Trig
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c6d611744819648b620d5ecb617489, type: 3}
 --- !u!1 &508166578
@@ -3380,8 +3381,7 @@ MonoBehaviour:
   _useUnloadUnusedAssets: 0
   _loopSegmentLogic: 1
   _levelCollection:
-  - {fileID: 11400000, guid: 206005ace50d5064ba48acf8310c8359, type: 2}
-  - {fileID: 11400000, guid: 206005ace50d5064ba48acf8310c8359, type: 2}
+  - {fileID: 11400000, guid: 04321983bd02c96449bb407fd0b10313, type: 2}
   _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
@@ -3658,11 +3658,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802553354}
   m_CullTransparentMesh: 1
---- !u!1 &815131712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 121617103937192086, guid: b4c6d611744819648b620d5ecb617489, type: 3}
-  m_PrefabInstance: {fileID: 1153280226}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &838686111
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,7 +4462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942769634808995617, guid: b01dead5e92ad8f48abdbd5f58db804a, type: 3}
       propertyPath: _isFinalTrack
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b01dead5e92ad8f48abdbd5f58db804a, type: 3}
@@ -4944,14 +4939,6 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 1bce23dbfeda65143b81259c40b02aa9, type: 3}
-    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
-      propertyPath: _array5Trig
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
-      propertyPath: _isFinalTrack
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c6d611744819648b620d5ecb617489, type: 3}
 --- !u!1 &1159998021
@@ -7228,7 +7215,7 @@ MonoBehaviour:
   NextLevel: {fileID: 1472131634}
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
-  _makeRedBunny: 15
+  _makeRedBunny: 150
   _makeRover: 150
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: 4570be90e95880846b0c95a3a67c3fa0, type: 3}
@@ -8244,14 +8231,14 @@ MonoBehaviour:
   _array3LoopGoals: 4
   _array4LoopGoals: 7
   _array5LoopGoals: 8
-  _array6LoopGoals: 100
+  _array6LoopGoals: 0
   _audioBoxes:
   - {fileID: 718326859}
   - {fileID: 1812119036}
   - {fileID: 1998017976}
   - {fileID: 909955701}
   - {fileID: 1811420985}
-  - {fileID: 815131712}
+  - {fileID: 407682543}
   musicPause: 0
   startPoint: 0
   _subLoopTotals: 0

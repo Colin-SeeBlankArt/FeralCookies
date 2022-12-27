@@ -136,7 +136,7 @@ public class ScoringSystem : MonoBehaviour
         }
         if (loopticker >= _winLevel)
         {
-            GameManager._noteQuota++;
+            //GameManager._noteQuota++;
         }
         if (_penalty>=1)
         {
@@ -173,7 +173,6 @@ public class ScoringSystem : MonoBehaviour
         //scoring collection logic
         if (_greenBrickTicker >= _blueBrickGoals)
         {
-            Debug.Log("Blue Tick");
             _greenBrickTicker = 0;
             _blBrktkr++;
             _blueCounter++;
@@ -181,7 +180,6 @@ public class ScoringSystem : MonoBehaviour
         }
         if (_blBrktkr >= _purpleBrickGoals)
         {
-            Debug.Log("Purple Tick");
             _blBrktkr = 0;
             _prpBrktkr++;
             _purpCounter++;
@@ -190,7 +188,6 @@ public class ScoringSystem : MonoBehaviour
         }
         if (_prpBrktkr >= _LvlWGoals)
         {
-            print("Level Loop Tick");
             _prpBrktkr = 0;
             _maxScore++;
             loopticker++;

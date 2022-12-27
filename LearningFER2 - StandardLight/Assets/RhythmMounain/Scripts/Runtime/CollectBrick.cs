@@ -27,6 +27,11 @@ public class CollectBrick : MonoBehaviour
 
     public int brickState = 1;
 
+    //color State Change values, linked to Game Manager(?)
+    public static int _gColorState;
+    public static int _rColorState;
+    public static int _bColorState;
+    public static int _pColorState;
     int NewNum;
 
     private AudioManager _audioManager;
@@ -82,8 +87,7 @@ public class CollectBrick : MonoBehaviour
                 elapsed = 0f;
                 Destroy(gameObject);
             }
-        }
-   
+        }   
     }
     
     //coin counter
@@ -91,7 +95,7 @@ public class CollectBrick : MonoBehaviour
     {
         if (_greenbrick)
         {
-            ScoringSys2.greenCoinCollect ++;
+            LoopMachine.greenCoinCollect ++;
             ScoringSystem._greenTick++;     //green brick tally
             ScoringSystem._greenBrickTicker++;    //for counter to work in Scoring
 
@@ -151,27 +155,28 @@ public class CollectBrick : MonoBehaviour
     {
         int _ranNum = Random.Range(0, MyNewNum);
         NewNum = _ranNum;
-        if (NewNum >= 0 && NewNum <= 69)
+        if (NewNum >= 0 && NewNum <= _gColorState)
         {
             _greenbrick = true;
         }
-        if (NewNum >= 70 && NewNum <= 89)
+        if (NewNum >= _gColorState && NewNum <= _rColorState)
         {
             rend.sharedMaterial = _bMaterial[1];
             _badBrick = true;
         }
-        if (NewNum >= 90 && NewNum <= 94)
+        if (NewNum >= _rColorState && NewNum <= _bColorState)
         {
             rend.sharedMaterial = _bMaterial[2];
             _blue = true;
         }
-        if (NewNum >= 95 && NewNum <= 99)
+        if (NewNum >= _bColorState && NewNum <= _pColorState)
         {
             rend.sharedMaterial = _bMaterial[3];
             _purple = true;
         }
-    } 
-}
+    }
+} 
+
 
 /*
 

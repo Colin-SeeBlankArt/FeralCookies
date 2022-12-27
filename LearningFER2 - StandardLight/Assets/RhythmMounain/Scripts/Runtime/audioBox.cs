@@ -7,6 +7,15 @@ public class audioBox : MonoBehaviour
     AudioSource audioSource;
     public static int _pause = 0;
     public static bool _loop = false;
+    public bool _isFinalTrack = false;
+
+    public bool _array0Trig = false;
+    public bool _array1Trig = false;
+    public bool _array2Trig = false;
+    public bool _array3Trig = false;
+    public bool _array4Trig = false;
+    public bool _array5Trig = false;
+    public bool _array6Trig = false;
 
     void Awake()
     {
@@ -37,7 +46,11 @@ public class audioBox : MonoBehaviour
         {           
             //this.gameObject.SetActive(false); 
             LoopMachine._playNextTrack = 1;
-            Debug.Log("Play Next Track ++");
+            if (_isFinalTrack)
+            {
+                WinCheck();
+            }
+            WhoAmI();
         }
 
     }
@@ -46,4 +59,36 @@ public class audioBox : MonoBehaviour
     {
         GameManager._noteQuota ++;
     }
-}
+
+    public void WhoAmI()
+    {
+        //if I am array 1, then array 2 is true, if I am array 2, then array3 true
+        if (_array0Trig)
+        {
+            LoopMachine.Array1Trig = true;           
+        }
+        if (_array1Trig)
+        {
+            LoopMachine.Array2Trig = true; //looping BassA
+            LoopMachine.Array3Trig = true;
+        }
+
+        if (_array3Trig)
+        {
+            LoopMachine.Array4Trig = true;
+        }
+        if (_array4Trig)
+        {
+            LoopMachine.Array5Trig = true;
+        }
+        if (_array5Trig)
+        {
+            LoopMachine.Array6Trig = true;
+        }
+        if (_array6Trig)
+        {
+            LoopMachine.Array6Trig = true;
+        }
+    }
+
+    }
