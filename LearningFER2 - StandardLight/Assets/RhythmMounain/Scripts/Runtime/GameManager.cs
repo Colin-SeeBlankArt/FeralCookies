@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     
     //instaniate bunny!!
     public float _makeRedBunny = 2f; //spawn red bunny
+    public float _makeGreenBunny = 2f; //spawn red bunny
     public float _makeRover = 1f;
     private float elapsed;
     private float _roverElapsed;
@@ -65,7 +66,13 @@ public class GameManager : MonoBehaviour
         if (elapsed >= _makeRedBunny)
         {
             elapsed = 0f;
-            MakeBunny();
+            MakeRedBunny();
+            MakeGoodBunny();
+        }
+        if (elapsed >= _makeGreenBunny)
+        {
+            elapsed = 0f;
+            MakeRedBunny();
             MakeGoodBunny();
         }
 
@@ -126,13 +133,14 @@ public class GameManager : MonoBehaviour
         //maybe it should pause since its game crit
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         ScoringSystem._resetALL ++;
+        LoopMachine._resetZero ++;
     }
     public void QuitGame()
     {
         UnityEngine.Debug.Log("Quit!");
         Application.Quit();
     }
-    public void MakeBunny()
+    public void MakeRedBunny()
     {       
         Instantiate(bunny, new Vector3(0, 0, 0), Quaternion.identity);
     }

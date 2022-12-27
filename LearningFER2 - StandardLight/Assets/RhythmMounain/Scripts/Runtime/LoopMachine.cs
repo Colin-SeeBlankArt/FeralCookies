@@ -53,6 +53,7 @@ public class LoopMachine : MonoBehaviour
     [SerializeField] private int _ArrayCounter; //old purple coin
 
     public static int _pause = 0; //from Game Manager
+    public static int _resetZero = 0; //from Game Manager
     public bool _allStop = false;
     public static bool resetLoop = false;
 
@@ -62,13 +63,14 @@ public class LoopMachine : MonoBehaviour
     [SerializeField] private int _nextTrack=0;
     void Start()
     {
-        SetToZero();
+        
     }
     private void Awake()
     {
         audioSourceB = GetComponent<AudioSource>();
         instance = this;
         //Invoke("DeactivateMe", audioSourceB.clip.length);
+        SetToZero();
     }
 
     void Update()
@@ -84,6 +86,13 @@ public class LoopMachine : MonoBehaviour
         {
             PauseLoops();
         }
+        if (_resetZero >= 1)
+        {
+            SetToZero();
+            _resetZero = 0;
+        }
+            
+
 
         if (_loopToggle == 1)
         {
@@ -118,35 +127,39 @@ public class LoopMachine : MonoBehaviour
             }
         }
          //looping bass A
-        if (_nextTrack == 3 && Array2Trig)
+        if (Array2Trig  && _nextTrack== 3)
         {          
             _audioBoxes[2].gameObject.SetActive(true);
             if (_array2 && Array2Trig)
             {
                 _nextTrack = 4;
                 Debug.Log("Array2");
+                _audioBoxes[1].gameObject.SetActive(false);
             }
         }
         //fire Array 3
         if (Array3Trig && _nextTrack == 4)
         {
             _audioBoxes[3].gameObject.SetActive(true);
+            
             if (_array3 && Array3Trig)
             {
                 _nextTrack = 5;
                 Debug.Log("Array3 - LoopHit");
-                //Array4Trig = true;
+                _audioBoxes[2].gameObject.SetActive(false);
             }
         }
         //fire Array 4
         if (Array4Trig && _nextTrack == 5)
         {
             _audioBoxes[4].gameObject.SetActive(true);
-            _audioBoxes[3].gameObject.SetActive(false);
-            if (_array4)
+            
+
+            if (_array4 && Array4Trig)
             {
                 _nextTrack = 6;
-                Debug.Log("Array4");
+                Debug.Log("Array4 LoopHit");
+                _audioBoxes[3].gameObject.SetActive(false);
             }
 
         }
@@ -154,6 +167,7 @@ public class LoopMachine : MonoBehaviour
         if (Array5Trig && _nextTrack == 6)
         {
             _audioBoxes[5].gameObject.SetActive(true);
+            _audioBoxes[4].gameObject.SetActive(false);
             Debug.Log("Array5");
         }
     }
@@ -229,6 +243,20 @@ public class LoopMachine : MonoBehaviour
         _audioBoxes[3].gameObject.SetActive(false);
         _audioBoxes[4].gameObject.SetActive(false);
         _audioBoxes[5].gameObject.SetActive(false);
+        Array0Trig = false;
+        Array1Trig = false;
+        Array2Trig = false;
+        Array3Trig = false;
+        Array4Trig = false;
+        Array5Trig = false;
+        Array6Trig = false;
+        _array0 = false;
+        _array1 = false;
+        _array2 = false;
+        _array3 = false;
+        _array4 = false;
+        _array5 = false;
+        _array6 = false;
 
     }
 }

@@ -69,17 +69,21 @@ public class audioBox : MonoBehaviour
         }
         if (_array1Trig)
         {
-            LoopMachine.Array2Trig = true; //looping BassA
+            LoopMachine.Array2Trig = true; //nest looping Bass with this          
+        }
+        if (_array2Trig)
+        {
             LoopMachine.Array3Trig = true;
         }
-
         if (_array3Trig)
         {
             LoopMachine.Array4Trig = true;
+            Debug.Log("Array3 - CoinHit");
         }
         if (_array4Trig)
         {
             LoopMachine.Array5Trig = true;
+            Debug.Log("Array4 - CoinHit");
         }
         if (_array5Trig)
         {

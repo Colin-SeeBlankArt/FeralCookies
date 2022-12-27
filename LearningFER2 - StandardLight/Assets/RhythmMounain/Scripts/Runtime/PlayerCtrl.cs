@@ -155,7 +155,7 @@ void Start()
 
     void Update()
     {
-        if(speed >= 15f)
+        if(speed >= maxSpeed)
         {
             CollectBrick._canBoost = false;
             SetSpeed(speed=maxSpeed);            
