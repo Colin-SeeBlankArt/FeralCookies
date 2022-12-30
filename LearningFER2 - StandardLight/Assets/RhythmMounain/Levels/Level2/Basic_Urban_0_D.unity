@@ -1860,7 +1860,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bb263363ee24c274c9e41f58844a0136, type: 3}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array5Trig
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _isFinalTrack
@@ -3557,7 +3557,7 @@ MonoBehaviour:
   _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
-  _sharedPathGenerator: {fileID: 11400000, guid: aca2e4e9011a60a4abc5e78721877ed9, type: 2}
+  _sharedPathGenerator: {fileID: 11400000, guid: 98304cf0b75b30d459fe1ab17d00bddb, type: 2}
   levels: []
   usePathGeneratorInstance: 0
 --- !u!1 &769248530
@@ -5136,11 +5136,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 1bce23dbfeda65143b81259c40b02aa9, type: 3}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array3Trig
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
-      propertyPath: _isFinalTrack
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c6d611744819648b620d5ecb617489, type: 3}
@@ -5974,7 +5970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array4Trig
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _isFinalTrack
@@ -7660,8 +7656,8 @@ MonoBehaviour:
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
   _makeRedBunny: 150
-  _makeGreenBunny: 30
-  _makeRover: 30
+  _makeGreenBunny: 2
+  _makeRover: 150
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: 4570be90e95880846b0c95a3a67c3fa0, type: 3}
   bunnyG: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
@@ -8414,7 +8410,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8826,10 +8822,10 @@ MonoBehaviour:
   _array0LoopGoals: 4
   _array1LoopGoals: 2
   _array2LoopGoals: 2
-  _array3LoopGoals: 4
-  _array4LoopGoals: 7
-  _array5LoopGoals: 8
-  _array6LoopGoals: 0
+  _array3LoopGoals: 100
+  _array4LoopGoals: 100
+  _array5LoopGoals: 100
+  _array6LoopGoals: 100
   _audioBoxes:
   - {fileID: 718326859}
   - {fileID: 1812119036}

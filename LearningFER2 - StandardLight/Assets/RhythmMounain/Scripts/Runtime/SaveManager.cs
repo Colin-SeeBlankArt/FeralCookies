@@ -17,7 +17,10 @@ public class GameSessionData
     public int BlueStack;
     public int PurpStack;
 }
-
+/*
+to add: Loop counter (which song loops did the player unlock)
+average player speed and game times
+*/
 [Serializable]
 public class GameSaveData
 {
