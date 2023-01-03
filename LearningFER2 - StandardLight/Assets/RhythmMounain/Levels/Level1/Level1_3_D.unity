@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42352942, g: 0.06666667, b: 0.42352942, a: 1}
+  m_Color: {r: 0.8117648, g: 0.10588236, b: 0.97647065, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2859,7 +2859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.7412455, b: 0.28112015, a: 0}
+  m_Color: {r: 0.24313727, g: 0.6627451, b: 0.1254902, a: 0.43137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2934,7 +2934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.7412455, b: 0.28112015, a: 0}
+  m_Color: {r: 0.1254902, g: 0.28235295, b: 0.6627451, a: 0.43137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3553,7 +3553,7 @@ MonoBehaviour:
   _useUnloadUnusedAssets: 0
   _loopSegmentLogic: 1
   _levelCollection:
-  - {fileID: 11400000, guid: 99cb6edf373d4024ba5288d15d5419b4, type: 2}
+  - {fileID: 11400000, guid: 7c547a34f034b904590ee96a51654db7, type: 2}
   _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
@@ -4061,7 +4061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.7412455, b: 0.28112015, a: 0}
+  m_Color: {r: 0.39955136, g: 0.08751629, b: 0.4716981, a: 0.43137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5137,10 +5137,6 @@ PrefabInstance:
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array3Trig
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
-      propertyPath: _isFinalTrack
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c6d611744819648b620d5ecb617489, type: 3}
@@ -7660,8 +7656,8 @@ MonoBehaviour:
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
   _makeRedBunny: 150
-  _makeGreenBunny: 30
-  _makeRover: 30
+  _makeGreenBunny: 2
+  _makeRover: 150
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: 4570be90e95880846b0c95a3a67c3fa0, type: 3}
   bunnyG: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
@@ -8414,7 +8410,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8826,10 +8822,10 @@ MonoBehaviour:
   _array0LoopGoals: 4
   _array1LoopGoals: 2
   _array2LoopGoals: 2
-  _array3LoopGoals: 4
-  _array4LoopGoals: 7
-  _array5LoopGoals: 8
-  _array6LoopGoals: 0
+  _array3LoopGoals: 100
+  _array4LoopGoals: 100
+  _array5LoopGoals: 100
+  _array6LoopGoals: 100
   _audioBoxes:
   - {fileID: 718326859}
   - {fileID: 1812119036}
@@ -8914,7 +8910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 1 Dev
+  m_text: Level 3 Dev
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}
   m_sharedMaterial: {fileID: 6365364023026732378, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}
