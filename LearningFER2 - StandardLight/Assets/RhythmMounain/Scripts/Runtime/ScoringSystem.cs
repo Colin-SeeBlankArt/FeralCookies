@@ -144,6 +144,10 @@ public class ScoringSystem : MonoBehaviour
             _greenTick = 0;
             Debug.Log("Hit Spark + ");
             _penalty = 0;
+            if (_greenBrickTicker <= 0)
+            {
+                _greenBrickTicker = 0;
+            }
         }
 
         _greenSlider.value = _gBricktkr; 

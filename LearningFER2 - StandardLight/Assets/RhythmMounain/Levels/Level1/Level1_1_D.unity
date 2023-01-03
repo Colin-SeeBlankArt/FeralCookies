@@ -1860,7 +1860,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bb263363ee24c274c9e41f58844a0136, type: 3}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array5Trig
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _isFinalTrack
@@ -2807,7 +2807,7 @@ MonoBehaviour:
   _purpleSlider: {fileID: 840018401}
   _blueBrickGoals: 4
   _purpleBrickGoals: 3
-  _LvlWGoals: 1
+  _LvlWGoals: 2
   _winLevel: 2
 --- !u!1 &627890586
 GameObject:
@@ -3554,6 +3554,7 @@ MonoBehaviour:
   _loopSegmentLogic: 1
   _levelCollection:
   - {fileID: 11400000, guid: 7c547a34f034b904590ee96a51654db7, type: 2}
+  - {fileID: 11400000, guid: 99cb6edf373d4024ba5288d15d5419b4, type: 2}
   _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
@@ -5136,7 +5137,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 1bce23dbfeda65143b81259c40b02aa9, type: 3}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array3Trig
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+      propertyPath: _isFinalTrack
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c6d611744819648b620d5ecb617489, type: 3}
@@ -5970,7 +5975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array4Trig
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _isFinalTrack
@@ -7656,7 +7661,7 @@ MonoBehaviour:
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
   _makeRedBunny: 150
-  _makeGreenBunny: 2
+  _makeGreenBunny: 150
   _makeRover: 150
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: 4570be90e95880846b0c95a3a67c3fa0, type: 3}
