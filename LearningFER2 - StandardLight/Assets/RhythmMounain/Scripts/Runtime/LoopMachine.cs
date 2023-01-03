@@ -67,6 +67,7 @@ public class LoopMachine : MonoBehaviour
     {
         audioSourceB = GetComponent<AudioSource>();
         instance = this;
+        _fireAudioLoops = true;
         //Invoke("DeactivateMe", audioSourceB.clip.length);
         SetToZero();
     }
@@ -74,6 +75,7 @@ public class LoopMachine : MonoBehaviour
     void Update()
     {
         CoinCounter();
+        
         if(_fireAudioLoops)
         {
             FireAudioLoops();
@@ -133,8 +135,7 @@ public class LoopMachine : MonoBehaviour
             if (_array2 && Array2Trig)
             {
                 _nextTrack = 4;
-                Debug.Log("Song loop 2");
-                
+                Debug.Log("Song loop 2");             
             }
         }
         //fire Array 3
@@ -219,7 +220,7 @@ public class LoopMachine : MonoBehaviour
             greenCoinCollect = 0;
             _greenCoin++;
             _subLoopcounter++;
-            _fireAudioLoops = true;
+            
         }
         if (_subLoopcounter >= _array0LoopGoals)
         {

@@ -74,6 +74,7 @@ public class audioBox : MonoBehaviour
         if (_array2Trig)
         {
             LoopMachine.Array3Trig = true;
+            Debug.Log("Array2 - CoinHit");
         }
         if (_array3Trig)
         {
