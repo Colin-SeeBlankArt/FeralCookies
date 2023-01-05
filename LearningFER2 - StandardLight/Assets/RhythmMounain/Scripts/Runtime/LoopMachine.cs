@@ -12,7 +12,6 @@ public class LoopMachine : MonoBehaviour
     //comes from SoundBox (player collision)
     public static int _loopToggle = 0;
 
-
     [SerializeField] public int _array0LoopGoals;
     [SerializeField] public int _array1LoopGoals;
     [SerializeField] public int _array2LoopGoals;
@@ -20,6 +19,7 @@ public class LoopMachine : MonoBehaviour
     [SerializeField] public int _array4LoopGoals;
     [SerializeField] public int _array5LoopGoals;
     [SerializeField] public int _array6LoopGoals;
+
 
     //array of audio boxes
     public GameObject[] _audioBoxes; 
@@ -60,7 +60,7 @@ public class LoopMachine : MonoBehaviour
 
     //used to toggle next track of the song
     public static int _playNextTrack = 0; //from audioBox
-    public static int _isLoopFinished = 0; //from audioBox
+    //public static int _isLoopFinished = 0; //from audioBox
     [SerializeField] private int _nextTrack=0;
 
     private void Awake()
@@ -87,8 +87,7 @@ public class LoopMachine : MonoBehaviour
         }
         if (_pause >= 1)
         {
-            PauseLoops();
-            
+            PauseLoops();            
         }
         if (_resetZero >= 1)
         {
@@ -176,6 +175,8 @@ public class LoopMachine : MonoBehaviour
     public void PauseLoops()
     {
         audioBox._pause++;
+        _fireAudioLoops = false;
+
     }
 
     void FireAudioLoops()

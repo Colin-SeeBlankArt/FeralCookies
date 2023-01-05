@@ -134,14 +134,20 @@ public class ScoringSystem : MonoBehaviour
             ResetALL();
             _resetALL = 0;
         }
+        
+        
+        //////////////////WIN Level!!!
+        // if (loopticker >= _winLevel && audioBox.Bool)
         if (loopticker >= _winLevel)
         {
-            //GameManager._noteQuota++;
+            
+            //WIN();
+
         }
         if (_penalty>=1)
         {
-            _greenBrickTicker = _greenBrickTicker/2;
-            _greenTick = 0;
+            //_greenBrickTicker = _greenBrickTicker/2;
+            //_greenTick = 0;
             Debug.Log("Hit Spark + ");
             _penalty = 0;
             if (_greenBrickTicker <= 0)
@@ -234,9 +240,11 @@ public class ScoringSystem : MonoBehaviour
         _purpTick = 0;
     }
 
-    public void a()//trigger the winLevel in GameManager
+    public void WIN()//trigger the winLevel in GameManager
     {
-        GameManager._noteQuota++;
+        //GameManager._noteQuota++;
+        //add in a bool from AudioBox,
+        ////maybe we can move loopMachine over here (feear)
     }
 }
 

@@ -58,6 +58,9 @@ public class audioBox : MonoBehaviour
     public void WinCheck()
     {
         GameManager._noteQuota ++;
+
+        //should this go to LoopMachine instead?
+        // This will make sure LM controls the activations
     }
 
     public void WhoAmI()
