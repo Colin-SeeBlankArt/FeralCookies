@@ -9,9 +9,6 @@ public class LoopMachine : MonoBehaviour
     //this is the loop counter machine, used to fire off the audio tracks
     public static LoopMachine instance;
 
-    //comes from SoundBox (player collision)
-    public static int _loopToggle = 0;
-
     [SerializeField] public int _array0LoopGoals;
     [SerializeField] public int _array1LoopGoals;
     [SerializeField] public int _array2LoopGoals;
@@ -20,15 +17,11 @@ public class LoopMachine : MonoBehaviour
     [SerializeField] public int _array5LoopGoals;
     [SerializeField] public int _array6LoopGoals;
 
-
     //array of audio boxes
-    public GameObject[] _audioBoxes; 
+    public GameObject[] _audioBoxes;
     
     //audio controller, needs to trigger song loops at loop counts
     AudioSource audioSourceB;
-
-    public int musicPause = 0;
-    public bool startPoint;
 
     public static bool Array0Trig = false;
     public static bool Array1Trig = false;
@@ -54,7 +47,8 @@ public class LoopMachine : MonoBehaviour
 
     public static int _pause = 0; //from Game Manager
     public static int _resetZero = 0; //from Game Manager
-    public bool _allStop = false;
+    bool _allStop = false;
+    public static bool _lastLoopCheck = false;//from audioBox, trying to stop Loops
     public static bool resetLoop = false;
     bool _fireAudioLoops = false;
 
@@ -94,12 +88,12 @@ public class LoopMachine : MonoBehaviour
             SetToZero();
             _resetZero = 0;
         }
-
-        if (_loopToggle == 1)
-        {            
-            //_array1 = true;
-            _loopToggle = 0;
+        if (_lastLoopCheck)
+        {
+            PauseLoops();
+            GameManager._noteQuota++;
         }
+
     }
     //AudioBox is the audio loop which player unlocks 
     public void ActivateAudioBox()
@@ -111,7 +105,6 @@ public class LoopMachine : MonoBehaviour
             if (_playNextTrack ==1)
             {
                 _nextTrack = 2;
-                Debug.Log("Song loop 0");
             }
         }
          //2nd 8 notes - no loop
@@ -122,8 +115,6 @@ public class LoopMachine : MonoBehaviour
             {
                 _nextTrack = 3;               
                 _audioBoxes[0].gameObject.SetActive(false);
-                Debug.Log("Song loop 1");
-                //_array1=false;
             }
         }
          //fire Array 2
@@ -133,8 +124,7 @@ public class LoopMachine : MonoBehaviour
             _audioBoxes[1].gameObject.SetActive(false);
             if (_array2 && Array2Trig)
             {
-                _nextTrack = 4;
-                Debug.Log("Song loop 2");             
+                _nextTrack = 4;           
             }
         }
         //fire Array 3
@@ -142,12 +132,9 @@ public class LoopMachine : MonoBehaviour
         {
             _audioBoxes[3].gameObject.SetActive(true);
             _audioBoxes[2].gameObject.SetActive(false);
-
             if (_array3 && Array3Trig)
             {
-                _nextTrack = 5;
-                Debug.Log("Song loop 3 - LoopHit");
-                
+                _nextTrack = 5;                
             }
         }
         //fire Array 4
@@ -159,7 +146,6 @@ public class LoopMachine : MonoBehaviour
             if (_array4 && Array4Trig)
             {
                 _nextTrack = 6;
-                Debug.Log("Song loop 4 LoopHit");
             }           
 
         }
@@ -168,21 +154,17 @@ public class LoopMachine : MonoBehaviour
         {
             _audioBoxes[5].gameObject.SetActive(true);
             _audioBoxes[4].gameObject.SetActive(false);
-            Debug.Log("Song loop 5");
         }
     }
 
     public void PauseLoops()
     {
         audioBox._pause++;
-        _fireAudioLoops = false;
-
     }
 
     void FireAudioLoops()
     {
         //to fire audio clilps 
-        //change these to reflect generic array calls, not specific loops
         if (_greenCoin >= _array0LoopGoals)
         {
             _array0 = true;
@@ -234,6 +216,7 @@ public class LoopMachine : MonoBehaviour
 
     public void SetToZero()
     {
+        _lastLoopCheck = false;
         _greenCoin = 0;
         _subLoopcounter = 0;
         _subLoopTotals = 0; ;

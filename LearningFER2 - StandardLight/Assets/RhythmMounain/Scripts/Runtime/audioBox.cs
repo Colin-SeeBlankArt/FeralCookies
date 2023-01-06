@@ -5,6 +5,7 @@ using UnityEngine;
 public class audioBox : MonoBehaviour
 {
     AudioSource audioSource;
+    public static audioBox instance;
     public static int _pause = 0;
     public static bool _loop = false;
     public bool _isFinalTrack = false;
@@ -19,7 +20,8 @@ public class audioBox : MonoBehaviour
 
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();        
+        audioSource = GetComponent<AudioSource>();     
+        instance = this;
     }
 
     void Update()
@@ -43,26 +45,27 @@ public class audioBox : MonoBehaviour
     public void EndPlaying()
     {
         if (!audioSource.isPlaying)
-        {           
-            //this.gameObject.SetActive(false); 
+        {
             LoopMachine._playNextTrack = 1;
+            
             if (_isFinalTrack)
             {
-                WinCheck();
+                LastLoopCheck();
             }
-            WhoAmI();
+            if (LoopMachine._lastLoopCheck==false)
+            {
+                WhoAmI();
+            }
         }
 
     }
 
-    public void WinCheck()
+    public void LastLoopCheck()
     {
-        GameManager._noteQuota ++;
-
-        //should this go to LoopMachine instead?
-        // This will make sure LM controls the activations
+        LoopMachine._lastLoopCheck = true;
+        audioSource.Pause();
     }
-
+    //fires to the LoopMachine to launch next loop to play, based on Array order
     public void WhoAmI()
     {
         //if I am array 1, then array 2 is true, if I am array 2, then array3 true
@@ -77,17 +80,15 @@ public class audioBox : MonoBehaviour
         if (_array2Trig)
         {
             LoopMachine.Array3Trig = true;
-            Debug.Log("Array2 - CoinHit");
         }
         if (_array3Trig)
         {
             LoopMachine.Array4Trig = true;
-            Debug.Log("Array3 - CoinHit");
         }
         if (_array4Trig)
         {
             LoopMachine.Array5Trig = true;
-            Debug.Log("Array4 - CoinHit");
+
         }
         if (_array5Trig)
         {

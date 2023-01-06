@@ -30,7 +30,7 @@ public class SoundBox : MonoBehaviour
     //this is tied to the scoring system, based on coin unlocks
     public void PlayMusic()
     {
-        LoopMachine._loopToggle=1;
+        //LoopMachine._loopToggle=1;
     }
 }
 
