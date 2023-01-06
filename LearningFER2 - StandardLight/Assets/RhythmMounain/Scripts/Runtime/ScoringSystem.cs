@@ -31,16 +31,22 @@ public class ScoringSystem : MonoBehaviour
     //UI Element which activates Buttons for Songs
     public GameObject LoopLists;
 
+    //slider text
     public Text greenTick;
     public Text blueTick;
     public Text purpleTick;
 
+    //slider objects
     public Slider _greenSlider;
     public Slider _blueSlider;
     public Slider _purpleSlider;
 
-    public static int _greenBrickTicker;  //actual score variable
+    ///// Major Counter
+    //actual score variable
+    public static int _greenBrickTicker;  
 
+
+    // coming from CollectBrick
     public static int brickTick;
     public static int _greenTick;   //this will be a positive impact on loop count
     public static int _redTick;     //this will be a negative impact on loop count
@@ -70,10 +76,6 @@ public class ScoringSystem : MonoBehaviour
     int _blueCounter;
     int _prpBrktkr;                         // Tcker for furture Brick colors
     int _purpCounter;
- 
-    int _loopTicker;
-    int _loopCount;
-    int _loopGoals;
 
     public int _blueBrickGoals = 4;        // Trigger for + Blue Brick 
     public int _purpleBrickGoals = 2;         // Trigger for + Purple Brick
@@ -85,7 +87,6 @@ public class ScoringSystem : MonoBehaviour
     private void Start()
     {
         ResetALL();
-        _loopGoals = _LvlWGoals;
         _greenSlider.maxValue = _blueBrickGoals;
         _blueSlider.maxValue = _purpleBrickGoals;
         _purpleSlider.maxValue = _LvlWGoals;    
@@ -100,24 +101,6 @@ public class ScoringSystem : MonoBehaviour
         
         pcScore = totBrickCt + _maxScore + _blueTick + _purpTick; //player score
         
-        //seting to zeros for scoretable
-        if (_greenBrickTicker <= 0)
-        {
-            _greenBrickTicker = 0;
-        }
-        if (goodBrickTot <= 0)
-        {
-            goodBrickTot = 0;
-        }
-        if (_greenTick <= 0)
-        {
-            _greenTick = 0;
-        }
-        if (_gBricktkr <= 0)
-        {
-            _gBricktkr = 0;
-        }
-
         _gBricktkr = _greenBrickTicker;
         _greenStack  = _greenBrickTicker;
         _negativeBrickTick = _redTick;
@@ -146,16 +129,12 @@ public class ScoringSystem : MonoBehaviour
         }
         if (_penalty>=1)
         {
-            //_greenBrickTicker = _greenBrickTicker/2;
-            //_greenTick = 0;
-            Debug.Log("Hit Spark + ");
-            _penalty = 0;
-            if (_greenBrickTicker <= 0)
-            {
-                _greenBrickTicker = 0;
-            }
+            Penalty();
         }
 
+
+        //Slider Logic
+            //Critical
         _greenSlider.value = _gBricktkr; 
         greenTick.text = "" + _greenTick;
         _blueSlider.value = _blBrktkr;
@@ -204,6 +183,16 @@ public class ScoringSystem : MonoBehaviour
         }
     }
 
+    void Penalty()
+    {
+        Debug.Log("Hit Spark + ");
+        _penalty = 0;
+        if (_greenBrickTicker <= 0)
+        {
+            _greenBrickTicker = 0;
+        }
+    }
+
     public void ResetScore()
     {
         //reset all points to zero
@@ -240,6 +229,12 @@ public class ScoringSystem : MonoBehaviour
         _purpTick = 0;
     }
 
+    public void ScoringSys()
+    {
+        /*
+
+        */
+    }
     public void WIN()//trigger the winLevel in GameManager
     {
         //GameManager._noteQuota++;

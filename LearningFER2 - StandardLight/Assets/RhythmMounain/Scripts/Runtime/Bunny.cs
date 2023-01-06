@@ -44,10 +44,6 @@ public class Bunny : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
-                BadBunny();
-
-
             _destroyMe = true;
         }
     }
@@ -62,11 +58,6 @@ public class Bunny : MonoBehaviour
         {
             runner.lane--;
         }
-    }
-    public void BadBunny()
-    {
-        ScoringSystem._penalty++;
-        Debug.Log("BunnyRed Speed Minus");
     }
     
 }

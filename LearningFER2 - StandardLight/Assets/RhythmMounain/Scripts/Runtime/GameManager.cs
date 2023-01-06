@@ -14,6 +14,13 @@ public class GameManager : MonoBehaviour
     public GameObject NextLevel;    //win level panel
     public GameObject PausePanel; //pause panel, currently
     public GameObject EndTime; //end time panel, currently
+ 
+    //control the probability machine for coin colors
+    //tied to game play for measuring different types of game play
+    [SerializeField] int _gColorState;
+    [SerializeField] int _rColorState;
+    [SerializeField] int _bColorState;
+    [SerializeField] int _pColorState;
     
     //instaniate bunny!!
     public float _makeRedBunny = 2f; //spawn red bunny
@@ -29,13 +36,6 @@ public class GameManager : MonoBehaviour
     public static bool _endTime = false;
 
     int _pauseMe = 0;
-
-    //control the probability machine for coin colors
-    //tied to game play for measuring different types of game play
-    [SerializeField] int _gColorState;
-    [SerializeField] int _rColorState;
-    [SerializeField] int _bColorState;
-    [SerializeField] int _pColorState;
 
     //test to find this out. May need to be Public in PlayerCtrl
     float minSpeed;

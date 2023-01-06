@@ -133,6 +133,8 @@ void Start()
         if (collider.CompareTag("Enemy"))
         {
             soundBite.Play("BunnyPing");
+            ScoringSystem._penalty++;
+            Debug.Log("BunnyRed Speed Minus");
         }
         if (collider.CompareTag("Ally"))
         {
@@ -160,6 +162,8 @@ void Start()
             CollectBrick._canBoost = false;
             SetSpeed(speed=maxSpeed);            
         }
+        else {CollectBrick._canBoost = true;}
+
         _speedometer.GetComponent<Text>().text ="Speed: " + speed.ToString() + " mps"; 
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))

@@ -14,9 +14,14 @@ public class UI_Manager : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void ChangeScene(int sceneIndex) //change by name
+    public void ChangeScene(int sceneIndex) //change by index
     {
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void ChangeSceneName(string level)
+    {
+        SceneManager.LoadScene(level);
     }
     public void StartPlayer()
     {
