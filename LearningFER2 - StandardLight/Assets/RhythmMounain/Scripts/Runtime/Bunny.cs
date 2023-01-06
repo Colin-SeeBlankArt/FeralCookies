@@ -36,7 +36,8 @@ public class Bunny : MonoBehaviour
         }
         if (_destroyMe)  //bool to say kill the coin
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
