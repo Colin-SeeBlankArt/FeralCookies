@@ -20,7 +20,7 @@ public class audioBox : MonoBehaviour
 
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();     
+        audioSource = GetComponent<AudioSource>();
         instance = this;
     }
 
@@ -34,8 +34,8 @@ public class audioBox : MonoBehaviour
             audioSource.Pause();
         }
         else { audioSource.UnPause(); }
-        
-        if(_loop)
+
+        if (_loop)
         {
             audioSource.loop = true;
         }
@@ -47,12 +47,12 @@ public class audioBox : MonoBehaviour
         if (!audioSource.isPlaying)
         {
             LoopMachine._playNextTrack = 1;
-            
+
             if (_isFinalTrack)
             {
                 LastLoopCheck();
             }
-            if (LoopMachine._lastLoopCheck==false)
+            if (LoopMachine._lastLoopCheck == false)
             {
                 WhoAmI();
             }
@@ -71,7 +71,7 @@ public class audioBox : MonoBehaviour
         //if I am array 1, then array 2 is true, if I am array 2, then array3 true
         if (_array0Trig)
         {
-            LoopMachine.Array1Trig = true;           
+            LoopMachine.Array1Trig = true;
         }
         if (_array1Trig)
         {
@@ -92,12 +92,12 @@ public class audioBox : MonoBehaviour
         }
         if (_array5Trig)
         {
-           LoopMachine.Array6Trig = true;
+            LoopMachine.Array6Trig = true;
         }
         if (_array6Trig)
         {
-           LoopMachine.Array6Trig = true;
+            LoopMachine.Array6Trig = true;
         }
     }
 
-    }
+}

@@ -11,10 +11,17 @@ public class ScoringSystem : MonoBehaviour
         {
             TimeCreated = DateTime.UtcNow,
             TotalBricks = brickTick,
-            PlayerScore = pcScore,
+            PlayerScore = pcScore,            
             RedStack = _redTick,
             BlueStack = _blueStack,
             PurpStack = _purpStack
+
+            /* GreenStack = _greenTick,
+             * GrnSprkTot = (create from GBunny),
+             * RdSprkTot = (crearte from RBunny),
+             * PollQuest_[Loop] = (Polls),
+             * TimeElapsed = timeElapsed,
+             */
         };
 
         SaveManager.Instance.SaveData("SessionData", sessionData);
@@ -31,20 +38,12 @@ public class ScoringSystem : MonoBehaviour
     //UI Element which activates Buttons for Songs
     public GameObject LoopLists;
 
-    //slider text
-    public Text greenTick;
-    public Text blueTick;
-    public Text purpleTick;
-
-    //slider objects
-    public Slider _greenSlider;
-    public Slider _blueSlider;
-    public Slider _purpleSlider;
-
     ///// Major Counter
     //actual score variable
-    public static int _greenBrickTicker;  
+    public static int _greenBrickTicker;
 
+    ////Poll Values
+    public static int _pollLevel = 0; //values from Poll Pop Up
 
     // coming from CollectBrick
     public static int brickTick;
@@ -64,7 +63,7 @@ public class ScoringSystem : MonoBehaviour
     public static int pcScore;
     int _maxScore;
 
-    public static int _resetScores = 0; //GAmeManger, Reset Level
+    public static int _resetScores = 0; //GameManger, Reset Level
     public static int _resetALL = 0; //GAmeManger, Reset All counters
 
     int totBrickCt;
@@ -77,30 +76,25 @@ public class ScoringSystem : MonoBehaviour
     int _prpBrktkr;                         // Tcker for furture Brick colors
     int _purpCounter;
 
-    public int _blueBrickGoals = 4;        // Trigger for + Blue Brick 
-    public int _purpleBrickGoals = 2;         // Trigger for + Purple Brick
-    public int _LvlWGoals = 2;       // Trigger for Level Winning
+    [SerializeField] private int _blueBrickGoals;   // Trigger for + Blue Brick 
+    [SerializeField] private int _purpleBrickGoals; // Trigger for + Purple Brick
+    [SerializeField] private int _LvlWGoals;        // Trigger for Level Winning
 
     [SerializeField]
     int _winLevel;
 
     private void Start()
     {
-        ResetALL();
-        _greenSlider.maxValue = _blueBrickGoals;
-        _blueSlider.maxValue = _purpleBrickGoals;
-        _purpleSlider.maxValue = _LvlWGoals;    
-        }
+        ResetALL();                    
+    }
 
     void Update()
-    {
-        
+    {       
         CoinCounter();
+        PollingData();
 
-        brickTick = brickTick + totBrickCt;
-        
-        pcScore = totBrickCt + _maxScore + _blueTick + _purpTick; //player score
-        
+        brickTick = brickTick + totBrickCt;        
+        pcScore = totBrickCt + _maxScore + _blueTick + _purpTick; //player score        
         _gBricktkr = _greenBrickTicker;
         _greenStack  = _greenBrickTicker;
         _negativeBrickTick = _redTick;
@@ -117,30 +111,11 @@ public class ScoringSystem : MonoBehaviour
             ResetALL();
             _resetALL = 0;
         }
-        
-        
-        //////////////////WIN Level!!!
-        // if (loopticker >= _winLevel && audioBox.Bool)
-        if (loopticker >= _winLevel)
-        {
-            
-            //WIN();
-
-        }
+  
         if (_penalty>=1)
         {
             Penalty();
         }
-
-
-        //Slider Logic
-            //Critical
-        _greenSlider.value = _gBricktkr; 
-        greenTick.text = "" + _greenTick;
-        _blueSlider.value = _blBrktkr;
-        blueTick.text = "" + _blueStack;
-        _purpleSlider.value = _prpBrktkr;
-        purpleTick.text = "" + _purpStack;
 
         //scoring logic    
         goodBrickTot = _greenTick - _negativeBrickTick;       
@@ -183,14 +158,45 @@ public class ScoringSystem : MonoBehaviour
         }
     }
 
+    void PollingData()
+    {
+        if (_pollLevel == 0)
+        {
+            //Debug.Log("Poll Level " + _pollLevel);
+        }
+        if (_pollLevel == 1)
+        {
+            Debug.Log("Poll Level " + _pollLevel);
+        }
+        if (_pollLevel == 2)
+        {
+            Debug.Log("Poll Level " + _pollLevel);
+        }
+        if (_pollLevel == 3)
+        {
+            Debug.Log("Poll Level " + _pollLevel);
+        }
+        if (_pollLevel == 4)
+        {
+            Debug.Log("Poll Level " + _pollLevel);
+        }
+        if (_pollLevel == 5)
+        {
+            Debug.Log("Poll Level " + _pollLevel);
+        }
+        if (_pollLevel == 6)
+        {
+            Debug.Log("Poll Level " + _pollLevel);
+        }
+
+    }
+
     void Penalty()
     {
         Debug.Log("Hit Spark + ");
+        
         _penalty = 0;
-        if (_greenBrickTicker <= 0)
-        {
-            _greenBrickTicker = 0;
-        }
+
     }
 
     public void ResetScore()
@@ -234,13 +240,12 @@ public class ScoringSystem : MonoBehaviour
         /*
 
         */
+        if (_greenBrickTicker <= 0)
+        {
+            _greenBrickTicker = 0;
+        }
     }
-    public void WIN()//trigger the winLevel in GameManager
-    {
-        //GameManager._noteQuota++;
-        //add in a bool from AudioBox,
-        ////maybe we can move loopMachine over here (feear)
-    }
+
 }
 
 

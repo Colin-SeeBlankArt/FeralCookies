@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour
     public static int StateTick;
     public int _currentState;
 
-    public GameObject NextLevel;    //win level panel
-    public GameObject PausePanel; //pause panel, currently
-    public GameObject EndTime; //end time panel, currently
+    public GameObject NextLevel;
+    public GameObject PollQuest;    //Poll Menu panela
+    public GameObject PausePanel;   //pause panel, currently
+    public GameObject EndTime;      //end time panel, currently
  
     //control the probability machine for coin colors
     //tied to game play for measuring different types of game play
@@ -50,8 +51,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
-        //controls the color of the coins at spawn
+        elapsed += Time.deltaTime;
+
+        //controls the color of the coins at spawn, based on 100
         CollectBrick._gColorState = _gColorState;
         CollectBrick._rColorState = _rColorState;
         CollectBrick._bColorState = _bColorState;
@@ -61,8 +63,6 @@ public class GameManager : MonoBehaviour
         {
             PauseGame();
         }
- 
-        elapsed += Time.deltaTime;
         if (elapsed >= _makeRedBunny)
         {
             elapsed = 0f;
@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
         {
             WinGame();
         }
+
          if(_endTime == true)
         {
             EndTimer();
@@ -142,19 +143,15 @@ public class GameManager : MonoBehaviour
     {       
         Instantiate(bunny, new Vector3(0, 0, 0), Quaternion.identity);
     }
-
     public void MakeGoodBunny()
     {
         Instantiate(bunnyG, new Vector3(0, 0, 0), Quaternion.identity);
     }
-
     public void MakeRover()
     {
         Instantiate(rover, new Vector3(0, 0, 0), Quaternion.identity);
         //Debug.Log("Rover is Not Working");
     }
-
-
     private async void Start()
     {
         await AnalyticsManager.InitializeAsync();

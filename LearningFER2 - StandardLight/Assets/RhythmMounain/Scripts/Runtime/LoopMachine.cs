@@ -19,7 +19,7 @@ public class LoopMachine : MonoBehaviour
 
     //array of audio boxes
     public GameObject[] _audioBoxes;
-    
+
     //audio controller, needs to trigger song loops at loop counts
     AudioSource audioSourceB;
 
@@ -55,7 +55,7 @@ public class LoopMachine : MonoBehaviour
     //used to toggle next track of the song
     public static int _playNextTrack = 0; //from audioBox
     //public static int _isLoopFinished = 0; //from audioBox
-    [SerializeField] private int _nextTrack=0;
+    [SerializeField] private int _nextTrack = 0;
 
     private void Awake()
     {
@@ -69,8 +69,8 @@ public class LoopMachine : MonoBehaviour
     void Update()
     {
         CoinCounter();
-        
-        if(_fireAudioLoops)
+
+        if (_fireAudioLoops)
         {
             FireAudioLoops();
         }
@@ -81,7 +81,7 @@ public class LoopMachine : MonoBehaviour
         }
         if (_pause >= 1)
         {
-            PauseLoops();            
+            PauseLoops();
         }
         if (_resetZero >= 1)
         {
@@ -100,31 +100,31 @@ public class LoopMachine : MonoBehaviour
     {
         //first 8 notes - no loop
         if (_array0)
-        {            
+        {
             _audioBoxes[0].gameObject.SetActive(true);
-            if (_playNextTrack ==1)
+            if (_playNextTrack == 1)
             {
                 _nextTrack = 2;
             }
         }
-         //2nd 8 notes - no loop
+        //2nd 8 notes - no loop
         if (Array1Trig && _nextTrack == 2)
-        {            
+        {
             _audioBoxes[1].gameObject.SetActive(true);
             if (_array1)
             {
-                _nextTrack = 3;               
+                _nextTrack = 3;
                 _audioBoxes[0].gameObject.SetActive(false);
             }
         }
-         //fire Array 2
-        if (Array2Trig  && _nextTrack== 3)
-        {          
+        //fire Array 2
+        if (Array2Trig && _nextTrack == 3)
+        {
             _audioBoxes[2].gameObject.SetActive(true);
             _audioBoxes[1].gameObject.SetActive(false);
             if (_array2 && Array2Trig)
             {
-                _nextTrack = 4;           
+                _nextTrack = 4;
             }
         }
         //fire Array 3
@@ -134,19 +134,19 @@ public class LoopMachine : MonoBehaviour
             _audioBoxes[2].gameObject.SetActive(false);
             if (_array3 && Array3Trig)
             {
-                _nextTrack = 5;                
+                _nextTrack = 5;
             }
         }
         //fire Array 4
         if (Array4Trig && _nextTrack == 5)
-        {           
+        {
             _audioBoxes[4].gameObject.SetActive(true);
             _audioBoxes[3].gameObject.SetActive(false);
 
             if (_array4 && Array4Trig)
             {
                 _nextTrack = 6;
-            }           
+            }
 
         }
         //fire Array 5
@@ -203,7 +203,7 @@ public class LoopMachine : MonoBehaviour
             greenCoinCollect = 0;
             _greenCoin++;
             _subLoopcounter++;
-            
+
         }
         if (_subLoopcounter >= _array0LoopGoals)
         {

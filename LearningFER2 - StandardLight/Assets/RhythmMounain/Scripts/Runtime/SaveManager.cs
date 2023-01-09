@@ -16,11 +16,15 @@ public class GameSessionData
     public int Penalties;
     public int BlueStack;
     public int PurpStack;
+
+    /*public int GreenStack;
+     *public int GrnSprkTot;
+     *public int RdSprkTot;
+     *public int PollQuest_[Loop];
+     *public int TimeElapsed;
+     */
 }
-/*
-to add: Loop counter (which song loops did the player unlock)
-average player speed and game times
-*/
+
 [Serializable]
 public class GameSaveData
 {
