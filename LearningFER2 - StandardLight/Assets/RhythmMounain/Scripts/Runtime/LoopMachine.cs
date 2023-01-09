@@ -9,6 +9,10 @@ public class LoopMachine : MonoBehaviour
     //this is the loop counter machine, used to fire off the audio tracks
     public static LoopMachine instance;
 
+
+    //target coin collection goals 
+    //which is half the trigger for song chunks
+    //this is my audioBoxLength int target
     [SerializeField] public int _array0LoopGoals;
     [SerializeField] public int _array1LoopGoals;
     [SerializeField] public int _array2LoopGoals;
@@ -23,6 +27,7 @@ public class LoopMachine : MonoBehaviour
     //audio controller, needs to trigger song loops at loop counts
     AudioSource audioSourceB;
 
+    //public check box, comes from audioBox.WhoAmi()
     public static bool Array0Trig = false;
     public static bool Array1Trig = false;
     public static bool Array2Trig = false;
@@ -30,6 +35,7 @@ public class LoopMachine : MonoBehaviour
     public static bool Array4Trig = false;
     public static bool Array5Trig = false;
     public static bool Array6Trig = false;
+
 
     bool _array0 = false;
     bool _array1 = false;

@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject currentState;
+
+    [SerializeField] bool NOSPEEDBoost = false;
+    //[SerializeField] int _maxSpeed;
     public static int StateTick;
     public int _currentState;
 
@@ -38,20 +41,24 @@ public class GameManager : MonoBehaviour
 
     int _pauseMe = 0;
 
-    //test to find this out. May need to be Public in PlayerCtrl
-    float minSpeed;
-    float maxSpeed;
 
     void Awake()
     {
         _noteQuota = 0;
         currentState.GetComponent<Text>().text = "State = " + StateTick;
         Play();
+
     }
 
     void Update()
     {
         elapsed += Time.deltaTime;
+        if(NOSPEEDBoost)
+        {
+            CollectBrick._canBoost = false;
+
+        }
+        else { CollectBrick._canBoost = true; }
 
         //controls the color of the coins at spawn, based on 100
         CollectBrick._gColorState = _gColorState;

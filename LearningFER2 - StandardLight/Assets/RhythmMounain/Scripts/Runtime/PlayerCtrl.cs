@@ -25,7 +25,7 @@ public class PlayerCtrl : MonoBehaviour
     //taken from DreamTeck.Forever.MathPlayer.cs
     public static int _speedBoostCheck = 0;
     float boost = 2f;
-    bool canBoost = true;
+    
     float speed;
     float startSpeed = 0;
 
@@ -48,6 +48,8 @@ public class PlayerCtrl : MonoBehaviour
 void Start()
     {
         //soundBite.Play("EngineNoise");
+
+        //maxSpeed = GameManger._maxSpeed;  // build/test this
     }
     void Awake()
     {
@@ -61,7 +63,7 @@ void Start()
         //_turnAnim = GetComponent<Animator>();
 
         soundBite = FindObjectOfType<AudioManager>();
-
+        
     }
 
     private void FloatingOriginOnonOriginOffset(Vector3 delta)
@@ -160,7 +162,8 @@ void Start()
         if(speed >= maxSpeed)
         {
             CollectBrick._canBoost = false;
-            SetSpeed(speed=maxSpeed);            
+            SetSpeed(speed=
+                maxSpeed);            
         }
         else {CollectBrick._canBoost = true;}
 
