@@ -95,8 +95,8 @@ public class CollectBrick : MonoBehaviour
     {
         if (_greenbrick)
         {
-            LoopMachine.greenCoinCollect ++; 
-            ScoringSystem._greenTick++;     //green brick tally
+            LoopMachine.greenCoinCollect ++;
+            ScoringSystem._greenStack++;     //green brick tally
             ScoringSystem._greenBrickTicker++;    //for counter to work in Scoring
 
             if (_canBoost)

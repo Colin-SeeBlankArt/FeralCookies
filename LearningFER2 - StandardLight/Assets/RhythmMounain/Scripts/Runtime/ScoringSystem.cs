@@ -11,15 +11,15 @@ public class ScoringSystem : MonoBehaviour
         {
             TimeCreated = DateTime.UtcNow,
             TotalBricks = brickTick,
-            PlayerScore = pcScore,            
-            RedStack = _redTick,
+            PlayerScore = pcScore,
+            GreenStack = _greenStack,
+            RedStack = _redStack,
             BlueStack = _blueStack,
-            PurpStack = _purpStack
+            PurpStack = _purpStack,
+            RdSprkTot = _rBunny,
+            GrnSprkTot = _gBunny,
 
-            /* GreenStack = _greenTick,
-             * GrnSprkTot = (create from GBunny),
-             * RdSprkTot = (crearte from RBunny),
-             * PollQuest_[Loop] = (Polls),
+            /*PollQuest_[Loop] = (Polls),
              * TimeElapsed = timeElapsed,
              */
         };
@@ -45,20 +45,24 @@ public class ScoringSystem : MonoBehaviour
     ////Poll Values
     public static int _pollLevel = 0; //values from Poll Pop Up
 
+    ////for Data Capture
+    public static int _greenStack;  //green collection
+    public static int _blueStack; //blue coin stack
+    public static int _purpStack; //purple coin stack
+    public static int _redStack;
+
     // coming from CollectBrick
     public static int brickTick;
     public static int _greenTick;   //this will be a positive impact on loop count
     public static int _redTick;     //this will be a negative impact on loop count
     public static int _purpTick;    //unlocks future items
-    public static int _blueTick;    //unlocks future items
+    public static int _blueTick;    //unlocks future items 
 
-    public static int _greenStack;  //green collection
     int _negativeBrickTick;
     
-    public static int _penalty; //hit the bunny, get penalized
-
-    public static int _blueStack; //blue coin stack
-    public static int _purpStack; //purple coin stack
+    public static int _rBunny; //hit the bunny, get penalized
+    public static int _gBunny;
+    public static int _penalty;
 
     public static int pcScore;
     int _maxScore;
@@ -69,7 +73,8 @@ public class ScoringSystem : MonoBehaviour
     int totBrickCt;
     int goodBrickTot;
 
-    int loopticker;
+    //int loopticker;
+    int Purseticker;
     int _gBricktkr;
     int _blBrktkr;                          // Ticker for Purple Bricks 
     int _blueCounter;
@@ -89,17 +94,13 @@ public class ScoringSystem : MonoBehaviour
     }
 
     void Update()
-    {       
+    {
+        _redStack = _negativeBrickTick = (_redTick*2);
+        _blueStack = _blueTick;
+        _purpStack = _purpTick;
         CoinCounter();
         PollingData();
-
-        brickTick = brickTick + totBrickCt;        
-        pcScore = totBrickCt + _maxScore + _blueTick + _purpTick; //player score        
-        _gBricktkr = _greenBrickTicker;
-        _greenStack  = _greenBrickTicker;
-        _negativeBrickTick = _redTick;
-        _blueStack = _blueCounter + _blueTick;
-        _purpStack = _purpCounter + _purpTick;
+        ScoringSys();
 
         if (_resetScores >= 1)
         {
@@ -117,17 +118,16 @@ public class ScoringSystem : MonoBehaviour
             Penalty();
         }
 
-        //scoring logic    
-        goodBrickTot = _greenTick - _negativeBrickTick;       
-        totBrickCt = _greenTick + _negativeBrickTick;
-
         //scoring display
-        BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  //count all bricks
+        //count all bricks
+        BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  
         PlayerScore.GetComponent<Text>().text = "Player Score: " + pcScore;
-        Loops.GetComponent<Text>().text = "Loops = " + loopticker;  //count loopos, based on 10 bricks for each loop
-        GBTick.GetComponent<Text>().text = "Green Brick = " + goodBrickTot; //counter for the green
-        BBTick.GetComponent<Text>().text = "Red Brick = " + _negativeBrickTick;  //counter for the red  
-      
+        //count loopos, based on 10 bricks for each loop
+        Loops.GetComponent<Text>().text = "BlueBlocks = " + Purseticker;  
+        //counter for the green
+        GBTick.GetComponent<Text>().text = "Green Brick = " + _gBricktkr;
+        //counter for the red
+        BBTick.GetComponent<Text>().text = "Red Brick = " + _negativeBrickTick;    
     }
 
 
@@ -135,6 +135,8 @@ public class ScoringSystem : MonoBehaviour
     void CoinCounter()
     {
         //scoring collection logic
+        
+        
         if (_greenBrickTicker >= _blueBrickGoals)
         {
             _greenBrickTicker = 0;
@@ -146,15 +148,15 @@ public class ScoringSystem : MonoBehaviour
         {
             _blBrktkr = 0;
             _prpBrktkr++;
-            _purpCounter++;
+            _purpCounter++; //loops unlocks
 
             _maxScore++;
         }
         if (_prpBrktkr >= _LvlWGoals)
         {
             _prpBrktkr = 0;
-            _maxScore++;
-            loopticker++;
+            _maxScore=_maxScore + 2;
+            Purseticker++;
         }
     }
 
@@ -194,8 +196,6 @@ public class ScoringSystem : MonoBehaviour
     void Penalty()
     {
         Debug.Log("Hit Spark + ");
-        
-        _penalty = 0;
 
     }
 
@@ -211,7 +211,6 @@ public class ScoringSystem : MonoBehaviour
         _purpStack = 0;
         _redTick = 0;
         _blueStack = 0;
-        _purpStack = 0;
         _blueCounter = 0;
         _blueTick = 0;
         _purpCounter = 0;
@@ -221,7 +220,7 @@ public class ScoringSystem : MonoBehaviour
     public void ResetALL()
     {
         //reset all points to zero
-        loopticker = 0;
+        Purseticker = 0;
         _negativeBrickTick = 0;
         _greenTick = 0;
         goodBrickTot = 0;
@@ -237,13 +236,10 @@ public class ScoringSystem : MonoBehaviour
 
     public void ScoringSys()
     {
-        /*
-
-        */
-        if (_greenBrickTicker <= 0)
-        {
-            _greenBrickTicker = 0;
-        }
+        pcScore = _maxScore;
+        totBrickCt = _maxScore + _negativeBrickTick;
+        _gBricktkr = _greenStack - _negativeBrickTick;
+        _maxScore = (_greenStack + _purpStack + _blueStack);
     }
 
 }

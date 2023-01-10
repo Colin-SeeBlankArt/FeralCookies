@@ -12,15 +12,15 @@ public class GameSessionData
     public DateTime TimeCreated;
     public int TotalBricks;
     public int PlayerScore;
+    public int GreenStack;
     public int RedStack;
     public int Penalties;
     public int BlueStack;
     public int PurpStack;
+    public int RdSprkTot;
+    public int GrnSprkTot;
 
-    /*public int GreenStack;
-     *public int GrnSprkTot;
-     *public int RdSprkTot;
-     *public int PollQuest_[Loop];
+    /*public int PollQuest_[Loop];
      *public int TimeElapsed;
      */
 }

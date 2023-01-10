@@ -135,12 +135,14 @@ void Start()
         if (collider.CompareTag("Enemy"))
         {
             soundBite.Play("BunnyPing");
+            ScoringSystem._rBunny++;
             ScoringSystem._penalty++;
             Debug.Log("BunnyRed Speed Minus");
         }
         if (collider.CompareTag("Ally"))
         {
             soundBite.Play("Ally");
+            ScoringSystem._gBunny++;
         }
 
         if (collider.CompareTag("BlockL"))
