@@ -9,7 +9,7 @@ public class ScoringSystem : MonoBehaviour
     {
         var sessionData = new GameSessionData()
         {
-            TimeCreated = DateTime.UtcNow,
+            //TimeCreated = DateTime.UtcNow,
             TotalBricks = brickTick,
             PlayerScore = pcScore,
             GreenStack = _greenStack,

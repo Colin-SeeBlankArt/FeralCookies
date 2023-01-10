@@ -9,7 +9,7 @@ using UnityEngine;
 [Serializable]
 public class GameSessionData
 {
-    public DateTime TimeCreated;
+    //public DateTime TimeCreated;
     public int TotalBricks;
     public int PlayerScore;
     public int GreenStack;
