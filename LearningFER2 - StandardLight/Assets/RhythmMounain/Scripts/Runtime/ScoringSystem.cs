@@ -18,6 +18,7 @@ public class ScoringSystem : MonoBehaviour
             PurpStack = _purpStack,
             RdSprkTot = _rBunny,
             GrnSprkTot = _gBunny,
+            Poll_1 = _pollLevel_1,
 
             /*PollQuest_[Loop] = (Polls),
              * TimeElapsed = timeElapsed,
@@ -31,19 +32,19 @@ public class ScoringSystem : MonoBehaviour
     //text of data
     public GameObject BrickCounter;
     public GameObject PlayerScore;
-    public GameObject Loops;
-    public GameObject GBTick;
-    public GameObject BBTick;
-
-    //UI Element which activates Buttons for Songs
-    public GameObject LoopLists;
+    public GameObject GreenCoincount;
+    public GameObject BlueCoinCount;
+    public GameObject PurpCoincount;
+    public GameObject RedCoinTick;
 
     ///// Major Counter
     //actual score variable
     public static int _greenBrickTicker;
 
     ////Poll Values
-    public static int _pollLevel = 0; //values from Poll Pop Up
+    public static int _pollLevel_1 = 0; //values from Poll Pop Up
+    public GameObject PollsBase;    //Poll Menu panel
+    bool _isFinalLevel=false;
 
     ////for Data Capture
     public static int _greenStack;  //green collection
@@ -68,14 +69,17 @@ public class ScoringSystem : MonoBehaviour
     int _maxScore;
 
     public static int _resetScores = 0; //GameManger, Reset Level
-    public static int _resetALL = 0; //GAmeManger, Reset All counters
+    public static int _resetALL = 0; //GameManger, Reset All counters
+
+    //UI for display of BlueCounter
+    public GameObject BlueBlockGoalUI;
 
     int totBrickCt;
     int goodBrickTot;
 
     //int loopticker;
     int Purseticker;
-    int _gBricktkr;
+    int _gBricktkr; //green coin purse
     int _blBrktkr;                          // Ticker for Purple Bricks 
     int _blueCounter;
     int _prpBrktkr;                         // Tcker for furture Brick colors
@@ -99,7 +103,7 @@ public class ScoringSystem : MonoBehaviour
         _blueStack = _blueTick;
         _purpStack = _purpTick;
         CoinCounter();
-        PollingData();
+        PollingData_A();
         ScoringSys();
 
         if (_resetScores >= 1)
@@ -122,12 +126,15 @@ public class ScoringSystem : MonoBehaviour
         //count all bricks
         BrickCounter.GetComponent<Text>().text = "Totals = " + totBrickCt;  
         PlayerScore.GetComponent<Text>().text = "Player Score: " + pcScore;
-        //count loopos, based on 10 bricks for each loop
-        Loops.GetComponent<Text>().text = "BlueBlocks = " + Purseticker;  
+
         //counter for the green
-        GBTick.GetComponent<Text>().text = "Green Brick = " + _gBricktkr;
+        GreenCoincount.GetComponent<Text>().text = "Green Coins = " + _gBricktkr;
+
+        BlueCoinCount.GetComponent<Text>().text = "Blue Coins = " + _blueStack;
+
+        PurpCoincount.GetComponent<Text>().text = "Purple Coins = " + _purpStack;
         //counter for the red
-        BBTick.GetComponent<Text>().text = "Red Brick = " + _negativeBrickTick;    
+        RedCoinTick.GetComponent<Text>().text = "Red Brick = " + _negativeBrickTick;    
     }
 
 
@@ -140,6 +147,7 @@ public class ScoringSystem : MonoBehaviour
         if (_greenBrickTicker >= _blueBrickGoals)
         {
             _greenBrickTicker = 0;
+            //_gBricktkr++;
             _blBrktkr++;
             _blueCounter++;
             _maxScore++;
@@ -160,39 +168,39 @@ public class ScoringSystem : MonoBehaviour
         }
     }
 
-    void PollingData()
+    void PollingData_A()
     {
-        if (_pollLevel == 0)
+        if (_pollLevel_1 == 0)
         {
-            //Debug.Log("Poll Level " + _pollLevel);
+            //this is labeled as "Choose One"
         }
-        if (_pollLevel == 1)
+        if (_pollLevel_1 == 1)
         {
-            Debug.Log("Poll Level " + _pollLevel);
+            Debug.Log("Poll Level " + _pollLevel_1);
         }
-        if (_pollLevel == 2)
+        if (_pollLevel_1 == 2)
         {
-            Debug.Log("Poll Level " + _pollLevel);
+            Debug.Log("Poll Level " + _pollLevel_1);
         }
-        if (_pollLevel == 3)
+        if (_pollLevel_1 == 3)
         {
-            Debug.Log("Poll Level " + _pollLevel);
+            Debug.Log("Poll Level " + _pollLevel_1);
         }
-        if (_pollLevel == 4)
+        if (_pollLevel_1 == 4)
         {
-            Debug.Log("Poll Level " + _pollLevel);
+            Debug.Log("Poll Level " + _pollLevel_1);
         }
-        if (_pollLevel == 5)
+        if (_pollLevel_1 == 5)
         {
-            Debug.Log("Poll Level " + _pollLevel);
+            Debug.Log("Poll Level " + _pollLevel_1);
         }
-        if (_pollLevel == 6)
+        if (_pollLevel_1 == 6)
         {
-            Debug.Log("Poll Level " + _pollLevel);
+            Debug.Log("Poll Level " + _pollLevel_1);
         }
 
     }
-
+   
     void Penalty()
     {
         Debug.Log("Hit Spark + ");
@@ -238,8 +246,17 @@ public class ScoringSystem : MonoBehaviour
     {
         pcScore = _maxScore;
         totBrickCt = _maxScore + _negativeBrickTick;
+        
+        //green brick count and display in UI
         _gBricktkr = _greenStack - _negativeBrickTick;
+        if(_gBricktkr <= 0)
+        {
+            _gBricktkr = 0;
+        }
+        
+        //collection of coin pick ups
         _maxScore = (_greenStack + _purpStack + _blueStack);
+
     }
 
 }

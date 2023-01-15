@@ -13,13 +13,17 @@ public class LoopMachine : MonoBehaviour
     //target coin collection goals 
     //which is half the trigger for song chunks
     //this is my audioBoxLength int target
-    [SerializeField] public int _array0LoopGoals;
-    [SerializeField] public int _array1LoopGoals;
-    [SerializeField] public int _array2LoopGoals;
-    [SerializeField] public int _array3LoopGoals;
-    [SerializeField] public int _array4LoopGoals;
-    [SerializeField] public int _array5LoopGoals;
-    [SerializeField] public int _array6LoopGoals;
+    [SerializeField] public int _songLoopGoal_00; //multiplier for all unlocks
+    [SerializeField] public int _songLoopGoal_01;
+    [SerializeField] public int _songLoopGoal_02;
+    [SerializeField] public int _songLoopGoal_03;
+    [SerializeField] public int _songLoopGoal_04;
+    [SerializeField] public int _songLoopGoal_05;
+    [SerializeField] public int _songLoopGoal_06;
+    [SerializeField] public int _songLoopGoal_07;
+    [SerializeField] public int _songLoopGoal_08;
+    [SerializeField] public int _songLoopGoal_09;
+
 
     //array of audio boxes
     public GameObject[] _audioBoxes;
@@ -81,7 +85,7 @@ public class LoopMachine : MonoBehaviour
             FireAudioLoops();
         }
 
-        if (_greenCoin >= _array0LoopGoals)
+        if (_greenCoin >= _songLoopGoal_00)
         {
             ActivateAudioBox();
         }
@@ -171,31 +175,31 @@ public class LoopMachine : MonoBehaviour
     void FireAudioLoops()
     {
         //to fire audio clilps 
-        if (_greenCoin >= _array0LoopGoals)
+        if (_greenCoin >= _songLoopGoal_00)
         {
             _array0 = true;
         }
         else
         {
-            _array1 = false;
+            _array0 = false;
         }
-        if (_subLoopTotals == _array1LoopGoals)
+        if (_subLoopTotals == _songLoopGoal_01)
         {
             _array1 = true;
         }
-        if (_subLoopTotals == _array2LoopGoals)
+        if (_subLoopTotals == _songLoopGoal_02)
         {
             _array2 = true;
         }
-        if (_subLoopTotals == _array3LoopGoals)
+        if (_subLoopTotals == _songLoopGoal_03)
         {
             _array3 = true;
         }
-        if (_subLoopTotals == _array4LoopGoals)
+        if (_subLoopTotals == _songLoopGoal_04)
         {
             _array4 = true;
         }
-        if (_subLoopTotals == _array5LoopGoals)
+        if (_subLoopTotals == _songLoopGoal_05)
         {
             _array5 = true;
         }
@@ -211,13 +215,14 @@ public class LoopMachine : MonoBehaviour
             _subLoopcounter++;
 
         }
-        if (_subLoopcounter >= _array0LoopGoals)
+        if (_subLoopcounter >= _songLoopGoal_00)
         {
             _subLoopTotals++;
             _ArrayCounter++;
             //_purpCoinTotals++;
             _subLoopcounter = 0;
         }
+        //if(_subLoopcounter >= _songLoopGoal_01)
     }
 
     public void SetToZero()

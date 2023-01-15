@@ -5,6 +5,7 @@ using UnityEngine;
 public class audioBox : MonoBehaviour
 {
     AudioSource audioSource;
+
     public static audioBox instance;
     public static int _pause = 0;
     public static bool _loop = false;

@@ -7,15 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject currentState;
-
     [SerializeField] bool NOSPEEDBoost = false;
     //[SerializeField] int _maxSpeed;
-    public static int StateTick;
-    public int _currentState;
 
     public GameObject NextLevel;
-    public GameObject PollQuest;    //Poll Menu panela
     public GameObject PausePanel;   //pause panel, currently
     public GameObject EndTime;      //end time panel, currently
  
@@ -41,11 +36,9 @@ public class GameManager : MonoBehaviour
 
     int _pauseMe = 0;
 
-
     void Awake()
     {
         _noteQuota = 0;
-        currentState.GetComponent<Text>().text = "State = " + StateTick;
         Play();
 
     }
