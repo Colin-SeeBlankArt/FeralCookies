@@ -2997,7 +2997,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3052,8 +3052,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: bb263363ee24c274c9e41f58844a0136, type: 3}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
-      propertyPath: _array4Trig
+      propertyPath: _array3Trig
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+      propertyPath: _array4Trig
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array5Trig
@@ -5885,7 +5889,7 @@ MonoBehaviour:
   _useUnloadUnusedAssets: 0
   _loopSegmentLogic: 1
   _levelCollection:
-  - {fileID: 11400000, guid: 206005ace50d5064ba48acf8310c8359, type: 2}
+  - {fileID: 11400000, guid: d75c4624b7d1ffb4aa3da917acd2846c, type: 2}
   _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
@@ -9115,7 +9119,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9171,6 +9175,10 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 1bce23dbfeda65143b81259c40b02aa9, type: 3}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array3Trig
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+      propertyPath: _array4Trig
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13538,13 +13546,13 @@ MonoBehaviour:
   NextLevel: {fileID: 1472131634}
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
-  _gColorState: 80
-  _rColorState: 100
-  _bColorState: 0
-  _pColorState: 0
-  _makeRedBunny: 150
-  _makeGreenBunny: 150
-  _makeRover: 150
+  _gColorState: 50
+  _rColorState: 83
+  _bColorState: 90
+  _pColorState: 95
+  _makeRedBunny: 5
+  _makeGreenBunny: 5
+  _makeRover: 5
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: 4570be90e95880846b0c95a3a67c3fa0, type: 3}
   bunnyG: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
@@ -15822,8 +15830,8 @@ MonoBehaviour:
   - {fileID: 2018206244}
   - {fileID: 1812119036}
   - {fileID: 909955701}
-  - {fileID: 407682543}
   - {fileID: 1114011350}
+  - {fileID: 407682543}
   - {fileID: 911228661}
   _subLoopTotals: 0
   _ArrayCounter: 0

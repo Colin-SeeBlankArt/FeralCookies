@@ -1962,7 +1962,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2017,6 +2017,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: bb263363ee24c274c9e41f58844a0136, type: 3}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+      propertyPath: _array3Trig
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array4Trig
       value: 0
       objectReference: {fileID: 0}
@@ -2030,6 +2034,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+--- !u!1 &457132730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 121617103937192086, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+  m_PrefabInstance: {fileID: 457132729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &503793224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
@@ -3683,11 +3692,11 @@ MonoBehaviour:
   _useUnloadUnusedAssets: 0
   _loopSegmentLogic: 1
   _levelCollection:
-  - {fileID: 11400000, guid: 206005ace50d5064ba48acf8310c8359, type: 2}
+  - {fileID: 11400000, guid: 6477330054be7844aac4f94f2d793a09, type: 2}
   _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
-  _sharedPathGenerator: {fileID: 11400000, guid: 98304cf0b75b30d459fe1ab17d00bddb, type: 2}
+  _sharedPathGenerator: {fileID: 11400000, guid: 8b4e7d1c16d58b24eb5c36507f91bcba, type: 2}
   levels: []
   usePathGeneratorInstance: 0
 --- !u!1 &769248530
@@ -4408,11 +4417,6 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
   m_PrefabInstance: {fileID: 1079690895}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &911228661 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 121617103937192086, guid: c938cd62c45e8994b9ecb041ff80541f, type: 3}
-  m_PrefabInstance: {fileID: 1967269576}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &934839285
 GameObject:
@@ -5330,7 +5334,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5390,6 +5394,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array3Trig
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+      propertyPath: _array4Trig
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6322,7 +6330,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6383,6 +6391,10 @@ PrefabInstance:
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array4Trig
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+      propertyPath: _array5Trig
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _isFinalTrack
@@ -8155,9 +8167,9 @@ MonoBehaviour:
   _rColorState: 80
   _bColorState: 95
   _pColorState: 100
-  _makeRedBunny: 150
-  _makeGreenBunny: 150
-  _makeRover: 150
+  _makeRedBunny: 10
+  _makeGreenBunny: 10
+  _makeRover: 10
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: 4570be90e95880846b0c95a3a67c3fa0, type: 3}
   bunnyG: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
@@ -8830,7 +8842,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: c938cd62c45e8994b9ecb041ff80541f, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: c938cd62c45e8994b9ecb041ff80541f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9004,7 +9016,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9415,10 +9427,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _songLoopGoal_00: 1
   _songLoopGoal_01: 4
-  _songLoopGoal_02: 20
-  _songLoopGoal_03: 40
-  _songLoopGoal_04: 0
-  _songLoopGoal_05: 0
+  _songLoopGoal_02: 18
+  _songLoopGoal_03: 28
+  _songLoopGoal_04: 32
+  _songLoopGoal_05: 34
   _songLoopGoal_06: 0
   _songLoopGoal_07: 0
   _songLoopGoal_08: 0
@@ -9427,8 +9439,8 @@ MonoBehaviour:
   - {fileID: 1444613366}
   - {fileID: 1812119036}
   - {fileID: 909955701}
+  - {fileID: 457132730}
   - {fileID: 407682543}
-  - {fileID: 911228661}
   - {fileID: 1379862097}
   _subLoopTotals: 0
   _ArrayCounter: 0
@@ -9504,7 +9516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 1
+  m_text: Urban Level 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}
   m_sharedMaterial: {fileID: 6365364023026732378, guid: 9af0275a5f27820409d8b4f3739c53d3, type: 2}

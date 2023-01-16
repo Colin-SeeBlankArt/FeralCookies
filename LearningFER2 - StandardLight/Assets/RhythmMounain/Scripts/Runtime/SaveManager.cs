@@ -19,10 +19,11 @@ public class GameSessionData
     public int PurpStack;
     public int RdSprkTot;
     public int GrnSprkTot;
-    public int Poll_1;
+
 
     /*public int PollQuest_[Loop];
      *public int TimeElapsed;
+     *public int Poll_1;
      */
 }
 

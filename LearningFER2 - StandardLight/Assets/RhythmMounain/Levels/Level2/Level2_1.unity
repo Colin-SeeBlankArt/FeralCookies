@@ -3000,11 +3000,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403988510}
   m_CullTransparentMesh: 1
---- !u!1 &407682543 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 121617103937192086, guid: b4c6d611744819648b620d5ecb617489, type: 3}
-  m_PrefabInstance: {fileID: 1153280226}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &407682546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
@@ -3426,7 +3421,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3481,6 +3476,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: bb263363ee24c274c9e41f58844a0136, type: 3}
     - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+      propertyPath: _array3Trig
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651322705827643339, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: _array4Trig
       value: 0
       objectReference: {fileID: 0}
@@ -3494,6 +3493,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+--- !u!1 &459016465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 121617103937192086, guid: b4c6d611744819648b620d5ecb617489, type: 3}
+  m_PrefabInstance: {fileID: 1379862096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &471811481
 GameObject:
   m_ObjectHideFlags: 0
@@ -5772,7 +5776,7 @@ MonoBehaviour:
   _levelIteration: 1
   _levelRandomizer: {fileID: 0}
   _startLevel: 0
-  _sharedPathGenerator: {fileID: 11400000, guid: 98304cf0b75b30d459fe1ab17d00bddb, type: 2}
+  _sharedPathGenerator: {fileID: 11400000, guid: 8b4e7d1c16d58b24eb5c36507f91bcba, type: 2}
   levels: []
   usePathGeneratorInstance: 0
 --- !u!1 &769248530
@@ -8681,7 +8685,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10200,7 +10204,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: b4c6d611744819648b620d5ecb617489, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13612,13 +13616,13 @@ MonoBehaviour:
   NextLevel: {fileID: 1472131634}
   PausePanel: {fileID: 802553354}
   EndTime: {fileID: 802553354}
-  _gColorState: 80
-  _rColorState: 100
-  _bColorState: 0
-  _pColorState: 0
-  _makeRedBunny: 150
-  _makeGreenBunny: 150
-  _makeRover: 150
+  _gColorState: 50
+  _rColorState: 75
+  _bColorState: 90
+  _pColorState: 100
+  _makeRedBunny: 15
+  _makeGreenBunny: 15
+  _makeRover: 15
   rover: {fileID: 1886980740282267379, guid: 2156d9e1b4909d146bc81d2a7e1ec730, type: 3}
   bunny: {fileID: 3601136861555390513, guid: 4570be90e95880846b0c95a3a67c3fa0, type: 3}
   bunnyG: {fileID: 3601136861555390513, guid: a6604205f5120b347b9bb5f61d4418e1, type: 3}
@@ -14495,7 +14499,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 121617103937192084, guid: c938cd62c45e8994b9ecb041ff80541f, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 121617103937192084, guid: c938cd62c45e8994b9ecb041ff80541f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14559,11 +14563,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1269684781707863113, guid: c938cd62c45e8994b9ecb041ff80541f, type: 3}
       propertyPath: _array3Trig
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1269684781707863113, guid: c938cd62c45e8994b9ecb041ff80541f, type: 3}
       propertyPath: _array5Trig
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1269684781707863113, guid: c938cd62c45e8994b9ecb041ff80541f, type: 3}
       propertyPath: _array6Trig
@@ -14701,7 +14705,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15615,8 +15619,8 @@ MonoBehaviour:
   _songLoopGoal_01: 2
   _songLoopGoal_02: 4
   _songLoopGoal_03: 20
-  _songLoopGoal_04: 0
-  _songLoopGoal_05: 0
+  _songLoopGoal_04: 24
+  _songLoopGoal_05: 28
   _songLoopGoal_06: 0
   _songLoopGoal_07: 0
   _songLoopGoal_08: 0
@@ -15625,9 +15629,9 @@ MonoBehaviour:
   - {fileID: 718326859}
   - {fileID: 1812119036}
   - {fileID: 909955701}
-  - {fileID: 911228661}
-  - {fileID: 407682543}
   - {fileID: 1114011350}
+  - {fileID: 459016465}
+  - {fileID: 911228661}
   _subLoopTotals: 0
   _ArrayCounter: 0
   _nextTrack: 0

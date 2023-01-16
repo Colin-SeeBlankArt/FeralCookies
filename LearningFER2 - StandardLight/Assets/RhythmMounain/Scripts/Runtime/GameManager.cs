@@ -67,11 +67,12 @@ public class GameManager : MonoBehaviour
         {
             elapsed = 0f;
             MakeRedBunny();
+            MakeGoodBunny();
         }
         if (elapsed >= _makeGreenBunny)
         {
             elapsed = 0f;;
-            MakeGoodBunny();
+            
         }
 
         _roverElapsed += Time.deltaTime;

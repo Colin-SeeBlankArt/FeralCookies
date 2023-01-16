@@ -18,10 +18,11 @@ public class ScoringSystem : MonoBehaviour
             PurpStack = _purpStack,
             RdSprkTot = _rBunny,
             GrnSprkTot = _gBunny,
-            Poll_1 = _pollLevel_1,
+
 
             /*PollQuest_[Loop] = (Polls),
              * TimeElapsed = timeElapsed,
+             * Poll_1 = _pollLevel_1,
              */
         };
 
@@ -117,10 +118,7 @@ public class ScoringSystem : MonoBehaviour
             _resetALL = 0;
         }
   
-        if (_penalty>=1)
-        {
-            Penalty();
-        }
+
 
         //scoring display
         //count all bricks
@@ -200,12 +198,7 @@ public class ScoringSystem : MonoBehaviour
         }
 
     }
-   
-    void Penalty()
-    {
-        Debug.Log("Hit Spark + ");
 
-    }
 
     public void ResetScore()
     {
@@ -249,14 +242,19 @@ public class ScoringSystem : MonoBehaviour
         
         //green brick count and display in UI
         _gBricktkr = _greenStack - _negativeBrickTick;
-        if(_gBricktkr <= 0)
+
+        if (_gBricktkr <= 0)
         {
             _gBricktkr = 0;
         }
         
         //collection of coin pick ups
-        _maxScore = (_greenStack + _purpStack + _blueStack);
-
+        _maxScore = (_greenStack + (_purpStack*3) + (_blueStack*2) + (_gBunny*4));
+        if (_penalty >= 1)
+        {
+            _blueStack = _blueStack - 2;
+            _penalty = 0;
+        }
     }
 
 }
