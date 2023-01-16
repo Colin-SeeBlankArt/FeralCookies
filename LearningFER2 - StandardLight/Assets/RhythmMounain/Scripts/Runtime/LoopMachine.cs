@@ -39,6 +39,9 @@ public class LoopMachine : MonoBehaviour
     public static bool Array4Trig = false;
     public static bool Array5Trig = false;
     public static bool Array6Trig = false;
+    public static bool Array7Trig = false;
+    public static bool Array8Trig = false;
+    public static bool Array9Trig = false;
 
 
     bool _array0 = false;
@@ -48,6 +51,9 @@ public class LoopMachine : MonoBehaviour
     bool _array4 = false;
     bool _array5 = false;
     bool _array6 = false;
+    bool _array7 = false;
+    bool _array8 = false;
+    bool _array9 = false;
 
     public static int greenCoinCollect; //from CollectBrck
     private int _greenCoin;
@@ -165,6 +171,13 @@ public class LoopMachine : MonoBehaviour
             _audioBoxes[5].gameObject.SetActive(true);
             _audioBoxes[4].gameObject.SetActive(false);
         }
+        
+        //fire Array 6
+        if (Array6Trig && _nextTrack == 7)
+        {
+            _audioBoxes[6].gameObject.SetActive(true);
+            _audioBoxes[5].gameObject.SetActive(false);
+        }
     }
 
     public void PauseLoops()
@@ -202,6 +215,22 @@ public class LoopMachine : MonoBehaviour
         if (_subLoopTotals == _songLoopGoal_05)
         {
             _array5 = true;
+        }
+        if (_subLoopTotals == _songLoopGoal_06)
+        {
+            _array6 = true;
+        }
+        if (_subLoopTotals == _songLoopGoal_07)
+        {
+            _array7 = true;
+        }
+        if (_subLoopTotals == _songLoopGoal_08)
+        {
+            _array8 = true;
+        }
+        if (_subLoopTotals == _songLoopGoal_09)
+        {
+            _array9 = true;
         }
     }
 

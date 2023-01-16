@@ -18,6 +18,9 @@ public class audioBox : MonoBehaviour
     public bool _array4Trig = false;
     public bool _array5Trig = false;
     public bool _array6Trig = false;
+    public bool _array7Trig = false;
+    public bool _array8Trig = false;
+    public bool _array9Trig = false;
 
     void Awake()
     {
@@ -98,6 +101,18 @@ public class audioBox : MonoBehaviour
         if (_array6Trig)
         {
             LoopMachine.Array6Trig = true;
+        }
+        if (_array7Trig)
+        {
+            LoopMachine.Array7Trig = true;
+        }
+        if (_array8Trig)
+        {
+            LoopMachine.Array8Trig = true;
+        }
+        if (_array9Trig)
+        {
+            LoopMachine.Array9Trig = true;
         }
     }
 

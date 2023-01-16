@@ -166,40 +166,6 @@ public class ScoringSystem : MonoBehaviour
         }
     }
 
-    void PollingData_A()
-    {
-        if (_pollLevel_1 == 0)
-        {
-            //this is labeled as "Choose One"
-        }
-        if (_pollLevel_1 == 1)
-        {
-            Debug.Log("Poll Level " + _pollLevel_1);
-        }
-        if (_pollLevel_1 == 2)
-        {
-            Debug.Log("Poll Level " + _pollLevel_1);
-        }
-        if (_pollLevel_1 == 3)
-        {
-            Debug.Log("Poll Level " + _pollLevel_1);
-        }
-        if (_pollLevel_1 == 4)
-        {
-            Debug.Log("Poll Level " + _pollLevel_1);
-        }
-        if (_pollLevel_1 == 5)
-        {
-            Debug.Log("Poll Level " + _pollLevel_1);
-        }
-        if (_pollLevel_1 == 6)
-        {
-            Debug.Log("Poll Level " + _pollLevel_1);
-        }
-
-    }
-
-
     public void ResetScore()
     {
         //reset all points to zero
@@ -256,6 +222,40 @@ public class ScoringSystem : MonoBehaviour
             _penalty = 0;
         }
     }
+
+    void PollingData_A()
+    {
+        if (_pollLevel_1 == 0)
+        {
+            //this is labeled as "Choose One"
+        }
+        if (_pollLevel_1 == 1)
+        {
+            Debug.Log("Poll Level " + _pollLevel_1);
+        }
+        if (_pollLevel_1 == 2)
+        {
+            Debug.Log("Poll Level " + _pollLevel_1);
+        }
+        if (_pollLevel_1 == 3)
+        {
+            Debug.Log("Poll Level " + _pollLevel_1);
+        }
+        if (_pollLevel_1 == 4)
+        {
+            Debug.Log("Poll Level " + _pollLevel_1);
+        }
+        if (_pollLevel_1 == 5)
+        {
+            Debug.Log("Poll Level " + _pollLevel_1);
+        }
+        if (_pollLevel_1 == 6)
+        {
+            Debug.Log("Poll Level " + _pollLevel_1);
+        }
+
+    }
+
 
 }
 

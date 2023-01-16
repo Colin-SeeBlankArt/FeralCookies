@@ -100,7 +100,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         audioBox._pause++;
     }
-
     public void Play()
     {
         Time.timeScale = 1;

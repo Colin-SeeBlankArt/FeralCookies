@@ -8,13 +8,13 @@ using Dreamteck.Forever;
 public class UI_Manager : MonoBehaviour
 {
     Animator anim;
-
+    public string url;
     public void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    public void ChangeScene(int sceneIndex) //change by index
+    public void ChangeScene(int sceneIndex) //change by index number
     {
         SceneManager.LoadScene(sceneIndex);
     }
@@ -22,6 +22,15 @@ public class UI_Manager : MonoBehaviour
     public void ChangeSceneName(string level)
     {
         SceneManager.LoadScene(level);
+    }//change by string name
+
+    public void OpenURL()
+    {
+        Application.OpenURL(url);
+    }
+    public void ChangeSceneNextIndex()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void StartPlayer()
     {

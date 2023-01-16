@@ -6203,6 +6203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecda1fe97457c3848ba0bd13020f67d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  url: 
 --- !u!114 &802553357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9890,7 +9891,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286977640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -11742,6 +11743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecda1fe97457c3848ba0bd13020f67d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  url: 
 --- !u!114 &1472131637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14063,6 +14065,7 @@ GameObject:
   - component: {fileID: 1843804095}
   - component: {fileID: 1843804094}
   - component: {fileID: 1843804093}
+  - component: {fileID: 1843804096}
   m_Layer: 5
   m_Name: PollQuestions
   m_TagString: Untagged
@@ -14134,22 +14137,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1472131634}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1286977640}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1843804096}
+        m_TargetAssemblyTypeName: UI_Manager, RM.Runtime
+        m_MethodName: OpenURL
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14196,6 +14187,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843804091}
   m_CullTransparentMesh: 1
+--- !u!114 &1843804096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843804091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecda1fe97457c3848ba0bd13020f67d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://sites.google.com/seeblankart.com/thesis-site/polls/urban-world?authuser=0
 --- !u!1001 &1847542072
 PrefabInstance:
   m_ObjectHideFlags: 0
