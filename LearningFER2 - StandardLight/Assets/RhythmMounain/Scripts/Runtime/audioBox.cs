@@ -100,17 +100,13 @@ public class audioBox : MonoBehaviour
         }
         if (_array6Trig)
         {
-            LoopMachine.Array6Trig = true;
+            LoopMachine.Array7Trig = true;
         }
         if (_array7Trig)
         {
-            LoopMachine.Array7Trig = true;
-        }
-        if (_array8Trig)
-        {
             LoopMachine.Array8Trig = true;
         }
-        if (_array9Trig)
+        if (_array8Trig)
         {
             LoopMachine.Array9Trig = true;
         }

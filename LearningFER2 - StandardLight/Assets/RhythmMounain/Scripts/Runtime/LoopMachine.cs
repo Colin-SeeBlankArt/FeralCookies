@@ -170,6 +170,11 @@ public class LoopMachine : MonoBehaviour
         {
             _audioBoxes[5].gameObject.SetActive(true);
             _audioBoxes[4].gameObject.SetActive(false);
+            
+            if (_array5 && Array5Trig)
+            {
+                _nextTrack = 7;
+            }
         }
         
         //fire Array 6
@@ -177,6 +182,48 @@ public class LoopMachine : MonoBehaviour
         {
             _audioBoxes[6].gameObject.SetActive(true);
             _audioBoxes[5].gameObject.SetActive(false);
+
+            if (_array6 && Array6Trig)
+            {
+                _nextTrack = 8;
+            }
+        }
+
+        //fire Array 7
+        if (Array7Trig && _nextTrack == 8)
+        {
+            _audioBoxes[7].gameObject.SetActive(true);
+            _audioBoxes[6].gameObject.SetActive(false);
+
+            if (_array7 && Array7Trig)
+            {
+                _nextTrack = 9;
+            }
+        }
+
+        //fire Array 8
+        if (Array8Trig && _nextTrack == 9)
+        {
+            _audioBoxes[8].gameObject.SetActive(true);
+            _audioBoxes[7].gameObject.SetActive(false);
+
+            if (_array8 && Array8Trig)
+            {
+                _nextTrack = 10;
+            }
+        }
+
+        //fire Array 9
+        if (Array9Trig && _nextTrack == 10)
+        {
+            _audioBoxes[9].gameObject.SetActive(true);
+            _audioBoxes[8].gameObject.SetActive(false);
+
+            if (_array9 && Array9Trig)
+            {
+                Debug.Log("Fnitio");
+                //_nextTrack = 8;
+            }
         }
     }
 
@@ -269,13 +316,20 @@ public class LoopMachine : MonoBehaviour
         _audioBoxes[3].gameObject.SetActive(false);
         _audioBoxes[4].gameObject.SetActive(false);
         _audioBoxes[5].gameObject.SetActive(false);
+        _audioBoxes[6].gameObject.SetActive(false);
+        _audioBoxes[7].gameObject.SetActive(false);
+        _audioBoxes[8].gameObject.SetActive(false);
+        _audioBoxes[9].gameObject.SetActive(false);
         Array0Trig = false;
         Array1Trig = false;
         Array2Trig = false;
         Array3Trig = false;
         Array4Trig = false;
         Array5Trig = false;
-        Array6Trig = false;
+        Array7Trig = false;
+        Array8Trig = false;
+        Array9Trig = false;
+
         _array0 = false;
         _array1 = false;
         _array2 = false;
@@ -283,6 +337,9 @@ public class LoopMachine : MonoBehaviour
         _array4 = false;
         _array5 = false;
         _array6 = false;
+        _array7 = false;
+        _array8 = false;
+        _array9 = false;
 
     }
 }
