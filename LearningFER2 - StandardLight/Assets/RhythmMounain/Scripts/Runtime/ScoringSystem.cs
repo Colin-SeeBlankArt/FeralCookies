@@ -16,9 +16,8 @@ public class ScoringSystem : MonoBehaviour
             RedStack = _redStack,
             BlueStack = _blueStack,
             PurpStack = _purpStack,
-            RdSprkTot = _rBunny,
-            GrnSprkTot = _gBunny,
-
+            RdSparkTot = _rBunny,
+            GrnSparkTot = _gBunny,
 
             /*PollQuest_[Loop] = (Polls),
              * TimeElapsed = timeElapsed,
@@ -204,10 +203,11 @@ public class ScoringSystem : MonoBehaviour
     public void ScoringSys()
     {
         pcScore = _maxScore;
-        totBrickCt = _maxScore + _negativeBrickTick;
+        totBrickCt = _greenStack + _purpStack + _blueStack + _negativeBrickTick;
         
         //green brick count and display in UI
         _gBricktkr = _greenStack - _negativeBrickTick;
+        brickTick = totBrickCt;
 
         if (_gBricktkr <= 0)
         {

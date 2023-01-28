@@ -14,11 +14,10 @@ public class GameSessionData
     public int PlayerScore;
     public int GreenStack;
     public int RedStack;
-    public int Penalties;
     public int BlueStack;
     public int PurpStack;
-    public int RdSprkTot;
-    public int GrnSprkTot;
+    public int RdSparkTot;
+    public int GrnSparkTot;
 
 
     /*public int PollQuest_[Loop];
