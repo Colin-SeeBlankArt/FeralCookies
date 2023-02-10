@@ -16,10 +16,9 @@ public class GameSessionData
     public int RedStack;
     public int BlueStack;
     public int PurpStack;
+
     //public int RdSparkTot;
-    public int GrnSparkTot;
-
-
+    //public int GrnSparkTot;
     /*public int PollQuest_[Loop];
      *public int TimeElapsed;
      *public int Poll_1;
