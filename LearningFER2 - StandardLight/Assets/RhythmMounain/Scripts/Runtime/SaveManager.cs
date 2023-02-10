@@ -16,7 +16,7 @@ public class GameSessionData
     public int RedStack;
     public int BlueStack;
     public int PurpStack;
-    public int RdSparkTot;
+    //public int RdSparkTot;
     public int GrnSparkTot;
 
 

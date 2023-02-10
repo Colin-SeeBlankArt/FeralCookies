@@ -16,7 +16,7 @@ public class ScoringSystem : MonoBehaviour
             RedStack = _redStack,
             BlueStack = _blueStack,
             PurpStack = _purpStack,
-            RdSparkTot = RdSpark,
+            //RdSparkTot = RdSpark,
             GrnSparkTot = _gBunny,
 
             /*PollQuest_[Loop] = (Polls),
