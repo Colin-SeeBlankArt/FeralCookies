@@ -16,7 +16,7 @@ public class ScoringSystem : MonoBehaviour
             RedStack = _redStack,
             BlueStack = _blueStack,
             PurpStack = _purpStack,
-            RdSparkTot = _rBunny,
+            RdSparkTot = RdSpark,
             GrnSparkTot = _gBunny,
 
             /*PollQuest_[Loop] = (Polls),
@@ -62,6 +62,7 @@ public class ScoringSystem : MonoBehaviour
     int _negativeBrickTick;
     
     public static int _rBunny; //hit the bunny, get penalized
+    public static int RdSpark;
     public static int _gBunny;
     public static int _penalty;
 
@@ -105,6 +106,7 @@ public class ScoringSystem : MonoBehaviour
         CoinCounter();
         PollingData_A();
         ScoringSys();
+        _rBunny = RdSpark;
 
         if (_resetScores >= 1)
         {
